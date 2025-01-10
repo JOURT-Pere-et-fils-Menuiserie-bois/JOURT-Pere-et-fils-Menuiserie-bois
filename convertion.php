@@ -78,7 +78,7 @@
 
 
         @media print {
-            form, .print-btn {
+            form, .print-btn, p, ol, H2, ul {
                 display: none;
             }
         }
@@ -86,8 +86,36 @@
 </head>
 <body>
     <div class="container">
-        <h1>Convertisseur d'unités</h1>
-        <form id="convertForm">
+<section class="presentation-convertisseur">
+    <h1>Convertisseur d'unités pour la menuiserie</h1>
+    <p>
+        Cet outil de conversion a été spécialement développé pour faciliter la vie des professionnels et amateurs de menuiserie. 
+        Il permet de convertir facilement et avec précision les unités de mesure les plus couramment utilisées dans ce domaine : 
+        <strong>mètres</strong>, <strong>centimètres</strong>, <strong>millimètres</strong>, <strong>pouces</strong> et <strong>pieds</strong>.
+    </p>
+    
+    <h2>Fonctionnalités principales :</h2>
+    <ul>
+        <li>Entrer une valeur numérique.</li>
+        <li>Sélectionner l’unité d’origine et l’unité de destination.</li>
+        <li>Obtenir instantanément le résultat sous forme de tableau historique des conversions réalisées.</li>
+        <li>Imprimer facilement l’historique des conversions.</li>
+    </ul>
+    
+    <h2>Comment ça fonctionne ?</h2>
+    <ol>
+        <li>Entrez la valeur à convertir dans le champ prévu à cet effet.</li>
+        <li>Choisissez l’unité de départ et l’unité cible parmi les options proposées.</li>
+        <li>Cliquez sur le bouton <strong>Convertir</strong> pour afficher le résultat.</li>
+        <li>L’historique des conversions s’affiche automatiquement sous forme de tableau.</li>
+        <li>Utilisez le bouton <strong>Imprimer l’historique</strong> pour conserver une trace de vos calculs.</li>
+    </ol>
+    
+    <h2>Pourquoi cet outil est-il utile ?</h2>
+    <p>
+        Que vous travailliez sur des projets nécessitant des conversions entre les systèmes métrique et impérial ou que vous ayez 
+        simplement besoin de convertir rapidement des longueurs pour vos coupes, cet outil est un allié indispensable sur les chantiers.
+    </p>        <form id="convertForm">
             <label for="value">Valeur à convertir :</label>
             <input type="number" id="value" step="0.01" placeholder="Entrez une valeur..." required>
 
@@ -123,8 +151,8 @@
             </thead>
             <tbody id="historyBody"></tbody>
         </table>
-
         <button class="print-btn" onclick="window.print()">Imprimer l'historique</button>
+</section>
     </div>
 
     <script>
@@ -176,7 +204,7 @@
         }
     </script>
 <footer id="footer">
-    <p>© 2025 - Ce code est libre d'utilisation sous réserve de conserver un lien vers <a href="https://www.jourt.com/tools/" target="_blank">Les outils du menuisier</a>.</p>
+    © 2025 - Ce code est libre d'utilisation sous réserve de conserver un lien vers <a href="https://www.jourt.com/tools">Les outils du menuisier | www.jourt.com</a>.
 </footer>
 </body>
 </html>
