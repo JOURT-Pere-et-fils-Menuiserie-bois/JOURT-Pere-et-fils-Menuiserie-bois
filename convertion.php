@@ -3,6 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DEV - Convertisseur d'unités - développement JOURT Père et fils Menuiserie bois la boite à outils Open Sources">
+<meta name="author" content="MR JOURT pour JOURT Père et fils Menuiserie bois">
+<!-- Open Graph / Facebook -->
+<meta property="og:locale" content="fr_FR">
+<meta property="og:type" content="business.business">
+<meta property="business:contact_data:street_address" content="50 Chemin de la Butte">
+<meta property="business:contact_data:locality" content="Brest">
+<meta property="business:contact_data:region" content="Finistère">
+<meta property="business:contact_data:postal_code" content="29200">
+<meta property="business:contact_data:country_name" content="France">
+<meta property="og:url" content="https://www.jourt.com/tools/convertion">
+<meta property="og:title" content="Menuiserie BREST JOURT Père et fils menuisier bois artisan">
+<meta property="og:site_name" content="Menuiserie BREST JOURT Père et fils S.A.S.">
+<meta property="og:description" content="JOURT Père et fils menuiserie bois, travaux sur mesures, la qualité artisanal pour vos besoins de projet particulier et professionnel, depuis 1946 à Brest">
+<meta property="og:image" content="https://www.jourt.com/share-1200-630.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Menuiserie bois Brest, JOURT Père et fils">
+
+<!-- Twitter -->                      
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Menuiserie BREST JOURT Père et fils menuisier bois artisan">
+<meta property="twitter:description" content="JOURT Père et fils menuiserie bois, travaux sur mesures, la qualité artisanal pour vos besoins de projet particulier et professionnel, depuis 1946 à Brest">
+<meta property="twitter:domain" content="jourt.com">
+<meta property="twitter:url" content="https://www.jourt.com/tools/convertion">
+<meta property="twitter:site" content="@JOURTPereEtFils">
+<meta property="twitter:image" content="https://www.jourt.com/share-1200-630.webp">
+<meta property="twitter:image:alt" content="Menuiserie BREST JOURT Père et fils S.A.S. bois, PVC, alu">
+<!-- META TAG FIN -->
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.jourt.com/tools/convertion">
+
+<script type="application/ld+json">
+{
+  "@context": "https://www.schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "JOURT Père et fils",
+  "url": "https://www.jourt.com/tools/convertion",
+  "logo": "https://www.jourt.com/images/logo-Jourt-2021.jpg",
+  "image": "https://www.jourt.com/images/logo-Jourt-2021.jpg",
+  "telephone": "+33 (0)2.98.45.01.41",
+  "priceRange": "$$$",
+  "description": "JOURT Père et fils menuiserie bois, travaux sur mesures et artisanal pour répondre aux besoins de projet particulier et professionnel, la qualité depuis 1946 à Brest",
+  "address": {"@type": "PostalAddress","streetAddress": "50 Chemin de la Butte","addressLocality": "Brest","addressRegion": "Finistère","postalCode": "29200","addressCountry": "FR"},
+  "geo": { "@type": "GeoCoordinates", "latitude": "48.3936944", "longitude": "-4.532305555555555" },
+  "hasMap": "https://www.google.com/maps/place/JOURT+P%C3%A8re+et+fils+Menuiserie+bois/@48.39369,-4.532329,16z/data=!4m12!1m5!3m4!2zNDjCsDIzJzM3LjMiTiA0wrAzMSc1Ni4zIlc!8m2!3d48.3936944!4d-4.5323056!3m5!1s0x4816bd90dd3d89cd:0x751ad4533101ee6f!8m2!3d48.3938371!4d-4.5320048!16s%2Fg%2F11pl05n__j?hl=fr-FR&entry=ttu",
+  "openingHours": [
+    "Mo 08:00-12:00 13:00-18:00",
+    "Tu 08:00-12:00 13:00-18:00",
+    "We 08:00-12:00 13:00-18:00",
+    "Th 08:00-12:00 13:00-18:00",
+    "Fr 08:00-12:00 13:00-18:00"
+  ]}
+</script>
     <title>Convertisseur d'unités - Menuiserie</title>
     <style>
         body {
@@ -62,6 +117,10 @@
         .print-btn:hover {
             background: #0056b3;
         }
+        header {
+            text-align: center;
+            margin-top: 20px;
+        }
         footer {
             text-align: center;
             margin-top: 20px;
@@ -86,6 +145,9 @@
 </head>
 <body>
     <div class="container">
+<header>
+<img itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject" alt="Profile Icon" title="Ouvrier menuisier" src="https://www.jourt.com/images/profile_icon-mini.webp" srcset="https://www.jourt.com/images/profile_icon-mini.webp 68w, https://www.jourt.com/images/profile_icon.webp 136w" sizes="(max-width: 700px) 136px,136px" width="136" height="136">
+</header>
 <section class="presentation-convertisseur">
     <h1>Convertisseur d'unités pour la menuiserie</h1>
     <p>
@@ -204,7 +266,7 @@
         }
     </script>
 <footer id="footer">
-    © 2025 - Ce code est libre d'utilisation sous réserve de conserver un lien vers <a href="https://www.jourt.com/tools">Les outils du menuisier | www.jourt.com</a>.
+    © 2025 - Ce code est libre d'utilisation sous réserve de conserver un lien vers <a href="https://www.jourt.com/tools/">Les outils du menuisier | www.jourt.com</a>.
 </footer>
 </body>
 </html>
