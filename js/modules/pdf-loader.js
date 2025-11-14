@@ -20,7 +20,7 @@ const PDFLoader = (function() {
 
         // Configurer PDF.js worker
         if (typeof pdfjsLib !== 'undefined') {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/lib/pdf.worker.mjs';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/lib/pdf.worker.min.mjs';
         }
     }
 

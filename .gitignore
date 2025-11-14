@@ -6,6 +6,10 @@
 /uploads/*
 /logs/*
 
+# Bibliothèques externes (à télécharger avec download-pdfjs.sh)
+/js/lib/*.mjs
+/js/lib/*.js
+
 # Configuration locale
 /php/config.local.php
 

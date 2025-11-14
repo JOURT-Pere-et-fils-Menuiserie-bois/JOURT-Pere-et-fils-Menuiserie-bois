@@ -295,7 +295,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/lib/pdf.mjs" type="module"></script>
+    <script src="js/lib/pdf.min.mjs" type="module"></script>
     <script src="js/modules/pubsub.js"></script>
     <script src="js/modules/storage.js"></script>
     <script src="js/modules/pdf-loader.js"></script>

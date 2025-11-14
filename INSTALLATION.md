@@ -26,14 +26,18 @@ cd JOURT-Pere-et-fils-Menuiserie-bois
 
 ### Étape 2 : Télécharger PDF.js
 
+**Méthode automatique (recommandée)** :
 ```bash
-cd js/lib/
-wget https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js
-wget https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js
-cd ../..
+bash download-pdfjs.sh
 ```
 
-**Alternative CDN** : Modifier `index.php` ligne 102 pour utiliser le CDN au lieu des fichiers locaux.
+**Méthode manuelle** :
+```bash
+cd js/lib/
+curl -L "https://mozilla.github.io/pdf.js/build/pdf.min.mjs" -o pdf.min.mjs
+curl -L "https://mozilla.github.io/pdf.js/build/pdf.worker.min.mjs" -o pdf.worker.min.mjs
+cd ../..
+```
 
 ### Étape 3 : Configurer les permissions
 
