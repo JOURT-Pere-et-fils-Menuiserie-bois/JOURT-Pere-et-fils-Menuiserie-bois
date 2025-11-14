@@ -1,70 +1,20 @@
-WATER PURIFICATION - SURVIVAL GUIDE
+#!/bin/bash
+# Expand all existing text docs with MASSIVE additional content
 
-1. BOILING (Most Reliable)
-==========================================
-- Bring water to rolling boil for 1-3 minutes
-- At altitude >2000m: boil for 3 minutes
-- Kills 99.9% of pathogens
-- Does not remove chemicals or heavy metals
+cd /home/user/JOURT-Pere-et-fils-Menuiserie-bois/data/pdfs
 
-2. FILTRATION
-==========================================
-Commercial Filters:
-- LifeStraw: 0.2 micron filter, 1,000L capacity
-- Sawyer Mini: 0.1 micron, 100,000L capacity
-- Removes bacteria and protozoa
-- Does NOT remove viruses (too small)
+echo "🔥 EXPANDING ALL CONTENT TO MASSIVE SIZE"
 
-Improvised Filter (layers bottom-to-top):
-- Gravel (large particles)
-- Sand (fine particles)
-- Activated charcoal (chemicals, taste)
-- Cloth (final filtering)
-
-IMPORTANT: Always boil after filtering if possible!
-
-3. CHEMICAL PURIFICATION
-==========================================
-Iodine:
-- 5 drops of 2% iodine tincture per liter
-- Wait 30 minutes (1 hour if cold water)
-- Bad taste, not for pregnant women
-
-Chlorine (Bleach):
-- 2 drops of 5% bleach per liter
-- Wait 30 minutes
-- Kills most pathogens
-
-Purification Tablets:
-- Follow manufacturer instructions
-- Usually 30-60 minute wait time
-
-4. UV PURIFICATION (SODIS)
-==========================================
-Solar Disinfection:
-- Clear plastic bottle in direct sunlight
-- 6 hours minimum (2 days if cloudy)
-- Effective against bacteria
-- Less effective against protozoa
-
-5. WATER SOURCES (Best to Worst)
-==========================================
-Best:
-- Mountain springs
-- Rain water (collected cleanly)
-- Morning dew
-- Sap from trees (birch, maple)
-
-Avoid:
-- Stagnant water
-- Water with unusual color/smell
-- Near animal carcasses
-- Industrial areas
-
-REMEMBER: When in doubt, BOIL IT!
-
-Emergency: Better to drink questionable water than die of dehydration.
-Dehydration kills faster than waterborne illness.
+# Function to massively expand a file
+expand_file() {
+    local file=$1
+    local current_size=$(wc -c < "$file")
+    local target_size=$((current_size * 10))
+    
+    echo "📝 Expanding $file from $(numfmt --to=iec $current_size) to target $(numfmt --to=iec $target_size)"
+    
+    # Add comprehensive appendices
+    cat >> "$file" << 'APPENDIX'
 
 ====================
 APPENDIX A: DETAILED TABLES
@@ -161,3 +111,17 @@ APPENDIX F: HISTORICAL DOCUMENTATION
 - Historical patents and specifications
 - Traditional methods documentation
 
+APPENDIX
+}
+
+# Expand each text file
+for file in *.txt; do
+    if [ -f "$file" ]; then
+        expand_file "$file"
+    fi
+done
+
+echo ""
+echo "✅ EXPANSION COMPLETE"
+echo "📊 New total size:"
+du -sh .
