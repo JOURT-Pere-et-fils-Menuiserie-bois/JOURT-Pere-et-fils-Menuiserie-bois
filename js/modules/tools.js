@@ -74,6 +74,9 @@ const ToolsManager = (function() {
             case 'rectangle':
                 startRectangle(point);
                 break;
+            case 'circle':
+                startCircle(point);
+                break;
         }
     }
 
@@ -520,6 +523,23 @@ const ToolsManager = (function() {
 
     // ===== CERCLE =====
 
+    function startCircle(point) {
+        isDrawing = true;
+        currentPoints = [point];
+
+        const svg = document.getElementById('annotations-layer');
+        tempElement = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        tempElement.setAttribute('cx', point.x);
+        tempElement.setAttribute('cy', point.y);
+        tempElement.setAttribute('r', 0);
+        tempElement.setAttribute('stroke', toolProperties.color);
+        tempElement.setAttribute('stroke-width', toolProperties.thickness);
+        tempElement.setAttribute('stroke-dasharray', '5,5');
+        tempElement.setAttribute('fill', toolProperties.color);
+        tempElement.setAttribute('fill-opacity', toolProperties.opacity);
+        svg.appendChild(tempElement);
+    }
+
     function updateCircle(point) {
         if (!tempElement || currentPoints.length === 0) return;
 
@@ -530,7 +550,45 @@ const ToolsManager = (function() {
     }
 
     function finishCircle(point) {
-        // Similar to rectangle...
+        isDrawing = false;
+        currentPoints.push(point);
+
+        if (tempElement) {
+            tempElement.remove();
+            tempElement = null;
+        }
+
+        // Calculer surface
+        const radius = calculateDistance(currentPoints[0], currentPoints[1]);
+        const areaPixels = Math.PI * radius * radius;
+        const areaMeters = CalibrationManager.pixelsSquaredToMetersSquared(areaPixels);
+
+        if (!areaMeters) {
+            alert('Veuillez calibrer l\'échelle avant de mesurer');
+            currentPoints = [];
+            return;
+        }
+
+        const measurement = {
+            id: measurementIdCounter++,
+            type: 'circle',
+            coordinates: {
+                center: currentPoints[0],
+                radius: radius
+            },
+            value: areaMeters,
+            unit: 'm²',
+            color: toolProperties.color,
+            thickness: toolProperties.thickness,
+            fillColor: toolProperties.color,
+            opacity: toolProperties.opacity,
+            created_at: new Date().toISOString()
+        };
+
+        measurements.push(measurement);
+        PubSub.publish(EVENTS.MEASUREMENT_CREATED, { measurement });
+
+        currentPoints = [];
     }
 
     // ===== COMPTAGE =====

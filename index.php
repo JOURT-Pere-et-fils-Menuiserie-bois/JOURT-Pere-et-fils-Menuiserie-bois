@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/versioning.css">
+    <link rel="stylesheet" href="css/dropdown.css">
 </head>
 <body>
     <div class="app-container">
@@ -38,7 +39,16 @@
                 <button id="btn-new-project" class="btn btn-secondary">+ Nouveau</button>
                 <button id="btn-upload-plan" class="btn btn-secondary">📄 Charger Plan</button>
                 <button id="btn-versions" class="btn btn-secondary">📋 Versions</button>
-                <button id="btn-export" class="btn btn-secondary">💾 Exporter</button>
+                <div class="btn-group">
+                    <button id="btn-export" class="btn btn-secondary">💾 Exporter ▼</button>
+                    <div class="dropdown-menu" id="export-menu">
+                        <button id="btn-export-excel">📊 Excel (.xlsx)</button>
+                        <button id="btn-export-csv">📄 CSV</button>
+                        <button id="btn-export-pdf">📑 Rapport PDF</button>
+                        <hr>
+                        <button id="btn-import-catalogue">📥 Importer catalogue</button>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -85,6 +95,25 @@
                         <h4>Comptage</h4>
                         <button class="tool-btn" data-tool="count" title="Comptage">
                             <span>🔢</span> Comptage
+                        </button>
+                    </div>
+
+                    <div class="tool-group">
+                        <h4>Annotations</h4>
+                        <button class="tool-btn" data-tool="markup:arrow" title="Flèche">
+                            <span>➡️</span> Flèche
+                        </button>
+                        <button class="tool-btn" data-tool="markup:text" title="Texte">
+                            <span>🆎</span> Texte
+                        </button>
+                        <button class="tool-btn" data-tool="markup:freehand" title="Dessin libre">
+                            <span>✏️</span> Libre
+                        </button>
+                        <button class="tool-btn" data-tool="markup:cloud" title="Nuage">
+                            <span>☁️</span> Nuage
+                        </button>
+                        <button class="tool-btn" data-tool="markup:symbol" title="Symbole">
+                            <span>⭐</span> Symbole
                         </button>
                     </div>
 
@@ -436,6 +465,15 @@
     <!-- Scripts -->
     <!-- PDF.js depuis CDN -->
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.mjs" type="module"></script>
+
+    <!-- SheetJS pour Excel (export/import) -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
+    <!-- jsPDF pour génération PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Modules Core -->
     <script src="js/modules/pubsub.js"></script>
     <script src="js/modules/storage.js"></script>
     <script src="js/modules/pdf-loader.js"></script>
@@ -452,6 +490,15 @@
     <script src="js/modules/info-panel.js"></script>
     <script src="js/modules/auto-save.js"></script>
     <script src="js/modules/shortcuts.js"></script>
+
+    <!-- Modules Avancés -->
+    <script src="js/modules/advanced-measurements.js"></script>
+    <script src="js/modules/markup.js"></script>
+    <script src="js/modules/excel-export.js"></script>
+    <script src="js/modules/pdf-reports.js"></script>
+    <script src="js/modules/ui-handlers.js"></script>
+
+    <!-- Application principale -->
     <script src="js/app.js"></script>
     <script>
         // Gestion modal Add Plan
