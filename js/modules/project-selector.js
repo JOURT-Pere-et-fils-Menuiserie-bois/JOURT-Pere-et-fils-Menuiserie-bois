@@ -34,14 +34,35 @@ const ProjectSelector = (function() {
         const modal = document.getElementById('open-project-modal');
         if (!modal) {
             console.error('Modale open-project-modal introuvable');
+            alert('❌ Erreur : Modale non trouvée dans le HTML');
             return;
         }
 
-        // Recharger la liste avant d'afficher
-        loadProjectsList().then(() => {
-            renderProjectsList();
-            modal.classList.add('active');
-        });
+        // Afficher la modale immédiatement avec un loader
+        const container = document.getElementById('projects-list');
+        if (container) {
+            container.innerHTML = '<div class="loading">Chargement des projets...</div>';
+        }
+        modal.classList.add('active');
+
+        // Recharger la liste
+        loadProjectsList()
+            .then(() => {
+                renderProjectsList();
+            })
+            .catch((error) => {
+                console.error('Erreur chargement projets:', error);
+                if (container) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <p>❌</p>
+                            <p>Erreur de connexion au serveur</p>
+                            <p style="font-size: 12px; color: #999;">Vérifiez que le serveur PHP est démarré</p>
+                            <button class="btn btn-primary" onclick="ProjectSelector.showProjectSelector()">Réessayer</button>
+                        </div>
+                    `;
+                }
+            });
     }
 
     /**
@@ -159,7 +180,7 @@ const ProjectSelector = (function() {
 
                 // Charger les mesures
                 try {
-                    const measurementsData = await StorageManager.loadMeasurements(currentVersion.version_id);
+                    const measurementsData = await StorageManager.loadMeasurements(project.project_id, currentVersion.version_id);
                     const measurements = measurementsData.measurements || measurementsData || [];
 
                     console.log('Mesures chargées:', measurements.length);

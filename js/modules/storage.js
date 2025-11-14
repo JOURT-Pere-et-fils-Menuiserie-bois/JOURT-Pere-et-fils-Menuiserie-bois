@@ -149,11 +149,12 @@ const StorageManager = (function() {
     /**
      * Sauvegarder mesures
      */
-    async function saveMeasurements(versionId, measurements) {
+    async function saveMeasurements(projectId, versionId, measurements) {
         saveLocal(`measurements_${versionId}`, measurements);
 
         try {
             const result = await apiRequest('/measurements.php', 'POST', {
+                project_id: projectId,
                 version_id: versionId,
                 measurements: measurements
             });
@@ -167,9 +168,9 @@ const StorageManager = (function() {
     /**
      * Charger mesures
      */
-    async function loadMeasurements(versionId) {
+    async function loadMeasurements(projectId, versionId) {
         try {
-            const result = await apiRequest(`/measurements.php?version_id=${versionId}`, 'GET');
+            const result = await apiRequest(`/measurements.php?project_id=${projectId}&version_id=${versionId}`, 'GET');
             saveLocal(`measurements_${versionId}`, result);
             return result;
         } catch (error) {

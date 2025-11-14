@@ -116,7 +116,7 @@ const AutoSave = (function() {
             measurements = getMeasurementsFromTable();
 
             // Sauvegarder les mesures
-            await StorageManager.saveMeasurements(currentVersion, measurements);
+            await StorageManager.saveMeasurements(currentProject.project_id, currentVersion, measurements);
 
             // Marquer comme sauvegardé
             isDirty = false;

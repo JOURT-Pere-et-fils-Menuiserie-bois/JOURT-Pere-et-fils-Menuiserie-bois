@@ -6,11 +6,28 @@
 const VersionManager = (function() {
     let versions = [];
     let currentVersionId = null;
+    let currentProjectId = null;
+
+    /**
+     * Initialiser - S'abonner aux événements
+     */
+    function init() {
+        // Mémoriser le projet courant
+        PubSub.subscribe(EVENTS.PROJECT_LOADED, (project) => {
+            currentProjectId = project.project_id;
+        });
+
+        PubSub.subscribe(EVENTS.PROJECT_CREATED, (project) => {
+            currentProjectId = project.project_id;
+        });
+    }
 
     /**
      * Charger les versions d'un projet
      */
     async function loadVersions(projectId) {
+        currentProjectId = projectId;
+
         try {
             const result = await StorageManager.apiRequest(`/versions.php?project_id=${projectId}`, 'GET');
 
@@ -83,11 +100,17 @@ const VersionManager = (function() {
             const version = versions.find(v => v.version_id === versionId);
             if (!version) return;
 
+            // Vérifier qu'on a un projet courant
+            if (!currentProjectId) {
+                alert('❌ Erreur : Aucun projet ouvert');
+                return;
+            }
+
             // Charger le plan
             await PDFLoader.loadPDFFromURL(version.file_path);
 
             // Charger les mesures
-            const measurements = await StorageManager.loadMeasurements(versionId);
+            const measurements = await StorageManager.loadMeasurements(currentProjectId, versionId);
             MeasurementTable.loadMeasurements(measurements);
 
             // Dessiner les mesures
@@ -147,9 +170,17 @@ const VersionManager = (function() {
 
     // API publique
     return {
+        init,
         loadVersions,
         loadVersion,
         compareWith,
         getCurrentVersion
     };
 })();
+
+// Initialiser au chargement
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', VersionManager.init);
+} else {
+    VersionManager.init();
+}
