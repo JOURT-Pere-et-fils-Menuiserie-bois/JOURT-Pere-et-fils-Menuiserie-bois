@@ -1,0 +1,550 @@
+/**
+ * PIP-BOY CSS - Style rétro-futuriste Fallout
+ * Phosphorescent green + CRT effects
+ */
+
+/* ========================================
+   FONTS & RESET
+   ======================================== */
+
+@font-face {
+    font-family: 'VT323';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/vt323.woff2') format('woff2');
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Couleurs Pip-Boy */
+    --color-primary: #00ff00;
+    --color-secondary: #33ff33;
+    --color-dark: #003300;
+    --color-darker: #001a00;
+    --color-black: #0a0a0a;
+    --color-bg: #0d0d0d;
+
+    /* Typography */
+    --font-main: 'VT323', monospace;
+    --font-size-base: 18px;
+    --font-size-large: 24px;
+    --font-size-xl: 32px;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Effects */
+    --glow-sm: 0 0 5px var(--color-primary);
+    --glow-md: 0 0 10px var(--color-primary);
+    --glow-lg: 0 0 20px var(--color-primary), 0 0 30px var(--color-primary);
+
+    /* Border */
+    --border: 2px solid var(--color-primary);
+}
+
+/* ========================================
+   BODY & MAIN CONTAINER
+   ======================================== */
+
+body.pip-body {
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    background: var(--color-black);
+    color: var(--color-primary);
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* CRT Scanlines overlay */
+body.pip-body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03),
+        rgba(0, 255, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanline 8s linear infinite;
+}
+
+/* CRT Flicker */
+body.pip-body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 0, 0.01);
+    pointer-events: none;
+    z-index: 9998;
+    animation: flicker 0.15s infinite;
+}
+
+.pip-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    background: var(--color-bg);
+    position: relative;
+}
+
+/* ========================================
+   BOOT SCREEN
+   ======================================== */
+
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.boot-content {
+    max-width: 800px;
+    padding: var(--spacing-xl);
+}
+
+.boot-logo {
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--color-primary);
+    text-shadow: var(--glow-md);
+    margin-bottom: var(--spacing-lg);
+    white-space: pre;
+}
+
+.boot-text {
+    margin-bottom: var(--spacing-lg);
+}
+
+.boot-text p {
+    margin: var(--spacing-xs) 0;
+    animation: typing 2s steps(50) forwards;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.loading-line {
+    animation: blink 1s infinite;
+}
+
+.boot-progress {
+    width: 100%;
+    height: 20px;
+    border: var(--border);
+    padding: 2px;
+    box-shadow: var(--glow-sm);
+}
+
+.boot-progress-bar {
+    height: 100%;
+    background: var(--color-primary);
+    width: 0%;
+    animation: loading 3s ease-in-out forwards;
+    box-shadow: var(--glow-md);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.pip-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.pip-status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: 14px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.offline-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: var(--glow-sm);
+    animation: pulse 2s infinite;
+}
+
+.battery-icon {
+    filter: drop-shadow(var(--glow-sm));
+}
+
+.pip-title {
+    font-size: var(--font-size-xl);
+    text-align: center;
+    text-shadow: var(--glow-lg);
+    letter-spacing: 4px;
+    animation: glitch 5s infinite;
+}
+
+/* ========================================
+   NAVIGATION
+   ======================================== */
+
+.pip-nav {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border: var(--border);
+    background: var(--color-darker);
+    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.nav-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: transparent;
+    border: 1px solid var(--color-dark);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.nav-tab:hover {
+    background: var(--color-dark);
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-sm);
+    transform: translateY(-2px);
+}
+
+.nav-tab.active {
+    background: var(--color-dark);
+    border-color: var(--color-primary);
+    box-shadow: var(--glow-md);
+    color: var(--color-secondary);
+}
+
+.nav-icon {
+    font-size: 24px;
+    filter: drop-shadow(var(--glow-sm));
+}
+
+.nav-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.pip-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    border: var(--border);
+    background: var(--color-black);
+    box-shadow: inset 0 0 30px rgba(0, 255, 0, 0.1);
+    position: relative;
+}
+
+/* Custom scrollbar */
+.pip-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.pip-content::-webkit-scrollbar-track {
+    background: var(--color-darker);
+    border: 1px solid var(--color-dark);
+}
+
+.pip-content::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    box-shadow: var(--glow-sm);
+}
+
+.pip-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.pip-footer {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border: var(--border);
+    background: var(--color-darker);
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* ========================================
+   UTILITIES
+   ======================================== */
+
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+/* Text glow */
+.glow {
+    text-shadow: var(--glow-md);
+}
+
+.glow-strong {
+    text-shadow: var(--glow-lg);
+}
+
+/* Box glow */
+.box-glow {
+    box-shadow: var(--glow-md);
+}
+
+/* Button style */
+.pip-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: transparent;
+    border: var(--border);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.pip-btn:hover {
+    background: var(--color-dark);
+    box-shadow: var(--glow-md);
+    transform: translateY(-2px);
+}
+
+.pip-btn:active {
+    transform: translateY(0);
+}
+
+/* Input style */
+.pip-input {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: var(--color-black);
+    border: var(--border);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+}
+
+.pip-input:focus {
+    outline: none;
+    box-shadow: var(--glow-md);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes loading {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+}
+
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0, 0);
+        text-shadow: var(--glow-lg);
+    }
+    92% {
+        transform: translate(-2px, 2px);
+        text-shadow: 2px 0 var(--color-primary), -2px 0 var(--color-secondary);
+    }
+    94% {
+        transform: translate(2px, -2px);
+        text-shadow: -2px 0 var(--color-primary), 2px 0 var(--color-secondary);
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 16px;
+        --font-size-large: 20px;
+        --font-size-xl: 28px;
+    }
+
+    .pip-nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-tab {
+        flex: 1 1 30%;
+    }
+
+    .nav-label {
+        font-size: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 14px;
+        --font-size-large: 18px;
+        --font-size-xl: 24px;
+        --spacing-sm: 6px;
+        --spacing-md: 12px;
+        --spacing-lg: 18px;
+    }
+
+    .pip-container {
+        padding: var(--spacing-sm);
+    }
+
+    .boot-logo {
+        font-size: 10px;
+    }
+
+    .nav-icon {
+        font-size: 20px;
+    }
+
+    .pip-status-bar {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        font-size: 12px;
+    }
+
+    /* Disable heavy animations on mobile for battery */
+    body.pip-body::after {
+        display: none;
+    }
+}
+
+/* Mini screens (< 360px) - Mode E-Ink */
+@media (max-width: 360px) {
+    :root {
+        --font-size-base: 12px;
+        --font-size-large: 16px;
+        --font-size-xl: 20px;
+    }
+
+    /* Désactiver tous les effets pour économiser batterie */
+    body.pip-body::before,
+    body.pip-body::after {
+        display: none;
+    }
+
+    * {
+        animation: none !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .nav-icon {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
+   POWER SAVE MODE
+   ======================================== */
+
+body.power-save {
+    /* Désactiver tous les effets */
+}
+
+body.power-save::before,
+body.power-save::after {
+    display: none;
+}
+
+body.power-save * {
+    animation: none !important;
+    text-shadow: none !important;
+    box-shadow: 0 0 2px var(--color-primary) !important;
+}
+
+body.power-save .pip-title {
+    animation: none;
+    text-shadow: var(--glow-sm);
+}

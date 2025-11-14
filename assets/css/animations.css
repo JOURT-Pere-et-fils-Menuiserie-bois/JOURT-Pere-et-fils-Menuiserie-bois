@@ -1,0 +1,401 @@
+/**
+ * ANIMATIONS CSS - Effets visuels et animations
+ */
+
+/* ========================================
+   CRT EFFECTS
+   ======================================== */
+
+/* Effet de courbure CRT (optionnel, désactivé par défaut pour perf) */
+.crt-effect {
+    animation: crt-flicker 0.1s infinite;
+}
+
+@keyframes crt-flicker {
+    0% { opacity: 0.98; }
+    50% { opacity: 1; }
+    100% { opacity: 0.98; }
+}
+
+/* Scanlines animées */
+@keyframes scanline-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* Glitch effect */
+.glitch-effect {
+    position: relative;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-effect::before {
+    animation: glitch-anim-1 2s infinite;
+    color: var(--color-primary);
+    z-index: -1;
+}
+
+.glitch-effect::after {
+    animation: glitch-anim-2 3s infinite;
+    color: var(--color-secondary);
+    z-index: -2;
+}
+
+@keyframes glitch-anim-1 {
+    0%, 100% {
+        transform: translate(0);
+        clip-path: inset(0 0 0 0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+        clip-path: inset(0 0 80% 0);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+        clip-path: inset(60% 0 0 0);
+    }
+    60% {
+        transform: translate(2px, 2px);
+        clip-path: inset(0 0 40% 0);
+    }
+    80% {
+        transform: translate(2px, -2px);
+        clip-path: inset(20% 0 0 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0%, 100% {
+        transform: translate(0);
+        clip-path: inset(0 0 0 0);
+    }
+    30% {
+        transform: translate(2px, -2px);
+        clip-path: inset(0 0 60% 0);
+    }
+    50% {
+        transform: translate(-2px, 2px);
+        clip-path: inset(80% 0 0 0);
+    }
+    70% {
+        transform: translate(-2px, -2px);
+        clip-path: inset(0 0 20% 0);
+    }
+}
+
+/* ========================================
+   TEXT EFFECTS
+   ======================================== */
+
+/* Machine à écrire */
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid var(--color-primary);
+    white-space: nowrap;
+    animation: typing 3s steps(40) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-primary); }
+}
+
+/* Text reveal */
+.text-reveal {
+    animation: text-reveal 1s ease-out forwards;
+}
+
+@keyframes text-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow pulse */
+.glow-pulse {
+    animation: glow-pulse-anim 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse-anim {
+    0%, 100% {
+        text-shadow: var(--glow-md);
+    }
+    50% {
+        text-shadow: var(--glow-lg);
+    }
+}
+
+/* ========================================
+   UI TRANSITIONS
+   ======================================== */
+
+/* Slide in from left */
+.slide-in-left {
+    animation: slide-in-left 0.3s ease-out;
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide in from right */
+.slide-in-right {
+    animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in */
+.fade-in {
+    animation: fade-in 0.5s ease-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scale in */
+.scale-in {
+    animation: scale-in 0.3s ease-out;
+}
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   LOADING ANIMATIONS
+   ======================================== */
+
+/* Dots loading */
+.loading-dots::after {
+    content: '';
+    animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Rotating border */
+.rotating-border {
+    position: relative;
+    overflow: hidden;
+}
+
+.rotating-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        var(--color-primary),
+        transparent
+    );
+    animation: rotate-border 3s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate-border {
+    to { transform: rotate(360deg); }
+}
+
+/* Progress bar animation */
+.progress-animated {
+    animation: progress-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes progress-shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* ========================================
+   INTERACTIVE EFFECTS
+   ======================================== */
+
+/* Button press */
+.btn-press {
+    transition: transform 0.1s;
+}
+
+.btn-press:active {
+    transform: scale(0.95);
+}
+
+/* Hover glow */
+.hover-glow {
+    transition: all 0.3s;
+}
+
+.hover-glow:hover {
+    text-shadow: var(--glow-lg);
+    transform: translateY(-2px);
+}
+
+/* Click ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s ease-out;
+}
+
+/* ========================================
+   SPECIAL EFFECTS
+   ======================================== */
+
+/* Static noise (background) */
+@keyframes static-noise {
+    0%, 100% { opacity: 0.05; }
+    50% { opacity: 0.1; }
+}
+
+.static-noise {
+    position: relative;
+}
+
+.static-noise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 0, 0.03) 2px, rgba(0, 255, 0, 0.03) 4px);
+    pointer-events: none;
+    animation: static-noise 0.1s infinite;
+}
+
+/* Screen flicker on boot */
+@keyframes screen-flicker {
+    0%, 100% { opacity: 1; }
+    10% { opacity: 0.8; }
+    20% { opacity: 1; }
+    30% { opacity: 0.9; }
+    40% { opacity: 1; }
+    50% { opacity: 0.7; }
+    60% { opacity: 1; }
+}
+
+.screen-flicker {
+    animation: screen-flicker 0.5s ease-in-out;
+}
+
+/* Terminal cursor */
+.terminal-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: var(--color-primary);
+    animation: cursor-blink 1s step-start infinite;
+    box-shadow: var(--glow-sm);
+}
+
+@keyframes cursor-blink {
+    50% { opacity: 0; }
+}
+
+/* ========================================
+   POWER SAVE MODE
+   ======================================== */
+
+.power-save * {
+    animation-duration: 0s !important;
+    transition-duration: 0s !important;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
