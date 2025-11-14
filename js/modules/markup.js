@@ -327,8 +327,16 @@ const MarkupManager = (function() {
         text.setAttribute('font-family', markup.fontFamily);
         text.textContent = markup.text;
 
-        // Ajouter background pour lisibilité
+        // Créer groupe et ajouter temporairement au DOM pour getBBox()
+        const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        group.id = `markup-${markup.id}`;
+        group.appendChild(text);
+        svg.appendChild(group);
+
+        // Maintenant on peut calculer bbox (text dans DOM)
         const bbox = text.getBBox();
+
+        // Créer background pour lisibilité
         const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
         rect.setAttribute('x', bbox.x - 2);
         rect.setAttribute('y', bbox.y - 2);
@@ -337,12 +345,8 @@ const MarkupManager = (function() {
         rect.setAttribute('fill', '#FFFFFF');
         rect.setAttribute('fill-opacity', '0.8');
 
-        const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        group.id = `markup-${markup.id}`;
-        group.appendChild(rect);
-        group.appendChild(text);
-
-        svg.appendChild(group);
+        // Insérer rect AVANT text
+        group.insertBefore(rect, text);
     }
 
     // ===== DESSIN LIBRE =====

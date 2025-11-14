@@ -16,6 +16,19 @@ const ToolsManager = (function() {
         return 'meas-' + (measurementIdCounter++);
     }
 
+    // Helper: Vérifier calibration avant mesure
+    function checkCalibration() {
+        if (typeof CalibrationManager === 'undefined') {
+            alert('Erreur: Module de calibration non chargé');
+            return false;
+        }
+        if (!CalibrationManager.getScale()) {
+            alert('⚠️ Veuillez calibrer l\'échelle avant de mesurer\n\nCliquez sur le bouton "Calibrer" et tracez une ligne sur une dimension connue du plan.');
+            return false;
+        }
+        return true;
+    }
+
     // Propriétés courantes
     let toolProperties = {
         color: '#FF0000',
@@ -245,15 +258,15 @@ const ToolsManager = (function() {
             tempElement = null;
         }
 
-        // Calculer longueur
-        const length = calculateDistance(currentPoints[0], currentPoints[1]);
-        const lengthMeters = CalibrationManager.pixelsToMeters(length);
-
-        if (!lengthMeters) {
-            alert('Veuillez calibrer l\'échelle avant de mesurer');
+        // Vérifier calibration avant calcul
+        if (!checkCalibration()) {
             currentPoints = [];
             return;
         }
+
+        // Calculer longueur
+        const length = calculateDistance(currentPoints[0], currentPoints[1]);
+        const lengthMeters = CalibrationManager.pixelsToMeters(length);
 
         // Créer mesure
         const measurement = {
@@ -335,6 +348,12 @@ const ToolsManager = (function() {
             tempElement = null;
         }
 
+        // Vérifier calibration avant calcul
+        if (!checkCalibration()) {
+            currentPoints = [];
+            return;
+        }
+
         // Calculer longueur totale
         let totalLength = 0;
         for (let i = 0; i < currentPoints.length - 1; i++) {
@@ -342,11 +361,6 @@ const ToolsManager = (function() {
         }
 
         const lengthMeters = CalibrationManager.pixelsToMeters(totalLength);
-
-        if (!lengthMeters) {
-            alert('Veuillez calibrer l\'échelle avant de mesurer');
-            currentPoints = [];
-            return;
         }
 
         const measurement = {
@@ -410,17 +424,17 @@ const ToolsManager = (function() {
             tempElement = null;
         }
 
+        // Vérifier calibration avant calcul
+        if (!checkCalibration()) {
+            currentPoints = [];
+            return;
+        }
+
         // Calculer surface
         const width = Math.abs(currentPoints[1].x - currentPoints[0].x);
         const height = Math.abs(currentPoints[1].y - currentPoints[0].y);
         const areaPixels = width * height;
         const areaMeters = CalibrationManager.pixelsSquaredToMetersSquared(areaPixels);
-
-        if (!areaMeters) {
-            alert('Veuillez calibrer l\'échelle avant de mesurer');
-            currentPoints = [];
-            return;
-        }
 
         const measurement = {
             id: generateMeasurementId(),
@@ -501,15 +515,15 @@ const ToolsManager = (function() {
             tempElement = null;
         }
 
-        // Calculer surface avec formule du lacet (Shoelace formula)
-        const areaPixels = calculatePolygonArea(currentPoints);
-        const areaMeters = CalibrationManager.pixelsSquaredToMetersSquared(areaPixels);
-
-        if (!areaMeters) {
-            alert('Veuillez calibrer l\'échelle avant de mesurer');
+        // Vérifier calibration avant calcul
+        if (!checkCalibration()) {
             currentPoints = [];
             return;
         }
+
+        // Calculer surface avec formule du lacet (Shoelace formula)
+        const areaPixels = calculatePolygonArea(currentPoints);
+        const areaMeters = CalibrationManager.pixelsSquaredToMetersSquared(areaPixels);
 
         const measurement = {
             id: generateMeasurementId(),
@@ -569,16 +583,16 @@ const ToolsManager = (function() {
             tempElement = null;
         }
 
+        // Vérifier calibration avant calcul
+        if (!checkCalibration()) {
+            currentPoints = [];
+            return;
+        }
+
         // Calculer surface
         const radius = calculateDistance(currentPoints[0], currentPoints[1]);
         const areaPixels = Math.PI * radius * radius;
         const areaMeters = CalibrationManager.pixelsSquaredToMetersSquared(areaPixels);
-
-        if (!areaMeters) {
-            alert('Veuillez calibrer l\'échelle avant de mesurer');
-            currentPoints = [];
-            return;
-        }
 
         const measurement = {
             id: generateMeasurementId(),

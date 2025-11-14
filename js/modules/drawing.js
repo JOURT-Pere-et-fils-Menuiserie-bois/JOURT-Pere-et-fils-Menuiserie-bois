@@ -73,13 +73,13 @@ const DrawingManager = (function() {
                 break;
         }
 
-        // Ajouter label avec mesure
+        // Ajouter au SVG d'abord (nécessaire pour getBBox())
+        svg.appendChild(group);
+
+        // Ajouter label avec mesure (après insertion dans DOM)
         if (measurement.value) {
             addLabel(group, measurement);
         }
-
-        // Ajouter au SVG
-        svg.appendChild(group);
 
         // Rendre interactif
         makeInteractive(group, measurement);

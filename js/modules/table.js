@@ -111,13 +111,13 @@ const MeasurementTable = (function() {
                 <span class="status-badge status-${status}">${getStatusLabel(status)}</span>
             </td>
             <td>
-                <button class="table-action-btn" onclick="MeasurementTable.editRow(${measurement.id})" title="Éditer">
+                <button class="table-action-btn" data-action="edit" title="Éditer">
                     ✏️
                 </button>
-                <button class="table-action-btn delete" onclick="MeasurementTable.deleteRow(${measurement.id})" title="Supprimer">
+                <button class="table-action-btn delete" data-action="delete" title="Supprimer">
                     🗑️
                 </button>
-                <button class="table-action-btn" onclick="MeasurementTable.highlightMeasurement(${measurement.id})" title="Localiser">
+                <button class="table-action-btn" data-action="highlight" title="Localiser">
                     🎯
                 </button>
             </td>
@@ -127,6 +127,24 @@ const MeasurementTable = (function() {
         row.querySelectorAll('.table-input').forEach(input => {
             input.addEventListener('change', function() {
                 handleInputChange(measurement.id, this);
+            });
+        });
+
+        // Ajouter événements sur les boutons d'action
+        row.querySelectorAll('.table-action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.dataset.action;
+                switch(action) {
+                    case 'edit':
+                        editRow(measurement.id);
+                        break;
+                    case 'delete':
+                        deleteRow(measurement.id);
+                        break;
+                    case 'highlight':
+                        highlightMeasurement(measurement.id);
+                        break;
+                }
             });
         });
 
