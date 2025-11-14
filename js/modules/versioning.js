@@ -41,25 +41,35 @@ const VersionManager = (function() {
             item.className = 'version-item' + (version.is_current ? ' current' : '');
 
             const date = new Date(version.upload_date).toLocaleDateString('fr-FR');
+            const sizeKB = (version.file_size / 1024).toFixed(1);
 
             item.innerHTML = `
                 <div class="version-item-info">
                     <h4>
-                        ${version.version_label}
+                        ${escapeHtml(version.version_label)}
                         ${version.is_current ? '<span class="version-badge">Actuelle</span>' : ''}
                     </h4>
-                    <p>${version.file_name} - ${date}</p>
-                    ${version.change_description ? `<p><em>${version.change_description}</em></p>` : ''}
+                    <p>${escapeHtml(version.file_name)} - ${date} - ${sizeKB} KB</p>
+                    ${version.change_description ? `<p><em>${escapeHtml(version.change_description)}</em></p>` : ''}
                 </div>
                 <div class="version-item-actions">
-                    <button class="btn-small" onclick="VersionManager.loadVersion(${version.version_id})">
+                    <button class="btn-small btn-load-version" data-version-id="${version.version_id}">
                         Charger
                     </button>
-                    <button class="btn-small" onclick="VersionManager.compareWith(${version.version_id})">
+                    <button class="btn-small btn-compare-version" data-version-id="${version.version_id}">
                         Comparer
                     </button>
                 </div>
             `;
+
+            // Event listeners
+            item.querySelector('.btn-load-version').addEventListener('click', () => {
+                loadVersion(version.version_id);
+            });
+
+            item.querySelector('.btn-compare-version').addEventListener('click', () => {
+                compareWith(version.version_id);
+            });
 
             container.appendChild(item);
         });
@@ -123,6 +133,16 @@ const VersionManager = (function() {
      */
     function getCurrentVersion() {
         return versions.find(v => v.version_id === currentVersionId);
+    }
+
+    /**
+     * Échapper HTML
+     */
+    function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
     }
 
     // API publique

@@ -25,10 +25,11 @@
                 </div>
             </div>
             <div class="header-right">
-                <button id="btn-new-project" class="btn btn-primary">Nouveau Projet</button>
-                <button id="btn-upload-plan" class="btn btn-secondary">Charger Plan</button>
-                <button id="btn-versions" class="btn btn-secondary">Versions</button>
-                <button id="btn-export" class="btn btn-secondary">Exporter</button>
+                <button id="btn-open-project" class="btn btn-primary">📂 Ouvrir Projet</button>
+                <button id="btn-new-project" class="btn btn-secondary">+ Nouveau</button>
+                <button id="btn-upload-plan" class="btn btn-secondary">📄 Charger Plan</button>
+                <button id="btn-versions" class="btn btn-secondary">📋 Versions</button>
+                <button id="btn-export" class="btn btn-secondary">💾 Exporter</button>
             </div>
         </header>
 
@@ -143,6 +144,11 @@
                 </div>
 
                 <div class="viewer-footer">
+                    <div class="pdf-navigation">
+                        <button id="btn-prev-page" class="btn-icon" title="Page précédente" disabled>◀</button>
+                        <span id="page-info">-</span>
+                        <button id="btn-next-page" class="btn-icon" title="Page suivante" disabled>▶</button>
+                    </div>
                     <span id="cursor-position">Position: -</span>
                     <span id="scale-info">Échelle: Non calibrée</span>
                 </div>
@@ -294,6 +300,28 @@
         </div>
     </div>
 
+    <!-- Modal: Open Project -->
+    <div id="open-project-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>Ouvrir un projet</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="projects-search">
+                    <input type="text" id="project-search" placeholder="🔍 Rechercher un projet...">
+                </div>
+                <div class="projects-list" id="projects-list">
+                    <!-- Populated by project-selector.js -->
+                    <div class="loading">Chargement des projets...</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Fermer</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="js/lib/pdf.min.mjs" type="module"></script>
     <script src="js/modules/pubsub.js"></script>
@@ -307,6 +335,7 @@
     <script src="js/modules/table.js"></script>
     <script src="js/modules/versioning.js"></script>
     <script src="js/modules/export.js"></script>
+    <script src="js/modules/project-selector.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

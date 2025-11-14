@@ -32,10 +32,21 @@ const App = (function() {
      */
     function initEventListeners() {
         // Header buttons
+        document.getElementById('btn-open-project').addEventListener('click', showOpenProjectModal);
         document.getElementById('btn-new-project').addEventListener('click', showNewProjectModal);
         document.getElementById('btn-upload-plan').addEventListener('click', showFileSelector);
         document.getElementById('btn-versions').addEventListener('click', showVersionsModal);
         document.getElementById('btn-export').addEventListener('click', showExportMenu);
+
+        // Project search
+        const searchInput = document.getElementById('project-search');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                if (typeof ProjectSelector !== 'undefined') {
+                    ProjectSelector.filterProjects(e.target.value);
+                }
+            });
+        }
 
         // File input
         document.getElementById('file-input').addEventListener('change', handleFileSelect);
@@ -60,6 +71,10 @@ const App = (function() {
         document.getElementById('btn-zoom-in').addEventListener('click', () => zoomIn());
         document.getElementById('btn-zoom-out').addEventListener('click', () => zoomOut());
         document.getElementById('btn-zoom-fit').addEventListener('click', () => zoomFit());
+
+        // PDF Navigation
+        document.getElementById('btn-prev-page').addEventListener('click', () => previousPage());
+        document.getElementById('btn-next-page').addEventListener('click', () => nextPage());
 
         // Properties
         document.getElementById('prop-color').addEventListener('change', updateToolProperties);
@@ -233,6 +248,17 @@ const App = (function() {
     }
 
     /**
+     * Afficher modal ouverture projet
+     */
+    function showOpenProjectModal() {
+        if (typeof ProjectSelector !== 'undefined') {
+            ProjectSelector.showProjectSelector();
+        } else {
+            alert('Module ProjectSelector non chargé');
+        }
+    }
+
+    /**
      * Afficher modal nouveau projet
      */
     function showNewProjectModal() {
@@ -376,6 +402,40 @@ const App = (function() {
     }
 
     /**
+     * Navigation PDF
+     */
+    function previousPage() {
+        if (typeof PDFLoader !== 'undefined') {
+            PDFLoader.previousPage();
+        }
+    }
+
+    function nextPage() {
+        if (typeof PDFLoader !== 'undefined') {
+            PDFLoader.nextPage();
+        }
+    }
+
+    /**
+     * Mettre à jour les contrôles de navigation PDF
+     */
+    function updatePDFNavigation(currentPage, totalPages) {
+        const pageInfo = document.getElementById('page-info');
+        const btnPrev = document.getElementById('btn-prev-page');
+        const btnNext = document.getElementById('btn-next-page');
+
+        if (totalPages > 0) {
+            pageInfo.textContent = `Page ${currentPage}/${totalPages}`;
+            btnPrev.disabled = currentPage <= 1;
+            btnNext.disabled = currentPage >= totalPages;
+        } else {
+            pageInfo.textContent = '-';
+            btnPrev.disabled = true;
+            btnNext.disabled = true;
+        }
+    }
+
+    /**
      * Mettre à jour propriétés outil
      */
     function updateToolProperties() {
@@ -482,6 +542,26 @@ const App = (function() {
      * Configurer les abonnements aux événements
      */
     function setupEventSubscriptions() {
+        PubSub.subscribe(EVENTS.PROJECT_LOADED, (project) => {
+            console.log('Projet chargé:', project);
+            currentProject = project;
+            updateProjectDisplay();
+            StorageManager.saveLocal('last_project_id', project.project_id);
+        });
+
+        PubSub.subscribe(EVENTS.PLAN_LOADED, (data) => {
+            console.log('Plan chargé:', data);
+            if (data.pages) {
+                updatePDFNavigation(1, data.pages);
+            }
+        });
+
+        PubSub.subscribe('pdf:page:changed', (data) => {
+            if (data.currentPage && data.totalPages) {
+                updatePDFNavigation(data.currentPage, data.totalPages);
+            }
+        });
+
         PubSub.subscribe(EVENTS.CALIBRATION_COMPLETED, (data) => {
             document.getElementById('scale-info').textContent =
                 `Échelle: ${data.scale.toFixed(4)} m/px`;

@@ -189,3 +189,38 @@
     stroke: #888;
     stroke-width: 1.5;
 }
+
+/* PDF Navigation Controls */
+.pdf-navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pdf-navigation .btn-icon {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pdf-navigation .btn-icon:hover:not(:disabled) {
+    background: var(--bg-tertiary);
+    border-color: var(--primary-color);
+}
+
+.pdf-navigation .btn-icon:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#page-info {
+    min-width: 80px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--text-primary);
+}

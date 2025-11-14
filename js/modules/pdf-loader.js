@@ -110,6 +110,12 @@ const PDFLoader = (function() {
 
             console.log('Page', pageNum, 'rendue');
 
+            // Publier événement de changement de page
+            PubSub.publish('pdf:page:changed', {
+                currentPage: currentPage,
+                totalPages: pdfDoc.numPages
+            });
+
         } catch (error) {
             console.error('Erreur rendu page:', error);
             throw error;
