@@ -120,21 +120,83 @@ const ProjectSelector = (function() {
         try {
             console.log('Ouverture du projet:', projectId);
 
+            // 1. Charger les métadonnées du projet
             const result = await StorageManager.loadProject(projectId);
             const project = result.project || result;
 
-            // Publier événement
+            // Publier événement de chargement du projet
             PubSub.publish(EVENTS.PROJECT_LOADED, project);
+
+            // 2. Charger les versions du projet
+            const versionsResult = await StorageManager.apiRequest(`/versions.php?project_id=${projectId}`, 'GET');
+            const versions = versionsResult.versions || [];
+
+            console.log('Versions trouvées:', versions.length);
+
+            // Charger les versions dans VersionManager pour la modale
+            if (typeof VersionManager !== 'undefined') {
+                await VersionManager.loadVersions(projectId);
+            }
+
+            // 3. Trouver la version actuelle ou la plus récente
+            let currentVersion = versions.find(v => v.is_current === 1 || v.is_current === '1');
+            if (!currentVersion && versions.length > 0) {
+                // Prendre la plus récente (tri par date)
+                currentVersion = versions.sort((a, b) =>
+                    new Date(b.upload_date) - new Date(a.upload_date)
+                )[0];
+            }
+
+            // 4. Charger le plan PDF et les mesures de cette version
+            if (currentVersion) {
+                console.log('Chargement de la version:', currentVersion.version_label);
+
+                // Charger le PDF
+                if (currentVersion.file_path && typeof PDFLoader !== 'undefined') {
+                    await PDFLoader.loadPDFFromURL(currentVersion.file_path);
+                    console.log('PDF chargé:', currentVersion.file_name);
+                }
+
+                // Charger les mesures
+                try {
+                    const measurementsData = await StorageManager.loadMeasurements(currentVersion.version_id);
+                    const measurements = measurementsData.measurements || measurementsData || [];
+
+                    console.log('Mesures chargées:', measurements.length);
+
+                    // Charger dans le tableau
+                    if (typeof MeasurementTable !== 'undefined') {
+                        MeasurementTable.loadMeasurements(measurements);
+                    }
+
+                    // Dessiner sur le canvas
+                    if (typeof DrawingManager !== 'undefined') {
+                        measurements.forEach(measurement => {
+                            DrawingManager.drawMeasurement(measurement);
+                        });
+                    }
+
+                    // Publier événement
+                    PubSub.publish(EVENTS.VERSION_CHANGED, {
+                        versionId: currentVersion.version_id,
+                        version: currentVersion
+                    });
+
+                } catch (measError) {
+                    console.log('Aucune mesure pour cette version (normal pour nouveau projet)');
+                }
+
+                showNotification(`✅ Projet "${project.project_name}" ouvert avec ${versions.length} version(s)`, 'success');
+            } else {
+                showNotification(`✅ Projet "${project.project_name}" ouvert (aucun plan)`, 'success');
+            }
 
             // Fermer la modale
             document.getElementById('open-project-modal').classList.remove('active');
 
-            // Notification
-            showNotification('✅ Projet ouvert : ' + project.project_name, 'success');
-
         } catch (error) {
             console.error('Erreur ouverture projet:', error);
-            showNotification('❌ Erreur lors de l\'ouverture du projet', 'error');
+            showNotification('❌ Erreur lors de l\'ouverture du projet: ' + error.message, 'error');
         }
     }
 
