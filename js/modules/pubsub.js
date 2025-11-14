@@ -78,6 +78,7 @@ const EVENTS = {
     // Plans
     PLAN_UPLOADED: 'plan:uploaded',
     PLAN_LOADED: 'plan:loaded',
+    PLAN_CHANGED: 'plan:changed',
 
     // Versions
     VERSION_CREATED: 'version:created',

@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 try {
-    // GET - Obtenir mesures
+    // GET - Obtenir mesures (nouvelle structure multi-plans)
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $projectId = $_GET['project_id'] ?? null;
         $versionId = $_GET['version_id'] ?? null;
@@ -24,26 +24,46 @@ try {
             jsonError('project_id et version_id requis');
         }
 
-        $measurements = $manager->getAll($projectId, $versionId);
-        jsonSuccess(['measurements' => $measurements]);
+        // Utiliser nouvelle méthode getAllByPlan()
+        $measurements = $manager->getAllByPlan($projectId, $versionId);
+
+        // Retourne directement { measurements_by_plan: {...} }
+        jsonSuccess($measurements);
     }
 
-    // POST - Créer/Sauvegarder mesures
+    // POST - Créer/Sauvegarder mesures (supporte ancienne et nouvelle structure)
     elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $data = json_decode(file_get_contents('php://input'), true);
 
-        if (empty($data['project_id']) || empty($data['version_id']) || empty($data['measurements'])) {
-            jsonError('Données incomplètes');
+        if (empty($data['project_id']) || empty($data['version_id'])) {
+            jsonError('project_id et version_id requis');
         }
 
-        $measurements = $manager->save(
-            $data['project_id'],
-            $data['version_id'],
-            $data['measurements'],
-            $data['user_id'] ?? 1
-        );
+        // NOUVELLE structure: measurements_by_plan
+        if (!empty($data['measurements_by_plan'])) {
+            $measurements = $manager->saveByPlan(
+                $data['project_id'],
+                $data['version_id'],
+                $data['measurements_by_plan'],
+                $data['user_id'] ?? 1
+            );
 
-        jsonSuccess(['measurements' => $measurements], 'Mesures sauvegardées');
+            jsonSuccess(['measurements_by_plan' => $measurements], 'Mesures sauvegardées');
+        }
+        // ANCIENNE structure: measurements (rétrocompatibilité)
+        elseif (!empty($data['measurements'])) {
+            $measurements = $manager->save(
+                $data['project_id'],
+                $data['version_id'],
+                $data['measurements'],
+                $data['user_id'] ?? 1
+            );
+
+            jsonSuccess(['measurements' => $measurements], 'Mesures sauvegardées');
+        }
+        else {
+            jsonError('measurements ou measurements_by_plan requis');
+        }
     }
 
     // PUT - Mettre à jour mesure

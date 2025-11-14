@@ -7,9 +7,7 @@ const AutoSave = (function() {
     const SAVE_INTERVAL = 30000; // 30 secondes
     let saveTimer = null;
     let isDirty = false;
-    let currentProject = null;
-    let currentVersion = null;
-    let currentPlanId = null;  // NOUVEAU: Plan courant
+    let currentPlanId = null;
     let measurements = [];
 
     /**
@@ -40,30 +38,13 @@ const AutoSave = (function() {
             markAsDirty();
         });
 
-        // Mémoriser le projet courant
-        PubSub.subscribe(EVENTS.PROJECT_LOADED, (project) => {
-            currentProject = project;
-        });
+        // Sauvegarder avant changement de plan + mémoriser nouveau plan
+        PubSub.subscribe(EVENTS.PLAN_CHANGED, async (data) => {
+            const project = App.getCurrentProject();
+            const version = App.getCurrentVersion();
 
-        PubSub.subscribe(EVENTS.PROJECT_CREATED, (project) => {
-            currentProject = project;
-        });
-
-        // Mémoriser la version courante
-        PubSub.subscribe(EVENTS.VERSION_CHANGED, (data) => {
-            currentVersion = data.versionId;
-        });
-
-        PubSub.subscribe(EVENTS.PLAN_LOADED, (data) => {
-            if (data.versionId) {
-                currentVersion = data.versionId;
-            }
-        });
-
-        // NOUVEAU: Mémoriser le plan courant + sauvegarder avant changement
-        PubSub.subscribe('plan:changed', async (data) => {
             // Sauvegarder ancien plan avant de changer
-            if (isDirty && currentPlanId && currentProject && currentVersion) {
+            if (isDirty && currentPlanId && project && version) {
                 console.log('💾 Auto-save avant changement de plan');
                 await saveNow();
             }
@@ -110,12 +91,15 @@ const AutoSave = (function() {
      * Sauvegarder
      */
     async function save() {
-        if (!currentProject) {
+        const project = App.getCurrentProject();
+        const version = App.getCurrentVersion();
+
+        if (!project) {
             console.log('AutoSave: Pas de projet courant');
             return;
         }
 
-        if (!currentVersion) {
+        if (!version) {
             console.log('AutoSave: Pas de version courante');
             return;
         }
@@ -138,9 +122,9 @@ const AutoSave = (function() {
 
             // Sauvegarder les mesures avec plan_id
             await StorageManager.saveMeasurements(
-                currentProject.project_id,
-                currentVersion,
-                currentPlanId,  // NOUVEAU: plan_id
+                project.project_id,
+                version,
+                currentPlanId,
                 measurements
             );
 

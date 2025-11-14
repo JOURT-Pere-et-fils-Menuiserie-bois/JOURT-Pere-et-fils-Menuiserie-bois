@@ -33,7 +33,82 @@ class MeasurementManager {
     }
 
     /**
-     * Obtenir toutes les mesures d'une version
+     * Sauvegarder mesures par plan (structure multi-plans)
+     *
+     * @param string $projectId
+     * @param string $versionId
+     * @param array $measurementsByPlan Format: ['plan_id' => [mesures...], ...]
+     * @param int $userId
+     * @return array
+     */
+    public function saveByPlan($projectId, $versionId, $measurementsByPlan, $userId = 1) {
+        $measurementsFile = SAVES_PATH . '/' . $projectId . '/versions/' . $versionId . '/measurements.json';
+
+        $timestamp = FlatFileDB::now();
+
+        // Traiter chaque plan
+        foreach ($measurementsByPlan as $planId => &$measurements) {
+            foreach ($measurements as &$m) {
+                // Générer ID si manquant
+                if (!isset($m['measurement_id'])) {
+                    $m['measurement_id'] = FlatFileDB::generateId('meas_');
+                }
+
+                // Timestamps
+                if (!isset($m['created_at'])) {
+                    $m['created_at'] = $timestamp;
+                    $m['created_by'] = $userId;
+                }
+                $m['updated_at'] = $timestamp;
+
+                // Métadonnées
+                $m['project_id'] = $projectId;
+                $m['version_id'] = $versionId;
+                $m['plan_id'] = $planId;
+            }
+        }
+
+        // Sauvegarder structure complète
+        $data = ['measurements_by_plan' => $measurementsByPlan];
+        FlatFileDB::write($measurementsFile, $data);
+
+        return $measurementsByPlan;
+    }
+
+    /**
+     * Obtenir toutes les mesures (structure multi-plans)
+     *
+     * @param string $projectId
+     * @param string $versionId
+     * @return array Format: ['measurements_by_plan' => [...]]
+     */
+    public function getAllByPlan($projectId, $versionId) {
+        $measurementsFile = SAVES_PATH . '/' . $projectId . '/versions/' . $versionId . '/measurements.json';
+        $data = FlatFileDB::read($measurementsFile, []);
+
+        // Structure measurements_by_plan existe
+        if (isset($data['measurements_by_plan'])) {
+            return $data;
+        }
+
+        // Migration automatique ancienne structure → nouvelle
+        if (is_array($data) && !empty($data)) {
+            // Ancienne structure détectée
+            if (isset($data['measurements']) && is_array($data['measurements'])) {
+                // Structure intermédiaire { measurements: [...] }
+                return ['measurements_by_plan' => []];
+            } elseif (isset($data[0])) {
+                // Array direct (très ancienne structure)
+                return ['measurements_by_plan' => []];
+            }
+        }
+
+        // Aucune mesure
+        return ['measurements_by_plan' => []];
+    }
+
+    /**
+     * Obtenir toutes les mesures d'une version (ancienne méthode - rétrocompatibilité)
      */
     public function getAll($projectId, $versionId) {
         $measurementsFile = SAVES_PATH . '/' . $projectId . '/versions/' . $versionId . '/measurements.json';

@@ -193,7 +193,7 @@ const PlanManager = (function() {
             updatePlanSelector();
 
             // Publier événement
-            PubSub.publish('plan:changed', { planId, plan });
+            PubSub.publish(EVENTS.PLAN_CHANGED, { planId, plan });
 
             console.log('✅ Plan chargé:', plan.floor_level);
 
