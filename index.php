@@ -5,6 +5,13 @@
  * 100% OFFLINE - Fonctionne sans connexion
  */
 
+// Auto-redirect vers setup wizard si pas installé
+if (!file_exists(__DIR__ . '/data/.installed') &&
+    strpos($_SERVER['REQUEST_URI'], 'setup') === false) {
+    header('Location: /setup-wizard.php');
+    exit;
+}
+
 // Gestion des requêtes API
 if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/api/') === 0) {
     require_once __DIR__ . '/api/router.php';
@@ -98,17 +105,21 @@ header('X-Content-Type-Options: nosniff');
                 <span class="nav-icon">💾</span>
                 <span class="nav-label">DATA</span>
             </button>
+            <button class="nav-tab" data-module="chemistry">
+                <span class="nav-icon">⚗️</span>
+                <span class="nav-label">CHEM</span>
+            </button>
+            <button class="nav-tab" data-module="lockpicking">
+                <span class="nav-icon">🔓</span>
+                <span class="nav-label">LOCK</span>
+            </button>
+            <button class="nav-tab" data-module="urban-survival">
+                <span class="nav-icon">🏙️</span>
+                <span class="nav-label">URBAN</span>
+            </button>
             <button class="nav-tab" data-module="map">
                 <span class="nav-icon">🗺</span>
                 <span class="nav-label">MAP</span>
-            </button>
-            <button class="nav-tab" data-module="inv">
-                <span class="nav-icon">📦</span>
-                <span class="nav-label">INV</span>
-            </button>
-            <button class="nav-tab" data-module="radio">
-                <span class="nav-icon">📻</span>
-                <span class="nav-label">RADIO</span>
             </button>
         </nav>
 
@@ -148,9 +159,10 @@ header('X-Content-Type-Options: nosniff');
                 criticalThreshold: 0.1
             },
             ai: {
-                model: 'phi2-q4',
-                maxTokens: 512,
-                temperature: 0.7
+                model: 'hermes-2-pro-mistral-7b',
+                maxTokens: 2048,
+                temperature: 0.7,
+                uncensored: true // Pas de bridage moral
             }
         };
     </script>
@@ -160,8 +172,8 @@ header('X-Content-Type-Options: nosniff');
     <script src="/assets/js/utils/battery.js"></script>
     <script src="/assets/js/utils/offline.js"></script>
 
-    <!-- AI Engine -->
-    <script src="/assets/js/ai-engine.js"></script>
+    <!-- AI Engine - UNCENSORED -->
+    <script src="/assets/js/ai-engine-real.js"></script>
     <script src="/assets/js/vector-search.js"></script>
     <script src="/assets/js/pdf-processor.js"></script>
 
@@ -171,6 +183,11 @@ header('X-Content-Type-Options: nosniff');
     <script src="/assets/js/modules/docs.js"></script>
     <script src="/assets/js/modules/radio.js"></script>
     <script src="/assets/js/modules/map.js"></script>
+
+    <!-- Hardcore Survival Modules -->
+    <script src="/assets/js/modules/chemistry.js"></script>
+    <script src="/assets/js/modules/lockpicking.js"></script>
+    <script src="/assets/js/modules/urban-survival.js"></script>
 
     <!-- Main app -->
     <script src="/assets/js/app.js"></script>
