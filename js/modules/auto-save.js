@@ -29,12 +29,12 @@ const AutoSave = (function() {
         });
 
         // Marquer comme modifié quand une mesure est modifiée
-        PubSub.subscribe('measurement:updated', () => {
+        PubSub.subscribe(EVENTS.MEASUREMENT_UPDATED, () => {
             markAsDirty();
         });
 
         // Marquer comme modifié quand une mesure est supprimée
-        PubSub.subscribe('measurement:deleted', () => {
+        PubSub.subscribe(EVENTS.MEASUREMENT_DELETED, () => {
             markAsDirty();
         });
 

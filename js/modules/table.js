@@ -159,7 +159,6 @@ const MeasurementTable = (function() {
 
         // Notifier
         PubSub.publish(EVENTS.MEASUREMENT_UPDATED, { measurement });
-        PubSub.publish('measurement:updated', { measurement });  // Pour auto-save
     }
 
     /**
@@ -334,7 +333,6 @@ const MeasurementTable = (function() {
     function deleteRow(measurementId) {
         if (confirm('Supprimer cette mesure ?')) {
             PubSub.publish(EVENTS.MEASUREMENT_DELETED, { measurementId });
-            PubSub.publish('measurement:deleted', { measurementId });  // Pour auto-save
         }
     }
 
