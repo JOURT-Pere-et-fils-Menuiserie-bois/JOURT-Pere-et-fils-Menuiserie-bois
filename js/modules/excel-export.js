@@ -65,7 +65,7 @@ const ExcelManager = (function() {
      */
     function exportMeasurements(measurements = null, fileName = null) {
         if (typeof XLSX === 'undefined') {
-            alert('Bibliothèque Excel non chargée. Incluez xlsx.js depuis CDN.');
+            alert('Bibliothèque Excel non chargée. Exécutez ./setup-libraries.sh pour installer les bibliothèques.');
             return;
         }
 

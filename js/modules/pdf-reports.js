@@ -76,7 +76,7 @@ const PDFReports = (function() {
      */
     function generateReport(measurements = null, options = {}) {
         if (typeof jsPDF === 'undefined') {
-            alert('Bibliothèque jsPDF non chargée. Incluez jspdf.umd.min.js depuis CDN.');
+            alert('Bibliothèque jsPDF non chargée. Exécutez ./setup-libraries.sh pour installer les bibliothèques.');
             return;
         }
 

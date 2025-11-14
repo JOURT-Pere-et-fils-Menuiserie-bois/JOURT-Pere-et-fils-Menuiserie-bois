@@ -18,9 +18,9 @@ const PDFLoader = (function() {
         canvas = document.getElementById('plan-canvas');
         context = canvas.getContext('2d');
 
-        // Configurer PDF.js worker depuis CDN
+        // Configurer PDF.js worker LOCAL
         if (typeof pdfjsLib !== 'undefined') {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.mjs';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/lib/pdf.worker.min.mjs';
         }
     }
 
