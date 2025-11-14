@@ -1,0 +1,1108 @@
+WEAPONS & COMBAT TACTICS
+Defensive Skills & Tactical Knowledge
+
+⚠️ SELF-DEFENSE & EDUCATIONAL PURPOSES ONLY
+
+====================
+TABLE OF CONTENTS
+====================
+
+1. FIREARMS FUNDAMENTALS
+2. IMPROVISED WEAPONS
+3. HAND-TO-HAND COMBAT
+4. TACTICAL MOVEMENT
+5. DEFENSIVE POSITIONS
+6. SMALL UNIT TACTICS
+7. SURVEILLANCE & EVASION
+8. MARKSMANSHIP
+9. WEAPON MAINTENANCE
+10. BALLISTICS & AMMUNITION
+
+====================
+1. FIREARMS FUNDAMENTALS
+====================
+
+BASIC FIREARM TYPES:
+
+Handguns:
+- Revolver: 5-8 rounds, reliable, slower reload
+- Semi-auto Pistol: 10-20 rounds, faster reload
+- Calibers: 9mm, .45 ACP, .40 S&W, .38 Special
+
+Rifles:
+- Bolt-action: Accurate, slow fire rate
+- Semi-auto: Moderate fire rate (AR-15, AK-47)
+- Lever-action: Classic, tubular magazine
+- Calibers: .223/5.56, 7.62×39, .308/7.62 NATO, .22 LR
+
+Shotguns:
+- Pump-action: Reliable, 5-8 shells
+- Semi-auto: Faster, more complex
+- Break-action: Simple, 1-2 shells
+- Gauges: 12ga (most common), 20ga, .410
+
+FOUR RULES OF GUN SAFETY:
+
+1. Treat every gun as if loaded
+2. Never point at anything you don't want to destroy
+3. Keep finger OFF trigger until ready to shoot
+4. Be sure of target and what's beyond it
+
+MARKSMANSHIP FUNDAMENTALS:
+
+Sight Alignment:
+- Front sight focused (rear blurry)
+- Top of front sight level with rear
+- Equal light on both sides
+- Target slightly blurry
+
+Sight Picture:
+- Aligned sights on target
+- Focus on front sight
+- Target center mass (combat)
+- Bullseye (precision)
+
+Trigger Control:
+- Straight back pressure
+- Surprise break (don't anticipate)
+- Smooth, continuous pull
+- Reset (semi-auto)
+
+Breathing:
+- Natural respiratory pause
+- Inhale, exhale partially, pause, shoot
+- OR shoot between breaths
+- Don't hold breath (shake)
+
+Stance:
+- Isosceles: Square to target, arms extended
+- Weaver: Bladed stance, push-pull tension
+- Modern: Aggressive forward lean
+- Stable base, knees slightly bent
+
+DRAW (Pistol):
+
+4-Count Draw:
+1. Grip (establish firing grip)
+2. Clear (draw from holster)
+3. Rotate (level pistol, finger on trigger)
+4. Extend (full extension, sight alignment)
+
+Speed: 1-2 seconds (trained)
+Accuracy more important than speed
+
+RELOADS:
+
+Tactical Reload:
+- Still rounds in magazine
+- Replace with full magazine
+- Retain partial magazine
+
+Emergency Reload:
+- Magazine empty, slide locked
+- Drop empty magazine
+- Insert new magazine
+- Release slide (chamber round)
+- Get back on target
+
+Speed Reload:
+- Magazine empty
+- Drop magazine (don't retain)
+- Slam in new magazine
+- Rack slide
+- Fastest method
+
+MALFUNCTION CLEARANCE:
+
+Type 1 (Failure to Fire):
+- "Tap, Rack, Bang"
+- Tap magazine (ensure seated)
+- Rack slide (eject round, chamber new)
+- Assess target, fire if needed
+
+Type 2 (Stovepipe):
+- Case stuck in ejection port
+- Sweep away with hand
+- Rack slide
+- Ready
+
+Type 3 (Double Feed):
+- Two rounds jammed
+- Lock slide back
+- Rip magazine out
+- Rack slide 3 times (clear)
+- New magazine
+- Rack slide
+- Ready
+
+====================
+2. IMPROVISED WEAPONS
+====================
+
+BLUNT INSTRUMENTS:
+
+Baseball Bat:
+- Effective reach
+- Two-hand grip
+- Swing for head/knees
+- Wood or aluminum
+
+Pipe/Club:
+- 18-24 inches ideal
+- Cap one end (weight)
+- Two-hand or one-hand
+- Aim for head, joints
+
+Tactical Flashlight:
+- Heavyweight (>200g)
+- Strike with bezel
+- Temporary blindness (strobe)
+- Dual purpose (light + weapon)
+
+EDGED WEAPONS:
+
+Kitchen Knife:
+- 6-8 inch blade
+- Fixed blade better than folder
+- Reverse grip (icepick) for power
+- Forward grip for reach/slashing
+
+Improvised Knife:
+- Sharpened metal/glass
+- Wrapped handle (tape, cloth)
+- Broken bottle (desperate)
+- Sharpened screwdriver
+
+Axe/Hatchet:
+- Devastating power
+- Requires skill
+- Training essential
+- Lethal force
+
+PROJECTILE WEAPONS:
+
+Slingshot:
+- Y-frame (wood, metal)
+- Latex tubing
+- Pouch (leather)
+- Ammo: Steel balls, rocks
+- Accurate to 30m with practice
+
+Bow & Arrow:
+- Recurve or longbow (DIY possible)
+- Arrows: Straight wood, fletched, pointed
+- Draw weight: 40-60 lbs hunting
+- Silent, reusable ammo
+- Skill intensive
+
+Crossbow:
+- Mechanical advantage
+- Hold drawn (no muscle fatigue)
+- More accurate than bow (less skill)
+- Slower reload
+- DIY difficult but possible
+
+Spear:
+- 6-8 foot pole
+- Sharpened/pointed end
+- OR knife lashed to pole
+- Thrust don't throw (retain weapon)
+- Reach advantage
+
+THROWING WEAPONS:
+
+Rocks/Projectiles:
+- Fist-sized rocks
+- Overhand throw
+- Aim for head
+- Distraction or damage
+
+Molotov Cocktail:
+- Glass bottle
+- Gasoline + oil/tar (thickener)
+- Cloth wick
+- Light and throw
+- Area denial, anti-vehicle
+- ⚠️ Dangerous to user
+
+DEFENSIVE TOOLS:
+
+Pepper Spray (OC):
+- 10-12 foot range
+- Aim for face
+- Cause temporary blindness, pain
+- Wind awareness (blowback)
+- Legal most places
+
+Taser/Stun Gun:
+- Electric shock
+- Close range (contact)
+- Taser (projectile) = distance
+- Not always effective (thick clothing)
+- Training required
+
+Kubaton:
+- 5.5 inch metal rod
+- Keychain weapon
+- Pressure points
+- Strikes to nerve clusters
+- Legal most places
+
+====================
+3. HAND-TO-HAND COMBAT
+====================
+
+TARGET AREAS:
+
+High Value:
+- Eyes (gouge, poke)
+- Throat (strike, choke)
+- Groin (kick, knee, strike)
+- Knees (kick, stomp)
+- Nose (palm strike, headbutt)
+
+Vulnerable Points:
+- Temple (side of head)
+- Jaw (knockout potential)
+- Solar plexus (wind knocked out)
+- Floating ribs (fracture)
+- Instep (stomp)
+
+STRIKES:
+
+Punch:
+- Make tight fist (thumb outside)
+- Strike with first two knuckles
+- Rotate hip for power
+- Straight punch faster than haymaker
+
+Palm Strike:
+- Base of palm (heel of hand)
+- Upward to nose/chin
+- Won't break hand (vs punch)
+- Effective and safer
+
+Elbow Strike:
+- Short range, devastating
+- Horizontal, vertical, reverse
+- Very hard surface
+- Multiple angles
+
+Knee Strike:
+- Clinch enemy
+- Pull down while kneeing up
+- Target groin, solar plexus, face
+- Brutal close-range weapon
+
+Kicks:
+- Front kick (push kick)
+- Roundhouse (power kick)
+- Side kick (penetration)
+- Groin kick (low, fast)
+- ⚠️ Risk of being caught/falling
+
+GRAPPLING:
+
+Chokes:
+- Rear naked choke (RNC): Under chin, bicep & forearm compress carotid
+- Guillotine: Front headlock, arm under chin
+- Triangle: Legs around neck (ground)
+- Unconscious in 8-10 seconds
+- ⚠️ Can kill if held too long
+
+Escapes:
+- Create distance
+- Strike to create opening
+- Don't go to ground (multiple attackers)
+- Stand up ASAP
+
+Takedowns:
+- Double leg (tackle)
+- Single leg
+- Throw (judo)
+- ⚠️ Only if 1-on-1
+
+WEAPONS DEFENSE:
+
+Knife Defense:
+- Create distance (priority #1)
+- Use barriers (chair, jacket)
+- Expect to get cut
+- Control weapon hand
+- Strike with other hand
+- Disarm if possible
+- RUN if able
+
+Gun Defense:
+- ONLY if gun contact distance
+- Redirect muzzle (offline)
+- Control weapon
+- Strike attacker
+- Disarm
+- ⚠️ Last resort, high risk
+
+Club Defense:
+- Close distance (inside swing arc)
+- Block with forearm
+- Strike vulnerable areas
+- Disarm/control weapon
+
+MULTIPLE ATTACKERS:
+
+Tactics:
+- Don't get surrounded
+- Keep moving
+- Position attackers behind each other
+- Strike and move
+- Create obstacles
+- ESCAPE priority (not fight)
+
+Target Priority:
+- Closest threat first
+- Armed before unarmed
+- Aggressive before passive
+
+====================
+4. TACTICAL MOVEMENT
+====================
+
+MOVEMENT TECHNIQUES:
+
+Individual Movement:
+- Low Crawl: Flat on ground, slow, concealed
+- High Crawl: Hands and knees, faster, less concealed
+- Rush: 3-5 seconds sprint, hit ground, observe
+- Walking: Heel-toe or toe-heel (silent)
+
+Team Movement:
+- Traveling: Moderate speed, moderate security
+- Traveling Overwatch: One element covers while other moves
+- Bounding Overwatch: One element stationary (cover) while other bounds forward
+
+COVER vs CONCEALMENT:
+
+Cover:
+- Stops bullets
+- Brick wall, concrete, engine block, thick wood
+- Earth (2-3 feet minimum)
+- Steel plate
+
+Concealment:
+- Hides you but doesn't stop bullets
+- Bushes, tall grass, darkness
+- Drywall, car doors, wooden fence
+- Plywood, thin metal
+
+Critical: KNOW THE DIFFERENCE
+
+USE OF COVER:
+
+Positions:
+- Shoot around (not over if possible)
+- Minimize exposure
+- Alternate positions (don't pop up same spot)
+- Avoid silhouetting
+
+Angles:
+- Stand back from cover (see more, harder to hit)
+- Pie the corner (gradual reveal)
+- Dominant eye side (right-handers peek right)
+
+BUILDING ENTRY:
+
+⚠️ EXTREMELY DANGEROUS - Team activity
+
+Principles:
+- Speed, Surprise, Violence of Action
+- Clear corners immediately
+- Don't silhouette in doorway (fatal funnel)
+- "Slice the pie" (gradual entry)
+- Communicate constantly
+
+Solo Entry (Avoid if possible):
+- Pie the door from outside
+- Quick peek (if time)
+- Dynamic entry or slow clear
+- Clear immediate threats first
+- Check corners (where you can't see)
+
+ROOM CLEARING:
+
+4-Man Team (Military):
+1. #1: Enters first, clears corner
+2. #2: Opposite corner
+3. #3: Follows #1
+4. #4: Follows #2
+- Clear center, far corners
+- Verbal "Clear!" when done
+
+2-Man Team:
+- #1 left, #2 right
+- Cross and clear
+- More dangerous (fewer guns)
+
+Solo:
+- Very dangerous
+- Avoid if possible
+- Pie from outside
+- Quick decisive entry
+- ⚠️ Easy to get ambushed
+
+STAIRWELLS:
+
+Going Up:
+- Extremely dangerous (high ground disadvantage)
+- Pie each landing
+- Move quickly when committed
+- Check above constantly
+
+Going Down:
+- Easier (high ground advantage)
+- Still pie corners
+- Don't skyline on stairs
+
+====================
+5. DEFENSIVE POSITIONS
+====================
+
+HOME DEFENSE:
+
+Hardening:
+- Solid core doors
+- Deadbolts (Grade 1)
+- Strike plates with 3" screws
+- Window locks/bars
+- Motion lights
+- Alarm system
+
+Safe Room:
+- Interior room, no windows
+- Solid door with deadbolt
+- Phone/radio
+- Weapons
+- First aid
+- Food/water for 24 hours
+
+Response Plan:
+- Gather family to safe room
+- Call police
+- Defend safe room (don't clear house)
+- Stay put until police arrive
+
+Fields of Fire:
+- Know your home layout
+- Identify choke points
+- Fatal funnel (doorways)
+- Cover positions
+- Backdrop (what's behind target)
+
+PERIMETER DEFENSE:
+
+Layered Defense:
+1. Outer: Fencing, lighting, visibility
+2. Middle: Alarms, sensors, cameras
+3. Inner: Locks, barriers, safe room
+4. Last: Armed response
+
+Observation:
+- 360° awareness
+- Dead space elimination
+- Clear fields of view
+- Remove hiding spots (trim bushes)
+
+Early Warning:
+- Dogs (best alarm)
+- Motion sensors
+- Cameras (visible + hidden)
+- Trip wires (non-explosive alarms)
+
+FIGHTING POSITIONS:
+
+Hasty Position:
+- Natural cover used quickly
+- Rock, tree, ditch, vehicle
+- Minimal preparation
+- Temporary
+
+Improved Position:
+- Dug in, sandbags
+- Overhead cover
+- 18-24 inches thick earth
+- Fire step, grenade sump
+
+Range Card:
+- Sketch of area
+- Reference points
+- Distances
+- Dead space
+- Fields of fire
+
+====================
+6. SMALL UNIT TACTICS
+====================
+
+FIRE TEAM (4 people):
+
+Roles:
+- Team Leader: Commands, rifleman
+- Rifleman: Standard weapon
+- Automatic Rifleman: LMG/SAW
+- Grenadier: Rifle + grenade launcher
+
+Formation:
+- Wedge: General purpose
+- File: Trails, close terrain
+- Line: Maximum firepower forward
+
+SQUAD (8-13 people):
+
+Organization:
+- Squad Leader
+- 2 Fire Teams (4 each)
+- OR 3 Fire Teams (3 each)
+
+Tactics:
+- Bounding overwatch
+- Fire and maneuver
+- Flanking
+- Suppression
+
+AMBUSH:
+
+Types:
+- Linear (L-shaped): Along road/trail
+- V-shaped: Funnel into kill zone
+- Circular: Surround (large force)
+
+Execution:
+1. Position (concealed, good fields of fire)
+2. Wait (patience critical)
+3. Initiate (command detonated, first shot)
+4. Destroy enemy in kill zone
+5. Withdraw (quickly, alternate route)
+
+Linear Ambush Setup:
+```
+        [Assault Line]
+        X X X X X X
+            ↓
+    Enemy → → → (Kill Zone)
+            ↓
+        X X X (Support)
+```
+
+PATROL:
+
+Types:
+- Reconnaissance: Gather information
+- Combat: Find and engage enemy
+- Security: Protect area
+
+Patrol Formation:
+- Point man (lead, observes)
+- Slack man (2nd, covers point)
+- Main body
+- Rear security
+
+Patrol Base:
+- Circular perimeter
+- 360° security
+- Listening posts outside perimeter
+- Rest/resupply location
+
+REACT TO CONTACT:
+
+Contact Front:
+- Return fire immediately
+- Take cover
+- Flanking element moves to flank
+- Suppress and maneuver
+
+Contact Rear:
+- Rear element returns fire
+- Leader directs
+- May reverse direction or continue forward
+
+Ambush (you're ambushed):
+- Assault through ambush (if in kill zone)
+- Return fire immediately
+- Don't stay in kill zone (fatal)
+- Violence of action
+
+====================
+7. SURVEILLANCE & EVASION
+====================
+
+OBSERVATION POST (OP):
+
+Location:
+- Good visibility
+- Concealed position
+- Multiple escape routes
+- Cover from fire
+
+Equipment:
+- Binoculars/scope
+- Notepad/camera
+- Radio
+- Camouflage
+- Food/water (long duration)
+
+Rotation:
+- 2-person minimum (one observes, one rests)
+- 4-hour shifts
+- Night vision if available
+
+CAMOUFLAGE:
+
+Visual:
+- Break up outline (shape)
+- Match colors (environment)
+- Avoid shine (cover skin, equipment)
+- Movement discipline (slow, minimal)
+
+Patterns:
+- Woodland: Green, brown, black
+- Desert: Tan, brown, light green
+- Urban: Gray, black, white
+- Snow: White, light gray
+
+Application:
+- Face paint (diagonal stripes, not horizontal)
+- Vegetation (local, fresh)
+- Netting
+- Ghillie suit (advanced)
+
+TRACKING:
+
+Signs:
+- Footprints (direction, age, number)
+- Broken vegetation (height, direction)
+- Displaced rocks/leaves
+- Trash/equipment dropped
+- Smell (smoke, cologne, food)
+
+Aging:
+- Fresh: Sharp edges, moist
+- Hours: Edges softening
+- Days: Weathered, filled with debris
+- Weeks: Nearly invisible
+
+Counter-Tracking:
+- Hard surfaces (rock, pavement)
+- Walk in water (streams)
+- Backtracking (walk backwards, confuse)
+- False trails
+- Brush out tracks (time-consuming)
+
+EVASION:
+
+Principles:
+- Avoid contact
+- Travel at night
+- Use terrain (ravines, thick vegetation)
+- Minimize traces
+- Irregular schedule
+
+Rest Areas:
+- Off main route
+- Concealed
+- Multiple escape routes
+- Avoid obvious (caves, buildings)
+
+Water:
+- Necessary but dangerous (people congregate)
+- Observe before approaching
+- Fill quickly, leave
+- Alternative: dew collection, rain
+
+Food:
+- Lower priority than evasion
+- Foraging/hunting creates traces
+- Fires visible/smells
+- Cache supplies if possible
+
+====================
+8. MARKSMANSHIP
+====================
+
+ZEROING:
+
+Process:
+1. Secure rifle (sandbag, rest)
+2. Fire 3-round group at known distance
+3. Measure deviation from point of aim
+4. Adjust sights (clicks or MOA)
+5. Repeat until centered
+
+Zero Distances:
+- Rifle: 100 yards (common), 25/300m (military)
+- Pistol: 25 yards
+- Shotgun: Pattern test (25 yards)
+
+MOA (Minute of Angle):
+- 1 MOA = ~1 inch at 100 yards
+- 2 inches at 200 yards
+- Scope adjustment in 1/4 MOA clicks typically
+
+RANGE ESTIMATION:
+
+Techniques:
+- Mil-dots (reticle markings)
+- Known size method: Range = (Size × 1000) / Mils
+- Bracketing (known references)
+- Laser rangefinder (if available)
+
+Holds:
+- 100m: Center mass
+- 200m: Top of head
+- 300m: 1 mil above head
+- Adjust for caliber/ballistics
+
+WIND READING:
+
+Indicators:
+- Flags, grass movement
+- Mirage (heat shimmer)
+- Trees swaying
+- Feel on face
+
+Effect:
+- Full value: 90° to bullet path
+- Half value: 45° to bullet path
+- No value: Directly toward/away
+
+Correction:
+- Hold into wind
+- Or adjust scope
+- Practice essential
+
+SHOOTING POSITIONS:
+
+Prone:
+- Most stable
+- Lowest profile
+- Legs spread, body angle to target
+- Support with magazine/bipod
+
+Sitting:
+- Moderately stable
+- Elbows on knees
+- Cross-legged or open-legged
+
+Kneeling:
+- Quick to assume
+- Less stable
+- Support elbow on knee
+- Sling support helps
+
+Standing (Offhand):
+- Least stable
+- Fastest
+- Elbow supported on ribs
+- Breathing critical
+
+SNAP SHOOTING:
+
+Technique:
+- Quick target acquisition
+- Minimal aiming (point shooting)
+- Close range (<25m)
+- Both eyes open
+- Instinctive
+
+Practice:
+- Dry fire (empty weapon)
+- Quick draw to shot
+- Multiple targets
+- Move and shoot
+
+====================
+9. WEAPON MAINTENANCE
+====================
+
+CLEANING:
+
+Frequency:
+- After every use (ideal)
+- Weekly if carried daily
+- Monthly if stored
+
+Process:
+1. Ensure unloaded (check twice!)
+2. Disassemble (field strip)
+3. Brush barrel (bore brush + solvent)
+4. Patch until clean (white patch)
+5. Lightly oil all metal
+6. Wipe excess oil
+7. Reassemble
+8. Function check
+
+Solvents:
+- Hoppes #9 (common)
+- CLP (clean, lubricate, protect)
+- Break-Free
+- OR: Kerosene, diesel (improvised)
+
+Lubricants:
+- Gun oil
+- CLP
+- Mobile 1 synthetic (improvised)
+- Avoid: WD-40 (not a lubricant)
+
+MALFUNCTIONS:
+
+Failure to Feed:
+- Weak magazine spring
+- Dirty chamber
+- Bad ammunition
+- Bent feed lips
+
+Failure to Eject:
+- Weak extractor
+- Dirty chamber
+- Weak ammo (underpowered)
+
+Failure to Fire:
+- Bad primer (ammo)
+- Firing pin broken/dirty
+- Light striker spring
+
+Stovepipe:
+- Weak ejector
+- Weak ammo
+- Dirty/damaged extractor
+- Limp wristing (pistol)
+
+IMPROVISED MAINTENANCE:
+
+Cleaning:
+- Motor oil (gun oil substitute)
+- Gasoline (solvent)
+- Toothbrush (brush)
+- Cloth patches (cut t-shirt)
+- Bore snake (paracord + cloth)
+
+Lubrication Points:
+- Slide rails (pistol)
+- Bolt carrier (rifle)
+- Trigger group (sparingly)
+- Barrel locking lugs
+
+Storage:
+- Clean and oiled
+- Dry environment
+- Desiccant (silica gel)
+- Inspect monthly
+- Cycle ammunition (brass degrades)
+
+====================
+10. BALLISTICS & AMMUNITION
+====================
+
+TERMINAL BALLISTICS:
+
+Factors:
+- Velocity: Faster = more damage
+- Mass: Heavier = deeper penetration
+- Expansion: Hollow point = more damage
+- Construction: FMJ vs soft point
+
+Wound Channel:
+- Permanent cavity: Bullet path
+- Temporary cavity: Tissue displacement
+- Fragmentation: Increases damage
+- Hydrostatic shock (debated)
+
+Overpenetration:
+- FMJ tends to overpenetrate
+- Hollow point expands, stops sooner
+- Barrier penetration (walls, glass)
+- Consideration for home defense
+
+COMMON CALIBERS:
+
+Pistol:
+- 9mm: Standard, effective, common
+- .45 ACP: Larger, slower, "stopping power"
+- .40 S&W: Middle ground
+- .38 Special: Revolver, mild recoil
+- .357 Magnum: Powerful revolver round
+- .22 LR: Weak but cheap, quiet, available
+
+Rifle:
+- .223/5.56: AR-15, low recoil, fragmentation
+- 7.62×39: AK-47, moderate power
+- .308/7.62 NATO: Full power, long range
+- .30-06: Classic hunting, powerful
+- .22 LR: Training, small game
+- 6.5 Creedmoor: Long range precision
+
+Shotgun:
+- 12 gauge: Most common, powerful
+- 20 gauge: Less recoil, effective
+- .410: Very light, limited power
+
+BULLET TYPES:
+
+FMJ (Full Metal Jacket):
+- Military standard
+- Penetrates well
+- Doesn't expand
+- Overpenetrates tissue
+
+JHP (Jacketed Hollow Point):
+- Self-defense standard
+- Expands on impact
+- More damage
+- Less penetration
+
+Soft Point:
+- Hunting
+- Moderate expansion
+- Good penetration
+- Balanced
+
+AP (Armor Piercing):
+- Hardened core (steel, tungsten)
+- Penetrates armor
+- Illegal for civilian use (most countries)
+
+BALLISTIC TABLES:
+
+5.56 NATO (55gr):
+- Muzzle: 3200 fps
+- 100y: 2770 fps, -1.5" drop
+- 200y: 2360 fps, -7" drop
+- 300y: 1980 fps, -20" drop
+
+7.62×39 (123gr):
+- Muzzle: 2350 fps
+- 100y: 2080 fps, -3" drop
+- 200y: 1830 fps, -13" drop
+- 300y: 1600 fps, -35" drop
+
+9mm (115gr):
+- Muzzle: 1200 fps
+- 25y: 1100 fps, -1" drop
+- 50y: 1030 fps, -5" drop
+
+RELOADING (Ammunition):
+
+⚠️ Precision required - Mistakes can explode gun
+
+Components:
+1. Brass case (reusable)
+2. Primer (small/large, rifle/pistol)
+3. Powder (specific type, precise weight)
+4. Bullet (projectile)
+
+Process:
+1. Inspect brass (cracks, splits)
+2. Decap (remove old primer)
+3. Resize (full length or neck)
+4. Prime (new primer)
+5. Charge (powder - PRECISE)
+6. Seat bullet (correct depth)
+7. Crimp (optional)
+
+Equipment:
+- Single stage press (beginner)
+- Progressive press (high volume)
+- Dies (caliber specific)
+- Powder measure
+- Scale (digital, precise)
+- Calipers
+
+Safety:
+- Never exceed max load
+- Single powder type at bench
+- Double-check every charge
+- Wear safety glasses
+- Start low, work up
+
+====================
+AMMUNITION STORAGE
+====================
+
+Conditions:
+- Cool (below 70°F ideal)
+- Dry (humidity <50%)
+- Dark (UV degrades powder)
+- Sealed (ammo cans, desiccant)
+
+Shelf Life:
+- Factory: 10+ years (proper storage)
+- 50+ years documented (still fires)
+- Primers degrade first
+- Inspect regularly
+
+Rotation:
+- FIFO (First In, First Out)
+- Date ammunition
+- Shoot old stock (training)
+- Replenish with fresh
+
+====================
+LEGAL CONSIDERATIONS
+====================
+
+⚖️ VARIES DRASTICALLY BY JURISDICTION
+
+Firearms:
+- USA: 2nd Amendment, state laws vary
+- Background checks (federal)
+- Concealed carry permits (state)
+- NFA items (suppressors, SBR, full-auto)
+
+Self-Defense Laws:
+- Castle Doctrine: No duty to retreat (home)
+- Stand Your Ground: No duty to retreat (public)
+- Duty to Retreat: Must attempt escape first
+- Reasonable force: Proportional response
+- Imminent threat: Immediate danger
+
+Use of Force Continuum:
+1. Presence
+2. Verbal commands
+3. Empty hand control
+4. Less-lethal (taser, OC)
+5. Lethal force
+
+⚠️ Lethal force ONLY when:
+- Imminent threat of death/serious injury
+- No other reasonable option
+- Proportional to threat
+- Immediately stop when threat ends
+
+Post-Incident:
+- Call police immediately
+- State you defended yourself
+- Request attorney
+- DO NOT give detailed statement without lawyer
+- Expect arrest (possible)
+- Legal fees (tens of thousands)
+
+International:
+- EU: Very restricted (varies by country)
+- UK: Essentially banned (handguns)
+- Australia: Heavily restricted
+- Canada: Restricted, licensing required
+- Switzerland: High ownership, well regulated
+- Check local laws (CRITICAL)
+
+====================
+SOURCES
+====================
+
+- US Army Field Manual 3-21.8 (Infantry Rifle Platoon and Squad)
+- US Marine Corps MCRP 3-01A (Rifle Marksmanship)
+- SAS Survival Handbook (John "Lofty" Wiseman)
+- The Modern Technique of the Pistol (Jeff Cooper)
+- Principles of Personal Defense (Jeff Cooper)
+- On Combat (Dave Grossman)
+- Tactical Medicine Essentials (TCCC)
+- FM 21-76 Survival Manual
+
+Compiled for educational archival purposes
+APOCALYPSE SURVIVAL DATABASE v3.0
