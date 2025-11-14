@@ -1,0 +1,191 @@
+/* Viewer Styles */
+
+.viewer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #2a2a2a;
+    overflow: hidden;
+}
+
+.viewer-header {
+    height: 50px;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.zoom-controls,
+.view-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zoom-controls button,
+.view-controls button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.zoom-controls button:hover,
+.view-controls button:hover {
+    background: var(--bg-tertiary);
+}
+
+#zoom-level {
+    min-width: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.viewer-main {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Drop Zone */
+.drop-zone {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2a2a2a;
+    z-index: 10;
+}
+
+.drop-zone.drag-over {
+    background: rgba(37, 99, 235, 0.1);
+    border: 3px dashed var(--primary-color);
+}
+
+.drop-zone.hidden {
+    display: none;
+}
+
+.drop-zone-content {
+    text-align: center;
+    color: #999;
+}
+
+.drop-zone-content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Canvas */
+#plan-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: crosshair;
+}
+
+#annotations-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+#annotations-layer.interactive {
+    pointer-events: auto;
+}
+
+/* SVG Annotations Styles */
+.measurement-line {
+    stroke-width: 2;
+    fill: none;
+    cursor: pointer;
+}
+
+.measurement-polygon {
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.measurement-point {
+    cursor: pointer;
+}
+
+.measurement-label {
+    font-size: 12px;
+    font-weight: 600;
+    fill: #fff;
+    stroke: #000;
+    stroke-width: 0.5px;
+    paint-order: stroke;
+    pointer-events: none;
+}
+
+.measurement-handle {
+    fill: white;
+    stroke: var(--primary-color);
+    stroke-width: 2;
+    cursor: move;
+}
+
+.measurement-handle:hover {
+    fill: var(--primary-color);
+}
+
+.measurement-item.selected {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.8));
+}
+
+.measurement-item.highlighted {
+    opacity: 1;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Viewer Footer */
+.viewer-footer {
+    height: 30px;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+#cursor-position,
+#scale-info {
+    font-family: 'Courier New', monospace;
+}
+
+/* Grid */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.grid-line {
+    stroke: #666;
+    stroke-width: 1;
+}
+
+.grid-line.major {
+    stroke: #888;
+    stroke-width: 1.5;
+}

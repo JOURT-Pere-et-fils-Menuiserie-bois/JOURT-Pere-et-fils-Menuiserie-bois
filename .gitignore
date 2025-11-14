@@ -1,0 +1,32 @@
+# Fichiers et dossiers à ignorer
+
+# Données
+/saves/*
+!/saves/.htaccess
+/uploads/*
+/logs/*
+
+# Configuration locale
+/php/config.local.php
+
+# Système
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+/.vscode
+/.idea
+*.sublime-project
+*.sublime-workspace
+
+# Dépendances (si utilisation npm/composer future)
+/node_modules
+/vendor
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.log

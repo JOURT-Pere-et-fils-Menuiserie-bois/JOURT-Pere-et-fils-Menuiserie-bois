@@ -1,0 +1,162 @@
+/* Measurements Table Styles */
+
+.measurements-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.measurements-table thead {
+    background: var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.measurements-table th {
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.measurements-table th.text-right {
+    text-align: right;
+}
+
+.measurements-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.15s;
+}
+
+.measurements-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.measurements-table tbody tr.selected {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.measurements-table tbody tr.needs-validation {
+    background: rgba(245, 158, 11, 0.1);
+    border-left: 3px solid var(--warning-color);
+}
+
+.measurements-table td {
+    padding: 10px;
+}
+
+.measurements-table input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.measurements-table input[type="text"],
+.measurements-table input[type="number"] {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.measurements-table select {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-badge.status-draft {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.status-badge.status-confirmed {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+}
+
+.status-badge.status-sent {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.status-badge.status-approved {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.status-badge.status-rejected {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.status-badge.status-in_avenant {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.status-badge.status-invoiced {
+    background: rgba(16, 185, 129, 0.2);
+    color: #059669;
+}
+
+.status-badge.status-paid {
+    background: rgba(16, 185, 129, 0.3);
+    color: #047857;
+}
+
+/* Total Row */
+.total-row {
+    background: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.total-row td {
+    padding: 12px 10px;
+    border-top: 2px solid var(--border-color);
+}
+
+/* Empty State */
+.empty-state td {
+    padding: 40px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Action Buttons in Table */
+.table-action-btn {
+    padding: 4px 8px;
+    margin-right: 4px;
+    border-radius: 3px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 11px;
+    transition: all 0.2s;
+}
+
+.table-action-btn:hover {
+    background: var(--border-color);
+}
+
+.table-action-btn.delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger-color);
+}
+
+.table-action-btn.delete:hover {
+    background: rgba(239, 68, 68, 0.2);
+}

@@ -1,0 +1,11 @@
+# Protection dossier saves
+# Bloquer accès direct aux fichiers
+
+Order Deny,Allow
+Deny from all
+
+# Autoriser uniquement les scripts PHP du serveur
+<FilesMatch "\.(pdf|json|xlsx|csv)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
