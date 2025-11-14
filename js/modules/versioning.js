@@ -97,50 +97,83 @@ const VersionManager = (function() {
      */
     async function loadVersion(versionId) {
         try {
+            console.log('🔄 Chargement version:', versionId);
+
             const version = versions.find(v => v.version_id === versionId);
-            if (!version) return;
+            if (!version) {
+                console.error('❌ Version non trouvée:', versionId);
+                alert('Version non trouvée');
+                return;
+            }
+
+            console.log('✅ Version trouvée:', version);
 
             // Vérifier qu'on a un projet courant
             if (!currentProjectId) {
+                console.error('❌ Aucun projet ouvert (currentProjectId est null)');
                 alert('❌ Erreur : Aucun projet ouvert');
                 return;
             }
 
+            console.log('✅ Projet courant:', currentProjectId);
+
             // Charger le plan
-            await PDFLoader.loadPDFFromURL(version.file_path);
+            console.log('📄 Chargement PDF depuis:', version.file_path);
+            try {
+                await PDFLoader.loadPDFFromURL(version.file_path);
+                console.log('✅ PDF chargé avec succès');
+            } catch (pdfError) {
+                console.error('❌ Erreur chargement PDF:', pdfError);
+                throw new Error(`Impossible de charger le PDF: ${pdfError.message}`);
+            }
 
             // Charger les mesures (ne pas bloquer si erreur)
+            console.log('📏 Chargement mesures...');
             try {
                 const measurementsData = await StorageManager.loadMeasurements(currentProjectId, versionId);
+                console.log('📦 Données mesures reçues:', measurementsData);
+
                 const measurements = measurementsData.measurements || measurementsData || [];
 
-                console.log('Mesures chargées pour version:', versionId, measurements.length);
+                console.log('✅ Mesures extraites:', measurements.length, 'mesure(s)');
 
                 if (measurements.length > 0) {
+                    console.log('📊 Chargement dans table...');
                     MeasurementTable.loadMeasurements(measurements);
 
+                    console.log('🎨 Dessin des mesures...');
                     // Dessiner les mesures
-                    measurements.forEach(m => {
-                        DrawingManager.drawMeasurement(m);
+                    measurements.forEach((m, index) => {
+                        try {
+                            DrawingManager.drawMeasurement(m);
+                            console.log(`  ✓ Mesure ${index + 1} dessinée`);
+                        } catch (drawError) {
+                            console.error(`  ✗ Erreur dessin mesure ${index + 1}:`, drawError);
+                        }
                     });
+
+                    console.log('✅ Toutes les mesures dessinées');
                 }
             } catch (measError) {
-                console.log('Aucune mesure pour cette version (normal si nouveau)');
+                console.warn('⚠️ Aucune mesure pour cette version (normal si nouveau):', measError.message);
             }
 
             currentVersionId = versionId;
 
             // Publier événement
+            console.log('📢 Publication événement VERSION_CHANGED');
             PubSub.publish(EVENTS.VERSION_CHANGED, { versionId });
 
             // Fermer modal
             document.getElementById('versions-modal').classList.remove('active');
 
-            alert(`Version ${version.version_label} chargée`);
+            console.log('✅ Version chargée avec succès:', version.version_label);
+            alert(`✅ Version ${version.version_label} chargée`);
 
         } catch (error) {
-            console.error('Erreur chargement version:', error);
-            alert('Erreur lors du chargement de la version');
+            console.error('❌ ERREUR CHARGEMENT VERSION:', error);
+            console.error('Stack trace:', error.stack);
+            alert(`❌ Erreur lors du chargement de la version:\n\n${error.message}\n\nVoir console pour détails (F12)`);
         }
     }
 
