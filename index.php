@@ -377,7 +377,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="js/lib/pdf.min.mjs" type="module"></script>
+    <!-- PDF.js depuis CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.mjs" type="module"></script>
     <script src="js/modules/pubsub.js"></script>
     <script src="js/modules/storage.js"></script>
     <script src="js/modules/pdf-loader.js"></script>
