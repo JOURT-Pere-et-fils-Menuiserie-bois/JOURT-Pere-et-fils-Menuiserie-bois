@@ -1,0 +1,1017 @@
+URBAN SURVIVAL TACTICS
+Post-Apocalyptic City Navigation & Resources
+
+⚠️ EMERGENCY SITUATIONS ONLY
+
+====================
+TABLE OF CONTENTS
+====================
+
+1. URBAN WATER SOURCES
+2. FOOD ACQUISITION
+3. SHELTER & CONCEALMENT
+4. URBAN NAVIGATION
+5. ENTRY TECHNIQUES
+6. VEHICLE ACCESS
+7. COUNTER-SURVEILLANCE
+8. SCAVENGING PRIORITIES
+9. GANG/THREAT AVOIDANCE
+10. POWER & ELECTRICITY
+
+====================
+1. URBAN WATER SOURCES
+====================
+
+PRIORITY ORDER (Safety):
+
+1. BOTTLED WATER (Stores, vending)
+   - Expiration date meaningless if sealed
+   - Check seal integrity
+   - Clear > colored containers
+   - Location: Stores, warehouses, gyms
+
+2. WATER HEATERS (Buildings)
+   - 40-80 gallons per unit
+   - Usually clean if building recent
+   - Drain valve at bottom
+   - Multi-story buildings = multiple units
+
+Access:
+   - Basement/utility rooms
+   - Turn off power first
+   - Open pressure relief valve (top)
+   - Open drain valve (bottom) with hose
+
+3. TOILET TANKS (Not bowl!)
+   - Tank holds 1.5-3 gallons
+   - Relatively clean if unused
+   - Avoid if chemical cleaners present
+   - ALWAYS purify before drinking
+
+4. SWIMMING POOLS
+   - Thousands of gallons
+   - Chlorine = pre-purified (partially)
+   - Still filter before drinking
+   - Last resort: industrial cooling towers
+
+5. RAINWATER COLLECTION
+   - Gutters and downspouts
+   - Tarps between buildings
+   - Container on roof access
+   - First rain = flush system (dirty)
+
+6. PIPES (Risky)
+   - Cold water pipes may have residual
+   - Open highest faucet (release pressure)
+   - Open lowest faucet (collect)
+   - Likely minimal yield
+
+7. RIVERS/STREAMS
+   - Urban waterways = HIGHLY contaminated
+   - Chemical runoff, sewage
+   - Multiple filtration + boiling essential
+   - Absolute last resort
+
+PURIFICATION (Critical in cities):
+
+Method 1: Boiling
+- Rolling boil: 1 minute (sea level)
+- 3 minutes if above 2000m altitude
+- Kills all pathogens
+- Doesn't remove chemicals
+
+Method 2: Chemical
+- Bleach (5.25% sodium hypochlorite)
+  * 8 drops per gallon
+  * Wait 30 minutes
+  * Smell should be chlorine
+- Iodine tablets (follow instructions)
+
+Method 3: Filtration
+- Commercial filter (Sawyer, LifeStraw)
+- DIY filter:
+  * Container with hole in bottom
+  * Layer: cloth → sand → charcoal → gravel → cloth
+  * Slow drip through layers
+  * Still boil after filtering!
+
+Method 4: UV (if available)
+- SteriPEN or sunlight + clear bottle
+- 6 hours direct sunlight in PET bottle
+- Only if water clear (pre-filter)
+
+SIGNS OF BAD WATER:
+⚠️ Oil sheen (gasoline, chemicals)
+⚠️ Strong chemical smell
+⚠️ Thick algae growth
+⚠️ Dead animals nearby
+⚠️ Foam (detergent runoff)
+
+====================
+2. FOOD ACQUISITION
+====================
+
+SCAVENGING LOCATIONS (Priority):
+
+1. GROCERY STORES
+
+   Shelf-Stable (months to years):
+   - Canned goods (inspect for rust/bulging)
+   - Dry pasta, rice (airtight = indefinite)
+   - Honey (never expires)
+   - Salt, sugar, spices
+   - Peanut butter (sealed)
+   - Powdered milk
+   - Hardtack, crackers
+
+   Avoid:
+   - Refrigerated (spoiled within days)
+   - Fresh produce (already rotting)
+   - Bakery items (mold quickly)
+
+   Safety:
+   - Check dates (guideline, not absolute)
+   - Bulging cans = BOTULISM (deadly)
+   - Smell test (if opens, smells off = discard)
+
+2. VENDING MACHINES
+
+   Access:
+   - Look for key slots (universal keys exist)
+   - OR shimmy/tilt (products fall)
+   - OR destructive (break glass) - LOUD
+
+   Contents:
+   - Chips, candy (high calorie, long shelf life)
+   - Nuts (protein, fats)
+   - Energy bars
+   - Soft drinks (sugar, hydration)
+
+3. WAREHOUSES
+
+   Industrial areas = massive stockpiles
+   - Food distribution centers
+   - Costco/Sam's Club (bulk)
+   - Restaurant supply warehouses
+   - Shipping containers (ports)
+
+   Security:
+   - Usually fenced
+   - Loading docks = weak point
+   - Roof access possible
+   - Bring bags/cart (volume)
+
+4. RESTAURANTS (Commercial Kitchens)
+
+   Dry storage areas:
+   - 50lb bags rice, flour, beans
+   - Industrial cans (#10 size)
+   - Oils, condiments (sealed)
+   - Freezers (spoiled without power)
+
+5. HOSPITALS/SCHOOLS
+
+   Cafeterias:
+   - Similar to restaurants
+   - Often overlooked by initial looters
+   - Vending machines numerous
+
+6. OFFICE BUILDINGS
+
+   Break rooms:
+   - Vending machines (each floor)
+   - Employee food stashes (desks)
+   - Candy bowls, snack drawers
+
+7. HOMES (Private Residences)
+
+   Pantries:
+   - Varies widely
+   - Suburban homes > apartments
+   - Check basements (storage)
+
+   Ethical consideration:
+   - Someone's home = last resort
+   - May be occupied (dangerous)
+
+8. DUMPSTER DIVING (Pre-Collapse)
+
+   Behind grocery stores:
+   - Throw out near-expiration (still good)
+   - Produce with blemishes (edible)
+   - Dented cans (fine if no bulge/leak)
+
+   Timing:
+   - Night after closing
+   - Just after restocking days
+
+   Safety:
+   - Inspect carefully
+   - Wash everything
+   - Cook thoroughly
+
+URBAN HUNTING/TRAPPING:
+
+Pigeons:
+- Abundant in cities
+- Trapping: Box trap with food bait
+- Nesting areas: Bridges, abandoned buildings
+- Preparation: Pluck, gut, boil (disease risk)
+
+Rats:
+- LAST RESORT (disease vectors)
+- Snap traps or improvised
+- Cook VERY thoroughly (160°F+)
+- Remove all organs carefully
+- High disease risk (leptospirosis, hantavirus)
+
+Fish (if urban waterway clean):
+- Unlikely due to pollution
+- Improvised rod: Stick + line + hook
+- Bait: Insects, small food scraps
+
+Squirrels:
+- Parks, trees
+- Slingshot or trap
+- Better than rats (less disease)
+
+EDIBLE URBAN PLANTS:
+
+Dandelions:
+- Entire plant edible
+- Leaves (salad), roots (roast for coffee substitute)
+- Flowers (wine, fritters)
+- Common in parks, yards
+
+Plantain (not banana):
+- Broad leaf weed
+- Young leaves edible raw
+- Older leaves cook like spinach
+
+Purslane:
+- Succulent weed
+- High omega-3
+- Leaves and stems raw or cooked
+
+Acorns:
+- Oak trees (parks)
+- Leach tannins (boil multiple times)
+- Grind into flour
+
+⚠️ NEVER eat unknown plants (poisoning risk)
+⚠️ Avoid plants near roads (contamination)
+
+====================
+3. SHELTER & CONCEALMENT
+====================
+
+LOCATION PRIORITIES:
+
+1. ABANDONED BUILDINGS
+
+   Best:
+   - Upper floors (less traffic)
+   - Multiple exits (fire escapes)
+   - Obscured windows (concealment)
+   - Structural integrity (check roof, floors)
+
+   Avoid:
+   - Ground floor (easy access = more people)
+   - Single entry (trap)
+   - Known squats (violence common)
+
+   Security:
+   - Barricade entry behind you
+   - Conceal that floor is occupied
+   - Quiet at all times
+   - Rotate locations
+
+2. PARKING GARAGES (Underground)
+
+   Advantages:
+   - Climate controlled (cool/warm)
+   - Protection from elements
+   - Multiple levels = hiding spots
+   - Less visible than street
+
+   Spots:
+   - Stairwells (semi-private)
+   - Storage rooms
+   - Mechanical areas
+
+3. SUBWAY/METRO TUNNELS
+
+   Pros:
+   - Underground = hidden
+   - Passages between areas
+   - Alcoves for maintenance
+
+   Cons:
+   - Flooding risk
+   - Darkness (light needed)
+   - Rats, disease
+   - Other people (gangs)
+
+   Safety:
+   - Never go deep without light
+   - Mark exit routes
+   - Avoid third rail (electrocution if powered)
+
+4. ROOFTOPS
+
+   Access:
+   - Fire escapes
+   - Interior stairwells
+   - Ladders
+
+   Benefits:
+   - High ground = visibility
+   - Less foot traffic
+   - Rain collection easy
+   - Signaling possible
+
+   Risks:
+   - Exposure to weather
+   - Visible from other roofs/buildings
+   - Limited escape routes
+
+5. SHIPPING CONTAINERS
+
+   Locations:
+   - Ports
+   - Industrial areas
+   - Rail yards
+
+   Setup:
+   - Insulate (metal = extreme temps)
+   - Ventilation critical (suffocation)
+   - Conceal entry
+   - Lock from inside
+
+6. SEWERS (Extreme Last Resort)
+
+   Pros:
+   - Hidden
+   - Extensive network
+   - Water source (requires purification!)
+
+   Cons:
+   - Toxic gases (H2S, methane)
+   - Disease (every pathogen imaginable)
+   - Flooding (rain = death)
+   - Darkness
+   - Rats
+
+   Survival:
+   - Gas detector if possible
+   - Never alone
+   - Rope/chalk trail (don't get lost)
+   - High ground for sleep (flooding)
+
+CONCEALMENT TECHNIQUES:
+
+Camouflage:
+- Blend with environment
+- Tarp/cardboard over "home"
+- Look like random trash
+- Avoid patterns (symmetry = human)
+
+Noise Discipline:
+- No talking loudly
+- Soft-soled shoes
+- Secure gear (no rattling)
+- Nighttime movement only if needed
+
+Light Discipline:
+- No fires (smoke visible miles)
+- Flashlight: Red filter (less visible)
+- Candles: Deep in structure only
+- Blackout windows
+
+Smell Discipline:
+- Cooking = attracts people
+- Human waste = disease + smell
+- Bury or remove far from camp
+
+====================
+4. URBAN NAVIGATION
+====================
+
+WITHOUT GPS/MAPS:
+
+Direction Finding:
+
+Sun:
+- Rises East, Sets West (general)
+- Shadow stick method:
+  1. Place stick vertical
+  2. Mark shadow tip
+  3. Wait 15min, mark again
+  4. Line = East-West
+
+Stars (Northern Hemisphere):
+- Polaris (North Star)
+- Find Big Dipper → Follow outer cup stars → 5x distance = Polaris
+
+Moss:
+- MYTH (unreliable in cities)
+- Buildings shade all sides
+
+Landmarks:
+- Tall buildings = reference points
+- Rivers (follow downstream = civilization)
+- Highways/rail = follow to exits
+
+ROUTE PLANNING:
+
+Avoid:
+- Main streets (exposed, populated)
+- Choke points (bridges, tunnels = ambush)
+- Known danger zones (mark mentally)
+
+Prefer:
+- Alleys and backstreets
+- Parallel routes to main roads
+- Multiple path options
+- High ground routes (roofs if connected)
+
+Movement:
+
+Daylight:
+- More visibility = more risk
+- Faster travel
+- Easier navigation
+- Higher encounter chance
+
+Night:
+- Concealment better
+- Slower, dangerous (trip hazards)
+- Need light source (gives away position)
+- Less people (but more dangerous people)
+
+Group:
+- Quieter than seems (discipline needed)
+- More security
+- More visible
+- Slower decision-making
+
+Solo:
+- Complete stealth possible
+- All decisions yours
+- No backup (injury = death)
+- Faster movement
+
+CROSSING OBSTACLES:
+
+Fences:
+- Chain link: Climb (toe holds)
+- Barbed wire: Thick blanket over top
+- Razor wire: AVOID (too dangerous)
+
+Walls:
+- Running start + jump + pull
+- Boost (teammate)
+- Stack objects (pallets, crates)
+
+Rivers/Canals:
+- Bridges (may be watched)
+- Swim (current danger, hypothermia)
+- Improvised raft (dangerous)
+
+====================
+5. ENTRY TECHNIQUES
+====================
+
+DOORS:
+
+Knob Locks (No Deadbolt):
+- Credit card shimming
+- Bypass latch with thin rigid tool
+- Success: 60% on older doors
+
+Deadbolts:
+- Lockpicking (see other documents)
+- Bumping
+- Drilling (destructive, loud)
+- OR find another entry
+
+Kicking/Shouldering:
+- Hit near lock (not center)
+- Multiple strong kicks
+- LOUD (attention)
+- Damages door (obvious entry)
+
+Barricaded Doors:
+- Check hinges (exterior = remove pins)
+- Alternate entry
+- Don't force (trap possible)
+
+WINDOWS:
+
+Breaking Glass:
+- Corner strike (less noise)
+- Wrapped hand/tool (muffle)
+- Remove remaining shards (cuts)
+- LOUD (attention)
+
+Sliding Windows:
+- Lift off track (if not secured)
+- Slim jim between frame
+
+Locked Windows:
+- Thin blade to flip latch
+- Cut glass with glass cutter (quiet)
+- Break as last resort
+
+ALTERNATIVE ENTRIES:
+
+Fire Escapes:
+- External access (climb from ground)
+- Upper floor = safer, less used
+
+Basement Windows:
+- Often overlooked
+- Smaller = tight squeeze
+- Check for barring first
+
+Ventilation:
+- Large ducts = possible entry
+- Bring light
+- May lead to dead ends
+- Noise travels in ducts
+
+Roof Access:
+- Adjacent buildings
+- Climb exterior (drainpipes, ledges)
+- Drop through skylight/hatch
+
+====================
+6. VEHICLE ACCESS
+====================
+
+OPENING LOCKED CAR:
+
+Slim Jim (Pre-2000 vehicles):
+- Slide between window and weather stripping
+- Hook vertical rod mechanism
+- Pull up (unlocks)
+- Modern cars: Electronic locks (doesn't work)
+
+Wedge + Rod Method:
+- Wedge: Inflate in door gap (top corner)
+- Rod: Long stiff wire
+- Reach interior unlock button
+- Works on most vehicles
+- Non-destructive
+
+Tennis Ball Myth:
+- Pressure unlock: DOESN'T WORK
+- Internet myth
+- Waste of time
+
+Breaking Window:
+- Side windows: Safety glass (shatters completely)
+- Aim: Bottom corner
+- Tool: Spark plug ceramic (shatters easily)
+- LOUD, obvious
+
+HOT-WIRING (Pre-1990 Vehicles):
+
+⚠️ Modern vehicles (post-2000): IMPOSSIBLE (immobilizer chips)
+
+Classic Method (Pre-1990):
+
+1. ACCESS STEERING COLUMN
+   - Remove plastic cover (screws or pull hard)
+   - Expose wire bundle
+
+2. IDENTIFY WIRES
+   - RED: Battery (always hot)
+   - YELLOW/BROWN: Accessories
+   - BLACK/WHITE: Ground
+   - GREEN/PURPLE: Starter
+
+   (Colors vary by make - test with multimeter if possible)
+
+3. STRIP INSULATION
+   - 1-2 inches from ends
+   - Careful not to cut wire
+
+4. CONNECT
+   - Twist RED + YELLOW together
+   - Dashboard lights = success
+   - Touch GREEN to combined briefly (engine starts)
+   - Remove GREEN immediately (starter disengages)
+   - Drive with exposed wires
+
+DANGERS:
+⚡ Shock possible (12V low risk)
+🔥 Short circuit = fire
+🚨 Modern alarm systems
+⚖️ ILLEGAL (grand theft auto)
+
+Steering Lock:
+- Most vehicles: Mechanical lock
+- Forceful turn breaks mechanism (older)
+- Modern: Electronic (very difficult)
+
+FUEL:
+
+Siphoning:
+1. Tube into tank
+2. Suck until fuel reaches mouth
+3. SPIT (don't swallow!)
+4. Quickly insert into container
+5. Gravity flows
+
+Anti-siphon screens:
+- Modern vehicles have them
+- Can push 1/4" tube through sometimes
+- OR drill tank (permanent damage)
+
+Fuel Priorities:
+1. Vehicles (obviously)
+2. Generators
+3. Gas station pumps (manual override)
+
+ALTERNATE TRANSPORT:
+
+Bicycles:
+- Faster than walking
+- Silent
+- No fuel needed
+- Easy maintenance
+- Lock pick bike locks (U-lock harder)
+
+Motorcycles:
+- Fuel efficient
+- Maneuverability
+- Loud (attention)
+- Less storage
+
+====================
+7. COUNTER-SURVEILLANCE
+====================
+
+DETECTING BEING FOLLOWED:
+
+Four Turns Test:
+- Turn right four times (full circle)
+- Same person/vehicle = following
+
+Unusual Stops:
+- Abrupt stop, window shopping
+- Follower must also stop (reveals them)
+
+Reflection:
+- Car mirrors, store windows
+- Observe without turning
+
+Choke Point:
+- Single entrance/exit location
+- Enter, watch who follows
+
+LOSING A TAIL:
+
+Public Transit:
+- Board train/bus
+- Exit at last second (doors closing)
+- Follower trapped or reveals themselves
+
+Crowds:
+- Duck into crowded area
+- Change direction inside
+- Exit different door
+
+Quick Changes:
+- Remove/add jacket
+- Hat on/off
+- Sunglasses
+- Changes silhouette
+
+Multiple Buildings:
+- Enter store, exit back/side
+- Through multiple connected shops
+- Harder to follow unseen
+
+HIDING:
+
+Urban Camouflage:
+- Homeless appearance (blend in)
+- Worker appearance (hi-vis vest = invisible)
+- Jogger (explains being in area)
+
+Hiding Spots:
+- Recessed doorways
+- Dumpster enclosures
+- Under vehicles (temporary)
+- Inside stores (blend with customers)
+
+OBSERVATION WITHOUT BEING SEEN:
+
+Reflections:
+- Building windows
+- Vehicle mirrors
+- Phone screen (fake call while watching)
+
+Peripheral Vision:
+- Don't stare directly
+- Glance and look away
+- Build mental map
+
+Elevated Positions:
+- Second floor windows
+- Parking garages
+- Overpasses
+
+AVOIDING CAMERAS:
+
+Modern City Reality:
+- Cameras everywhere (impossible to avoid all)
+- Facial recognition advancing
+- License plate readers
+
+Techniques (Limited effectiveness):
+- Hood/hat + head down
+- Sunglasses (daytime)
+- Face mask (post-COVID = normal)
+- Avoid main streets
+- IR reflective clothing (some cameras)
+
+====================
+8. SCAVENGING PRIORITIES
+====================
+
+IMMEDIATE (First 72 hours):
+
+1. Water (3 days without = death)
+2. Medications (prescriptions, first aid)
+3. Food (perishables first, then shelf-stable)
+4. Weapons/defense
+5. Light sources (flashlights, batteries)
+6. Communication (radio, phone if networks up)
+
+SHORT TERM (Week 1-2):
+
+1. Fuel (vehicles, generators, heating)
+2. Batteries (all sizes)
+3. Matches, lighters
+4. Warm clothing, blankets
+5. Tools (multipurpose)
+6. Water containers
+7. Medical supplies
+8. Hygiene items
+
+MEDIUM TERM (Month 1-3):
+
+1. Seeds (gardening)
+2. Ammunition
+3. Repair supplies
+4. Alcohol (trade, medical, fuel)
+5. Tobacco (trade value)
+6. Books (knowledge, entertainment)
+7. Soap/cleaning supplies
+
+LONG TERM (3+ months):
+
+1. Metals (repair, crafting)
+2. Fuel stabilizer
+3. Salt (preservation, seasoning)
+4. Vitamins
+5. Antibiotics (vet supply if no pharmacy)
+6. Spare parts (common items)
+
+BARTER ITEMS:
+
+High Value:
+- Alcohol
+- Tobacco
+- Coffee
+- Chocolate
+- Ammunition
+- Medications
+- Toilet paper
+- Feminine hygiene
+- Soap
+
+Medium Value:
+- Batteries
+- Lighters
+- Duct tape
+- Zip ties
+- Rope
+- Tarps
+
+LOCATIONS BY ITEM:
+
+Tools: Hardware stores, garages, workshops
+Medical: Pharmacies, hospitals, vet clinics
+Food: Grocery, restaurants, warehouses
+Fuel: Gas stations, marinas, airports
+Weapons: Gun stores (if legal), police stations
+Clothes: Department stores, homes
+Electronics: Office buildings, electronic stores
+
+====================
+9. GANG/THREAT AVOIDANCE
+====================
+
+POST-COLLAPSE THREATS:
+
+Desperate Individuals:
+- Most common
+- Unpredictable
+- Looking for supplies
+- May or may not be violent
+
+Organized Gangs:
+- Territory control
+- Tax/toll systems
+- More dangerous (numbers)
+- Avoid territory
+
+Marauders:
+- Roving groups
+- Pure violence/theft
+- Most dangerous
+- Avoid at all costs
+
+Law Enforcement (Early):
+- May still exist
+- Overstretched
+- Curfews possible
+- Avoid confrontation
+
+Military (Martial Law):
+- Checkpoints
+- Restricted zones
+- Comply or avoid
+
+TERRITORIAL AWARENESS:
+
+Gang Signs:
+- Graffiti markings
+- Specific colors
+- Symbols
+
+Safe Passage:
+- Pay toll if required (supplies)
+- Don't challenge territory
+- Move through quickly
+
+Neutral Zones:
+- Everyone needs resources
+- Temporary truces
+- Still dangerous
+
+DEFENSIVE POSTURE:
+
+Appear:
+- Not worth robbing (homeless look)
+- OR too dangerous to attack (armed, confident)
+- NOT wealthy/well-supplied (target)
+
+Travel:
+- Groups safer (but louder)
+- Vary routes
+- Move during "safer" times
+- Have exit plan always
+
+Weapons:
+- Visible deterrent vs concealed surprise
+- Firearm (if legal/available)
+- Knife (backup)
+- Improvised (club, Molotov, etc.)
+
+CONFLICT AVOIDANCE:
+
+De-escalation:
+- Comply if mugged (items replaceable, life isn't)
+- Don't make eye contact (challenge)
+- Back away slowly
+- Hands visible (non-threatening)
+
+When to Fight:
+- Life threatened regardless
+- Can't escape
+- Defending others
+- LAST RESORT
+
+When to Run:
+- Path available
+- Can outrun (unburdened)
+- No hostages
+- PREFERRED OPTION
+
+====================
+10. POWER & ELECTRICITY
+====================
+
+POWER GENERATION:
+
+Solar (Scavenge panels):
+- Rooftop panels (homes, businesses)
+- Portable panels (camping stores)
+- Charge batteries during day
+- 12V system easiest
+
+Gasoline Generators:
+- Scavenge from hardware stores
+- Fuel limited
+- LOUD (attracts attention)
+- Use sparingly
+
+Car Battery:
+- 12V DC power source
+- Inverter = 110V AC
+- Charge with alternator (running car)
+- Limited capacity
+
+Wind (Urban difficult):
+- Rooftop small turbine
+- Inconsistent in cities
+- DIY possible (car alternator + blades)
+
+Pedal Power:
+- Bicycle + alternator
+- Human-powered generation
+- Charges batteries slowly
+
+ELECTRICAL SOURCES:
+
+Traffic Lights:
+- Solar panels on top (many models)
+- Battery backup inside box
+- Access control box (locked)
+
+Street Lights:
+- Some solar-powered
+- Battery inside pole base
+
+Emergency Lights:
+- Buildings have backup batteries
+- Exit signs (small batteries)
+
+Vehicles:
+- Batteries (12V)
+- Alternator (running = power)
+
+IMPROVISED LIGHTING:
+
+Candles:
+- Scavenge stores, churches
+- DIY: Fat/wax + wick
+- Fire hazard (ventilation)
+
+Oil Lamps:
+- Container + wick + oil
+- Cooking oil works
+- Better than candles (brighter)
+
+Chemical (Glow sticks):
+- Single use
+- 8-12 hours light
+- No heat/fire
+
+Shake Flashlight:
+- Magnetic induction
+- No batteries
+- Low light output
+
+====================
+LEGAL DISCLAIMER
+====================
+
+This document is for:
+- Post-apocalyptic scenarios
+- Extreme emergency survival
+- Educational purposes
+- Theoretical knowledge
+
+NOT for:
+- Normal circumstances
+- Criminal activity
+- Property damage/theft
+- Harm to others
+
+All activities described may be ILLEGAL in normal circumstances.
+
+Author/distributor assumes NO responsibility for misuse.
+
+⚠️ Use only in genuine survival emergencies
+⚖️ Respect laws and property in normal society
+🆘 In true emergency, survival takes priority
+
+====================
+SOURCES
+====================
+
+- Urban Survival Guide (SF Gonzales)
+- SAS Urban Survival Handbook
+- The Modern Survival Manual (Fernando Aguirre)
+- Emergency War Surgery (NATO)
+- US Army Urban Operations Manual
+- Practical field experience (various contributors)
+
+Compiled for educational archival purposes
+APOCALYPSE SURVIVAL DATABASE v3.0

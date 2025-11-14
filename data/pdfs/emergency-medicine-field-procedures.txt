@@ -1,0 +1,690 @@
+EMERGENCY FIELD MEDICINE
+Procedures Without Hospital Access
+
+⚠️ EXTREME EMERGENCY ONLY - Seek professional help if possible
+
+====================
+MEDICAL HIERARCHY
+====================
+
+1. PREVENT death (ABC: Airway, Breathing, Circulation)
+2. TREAT life-threatening injuries
+3. STABILIZE for evacuation
+4. MANAGE pain
+5. PREVENT infection
+
+Time criticality:
+- 3 minutes without air = brain death
+- 3 hours without warmth (hypothermia) = death
+- 3 days without water = death
+- 3 weeks without food = death
+
+====================
+SEVERE BLEEDING CONTROL
+====================
+
+TOURNIQUET APPLICATION:
+
+When to use:
+✓ Limb arterial bleeding uncontrolled by pressure
+✓ Multiple casualties (triage)
+✓ Partial/complete amputation
+✗ Head, neck, torso bleeding (impossible)
+
+Procedure:
+1. Place 2-3 inches ABOVE wound (toward heart)
+2. NEVER place on joint
+3. Commercial tourniquet (CAT, SOFT-T) best
+4. OR improvised: Belt, cloth (2" wide minimum)
+5. Tighten until bleeding STOPS completely
+6. Note time applied (write on tourniquet/patient)
+7. Do NOT release (unless >2 hours + evacuation possible)
+
+Improvised Tourniquet:
+- Cloth band (cravat, shirt strip) 2-4" wide
+- Windlass (stick) to twist tight
+- Secure windlass (tape, second cloth)
+- Tighten until pulse distal to tourniquet gone
+
+⚠️ Tourniquets cause pain (expect screaming)
+⚠️ Limb may be lost (life > limb)
+⚠️ Don't remove in field (shock risk)
+
+WOUND PACKING:
+
+For wounds that can't be tourniqueted:
+1. Expose wound (cut clothes away)
+2. Gauze (preferably hemostatic: QuikClot, Celox)
+3. Pack DEEP into wound (use finger/forceps)
+4. Fill entire wound cavity
+5. Direct pressure 3 minutes
+6. Pressure dressing over packed wound
+
+Hemostatic agents:
+- QuikClot Combat Gauze (best)
+- Celox granules
+- OR plain gauze (better than nothing)
+
+PRESSURE DRESSING:
+
+1. Gauze pads over wound
+2. Wrap elastic bandage (ACE bandage)
+3. TIGHT (should restrict blood flow slightly)
+4. Check distal pulse (shouldn't cut off completely)
+
+====================
+AIRWAY MANAGEMENT
+====================
+
+HEIMLICH MANEUVER (Choking):
+
+Conscious patient:
+1. Stand behind
+2. Fist below sternum, above navel
+3. Other hand over fist
+4. Quick upward thrusts
+5. Repeat until object expelled
+
+Unconscious patient:
+1. Lay supine (on back)
+2. CPR chest compressions (may dislodge)
+3. If visible, finger sweep (careful - don't push deeper)
+
+RECOVERY POSITION (Unconscious but breathing):
+
+1. Kneel beside patient
+2. Extend arm nearest you above head
+3. Roll patient toward you
+4. Bend top knee (stabilizes)
+5. Tilt head back (airway open)
+6. Monitor breathing continuously
+
+OROPHARYNGEAL AIRWAY (OPA):
+
+Use: Unconscious patient with airway obstruction
+1. Measure: Earlobe to corner of mouth
+2. Insert upside down initially
+3. Rotate 180° as it passes tongue
+4. Flange rests on lips
+⚠️ Conscious patient = gag reflex (don't use)
+
+CRICOTHYROTOMY (Surgical Airway):
+
+⚠️ ABSOLUTE LAST RESORT - Patient will die without
+
+Indications:
+- Airway completely blocked
+- Can't ventilate/intubate
+- Facial trauma preventing other airway
+- Minutes until death
+
+Procedure:
+1. Locate cricothyroid membrane (between thyroid + cricoid cartilage)
+   - Adam's apple (thyroid), next hard ring below = cricoid
+   - Soft spot between = cricothyroid membrane
+2. Stabilize larynx (hold thyroid cartilage)
+3. Sterilize if time (alcohol, iodine)
+4. Vertical incision through skin (1-2 inches)
+5. Horizontal incision through membrane (1cm)
+6. Insert tube (endotracheal tube, pen barrel, hollow tube)
+7. Secure tube
+8. Verify air movement (chest rise)
+
+Improvised tube:
+- Ballpoint pen (remove ink cartridge)
+- Straw
+- IV catheter (large bore)
+- Tracheostomy tube (ideal if available)
+
+Complications:
+- Bleeding (significant)
+- Misplacement (through tracheal wall)
+- Tube dislodgement
+- Infection
+
+====================
+CHEST INJURIES
+====================
+
+TENSION PNEUMOTHORAX:
+
+Signs:
+- Difficulty breathing (severe)
+- Trachea deviated to one side
+- Decreased breath sounds one side
+- Distended neck veins
+- Worsening rapidly
+
+Treatment (Needle Decompression):
+
+⚠️ Can kill if done wrong - only if patient dying
+
+1. Locate 2nd intercostal space (2nd rib space)
+2. Midclavicular line (nipple line going up)
+3. Affected side (decreased breath sounds)
+4. 14-16 gauge needle OR angiocath
+5. Insert ABOVE rib (vessels below rib)
+6. Advance until "pop" or air rush
+7. Remove needle, leave catheter
+8. Tape in place
+9. Should hear air escaping (good sign)
+
+SUCKING CHEST WOUND (Open Pneumothorax):
+
+Treatment:
+1. Occlusive dressing (air/water tight)
+   - Commercial chest seal (best)
+   - Plastic wrap
+   - Vaseline gauze
+2. Tape on THREE sides only (flutter valve)
+3. Open side allows air OUT but not IN
+4. Monitor breathing
+
+FLAIL CHEST:
+
+Signs:
+- Paradoxical chest movement
+- Multiple rib fractures
+- Severe pain
+
+Treatment:
+- Pain management
+- Support breathing
+- Don't splint (old technique, causes pneumonia)
+- Evacuation urgent
+
+====================
+FRACTURES
+====================
+
+OPEN FRACTURE (Bone exposed):
+
+⚠️ High infection risk
+
+1. Stop bleeding (pressure, tourniquet if needed)
+2. DO NOT push bone back in
+3. Cover with sterile dressing (moist if possible)
+4. Splint in position found
+5. Antibiotics (if available)
+6. Evacuation urgent
+
+CLOSED FRACTURE:
+
+Signs:
+- Deformity
+- Swelling
+- Pain, inability to use
+- Crepitus (grinding feeling)
+
+Treatment:
+1. Check CSM (Circulation, Sensation, Motor)
+   - Pulse distal to injury
+   - Can patient feel touch?
+   - Can patient move digits?
+2. Splint in position of comfort
+3. Re-check CSM after splinting
+4. Immobilize joints above + below fracture
+5. Ice if available (20 min on, 20 off)
+6. Elevation
+
+Improvised Splints:
+- Boards, sticks, tent poles
+- Cardboard (folded for rigidity)
+- Rolled newspaper/magazine
+- Adjacent limb (buddy taping)
+
+FEMUR FRACTURE (Special):
+
+⚠️ Life-threatening (shock from blood loss)
+
+Traction splinting (ideal):
+- Kendrick, Hare, or improvised
+- Applies continuous pull
+- Reduces muscle spasm
+- Decreases internal bleeding
+
+Without traction splint:
+1. Stabilize as-is
+2. Board splints both sides
+3. Urgent evacuation
+4. IV fluids if available (shock)
+
+====================
+BURNS
+====================
+
+CLASSIFICATION:
+
+1st Degree (Superficial):
+- Red, painful
+- No blisters
+- Sunburn-like
+
+2nd Degree (Partial Thickness):
+- Blisters
+- Very painful
+- Red/white appearance
+
+3rd Degree (Full Thickness):
+- White/black/charred
+- PAINLESS (nerves destroyed)
+- Leathery appearance
+
+RULE OF NINES (% Body Surface):
+- Head: 9%
+- Each arm: 9%
+- Chest: 9%
+- Abdomen: 9%
+- Upper back: 9%
+- Lower back: 9%
+- Each leg front: 9%
+- Each leg back: 9%
+- Groin: 1%
+
+⚠️ >15% 2nd degree or >5% 3rd degree = CRITICAL
+
+TREATMENT:
+
+Immediate:
+1. Remove from heat source
+2. Remove clothing (if not stuck)
+3. Cool with water (NOT ice)
+   - 10-20 minutes
+   - Stop before hypothermia
+4. Remove jewelry (swelling coming)
+
+Dressing:
+1. Cover with sterile dressing
+2. Don't pop blisters (infection risk)
+3. Non-adherent dressing (Vaseline gauze)
+4. Loose wrapping
+
+DON'T:
+- Ice (tissue damage)
+- Butter, oils (traps heat)
+- Pop blisters
+- Tight dressings
+
+Fluid Resuscitation (severe burns):
+
+Parkland Formula:
+- 4ml × kg body weight × % burned
+- Half in first 8 hours
+- Half in next 16 hours
+- Example: 70kg person, 20% burned
+  * 4 × 70 × 20 = 5600ml total
+  * 2800ml first 8 hours
+  * 2800ml next 16 hours
+
+⚠️ IV access required (advanced)
+
+====================
+SHOCK
+====================
+
+TYPES:
+
+Hypovolemic (Blood/fluid loss):
+- Bleeding, dehydration
+- Most common traumatic
+
+Cardiogenic (Heart failure):
+- Heart attack
+- Heart can't pump
+
+Distributive (Blood vessel dilation):
+- Septic (infection)
+- Anaphylactic (allergic)
+- Neurogenic (spinal injury)
+
+SIGNS:
+- Pale, cool, clammy skin
+- Rapid weak pulse
+- Rapid shallow breathing
+- Anxiety, confusion
+- Decreased urine output
+
+TREATMENT:
+
+1. Treat cause:
+   - Bleeding = control
+   - Dehydration = fluids
+   - Allergic = epinephrine
+
+2. Position:
+   - Supine (flat on back)
+   - Legs elevated 12 inches
+   - Exception: Head injury (flat only)
+
+3. Maintain body temperature:
+   - Blankets
+   - Prevent heat loss
+
+4. Fluids:
+   - IV (Ringer's lactate, normal saline)
+   - OR oral if conscious (water, ORS)
+
+5. Monitor:
+   - Pulse
+   - Breathing
+   - Mental status
+   - Skin color/temp
+
+====================
+WOUND CARE
+====================
+
+CLEANING:
+
+1. Wash hands (soap, water, or sanitizer)
+2. Irrigate wound:
+   - Clean water (potable)
+   - Pressure (syringe, squeeze bottle)
+   - Large volume (1-2 liters)
+   - Flush debris out
+3. NO hydrogen peroxide (damages tissue)
+4. Betadine or chlorhexidine (if available)
+
+CLOSURE:
+
+Primary (Immediate):
+- Clean wounds <6 hours old
+- No signs infection
+- Methods: Sutures, staples, glue, tape
+
+Delayed:
+- Contaminated wounds
+- >6 hours old
+- Leave open, pack with gauze
+- Close after 3-5 days if no infection
+
+Suturing (if trained):
+1. Anesthetic (lidocaine if available)
+2. Needle driver, forceps, scissors
+3. Curved needle with suture
+4. Simple interrupted stitches
+5. 1-2mm from wound edge
+6. Tie square knots (not too tight)
+7. Space ~5mm apart
+
+Improvised Closure:
+- Duct tape strips (wound edges together)
+- Butterfly bandages
+- Superglue (dermabond = medical cyanoacrylate)
+- Hair (yes, actually works - tie across wound)
+
+DRESSING:
+
+1. Sterile gauze directly on wound
+2. More gauze for absorption
+3. Wrap with bandage (secure)
+4. Check daily for infection
+
+INFECTION SIGNS:
+- Redness spreading
+- Increased pain
+- Pus
+- Red streaks (lymphangitis)
+- Fever
+- Swelling
+
+Antibiotic (if available):
+- Amoxicillin-clavulanate (Augmentin)
+- Cephalexin (Keflex)
+- Doxycycline
+- OR veterinary equivalent (fish antibiotics)
+
+====================
+ANTIBIOTICS (Scavenged)
+====================
+
+VETERINARY ANTIBIOTICS:
+
+⚠️ Same as human, different packaging
+
+"Fish Mox" = Amoxicillin 250mg
+"Fish Mox Forte" = Amoxicillin 500mg
+"Fish Flex" = Cephalexin 250mg
+"Fish Flox" = Ciprofloxacin 250mg
+"Bird Biotic" = Doxycycline 100mg
+
+Dosing (Adult):
+- Amoxicillin: 500mg every 8 hours
+- Cephalexin: 500mg every 6 hours
+- Ciprofloxacin: 500mg every 12 hours
+- Doxycycline: 100mg every 12 hours
+
+Duration: 7-10 days (complete course!)
+
+⚠️ Allergies same as human antibiotics
+⚠️ Pregnant women: Avoid doxycycline, cipro
+
+SCAVENGING:
+
+- Pet stores (aquarium section)
+- Veterinary clinics
+- Farm supply stores
+- Online (pre-collapse)
+
+====================
+PAIN MANAGEMENT
+====================
+
+SCAVENGED MEDICATIONS:
+
+Mild-Moderate Pain:
+- Ibuprofen: 400-800mg every 6 hours
+- Acetaminophen: 500-1000mg every 6 hours
+- Aspirin: 325-650mg every 4-6 hours
+- Naproxen: 500mg every 12 hours
+
+Moderate-Severe:
+- Tramadol: 50-100mg every 6 hours
+- Codeine: 30-60mg every 4 hours
+- Hydrocodone: (if found - prescription)
+
+⚠️ Addiction risk with opioids
+⚠️ Don't combine multiple (liver damage)
+⚠️ Don't exceed max daily dose
+
+NATURAL (Less effective):
+- Willow bark (aspirin-like)
+- Alcohol (moderate amounts)
+- Cannabis (if legal/available)
+
+====================
+HYPOTHERMIA
+====================
+
+STAGES:
+
+Mild (32-35°C / 90-95°F):
+- Shivering
+- Confusion
+- Fumbling hands
+
+Moderate (28-32°C / 82-90°F):
+- Shivering stops
+- Severe confusion
+- Drowsiness
+
+Severe (<28°C / <82°F):
+- Unconscious
+- Weak pulse
+- Shallow breathing
+- Appears dead
+
+TREATMENT:
+
+Mild:
+1. Remove wet clothes
+2. Dry clothing, blankets
+3. Warm drinks (if conscious)
+4. Body heat (skin-to-skin)
+5. Activity (if able)
+
+Moderate/Severe:
+1. Handle GENTLY (rough = cardiac arrest)
+2. Horizontal position
+3. Insulate from ground
+4. Passive rewarming (blankets)
+5. NO hot water (causes shock)
+6. Monitor breathing/pulse
+7. CPR if needed (continue longer than normal - hours!)
+
+⚠️ "Not dead until warm and dead"
+⚠️ Successful resuscitation after hours possible
+
+====================
+HEAT STROKE
+====================
+
+SIGNS:
+- Core temp >40°C (104°F)
+- Confusion, aggression
+- NO sweating (skin dry)
+- Rapid pulse
+- Seizures possible
+
+TREATMENT (Urgent!):
+
+1. Move to shade
+2. Remove excess clothing
+3. Cool RAPIDLY:
+   - Water immersion (best)
+   - Wet towels + fan
+   - Ice packs (armpits, groin, neck)
+4. Monitor temp (stop at 38°C / 100.4°F)
+5. IV fluids (if able)
+6. Treat seizures (protect from injury)
+
+⚠️ Can cause death/permanent brain damage
+⚠️ Organ failure common
+
+====================
+DENTAL EMERGENCIES
+====================
+
+TOOTH ABSCESS:
+
+Signs:
+- Severe toothache
+- Swelling (face, gum)
+- Fever
+- Pus
+
+Treatment:
+1. Antibiotics (amoxicillin or clindamycin)
+2. Pain relief (ibuprofen + acetaminophen)
+3. Warm salt water rinses
+4. Drainage if pointing (sterile needle)
+
+⚠️ Can spread to brain (deadly)
+
+TOOTH EXTRACTION (Last resort):
+
+1. Anesthetic (lidocaine injection if available)
+2. Grasp tooth with forceps/pliers
+3. Rock back and forth (loosen)
+4. Pull straight out
+5. Gauze pressure (30 minutes)
+6. Antibiotics
+
+LOST FILLING:
+
+Temporary:
+- Dental cement (pharmacy)
+- OR sugar-free gum
+- Clove oil (pain relief)
+
+====================
+CHILDBIRTH (Emergency)
+====================
+
+If no medical help available:
+
+PREPARATION:
+1. Clean area
+2. Wash hands thoroughly
+3. Sterile gloves if possible
+4. Clean towels, blankets
+5. Bulb syringe (clear airway)
+6. Clamps/ties (umbilical cord)
+
+DELIVERY:
+1. Mother in comfortable position
+2. Support perineum (reduce tearing)
+3. Baby crowning = don't push yet (pant)
+4. Head delivers = check for cord around neck
+5. If cord around neck = slip over head
+6. Support head as shoulders deliver
+7. Baby will be slippery (careful)
+
+IMMEDIATE NEWBORN:
+1. Suction mouth, then nose
+2. Dry and stimulate (rub with towel)
+3. Should cry (clears lungs)
+4. Keep warm (skin-to-skin with mother)
+
+UMBILICAL CORD:
+1. Wait until stops pulsing (1-5 min)
+2. Clamp/tie in two places (6 inches apart)
+3. Cut between ties (sterile scissors/knife)
+4. Leave 2-3 inches attached to baby
+
+PLACENTA:
+1. Delivers 5-30 minutes after baby
+2. DON'T pull cord
+3. Wait for natural delivery
+4. Gentle traction only
+5. Massage uterus after (prevents bleeding)
+
+POST-DELIVERY BLEEDING:
+- Massage uterus (firm ball in abdomen)
+- Breastfeed (releases oxytocin)
+- If severe: Pack uterus with gauze
+⚠️ >500ml blood loss = dangerous
+
+====================
+LEGAL/ETHICAL
+====================
+
+Good Samaritan Laws:
+- Protect rescuers in emergencies
+- Vary by jurisdiction
+- Generally cover reasonable care
+- NOT gross negligence
+
+Consent:
+- Conscious patient = ask permission
+- Unconscious = implied consent (emergency)
+- Children = parent consent (if available)
+
+Scope of Practice:
+- Only do what you're trained for
+- Emergency = leeway
+- Document what you did
+
+Do No Harm:
+- First principle
+- Intervention must help > hurt
+- Sometimes best action = none
+
+⚠️ This information for EMERGENCY use only
+⚠️ Seek professional medical care when possible
+⚠️ Training highly recommended before attempting
+
+====================
+SOURCES
+====================
+
+- Emergency War Surgery (NATO Handbook)
+- Where There Is No Doctor (David Werner)
+- TCCC Guidelines (Tactical Combat Casualty Care)
+- NOLS Wilderness Medicine
+- US Army Field Manual 4-25.11
+- Red Cross First Aid Manual
+- Wilderness Medical Society Guidelines
+
+Compiled for educational archival purposes
+APOCALYPSE SURVIVAL DATABASE v3.0

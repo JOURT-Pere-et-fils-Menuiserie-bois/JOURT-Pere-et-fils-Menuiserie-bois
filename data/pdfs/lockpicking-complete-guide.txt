@@ -1,0 +1,785 @@
+COMPLETE LOCKPICKING GUIDE
+MIT Guide + Practical Lock Picking (Deviant Ollam)
+
+⚠️ LEGAL USE ONLY - Your locks or with permission
+
+====================
+TABLE OF CONTENTS
+====================
+
+1. LOCK MECHANISMS
+2. TOOLS & IMPROVISATION
+3. SINGLE PIN PICKING (SPP)
+4. RAKING TECHNIQUES
+5. BUMPING
+6. BYPASS METHODS
+7. ADVANCED TECHNIQUES
+8. LOCK TYPES
+9. PRACTICE PROGRESSION
+10. LEGAL ASPECTS
+
+====================
+1. LOCK MECHANISMS
+====================
+
+PIN TUMBLER LOCK (Most Common)
+
+Components:
+┌─────────────────────────┐
+│   |||   (Springs)       │
+│  [===]  Driver Pins     │
+│  [===]  Key Pins        │
+│ ═════   Shear Line      │
+│  |||    Plug/Cylinder   │
+└─────────────────────────┘
+
+How it works:
+1. Key pins rest in plug (cylinder)
+2. Driver pins pushed down by springs
+3. Without key: Pins cross shear line → Locked
+4. With correct key: All pins at shear line → Unlocked
+5. Plug can rotate → Cam moves bolt
+
+BINDING ORDER:
+- Locks have manufacturing tolerances
+- Plug slightly off-center in housing
+- Pins bind in specific order (not front-to-back)
+- First to bind = first to set
+
+Critical Concept: TENSION
+- Light rotational pressure on plug
+- Creates binding on one pin at a time
+- Too much = all pins bind (impossible)
+- Too little = pins don't stay set
+- Sweet spot = skill to learn
+
+====================
+2. TOOLS & IMPROVISATION
+====================
+
+PROFESSIONAL TOOLS:
+
+1. TENSION WRENCHES (Critical!)
+
+   TOK (Top of Keyway):
+   - L-shaped, fits top of keyway
+   - Better feedback
+   - More working room
+
+   BOK (Bottom of Keyway):
+   - Traditional, fits bottom
+   - Works on most locks
+   - Can obstruct pins
+
+2. PICKS
+
+   Hook (Primary tool):
+   - Short Hook: Most common, versatile
+   - Standard Hook: Deeper reach
+   - Deep Hook: Rear pins, long keyway
+
+   Half Diamond:
+   - Moderate raking
+   - Some SPP capability
+
+   Rake (Speed picking):
+   - Bogota: Triple peak, very effective
+   - Snake/S-Rake: Wavy profile
+   - C-Rake: Circular motion
+   - City Rake: Varied height peaks
+
+3. SPECIALTY TOOLS
+
+   - Broken Key Extractor
+   - Double-ended picks
+   - Warded lock picks
+   - Decoder picks
+   - Bypass tools
+
+IMPROVISED TOOLS:
+
+Bobby Pins/Hair Clips:
+1. Remove rubber tips
+2. Bend one into L-shape (tension wrench)
+3. Second: straighten, slight bend at tip (pick)
+4. File/sand rough edges
+
+Paper Clips:
+- Large clips work better
+- Bend into L for tension
+- Straighten + small hook for pick
+- Less effective than bobby pins
+
+Street Sweeper Bristles:
+- Perfect spring steel
+- Heat and bend to shape
+- Excellent improvised picks
+
+Windshield Wiper Inserts:
+- Spring steel strips
+- Cut and shape
+- Good TOK tensioners
+
+Soda Can Aluminum:
+- Shim for padlocks/latch bypass
+- Too soft for picks
+- Good for practice templates
+
+Credit Cards (for shimming):
+- Not for picking, but bypass
+- Slip latch locks
+- Expired cards only!
+
+====================
+3. SINGLE PIN PICKING (SPP)
+====================
+
+TECHNIQUE (Most reliable, works on all):
+
+STEP 1: RECONNAISSANCE
+- Insert pick fully, feel each pin
+- Count pins (typically 5-6)
+- Note which feel different
+- Identify warding (obstructions)
+
+STEP 2: TENSION APPLICATION
+- Insert wrench (TOK or BOK)
+- Apply VERY light tension
+- Direction: Usually clockwise (US)
+- Test both directions if unsure
+
+STEP 3: FINDING BINDING PIN
+- Insert pick to rear pin
+- Gently test each pin (back to front)
+- Binding pin = most resistance
+- Others = springy, easy to push
+
+STEP 4: SETTING THE PIN
+- Lift binding pin slowly
+- Listen/feel for subtle CLICK
+- Pin sets at shear line
+- Counter-rotation might occur (advanced)
+
+STEP 5: REPEAT
+- Maintain tension throughout
+- New pin becomes binding
+- Set each in order
+- Last pin = plug rotates (OPEN!)
+
+COMMON ISSUES:
+
+Oversetting:
+- Pin pushed too far
+- Driver pin enters plug
+- Creates false set
+- Solution: Reduce tension, reset
+
+False Sets:
+- Some pins set, plug rotates slightly
+- Feels like opening but still locked
+- Security pins cause this (see Advanced)
+- Continue picking remaining pins
+
+Lock Won't Open After All Set:
+- One or more pins overset
+- Release tension slightly
+- Pins may drop back
+- Re-pick from beginning
+
+No Pins Binding:
+- Tension too light (increase slightly)
+- Or too heavy (reduce)
+- Lock already picked (check)
+
+FEEDBACK TYPES:
+
+Tactile:
+- Feel click through pick
+- Pin resistance changes
+- Counter-rotation (spool pins)
+- Most reliable sense
+
+Auditory:
+- Subtle click sound
+- Pin setting
+- Quiet environment needed
+
+Visual:
+- Clear/practice locks
+- See pin movement
+- Training only
+
+====================
+4. RAKING TECHNIQUES
+====================
+
+CONCEPT:
+- Rapid back-and-forth motion
+- Bumps multiple pins simultaneously
+- Relies on luck + physics
+- Fast but less reliable than SPP
+
+BASIC RAKING:
+
+1. Insert rake fully into lock
+2. Apply moderate constant tension
+3. Quickly scrub in/out
+4. Vary vertical pressure
+5. Try rotating plug during rake
+6. 10-15 seconds max, then try SPP
+
+ZIPPING:
+1. Insert pick completely
+2. Quick removal while lifting
+3. "Zip" out under spring tension
+4. Hope pins bounce to shear line
+5. Very fast, low success rate
+
+ROCKING:
+1. Rake inserted partially
+2. Rock up and down
+3. Slight in/out movement
+4. Good for wafer locks
+5. Moderate tension
+
+EFFECTIVENESS:
+- Master Lock #3: 90% (beginner friendly)
+- Basic padlocks: 70%
+- Standard house locks: 40%
+- Security pins: 10%
+- High-security: 0% (must SPP)
+
+WHEN TO RAKE:
+✓ Low security locks
+✓ Time pressure
+✓ Many locks to open
+✓ Learning/practice
+✗ High security
+✗ Security pins present
+✗ Precision required
+
+====================
+5. BUMPING
+====================
+
+BUMP KEY METHOD:
+
+Requirements:
+- Blank key matching lock brand/keyway
+- File to cut all depths to maximum
+- Shoulder intact for alignment
+- Small hammer/screwdriver
+
+Creating Bump Key:
+1. Obtain key blank (correct profile)
+2. File all teeth to maximum depth (typically #9)
+3. Leave ~2mm between cuts
+4. File slight angle on teeth (optional)
+5. Round edges slightly
+
+Bumping Technique:
+1. Insert bump key (not fully)
+2. Pull back one click (critical!)
+3. Apply light rotation pressure
+4. Sharp tap on key bow
+5. Turn simultaneously with tap
+6. Repeat if necessary
+
+Physics:
+- Tap transfers kinetic energy
+- Key pins jump up
+- Driver pins continue upward (inertia)
+- Brief moment: shear line clear
+- Turn plug during this instant
+
+Success Rate:
+- Standard locks: 80-90%
+- First attempt: ~30%
+- With practice: ~70%
+- Time: 5-30 seconds typically
+
+BUMP HAMMER:
+- Plastic/rubber preferred
+- Weight: 50-100g optimal
+- Too heavy = damage lock
+- Screwdriver handle works
+
+COUNTERMEASURES (Defense):
+- Anti-bump pins (flat tops)
+- Side pins
+- Different pin materials
+- Bump-resistant locks (Medeco, Assa Abloy)
+
+ADVANTAGES:
+✓ Very fast
+✓ Minimal skill required
+✓ Works on most pin tumblers
+✓ One key opens many locks (same brand)
+
+DISADVANTAGES:
+✗ Leaves evidence (marks inside lock)
+✗ Can damage lock permanently
+✗ Noisy (tap sound)
+✗ Illegal in some jurisdictions to possess
+✗ Doesn't work on high-security
+
+====================
+6. BYPASS METHODS
+====================
+
+Not "picking" but opening without key:
+
+LATCH SLIPPING (Credit Card Method):
+
+Target: Spring latch without deadbolt
+1. Insert card between door and frame
+2. Angle toward latch
+3. Push while pressuring handle
+4. Latch compresses, door opens
+
+Works on:
+- Interior doors (bathroom, bedroom)
+- Old exterior doors (poor installation)
+- Cheap apartment locks
+
+Doesn't work on:
+- Deadbolts
+- Latch guards installed
+- Metal frame (no gap)
+
+Best Tools:
+- X-ray film (flexible + stiff)
+- Plastic ID card (expired!)
+- Plastic ruler
+- Purpose-made shims
+
+PADLOCK SHIMMING:
+
+Target: Padlocks with spring-loaded shackle
+
+Shim Creation:
+- Aluminum can metal
+- Cut thin strip (~5mm x 50mm)
+- Fold lengthwise (double thickness)
+- Round one end
+
+Technique:
+1. Insert shim between shackle and body
+2. Push toward locking mechanism
+3. Compresses spring ball bearing
+4. Shackle releases
+5. Works on both sides simultaneously
+
+Success: 60% basic padlocks
+
+TUBULAR LOCK BYPASS:
+
+Tool: Ballpoint pen (Bic brand often works)
+
+Method (Kryptonite Lock Hack):
+1. Force pen into lock
+2. Twist forcefully
+3. Lock mechanism breaks/disengages
+4. Destructive method
+
+Better: Tubular lock pick (actual tool)
+
+WAFER LOCK BYPASS:
+
+Tool: Jiggler keys (tryout keys)
+
+- Set of varied wafer patterns
+- Insert and jiggle
+- One usually fits close enough
+- Common on filing cabinets, older cars
+
+DECODER BYPASS:
+
+- Reads lock combination without opening
+- Works on some combination locks
+- Feel/sound technique
+- Master Lock vulnerable:
+  1. Pull shackle taut
+  2. Rotate dial slowly
+  3. Feel resistance points (sticky spots)
+  4. Decode combination from pattern
+
+IMPRESSIONING:
+
+Creates working key without original:
+
+1. Insert blank key
+2. Apply rotation pressure
+3. Wiggle up and down
+4. Marks appear on key (binding points)
+5. File marked areas slightly
+6. Repeat until key works
+
+Time: 15min - 2 hours
+Skill: Advanced
+Leaves NO evidence
+
+====================
+7. ADVANCED TECHNIQUES
+====================
+
+SECURITY PINS:
+
+Spool Pins:
+- Narrow section in middle
+- Creates false set
+- Counter-rotation when binding
+- Solution: Reduce tension, continue picking
+
+Mushroom Pins:
+- Flared top
+- Similar to spool
+- False sets common
+
+Serrated Pins:
+- Multiple clicks when setting
+- Each serration = small click
+- Lift through all serrations
+
+COUNTER-ROTATION:
+- Pin sets, plug rotates backwards slightly
+- Indicates spool/mushroom pin
+- Means you're making progress!
+- Reduce tension, find next binding pin
+
+SIDEBAR LOCKS:
+
+Examples: Medeco, Assa, IKON
+
+Extra security:
+- Pins must lift AND rotate to correct angle
+- Side bar drops into slots when aligned
+- Requires specialized picking
+- Very difficult (advanced only)
+
+Tools needed:
+- Medeco picks (angled tip)
+- OR improvise with modified picks
+- Much more time required
+
+DISC DETAINER LOCKS:
+
+Examples: Abloy, Abus Plus
+
+Mechanism:
+- Rotating discs instead of pins
+- Each disc has groove
+- Sidebar aligns with grooves
+
+Picking:
+- Specialized disc detainer pick required
+- Rotate each disc to proper position
+- Feel for sidebar engagement
+- Very difficult, expensive tools
+
+DIMPLE LOCKS:
+
+Key: Dimples instead of cuts
+Pins: Multiple directions (not just vertical)
+
+Picking:
+- Requires multipick or special picks
+- Pick pins from multiple angles
+- 2-3x longer than standard
+- Medium difficulty
+
+====================
+8. LOCK TYPES BY DIFFICULTY
+====================
+
+★☆☆☆☆ BEGINNER (Practice):
+- Master Lock #3 padlock
+- Transparent practice locks
+- Basic cable locks
+- Cheap padlocks (<$10)
+
+Time: 30 seconds - 5 minutes
+Success: 80%+ with practice
+
+★★☆☆☆ EASY:
+- Kwikset (residential)
+- Schlage (basic models)
+- Weiser
+- Most apartment locks
+- Filing cabinets
+
+Time: 2-10 minutes
+Success: 60%+
+
+★★★☆☆ INTERMEDIATE:
+- American Lock padlocks
+- Abus (basic models)
+- Yale (standard)
+- Schlage (security pins)
+- Most commercial locks
+
+Time: 5-20 minutes
+Success: 40%
+
+★★★★☆ ADVANCED:
+- Mul-T-Lock
+- Medeco (some models)
+- Assa Abloy
+- High-security padlocks
+- Medeco Biaxial
+
+Time: 15min - 2 hours
+Success: 20% (experienced)
+
+★★★★★ EXPERT:
+- Medeco M3/M4
+- Assa Twin
+- Abloy Protec/Protec2
+- BiLock
+- Evva MCS
+
+Time: 30min - Never
+Success: <5%
+Often unpickable (current technology)
+
+====================
+9. PRACTICE PROGRESSION
+====================
+
+WEEK 1-2: Basics
+Locks:
+- Master Lock #3
+- Transparent practice lock
+- 2-3 pin practice lock
+
+Focus:
+- Tension control
+- Finding binding pin
+- Setting pins
+- Raking basics
+
+Goal: Open Master #3 in <2 minutes
+
+WEEK 3-4: Skill Building
+Locks:
+- Master Lock LOTO series
+- Basic Kwikset
+- 5-pin standard lock
+
+Focus:
+- Consistent SPP
+- Light tension mastery
+- Feedback recognition
+- Speed improvement
+
+Goal: 5-pin lock in <5 minutes
+
+MONTH 2-3: Intermediate
+Locks:
+- American Lock 1100
+- Abus 55/40
+- Schlage Classic
+
+Focus:
+- Security pins
+- False sets
+- Counter-rotation
+- Various keyways
+
+Goal: Security pin lock in <10 minutes
+
+MONTH 4-6: Advanced
+Locks:
+- Medeco Original
+- Mul-T-Lock Classic
+- Master Lock 570/410 LOTO
+
+Focus:
+- Sidebar locks
+- Complex keyways
+- Advanced feedback
+- Consistency
+
+Goal: Advanced lock occasionally
+
+YEAR 1+: Expert
+Locks:
+- Medeco Biaxial/M3
+- Assa Twin
+- BiLock
+- Abloy
+
+Focus:
+- Specialized techniques
+- Patience
+- Advanced tools
+- Rare success!
+
+PRACTICE TIPS:
+
+1. Daily Practice:
+   - 15-30 minutes minimum
+   - Multiple attempts on same lock
+   - Note what works
+
+2. Reset Skills:
+   - Return to easy locks periodically
+   - Maintain fundamentals
+   - Build confidence
+
+3. Understand Failures:
+   - Why didn't it open?
+   - Oversetting? Wrong binding pin?
+   - Learn from each attempt
+
+4. Multiple Locks:
+   - Each lock is different
+   - Variety builds adaptability
+   - Same model = different tolerances
+
+5. Document Progress:
+   - Log times
+   - Note techniques
+   - Track improvement
+
+====================
+10. LEGAL ASPECTS
+====================
+
+UNITED STATES:
+
+Possession:
+- ILLEGAL (without locksmith license):
+  * Mississippi
+  * Nevada
+  * Ohio
+  * Virginia (in public)
+
+- LEGAL (most states) BUT:
+  * Intent matters
+  * "Going equipped" laws
+  * Possession during crime = additional charges
+
+- LEGAL (all states):
+  * Locksmith with license
+  * Own property
+  * With permission
+  * Sport/hobby (demonstrable)
+
+Usage:
+- Picking lock you don't own = Burglary tools charge
+- Even if door not opened = "Attempted" charge
+- Federal buildings = Federal crime (10 years)
+
+FRANCE:
+
+Possession: LEGAL
+Usage: ILLEGAL without authorization
+- "Effraction" (breaking and entering)
+- 3 years + 45,000€ fine
+- Tool possession during crime = aggravating factor
+
+Exception:
+- Serrurier professionnel (licensed locksmith)
+- Own property (prove ownership)
+- Emergency services
+
+UK:
+
+Possession in public: ILLEGAL without "good reason"
+- "Going equipped for theft" (Theft Act 1968)
+- Up to 3 years imprisonment
+
+Legal:
+- At home (for hobby)
+- Locksmith
+- Security professional
+
+CANADA:
+
+Section 351 Criminal Code:
+- "Possession of break-in instruments"
+- ILLEGAL to possess for criminal purpose
+- Burden of proof on crown
+
+Legal:
+- Legitimate locksmith
+- Own locks
+- Security research (demonstrable)
+
+GERMANY:
+
+§ 244 StGB (Burglary):
+- Tools possession if "zur Einbruch vorbereitet"
+- Illegal if preparing burglary
+
+Legal:
+- Locksmith trade
+- Hobby (prove no criminal intent)
+
+INTERNATIONAL TRAVEL:
+
+⚠️ DO NOT carry picks across borders
+- Customs can seize
+- Intent impossible to prove
+- Risk criminal charges
+- Many countries = presumption of guilt
+
+LEGITIMATE USES:
+
+✓ Sport Lockpicking:
+- Competitions exist
+- LockCon, DEF CON contests
+- TOOOL groups (Netherlands, global)
+
+✓ Professional:
+- Licensed locksmith
+- Security consultant
+- Pentester (with authorization)
+- Law enforcement
+
+✓ Personal:
+- Own locks ONLY
+- Learning/education
+- Security awareness
+- Emergency backup (locked out)
+
+✗ NEVER:
+- Someone else's property
+- Without explicit permission
+- "Testing" random locks
+- Any criminal purpose
+
+DISCLAIMER:
+
+This document is for:
+- Education only
+- Theoretical knowledge
+- Legal lockpicking sport
+- Emergency preparedness (your property)
+
+Illegal use is:
+- YOUR responsibility
+- Criminally prosecuted
+- Morally wrong
+- Not endorsed by this document
+
+⚠️ Respect laws and property rights
+⚖️ Check local regulations before practice
+🔐 Only pick locks you own or have written permission for
+
+====================
+SOURCES
+====================
+
+- MIT Guide to Lock Picking (Ted the Tool)
+- Practical Lock Picking (Deviant Ollam)
+- The Complete Book of Locks and Locksmithing (Bill Phillips)
+- Lock Picking: Detail Overkill (Solomon)
+- LockPickingLawyer (YouTube educational content)
+- TOOOL (The Open Organisation Of Lockpickers)
+- Schuyler Towne (lockpicking historian)
+- Various locksmith technical manuals
+
+Compiled for educational archival purposes
+APOCALYPSE SURVIVAL DATABASE v3.0

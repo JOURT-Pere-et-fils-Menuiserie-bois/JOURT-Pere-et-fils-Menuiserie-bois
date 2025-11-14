@@ -1,0 +1,542 @@
+SURVIVAL CHEMISTRY & COMPOUND SYNTHESIS
+Practical Applications for Off-Grid Situations
+
+⚠️ EDUCATIONAL AND EMERGENCY USE ONLY
+
+====================
+ESSENTIAL COMPOUNDS
+====================
+
+1. SOAP (Saponification)
+2. ALCOHOL (Fermentation & Distillation)
+3. ACIDS & BASES
+4. DISINFECTANTS
+5. PRESERVATIVES
+6. EXPLOSIVES (See separate document)
+7. MEDICATIONS
+8. FUELS
+
+====================
+1. SOAP PRODUCTION
+====================
+
+COLD PROCESS METHOD:
+
+Ingredients:
+- Fat/Oil (animal fat, vegetable oil)
+- Lye (Sodium Hydroxide - NaOH)
+- Water
+
+LYE CREATION (From wood ash):
+
+1. COLLECT HARDWOOD ASH
+   - Oak, hickory, maple (best)
+   - Pine, softwoods (less effective)
+   - Burn completely (white ash)
+   - Collect ~10 cups ash
+
+2. LEACH POTASH
+   - Container with small holes in bottom
+   - Fill with straw/grass (filter)
+   - Add wood ash
+   - Pour water through (1:1 ratio)
+   - Collect brown liquid = lye solution
+
+3. CONCENTRATION
+   - Boil lye solution
+   - Reduce volume by half
+   - Test: Float fresh egg
+   - Should float = ready
+   - Too weak = boil more
+
+SOAP MAKING:
+
+Traditional Method:
+1. Heat fat/oil (40-50°C)
+2. Slowly add lye solution
+3. Stir continuously (30-60 min)
+4. "Trace" appears (pudding-like)
+5. Pour into molds
+6. Cure 4-6 weeks
+
+⚠️ LYE IS CAUSTIC:
+- Severe burns on contact
+- Wear protection (gloves, goggles)
+- Vinegar neutralizes lye burns
+- NEVER add water to lye (explosive boil)
+- Always add lye to water
+
+Soap Calculator:
+- Different fats need different lye amounts
+- Beef tallow: SAP value 0.140
+- Olive oil: SAP value 0.134
+- Coconut oil: SAP value 0.178
+
+Formula: (Fat weight × SAP value) × 0.95 = NaOH needed
+
+LIQUID SOAP (Potassium Hydroxide):
+- Wood ash lye = KOH (potassium)
+- Creates liquid/gel soap
+- Easier than NaOH process
+- Dilute with water after cooking
+
+====================
+2. ALCOHOL PRODUCTION
+====================
+
+ETHANOL (Drinking/Disinfectant/Fuel):
+
+FERMENTATION:
+
+Requirements:
+- Sugar source (fruit, grain, honey)
+- Yeast (commercial or wild)
+- Water
+- Anaerobic environment
+
+Simple Mash:
+1. Sugar/grain + water (1:4 ratio)
+2. Heat to 65°C (starch conversion if grain)
+3. Cool to 20-25°C
+4. Add yeast
+5. Seal container (airlock ideal)
+6. Ferment 7-14 days
+7. Bubbling stops = ready
+
+Sugar Sources:
+- Table sugar (easiest)
+- Honey
+- Fruit juice
+- Grain (requires mashing)
+- Potatoes (starch → sugar conversion)
+
+Wild Yeast:
+- Grape skins (white film = yeast)
+- Apple skins
+- 50/50 success (can spoil instead)
+- Commercial yeast more reliable
+
+DISTILLATION:
+
+⚠️ ILLEGAL in many countries without license
+
+Simple Still:
+1. Heat source (fire, electric)
+2. Pot (fermented mash)
+3. Collection tube/coil (condenser)
+4. Cooling method (water jacket)
+5. Collection container
+
+Process:
+1. Heat mash to 78.4°C (ethanol boiling point)
+2. Vapor rises through tube
+3. Condenser cools vapor → liquid
+4. Collect distillate
+
+FRACTIONS:
+- First 50ml (per 5L mash) = METHANOL (POISON!)
+- Discard foreshots (heads)
+- Collect "hearts" (ethanol)
+- Stop when temp >90°C (tails)
+
+Purity:
+- First distillation: 40-60% alcohol
+- Second distillation: 80-90%
+- Third: 90-95%
+- Azeotrope limit: 95.6% (water/ethanol inseparable)
+
+SAFETY:
+🔥 HIGHLY FLAMMABLE (vapor + heat = explosion)
+☠️ Methanol = BLINDNESS/DEATH
+⚚ Distill outside or well-ventilated
+🧪 Never sealed system (pressure explosion)
+
+Uses:
+- Disinfection (70% most effective)
+- Drinking (diluted, no methanol)
+- Fuel (stoves, lamps)
+- Solvent
+- Trade/barter
+
+====================
+3. ACIDS & BASES
+====================
+
+ACETIC ACID (Vinegar):
+
+Fermentation Method:
+1. Ethanol solution (wine, cider, beer)
+2. Acetobacter bacteria (mother of vinegar)
+3. Aerobic environment (oxygen needed)
+4. 1-3 months fermentation
+5. Result: 4-8% acetic acid
+
+Uses:
+- Food preservation (pickling)
+- Cleaning
+- pH adjustment
+- Weak acid reactions
+
+CITRIC ACID:
+
+Source: Lemons, limes (6-8% citric acid)
+1. Juice citrus fruits
+2. Strain pulp
+3. Use directly or dry
+4. Crystallization (evaporate, cool)
+
+Uses:
+- Preservative
+- Flavor
+- Cleaning (descaling)
+- Chelating agent
+
+SULFURIC ACID (Advanced):
+
+⚠️ EXTREMELY DANGEROUS
+
+Old Battery Method (Dilute H2SO4):
+- Car battery electrolyte = ~30% H2SO4
+- Drain battery (CAREFULLY)
+- Use dilute for reactions
+- NEVER concentrate (explosive)
+
+Lead Chamber Process (Industrial):
+- SO2 (burn sulfur) + NO2 + H2O
+- Too dangerous/complex for field
+
+HYDROCHLORIC ACID:
+
+Salt + Sulfuric Acid Method:
+- NaCl + H2SO4 → HCl (gas) + NaHSO4
+- Bubble HCl through water
+- Dangerous (corrosive gas)
+
+Uses:
+- pH control
+- Cleaning (muriatic acid)
+- Chemical synthesis
+
+SODIUM HYDROXIDE (Lye):
+
+See soap section above (wood ash leaching)
+
+Commercial:
+- Drain cleaner (pure NaOH)
+- Very caustic
+
+Uses:
+- Soap making
+- Biodiesel production
+- pH adjustment
+- Dissolving proteins/fats
+
+CALCIUM HYDROXIDE (Slaked Lime):
+
+Production:
+1. Burn limestone/seashells (CaCO3)
+2. → Quicklime (CaO) + CO2
+3. Add water (exothermic!)
+4. → Ca(OH)2 (slaked lime)
+
+Uses:
+- Mortar/cement
+- Tanning leather
+- Nixtamalization (corn → hominy)
+- Disinfectant (whitewash)
+
+====================
+4. DISINFECTANTS
+====================
+
+BLEACH (Sodium Hypochlorite):
+
+Pool Shock Method:
+- Calcium hypochlorite (pool chemical)
+- More stable than liquid bleach
+- 1 tsp per gallon water = disinfectant
+- 1/4 tsp per gallon = drinking water
+
+DIY (Electrolysis):
+- Salt water + electricity
+- Produces NaClO + H2 gas
+- Dangerous (chlorine gas, hydrogen)
+- Requires knowledge
+
+IODINE:
+
+Sources:
+- Betadine (povidone-iodine)
+- Tincture of iodine (alcohol solution)
+- Kelp/seaweed (extraction complex)
+
+Water Purification:
+- 5 drops per liter
+- Wait 30 minutes
+- Taste improvement: Vitamin C after
+
+HYDROGEN PEROXIDE:
+
+Concentration:
+- 3% (pharmacy) - Wound cleaning
+- 6% (salon) - Hair bleaching
+- 35% (industrial) - DANGEROUS
+
+Stability:
+- Decomposes to water + oxygen
+- Store cool, dark
+- Brown bottle preferred
+
+Uses:
+- Wound disinfection
+- Surface sterilization
+- Bleaching
+- Oxidizer (rocket fuel if concentrated!)
+
+ALCOHOL:
+
+See ethanol section
+- 70% most effective (not 100%)
+- Evaporates (not residual)
+- Flammable
+
+====================
+5. PRESERVATIVES
+====================
+
+SALT:
+
+Dry Curing:
+- Cover meat completely
+- 3-4 weeks
+- Removes moisture
+- Prevents bacterial growth
+
+Brining:
+- 20-25% salt solution
+- Submerge meat
+- Weight to keep under
+- 1-3 weeks
+
+SUGAR:
+
+Preservation:
+- High concentration (jams, jellies)
+- >50% sugar prevents bacteria
+- Osmotic pressure
+
+VINEGAR:
+
+Pickling:
+- 5% acetic acid minimum
+- Boil vegetables in vinegar
+- Seal in jars
+- Lasts years
+
+SMOKING:
+
+Compounds:
+- Phenols (antibacterial)
+- Formaldehyde (preservative)
+- Drying effect
+
+Cold Smoke: 20-30°C (preserves, doesn't cook)
+Hot Smoke: 60-80°C (cooks + preserves)
+
+NITRITES/NITRATES:
+
+Sources:
+- Saltpeter (KNO3)
+- Celery (natural nitrates)
+
+Curing:
+- Pink salt (#1 or #2)
+- Prevents botulism
+- Creates cured flavor/color
+
+⚠️ Excess nitrites = toxic
+⚠️ Follow recipes precisely
+
+====================
+6. MEDICATIONS (Natural)
+====================
+
+ASPIRIN (Salicylic Acid):
+
+Willow Bark Method:
+1. Harvest willow bark (spring best)
+2. Dry completely
+3. Powder finely
+4. Boil in water (tea)
+5. Contains salicin → salicylic acid in body
+
+Dosage: 1-2 tsp bark powder per dose
+Effects: Pain relief, anti-inflammatory, fever reduction
+
+QUININE (Antimalarial):
+
+Source: Cinchona bark
+- Grows in specific regions (South America, Indonesia)
+- Boil bark in water
+- Bitter tea
+- Treats malaria
+
+⚠️ Difficult to dose precisely
+⚠️ Can cause cinchonism (overdose)
+
+ANTIBIOTICS:
+
+Penicillin (Mold):
+- Penicillium mold (bread, citrus)
+- Growing is easy, purification nearly impossible
+- NOT recommended (impure = dangerous)
+
+Natural Antibacterials:
+- Honey (wound dressing)
+- Garlic (allicin)
+- Tea tree oil (topical)
+- Colloidal silver (debated efficacy)
+
+⚠️ NOT substitutes for real antibiotics
+⚠️ Use fish/vet antibiotics if needed
+
+ANESTHETICS:
+
+Alcohol:
+- Crude but effective (high doses)
+- Not surgical anesthesia
+- Pain dulling only
+
+Opium Poppy:
+- Papaver somniferum
+- Latex contains morphine/codeine
+- Score seed pod, collect latex
+- HIGHLY ADDICTIVE
+- Illegal most places
+
+⚠️ Overdose = respiratory arrest
+⚠️ Legal issues severe
+
+====================
+7. FUELS
+====================
+
+BIODIESEL:
+
+Transesterification:
+1. Vegetable oil/animal fat
+2. Methanol (wood alcohol)
+3. Lye (NaOH or KOH catalyst)
+
+Process:
+1. Heat oil (50-60°C)
+2. Mix methanol + lye (25% oil volume methanol)
+3. Add to oil, mix 1 hour
+4. Separate layers (biodiesel top, glycerin bottom)
+5. Wash biodiesel (water)
+6. Dry completely
+
+Ratio: 100L oil + 20L methanol + 400g lye → ~100L biodiesel
+
+⚠️ Methanol highly toxic
+⚠️ Process produces flammable vapors
+
+METHANOL (Wood Alcohol):
+
+Destructive Distillation:
+1. Heat wood without oxygen (retort)
+2. Vapor condenses
+3. Separate fractions
+4. Toxic but useful (fuel)
+
+⚠️ NEVER DRINK (blindness/death)
+
+CHARCOAL:
+
+Production:
+1. Burn wood in low-oxygen environment
+2. Dirt mound method (cover burning wood)
+3. OR metal barrel with vent hole
+4. Cook until smoke stops
+5. Cool completely
+
+Uses:
+- Fuel (cooking, heating)
+- Filtration (activated charcoal)
+- Blackpowder component
+- Drawing/marking
+
+====================
+8. GUNPOWDER/PROPELLANTS
+====================
+
+See explosives document for details
+
+====================
+SAFETY PRECAUTIONS
+====================
+
+GENERAL:
+- Ventilation critical (toxic vapors)
+- Eye protection always
+- Gloves for caustics
+- Fire extinguisher nearby
+- First aid kit accessible
+
+LABELING:
+- Mark ALL containers
+- Date created
+- Contents
+- Concentration
+- Warnings
+
+STORAGE:
+- Cool, dark, dry
+- Separate incompatibles
+- Acids away from bases
+- Oxidizers away from fuels
+
+DISPOSAL:
+- Neutralize before discarding
+- Acid + base = neutral salt + water
+- Dilute and dispose (small amounts)
+- Never down drain (large amounts)
+
+TESTING:
+- Small batches first
+- Test before scaling up
+- Document what works
+
+====================
+LEGAL WARNINGS
+====================
+
+⚖️ Many compounds restricted/illegal
+⚖️ Distillation = permit required (most countries)
+⚖️ Drug precursors = DEA watch list (USA)
+⚖️ Explosives = federal crime if unlicensed
+
+This information:
+- Educational purposes
+- Post-apocalyptic scenarios
+- Legitimate chemistry knowledge
+
+NOT for:
+- Illegal drug production
+- Unlicensed explosives
+- Harm to others
+- Illegal distillation
+
+====================
+SOURCES
+====================
+
+- The Chemistry of Powder and Explosives (Tenney Davis)
+- Henley's Formulas for Home and Workshop
+- Caveman Chemistry (Kevin Dunn)
+- The Anarchist Cookbook (chemistry sections)
+- US Army Improvised Munitions Handbook
+- Various chemistry textbooks
+
+Compiled for educational archival purposes
+APOCALYPSE SURVIVAL DATABASE v3.0
