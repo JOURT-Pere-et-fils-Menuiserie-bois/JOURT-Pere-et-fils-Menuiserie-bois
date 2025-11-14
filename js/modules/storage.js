@@ -90,7 +90,17 @@ const StorageManager = (function() {
             });
 
             if (!response.ok) {
-                throw new Error(`Upload error! status: ${response.status}`);
+                // Essayer de lire le message d'erreur du serveur
+                let errorMessage = `HTTP ${response.status}`;
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.error || errorMessage;
+                } catch (e) {
+                    const errorText = await response.text();
+                    errorMessage = errorText || errorMessage;
+                }
+                console.error('Upload error details:', errorMessage);
+                throw new Error(`Upload error: ${errorMessage}`);
             }
 
             return await response.json();

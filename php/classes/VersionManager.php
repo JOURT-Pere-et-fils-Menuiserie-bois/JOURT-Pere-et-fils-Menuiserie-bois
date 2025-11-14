@@ -30,11 +30,11 @@ class VersionManager {
             'version_id' => $versionId,
             'version_number' => $versionNumber,
             'version_label' => $data['version_label'] ?? $versionId,
-            'file_path' => $data['file_path'],
-            'file_name' => $data['file_name'],
-            'file_hash' => $data['file_hash'],
-            'file_size' => $data['file_size'],
-            'mime_type' => $data['mime_type'],
+            'file_path' => $data['file_path'] ?? null,
+            'file_name' => $data['file_name'] ?? null,
+            'file_hash' => $data['file_hash'] ?? null,
+            'file_size' => $data['file_size'] ?? 0,
+            'mime_type' => $data['mime_type'] ?? null,
             'scale_factor' => null,
             'origin_x' => 0,
             'origin_y' => 0,
@@ -92,7 +92,7 @@ class VersionManager {
     }
 
     /**
-     * Mettre à jour une version (ex: échelle)
+     * Mettre à jour une version (ex: échelle, file_path)
      */
     public function update($projectId, $versionId, $data) {
         $versionsFile = SAVES_PATH . '/' . $projectId . '/versions/versions.json';
@@ -100,12 +100,14 @@ class VersionManager {
 
         foreach ($versions as &$version) {
             if ($version['version_id'] === $versionId) {
-                // Mettre à jour les champs
-                foreach (['scale_factor', 'origin_x', 'origin_y', 'rotation_degrees'] as $field) {
+                // Mettre à jour les champs autorisés
+                $allowedFields = ['scale_factor', 'origin_x', 'origin_y', 'rotation_degrees', 'file_path', 'version_label', 'status'];
+                foreach ($allowedFields as $field) {
                     if (isset($data[$field])) {
                         $version[$field] = $data[$field];
                     }
                 }
+                $version['updated_at'] = FlatFileDB::now();
                 break;
             }
         }
