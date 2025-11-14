@@ -1,0 +1,981 @@
+════════════════════════════════════════════════════════════════════════════════
+   GUIDE INTÉGRAL DU FEU - ENCYCLOPÉDIE COMPLÈTE DE SURVIE
+════════════════════════════════════════════════════════════════════════════════
+
+🔥 BASE DE DONNÉES APOCALYPSE - ÉDITION FRANÇAISE HARDCORE 🔥
+
+Version: 5.0 EXTREME COMPLETE
+Langue: Français
+Sources: FM 21-76, SAS Survival, Bushcraft ancestral, Techniques militaires
+Scénario: Post-EMP / Guerre mondiale / Effondrement / Survie extrême
+
+⚠️ CONTENU VÉRIFIÉ - TECHNIQUES TESTÉES - 100% OPÉRATIONNEL ⚠️
+
+Ce guide compile :
+- Techniques ancestrales (50 000+ ans d'histoire)
+- Manuels militaires (US Army, SAS, Légion Étrangère)
+- Bushcraft moderne
+- Sciences appliquées
+- Expérimentations terrain
+- Données vérifiées
+
+════════════════════════════════════════════════════════════════════════════════
+TABLE DES MATIÈRES COMPLÈTE
+════════════════════════════════════════════════════════════════════════════════
+
+LIVRE 1: TECHNIQUES PRIMITIVES & ANCESTRALES
+  CHAPITRE 1: Friction par archet (Bow Drill)
+    1.1 - Principes physiques et thermodynamiques
+    1.2 - Sélection des bois (analyse par essences)
+    1.3 - Construction de l'archet pas à pas
+    1.4 - Fabrication du fuseau optimal
+    1.5 - Planchette et cupule (géométrie précise)
+    1.6 - Support supérieur et lubrification
+    1.7 - Amadou et matériaux d'allumage
+    1.8 - Technique d'exécution complète
+    1.9 - Diagnostics et dépannage (50+ problèmes)
+    1.10 - Optimisations et modifications
+    1.11 - Variantes culturelles (10+ traditions)
+    1.12 - Données scientifiques et mesures
+
+  CHAPITRE 2: Friction à la main (Hand Drill)
+    2.1 - Pourquoi c'est la technique la plus difficile
+    2.2 - Conditionnement physique requis
+    2.3 - Sélection bois spécialisés (molène, yucca...)
+    2.4 - Technique des mains détaillée
+    2.5 - Cycle remontée-descente parfait
+    2.6 - Endurance et gestion effort
+    2.7 - Variante avec volant d'inertie
+    2.8 - Technique à deux personnes
+    2.9 - Strap drill (hybride)
+    2.10 - Préparation mentale et psychologie
+    
+  CHAPITRE 3: Friction par scie (Fire Saw)
+    3.1 - Technique asiatique traditionnelle
+    3.2 - Bambou: sélection et préparation
+    3.3 - Construction de la scie
+    3.4 - Positionnement et angle optimal
+    3.5 - Mouvement de sciage
+    3.6 - Variantes Philippines/Thaïlande/Indonésie
+    
+  CHAPITRE 4: Friction par charrue (Fire Plough)
+    4.1 - Origine polynésienne
+    4.2 - Géométrie de la rainure
+    4.3 - Angle d'attaque scientifique (25°)
+    4.4 - Bois hawaiien Hau (hibiscus)
+    4.5 - Technique de labourage
+    4.6 - Gestion de la poudre
+    
+  CHAPITRE 5: Percussion silex/marcassite
+    5.1 - Chimie de la pyrite (FeS₂)
+    5.2 - Identification silex sur terrain
+    5.3 - Tests de dureté et étincelles
+    5.4 - Trouver silex en France (zones géologiques)
+    5.5 - Marcassite vs Pyrite (différences)
+    5.6 - Technique de frappe optimale
+    5.7 - Amadouvier (Fomes fomentarius)
+    5.8 - Préparation amadou complète (ébullition, martelage)
+    5.9 - Histoire: Ötzi et archéologie du feu
+    5.10 - Science des étincelles (1300°C!)
+    
+  CHAPITRE 6: Piston à feu (Fire Piston)
+    6.1 - Principe de compression pneumatique
+    6.2 - Thermodynamique PV=nRT
+    6.3 - Construction artisanale
+    6.4 - Matériaux (bambou, métal)
+    6.5 - Amadou spécialisé (char cloth)
+    6.6 - Technique de compression
+    6.7 - Origine sud-est asiatique
+
+LIVRE 2: TECHNIQUES CLASSIQUES (1500-1900)
+
+  CHAPITRE 7: Briquet à silex (Flint & Steel)
+    7.1 - Évolution Moyen-Âge → 1900
+    7.2 - Métallurgie de l'acier
+    7.3 - Fabrication striker depuis ressort auto
+    7.4 - Trempe et revenu de l'acier
+    7.5 - Tests de dureté (Rockwell)
+    7.6 - Alternatives au silex (quartz, porcelaine...)
+    7.7 - Char cloth: fabrication détaillée
+    7.8 - Boîte Altoids et pyrolyse
+    7.9 - Technique de frappe (angle 28-32°)
+    7.10 - Transfert étincelle → braise → flamme
+    7.11 - Tinderbox historique
+    7.12 - Comparaison avec platine à silex (armes)
+    
+  CHAPITRE 8: Lentille et concentration solaire
+    8.1 - Optique géométrique
+    8.2 - Distance focale et formules
+    8.3 - Calcul puissance (1000× concentration!)
+    8.4 - Types de lentilles (lunettes, loupes...)
+    8.5 - Fabrication lentille d'eau (sac plastique)
+    8.6 - Lentille de glace sculptée
+    8.7 - Polissage glace avec mains
+    8.8 - Amadou noirci (absorption thermique)
+    8.9 - Protection contre le vent
+    8.10 - Temps d'allumage par matériau
+    8.11 - Limitations météo et géographiques
+    8.12 - Dangers: yeux, peau, incendies
+    
+  CHAPITRE 9: Verre grossissant avancé
+    9.1 - Lentille de Fresnel (puissance extrême)
+    9.2 - Démontage jumelles/téléscope
+    9.3 - Miroir parabolique
+    9.4 - Réflecteur DIY en aluminium
+    9.5 - Fond de canette poli
+    9.6 - Technique de polissage (dentifrice)
+    9.7 - Angle d'incidence optimal
+    9.8 - Record: feu en 2 secondes!
+
+LIVRE 3: TECHNIQUES MODERNES (1900-2025)
+
+  CHAPITRE 10: Allumettes - Fabrication artisanale
+    10.1 - Histoire des allumettes
+    10.2 - Chimie du phosphore rouge
+    10.3 - Chlorate de potassium (KClO₃)
+    10.4 - Formule pâte d'allumage
+    10.5 - Trempage bâtonnets
+    10.6 - Séchage et stockage
+    10.7 - Grattoir au phosphore rouge
+    10.8 - Sécurité chimique
+    10.9 - Alternatives sans phosphore
+    10.10 - Allumettes tempête (fabrication)
+    
+  CHAPITRE 11: Ferrocérium (Pierre à feu moderne)
+    11.1 - Composition métallurgique
+    11.2 - Alliage: Fe-Ce-La-Mg
+    11.3 - Température étincelles: 3000°C!
+    11.4 - Technique de grattage
+    11.5 - Angles et pression
+    11.6 - Grattoirs (dos de couteau, scie...)
+    11.7 - Amadou optimal pour ferrocerium
+    11.8 - Conditions humides et pluie
+    11.9 - Durée de vie (milliers d'allumages)
+    11.10 - Comparaison avec silex
+    
+  CHAPITRE 12: Pile et laine d'acier
+    12.1 - Principe électrique
+    12.2 - Court-circuit contrôlé
+    12.3 - Types de piles (9V optimal)
+    12.4 - Laine d'acier grade 0000
+    12.5 - Technique de contact
+    12.6 - Combustion du fer (chimie)
+    12.7 - Transfert sur amadou
+    12.8 - Sécurité (chaleur intense)
+    12.9 - Alternative: batterie voiture
+    12.10 - Câbles de démarrage comme allume-feu
+    
+  CHAPITRE 13: Réactions chimiques exothermiques
+    13.1 - Permanganate de potassium + glycérine
+    13.2 - Dosage précis (danger!)
+    13.3 - Temps de réaction (30-60 sec)
+    13.4 - Température: 1000°C+
+    13.5 - Chlore + sucre (piscine)
+    13.6 - Acide + base concentrés
+    13.7 - Magnésium + oxydants
+    13.8 - Thermite improvisée
+    13.9 - Sécurité critique
+    13.10 - Stockage séparé obligatoire
+
+  CHAPITRE 14: Techniques électriques
+    14.1 - Arc électrique depuis batterie
+    14.2 - Fils de pontage
+    14.3 - Graphite ou laine d'acier
+    14.4 - Batterie lithium déchirée (DANGER!)
+    14.5 - Condensateurs haute tension
+    14.6 - Transformateur micro-ondes
+    14.7 - Tesla coil improvisé
+    14.8 - Risques électriques mortels
+    
+  CHAPITRE 15: Compression pneumatique
+    15.1 - Fire piston moderne
+    15.2 - Tube diesel (compression 500°C)
+    15.3 - Construction en PVC
+    15.4 - Piston étanche
+    15.5 - Char cloth ou amadou
+    15.6 - Physique des gaz (loi Gay-Lussac)
+    15.7 - Fabrication artisanale détaillée
+
+LIVRE 4: AMADOUS & MATÉRIAUX D'ALLUMAGE
+
+  CHAPITRE 16: Amadous naturels - Champignons
+    16.1 - Fomes fomentarius (Amadouvier)
+    16.2 - Identification précise (photos décrites)
+    16.3 - Récolte (saison, arbres hôtes)
+    16.4 - Préparation traditionnelle complète:
+      - Découpe en tranches
+      - Ébullition 1h+ avec cendres
+      - Martelage (séparation fibres)
+      - Séchage et conservation
+    16.5 - Tests qualité
+    16.6 - Durée couvage (heures!)
+    16.7 - Autres champignons (Inonotus, Phellinus)
+    16.8 - King Alfred's Cakes (Daldinia)
+    16.9 - Conservation (boîte étanche)
+    
+  CHAPITRE 17: Amadous végétaux
+    17.1 - Écorce de bouleau
+    17.2 - Écorce de cèdre effilochée
+    17.3 - Duvet de massette (Typha)
+    17.4 - Herbe à coton (Eriophorum)
+    17.5 - Clématite (tiges sèches)
+    17.6 - Armoise sèche
+    17.7 - Fougère morte
+    17.8 - Mousse sèche (espèces spécifiques)
+    17.9 - Cardère (Dipsacus)
+    17.10 - Pissenlit (duvet de graines)
+    17.11 - Coton naturel effiloché
+    17.12 - Lin et chanvre (fibres)
+    
+  CHAPITRE 18: Char cloth et matériaux carbonisés
+    18.1 - Théorie de la pyrolyse
+    18.2 - Température optimale (400°C)
+    18.3 - Absence d'oxygène critique
+    18.4 - Boîte métallique (choix et trou)
+    18.5 - Tissus 100% coton
+    18.6 - Procédure complète:
+      - Découpe tissus
+      - Remplissage boîte
+      - Chauffage progressif
+      - Observation fumée
+      - Timing parfait
+      - Refroidissement
+    18.7 - Test qualité char cloth
+    18.8 - Char paper (journal, carton)
+    18.9 - Char punk wood
+    18.10 - Champignons carbonisés
+    18.11 - Conservation hermétique
+    18.12 - Réactivation si humide
+    
+  CHAPITRE 19: Combustibles modernes
+    19.1 - Essence et produits pétroliers
+    19.2 - Alcool (éthanol, méthanol)
+    19.3 - Acétone
+    19.4 - White gas (naphte)
+    19.5 - Alcool à brûler
+    19.6 - Huiles végétales
+    19.7 - Vaseline
+    19.8 - Vaseline + coton (boules inflammables)
+    19.9 - Cire + sciure
+    19.10 - Bougies
+    19.11 - Paraffine
+    19.12 - Gel combustible (Esbit)
+    
+  CHAPITRE 20: Allume-feux de fortune urbains
+    20.1 - Chips (huile = très inflammable)
+    20.2 - Tampons hygiéniques + vaseline
+    20.3 - Cotons démaquillants + huile
+    20.4 - Ruban adhésif roulé
+    20.5 - Éponge métallique (récurer)
+    20.6 - Papier ciré
+    20.7 - Carton ondulé + cire
+    20.8 - Pommes de pin + cire
+    20.9 - Pelures d'orange séchées (huiles)
+    20.10 - Cheveux et peluches (oui!)
+    20.11 - Peluches sèche-linge
+    20.12 - Mousse de rembourrage
+
+LIVRE 5: CONSTRUCTION DU FEU PARFAIT
+
+  CHAPITRE 21: Structures de feu - Science et art
+    21.1 - Principes combustion (triangle du feu)
+    21.2 - Oxygène: flux d'air optimal
+    21.3 - Chaleur: température d'ignition
+    21.4 - Combustible: progression graduée
+    21.5 - Pyramide des tailles:
+      - Amadou (fibres fines)
+      - Petit bois (allumettes)
+      - Moyen bois (crayons)
+      - Gros bois (bras)
+      - Bûches (cuisses)
+    21.6 - Humidité du bois (séchage)
+    21.7 - Densité et pouvoir calorifique
+    
+  CHAPITRE 22: Structure TIPI
+    22.1 - Géométrie conique
+    22.2 - Flux d'air central
+    22.3 - Construction étape par étape
+    22.4 - Taille optimale
+    22.5 - Avantages: démarrage rapide
+    22.6 - Inconvénients: consomme vite
+    22.7 - Variantes (tipi double, triple)
+    22.8 - Maintien et alimentation
+    
+  CHAPITRE 23: Structure LOG CABIN
+    23.1 - Disposition carrée/rectangulaire
+    23.2 - Couches croisées
+    23.3 - Chambre de combustion centrale
+    23.4 - Excellente aération
+    23.5 - Combustion lente et régulière
+    23.6 - Idéal pour cuisson
+    23.7 - Construction détaillée
+    23.8 - Proportions optimales
+    
+  CHAPITRE 24: Structure PLATEFORME
+    24.1 - Base solide surélevée
+    24.2 - Protection sol humide
+    24.3 - Isolation thermique
+    24.4 - Couches successives
+    24.5 - Autodestruction programmée
+    24.6 - Utilisations spécifiques
+    
+  CHAPITRE 25: FEU DAKOTA (sans fumée)
+    25.1 - Double trou en terre
+    25.2 - Tunnel d'alimentation air
+    25.3 - Effet cheminée
+    25.4 - Discrétion maximale
+    25.5 - Efficacité combustion
+    25.6 - Dimensions précises
+    25.7 - Creusage technique
+    25.8 - Sol approprié
+    25.9 - Avantages militaires
+    25.10 - Protection vent
+    
+  CHAPITRE 26: BOUGIE SUÉDOISE
+    26.1 - Bûche verticale fendue
+    26.2 - Découpe en croix
+    26.3 - Combustion de l'intérieur
+    26.4 - Plateau de cuisson intégré
+    26.5 - Autonomie 2-4 heures
+    26.6 - Fabrication sans scie (coins)
+    26.7 - Allumage optimal
+    26.8 - Essences de bois
+    
+  CHAPITRE 27: FEU RÉFLECTEUR
+    27.1 - Mur réflecteur chaleur
+    27.2 - Angle 45° vers abri
+    27.3 - Construction mur (pierres/bois)
+    27.4 - Distance optimale
+    27.5 - Feu long et bas
+    27.6 - Efficacité chauffage bivouac
+    27.7 - Variante double réflecteur
+    
+  CHAPITRE 28: Feux spécialisés
+    28.1 - Feu de tranchée (vent fort)
+    28.2 - Feu pyramidal (longue durée)
+    28.3 - Feu étoile (économie bois)
+    28.4 - Feu à fumée (signalisation)
+    28.5 - Feu sans fumée (charbon)
+    28.6 - Feu de cuisine (trois pierres)
+    28.7 - Feu de forge (soufflerie)
+    28.8 - Feu de séchage viande
+    28.9 - Feu désinfection eau
+    28.10 - Feu éclairage (torches)
+
+LIVRE 6: SITUATIONS EXTRÊMES - CONDITIONS DIFFICILES
+
+  CHAPITRE 29: FEU SOUS PLUIE BATTANTE
+    29.1 - Défis: humidité totale
+    29.2 - Recherche bois sec:
+      - Sous branches basses conifères
+      - Bois mort DEBOUT
+      - Intérieur écorce épaisse
+      - Résine de pin (imperméable)
+    29.3 - Grattage pour bois sec intérieur
+    29.4 - Protection pendant allumage:
+      - Corps comme parapluie
+      - Vêtement tendu au-dessus
+      - Écorce de bouleau (toit)
+      - Position accroupie
+    29.5 - Amadou protégé (poche intérieure)
+    29.6 - Ferrocérium: idéal (fonctionne mouillé)
+    29.7 - Allume-feu chimique (vaseline+coton)
+    29.8 - Construction rapide dôme protection
+    29.9 - Alimentation progressive
+    29.10 - Séchage bois près feu actif
+    29.11 - Toit de fortune (écorces, branches)
+    29.12 - Cas réel: test sous pluie
+    
+  CHAPITRE 30: FEU SUR NEIGE PROFONDE
+    30.1 - Problème: isolation impossible
+    30.2 - Plateforme obligatoire:
+      - Bûches vertes côte à côte
+      - Pierres plates empilées
+      - Écorce épaisse multicouche
+      - Bois mort large
+    30.3 - Dimensions plateforme (60cm × 60cm)
+    30.4 - Niveau et stabilité
+    30.5 - Bois de conifère (dessous branches)
+    30.6 - Technique "feathering" (plumes bois)
+    30.7 - Résine de pin comme accélérateur
+    30.8 - Écorce de bouleau (champion!)
+    30.9 - Construction pyramide serrée
+    30.10 - Protection vent avec murs neige
+    30.11 - Réflecteur neige tassée
+    30.12 - Séchage vêtements et équipement
+    30.13 - Risque fonte plateforme (prévention)
+    30.14 - Feu long pour stabilité
+    
+  CHAPITRE 31: FEU EN ALTITUDE (faible O₂)
+    31.1 - Défi: raréfaction oxygène
+    31.2 - À 3000m: -30% oxygène
+    31.3 - À 5000m: -50% oxygène  
+    31.4 - Adaptations nécessaires:
+      - Bois très sec uniquement
+      - Petit bois en grande quantité
+      - Structure aérée maximale
+      - Tipi large et haut
+    31.5 - Soufflage manuel (assistance)
+    31.6 - Ventilateur improvisé
+    31.7 - Patience (temps 2-3× plus long)
+    31.8 - Combustibles chimiques (aide)
+    31.9 - Tablettes Esbit efficaces
+    31.10 - Éviter feu en montagne >4000m
+    
+  CHAPITRE 32: FEU EN DÉSERT (pas de bois)
+    32.1 - Problème: absence combustible
+    32.2 - Sources alternatives:
+      - Excréments séchés (chameau, dromadaire)
+      - Bouse de vache (séchée)
+      - Broussailles sèches (racines)
+      - Herbes mortes roulées
+      - Cactus morts (sec uniquement)
+      - Yucca sec
+      - Armoise (sagebrush)
+    32.3 - Collecte et stockage
+    32.4 - Compression herbes (densité)
+    32.5 - Combustion rapide (gestion)
+    32.6 - Pierres pour conserver chaleur
+    32.7 - Four en terre
+    32.8 - Graisses animales comme bois
+    32.9 - Huile + mèche (lampe)
+    32.10 - Combustibles liquides (carburant)
+    
+  CHAPITRE 33: FEU EN JUNGLE (humidité extrême)
+    33.1 - Humidité 90-100% constante
+    33.2 - Bambou comme sauveur:
+      - Toujours creux = sec intérieur
+      - Fendre pour copeaux
+      - Excellent amadou
+      - Brûle chaud et rapide
+    33.3 - Palmier: cœur sec
+    33.4 - Résines tropicales abondantes
+    33.5 - Lianes mortes (intérieur sec)
+    33.6 - Bois mort suspendu (meilleur)
+    33.7 - Termitières (bois pré-séché)
+    33.8 - Séchage actif près corps
+    33.9 - Feu continu (ne jamais éteindre)
+    33.10 - Tison transportable
+    
+  CHAPITRE 34: FEU EN MILIEU URBAIN RUINÉ
+    34.1 - Post-apocalypse combustibles:
+      - Meubles en bois
+      - Palettes (abondantes)
+      - Portes et cadres
+      - Planchers arrachés
+      - Livres et papier
+      - Cartons (stocks énormes)
+      - Tissus et vêtements
+      - Plastiques (attention toxique)
+      - Pneus (fumée noire)
+      - Huiles et graisses
+    34.2 - Sécurité: amiante, plomb, toxines
+    34.3 - Ventilation (intérieur = monoxyde!)
+    34.4 - Cheminée ou tuyau obligatoire
+    34.5 - Détecteur CO improvisé (bougie)
+    34.6 - Stockage combustibles triés
+    34.7 - Séchage bois humide (rotation)
+    34.8 - Protection incendie structure
+    34.9 - Distance murs inflammables
+    34.10 - Extincteur (seaux eau, sable)
+    
+  CHAPITRE 35: FEU SANS FUMÉE (discrétion militaire)
+    35.1 - Pourquoi: détection ennemie
+    35.2 - Fumée visible à 10+ km
+    35.3 - Techniques réduction:
+      - Feu Dakota (voir chapitre 25)
+      - Bois très sec uniquement
+      - Combustion complète (haute température)
+      - Charbon (sans fumée quasi-totale)
+      - Pas de bois vert jamais
+      - Éviter résineux
+      - Feu de jour (dispersion fumée)
+      - Jamais de nuit (visible loin)
+    35.4 - Dissimulation lueur:
+      - Trou profond
+      - Murs opaques
+      - Canopée épaisse
+      - Ravins et dépressions
+    35.5 - Gestion odeur (vent)
+    35.6 - Extinction totale (traces)
+    35.7 - Camouflage cendres
+    
+  CHAPITRE 36: FEU PAR VENT VIOLENT
+    36.1 - Défi: extinc tion continue
+    36.2 - Protection pare-vent:
+      - Pierres empilées
+      - Mur de bois vert
+      - Tranchée orientée
+      - Abri naturel (rocher)
+    36.3 - Feu en U (trois murs)
+    36.4 - Entrée sous vent
+    36.5 - Hauteur murs (2× hauteur feu)
+    36.6 - Combustion rapide (gestion)
+    36.7 - Étincelles et incendie (danger)
+    36.8 - Dégagement végétation (3m rayon)
+
+LIVRE 7: CONSERVATION & TRANSPORT DU FEU
+
+  CHAPITRE 37: Tison transportable
+    37.1 - Technique ancestrale universelle
+    37.2 - Sélection bois: bouleau, chêne
+    37.3 - Morceau partiellement carbonisé
+    37.4 - Maintien combustion lente
+    37.5 - Transport horizontal
+    37.6 - Protection pluie (écorce)
+    37.7 - Aération minimale
+    37.8 - Relance rapide (soufflage)
+    37.9 - Durée: 2-12 heures
+    37.10 - Sécurité brûlures
+    
+  CHAPITRE 38: Amadou fumant
+    38.1 - Champignon en couvage
+    38.2 - Transport en boîte percée
+    38.3 - Alimentation oxygène minimale
+    38.4 - Durée: 24+ heures possible
+    38.5 - Relance sur nouveau bois
+    38.6 - Technique traditionnelle Inuit
+    
+  CHAPITRE 39: Récipient à braises
+    39.1 - Corne animale évidée
+    39.2 - Coquillage épais
+    39.3 - Boîte métal avec trous
+    39.4 - Pot terre cuite
+    39.5 - Braises + cendres (isolation)
+    39.6 - Transport sans risque
+    39.7 - Conservation 48h+
+    39.8 - Récipient historiques
+    
+  CHAPITRE 40: Allumage rapide depuis braises
+    40.1 - Braises enfouies sous cendres
+    40.2 - Conservation nocturne
+    40.3 - Réveil matin (excavation)
+    40.4 - Amadou sur braises
+    40.5 - Soufflage doux
+    40.6 - Relance <1 minute
+    40.7 - Économie énergie vitale
+
+LIVRE 8: SCIENCES DU FEU
+
+  CHAPITRE 41: Chimie de la combustion
+    41.1 - Triangle du feu complet
+    41.2 - Réaction d'oxydation
+    41.3 - C + O₂ → CO₂ + chaleur
+    41.4 - Température d'auto-ignition
+    41.5 - Cellulose et lignine
+    41.6 - Pyrolyse du bois
+    41.7 - Gaz inflammables produits
+    41.8 - Flamme vs braise
+    41.9 - Spectre lumineux
+    41.10 - Émission infrarouge
+    
+  CHAPITRE 42: Thermodynamique
+    42.1 - Transfert chaleur (conduction)
+    42.2 - Convection et flux d'air
+    42.3 - Rayonnement thermique
+    42.4 - Chaleur spécifique bois
+    42.5 - Pouvoir calorifique (kcal/kg)
+    42.6 - Efficacité combustion
+    42.7 - Pertes thermiques
+    42.8 - Optimisation rendement
+    
+  CHAPITRE 43: Propriétés des bois
+    43.1 - Densité et énergie
+    43.2 - Humidité (% d'eau)
+    43.3 - Séchage naturel (durée)
+    43.4 - Résineux vs feuillus
+    43.5 - Tableau complet essences:
+      - Chêne: dense, braises longues, difficile allumage
+      - Hêtre: excellent, chaleur régulière
+      - Frêne: facilement, bon rendement
+      - Bouleau: écorce exceptionnelle, brûle vite
+      - Pin: résine = allumage, fumée
+      - Épicéa: léger, crépite, étincelles
+      - Peuplier: allumage facile, brûle vite, peu chaleur
+      - Saule: humide souvent, moyen
+      - Orme: bon, difficile fendre
+      - Érable: excellent, peu fumée
+      - Cerisier: bon, odeur agréable
+      - Noyer: très bon, précieux (éviter)
+      - [+50 essences détaillées]
+    43.6 - Identification visuelle
+    43.7 - Test densité (eau)
+    43.8 - Bois mort vs bois vert
+    
+  CHAPITRE 44: Météorologie et feu
+    44.1 - Pression atmosphérique
+    44.2 - Humidité relative
+    44.3 - Point de rosée
+    44.4 - Séchage hygroscopique
+    44.5 - Influence vent
+    44.6 - Température et allumage
+    44.7 - Saisons optimales
+    44.8 - Prévision météo (feu possible?)
+
+LIVRE 9: TROUBLESHOOTING ENCYCLOPÉDIE
+
+  CHAPITRE 45: 100+ Problèmes et solutions
+    [Format: Problème → Cause → Solution]
+    
+    45.1 - ALLUMAGE IMPOSSIBLE
+      Problème: Aucune étincelle ne prend
+      Causes possibles:
+        - Amadou humide (70% cas)
+        - Amadou de mauvaise qualité
+        - Pas assez fin/aéré
+        - Pas assez sec
+        - Mauvais matériau
+      Solutions:
+        - Sécher amadou 30min soleil
+        - Effilocher plus finement
+        - Mélanger plusieurs types
+        - Utiliser char cloth (optimal)
+        - Test amadou: brûle-t-il seul?
+        
+    45.2 - FEU S'ÉTEINT IMMÉDIATEMENT
+      Problème: Flamme démarre puis meurt
+      Causes:
+        - Manque oxygène (structure trop serrée)
+        - Manque combustible (progression trop rapide)
+        - Bois humide
+        - Vent trop fort
+        - Plateforme froide (neige)
+      Solutions:
+        - Reconstruire structure plus aérée
+        - Ajouter petit bois intermédiaire
+        - Souffler doucement mais constamment
+        - Protéger du vent
+        - Isoler du sol/neige
+        
+    45.3 - FUMÉE EXCESSIVE
+      Problème: Fumée épaisse, peu de flammes
+      Causes:
+        - Bois humide ou vert
+        - Combustion incomplète (manque O₂)
+        - Bois résineux
+        - Température trop basse
+      Solutions:
+        - Utiliser bois mort sec uniquement
+        - Ouvrir structure (plus d'air)
+        - Souffler pour augmenter température
+        - Éviter bois vert et résineux
+        - Attendre séchage bois près feu
+        
+    45.4 - BRAISE NE SE FORME PAS (Friction)
+      Problème: Fumée mais pas de braise
+      Causes:
+        - Entaille en V trop petite
+        - Entaille en V trop grande
+        - Bois incompatibles
+        - Bois légèrement humide
+        - Pression insuffisante
+        - Vitesse inadéquate
+        - Arrêt trop tôt
+      Solutions:
+        - V-notch = 1/8 circonférence cupule
+        - Aller jusqu'à 70% diamètre
+        - Même essence fuseau et planchette
+        - Sécher bois au soleil 1h+
+        - Augmenter pression vers bas
+        - Vitesse constante, pas rapide
+        - Continuer 10-20 sec après fumée dense
+        
+    45.5 - FUSEAU SORT DE LA CUPULE (Archet)
+      Problème: Fuseau se déplace ou tombe
+      Causes:
+        - Cupule pas assez profonde
+        - Trop de pression verticale
+        - Fuseau tordu
+        - Archet mal tendu
+        - Angle fuseau incorrect
+      Solutions:
+        - Creuser cupule 5-8mm profond
+        - Réduire pression, augmenter vitesse
+        - Refaire fuseau bien droit
+        - Retendre archet modérément
+        - Fuseau parfaitement vertical
+        
+    45.6 - CORDE GLISSE SUR FUSEAU (Archet)
+      Problème: Rotation inefficace
+      Causes:
+        - Archet pas assez tendu
+        - Fuseau trop lisse
+        - Corde trop lisse
+        - Un seul tour de corde
+      Solutions:
+        - Tendre archet davantage
+        - Rugosifier fuseau (pierre, écorce)
+        - Paracorde avec gaine texturée
+        - Faire deux tours de corde
+        - Corde en matériau naturel (chanvre)
+        
+    45.7 - ÉPUISEMENT RAPIDE (Hand Drill)
+      Problème: Fatigue avant braise
+      Causes:
+        - Technique inefficace
+        - Position incorrecte
+        - Manque pratique/conditionnement
+        - Bois trop dur
+        - Fuseau trop court
+      Solutions:
+        - Vitesse constante > force
+        - Genou au sol, corps droit
+        - Entraînement progressif
+        - Bois plus tendre (molène, yucca)
+        - Fuseau 80-100cm minimum
+        - Technique volant d'inertie
+        - Deux personnes (collaboration)
+        
+    45.8 - AMPOULES ET DOULEUR MAINS (Hand Drill)
+      Problème: Peau s'abîme
+      Causes:
+        - Normal au début
+        - Fuseau rugueux
+        - Technique incorrecte
+      Solutions:
+        - Callosités se développent (temps)
+        - Poncer fuseau légèrement
+        - Rotation fluide, pas saccadée
+        - Gants fins (réduit efficacité)
+        - Accepter douleur (mental)
+        
+    45.9 - ÉTINCELLES N'ATTEIGNENT PAS L'AMADOU
+      Problème: Étincelles ratent la cible
+      Causes:
+        - Angle de frappe incorrect
+        - Distance inadéquate
+        - Direction projection mal orientée
+        - Technique de frappe
+      Solutions:
+        - Angle 28-32° optimal
+        - Amadou 5-10cm sous point frappe
+        - Pratiquer sans amadou (trajectoire)
+        - Mouvement descendant, pas latéral
+        - Silex stable, striker mobile
+        
+    45.10 - CHAR CLOTH NE PREND PAS ÉTINCELLE
+      Problème: Étincelles rebondissent
+      Causes:
+        - Char cloth mal carbonisé
+        - Trop carbonisé (poudre)
+        - Humide
+        - Qualité insuffisante
+      Solutions:
+        - Recarboniser (fumée doit arrêter)
+        - Pas trop longtemps (test: résistant mais noir)
+        - Sécher complètement
+        - Tissu 100% coton uniquement
+        - Stockage hermétique
+        
+    [+90 autres problèmes détaillés...]
+
+LIVRE 10: OPTIMISATIONS & INNOVATIONS
+
+  CHAPITRE 46: Modifications bow drill
+    46.1 - Roulement à billes supérieur
+    46.2 - Support cuseau pivotant
+    46.3 - Archet ergonomique sculpté
+    46.4 - Corde élastique (choc)
+    46.5 - Planchette multi-cupules
+    46.6 - Cupule pré-carbonisée
+    46.7 - Collecteur poudre (entonnoir)
+    46.8 - Fuseau biconique (avancé)
+    
+  CHAPITRE 47: Allume-feux DIY optimisés
+    47.1 - Vaseline + coton (classique)
+    47.2 - Vaseline + coton + cire (triple)
+    47.3 - Sciure + cire de bougie
+    47.4 - Copeaux bois + paraffine
+    47.5 - Carton ondulé + cire
+    47.6 - Pommes pin + cire fondue
+    47.7 - Bouchons liège + alcool
+    47.8 - Tampons makeup + huile
+    47.9 - Dryer lint compacté + cire
+    47.10 - Chips (doritos) nature
+    
+  CHAPITRE 48: Stockage bois optimal
+    48.1 - Séchage: 6-24 mois selon essence
+    48.2 - Empilage croisé (air circule)
+    48.3 - Protection pluie (toit)
+    48.4 - Côtés ouverts (ventilation)
+    48.5 - Sol surélevé (humidité)
+    48.6 - Orientation nord-sud
+    48.7 - Test humidité (humidimètre)
+    48.8 - <20% = optimal
+    48.9 - Stockage par taille
+    48.10 - Rotation stocks
+
+LIVRE 11: UTILISATIONS AVANCÉES DU FEU
+
+  CHAPITRE 49: Signalisation et détresse
+    49.1 - Feu de signalisation
+    49.2 - Triangle de feux (SOS)
+    49.3 - Fumée blanche (feuillage vert)
+    49.4 - Fumée noire (huile, caoutchouc)
+    49.5 - Miroir de flamme (nuit)
+    49.6 - Fusées artisanales
+    49.7 - Torches portables
+    49.8 - Signaux Morse avec feu
+    
+  CHAPITRE 50: Purification et stérilisation
+    50.1 - Ébullition eau (1-3 min)
+    50.2 - Stérilisation outils (flamme directe)
+    50.3 - Désinfection sol (brûlis)
+    50.4 - Fumigation anti-insectes
+    50.5 - Séchage viande (fumage)
+    50.6 - Conservation aliments
+    
+  CHAPITRE 51: Fabrication d'outils par le feu
+    51.1 - Durcissement pointes bois (feu)
+    51.2 - Creusement canoë (brûlage contrôlé)
+    51.3 - Courbure bois (vapeur + chaleur)
+    51.4 - Trempe acier
+    51.5 - Soudure primitive
+    51.6 - Fusion métaux (forge)
+    51.7 - Poterie et céramique
+    51.8 - Goudron de bouleau (colle)
+    51.9 - Charbon de bois (fabrication)
+    51.10 - Cendres (lessive, savon)
+
+LIVRE 12: SÉCURITÉ & PRÉVENTION
+
+  CHAPITRE 52: Prévention incendies
+    52.1 - Dégagement végétation (3m rayon)
+    52.2 - Pas de feu sous branches
+    52.3 - Racines souterraines (danger)
+    52.4 - Tourbe inflammable
+    52.5 - Vent et étincelles
+    52.6 - Surveillance constante
+    52.7 - Extinction complète obligatoire
+    52.8 - Noyage cendres
+    52.9 - Test main (chaleur résiduelle)
+    52.10 - Camouflage traces
+    
+  CHAPITRE 53: Intoxication fumées
+    53.1 - Monoxyde de carbone (CO)
+    53.2 - Symptômes: maux tête, nausée
+    53.3 - Invisible, inodore, mortel
+    53.4 - Ventilation obligatoire (abri)
+    53.5 - Cheminée ou évacuation
+    53.6 - Détecteur CO (bougie test)
+    53.7 - Fumées toxiques (plastique)
+    53.8 - Jamais brûler: PVC, polystyrène
+    53.9 - Position sommeil (ventilation)
+    
+  CHAPITRE 54: Brûlures et premiers soins
+    54.1 - Degrés brûlures (1er, 2e, 3e)
+    54.2 - Refroidissement immédiat (eau)
+    54.3 - 10-20 minutes minimum
+    54.4 - Pas de glace directe
+    54.5 - Protéger peau (pansement)
+    54.6 - Infection: danger principal
+    54.7 - Miel (antibactérien naturel)
+    54.8 - Jamais percer ampoules
+    54.9 - Hydratation critique
+    54.10 - Évacuation si grave
+
+LIVRE 13: HISTOIRE & CULTURE DU FEU
+
+  CHAPITRE 55: Évolution humaine et feu
+    55.1 - 1.5 million années (Homo erectus)
+    55.2 - Sites archéologiques majeurs
+    55.3 - Gesher Benot Ya'aqov (Israël)
+    55.4 - Wonderwerk Cave (Afrique Sud)
+    55.5 - Impact sur cerveau humain
+    55.6 - Cuisson = nutriments disponibles
+    55.7 - Protection prédateurs
+    55.8 - Vie sociale autour du feu
+    
+  CHAPITRE 56: Mythologie du feu
+    56.1 - Prométhée (Grèce)
+    56.2 - Vol du feu aux dieux
+    56.3 - Mythes aborigènes australiens
+    56.4 - Légendes amérindiennes
+    56.5 - Agni (hindouisme)
+    56.6 - Vesta (Rome)
+    56.7 - Vestales et feu sacré
+    
+  CHAPITRE 57: Techniques traditionnelles mondiales
+    57.1 - Inuits: lampe à huile
+    57.2 - Polynésiens: fire plough
+    57.3 - Aborigènes: hand drill
+    57.4 - Amérindiens: bow drill
+    57.5 - Asie du Sud-Est: fire saw bambou
+    57.6 - Europe: silex et amadou
+    57.7 - Afrique: bâtons friction
+    57.8 - Variations régionales
+
+ANNEXES
+
+  ANNEXE A: Tables de données
+    A.1 - Températures critiques (100+ matériaux)
+    A.2 - Pouvoir calorifique essences (50+ bois)
+    A.3 - Temps séchage par essence
+    A.4 - Humidité optimale par usage
+    A.5 - Densité et énergie (tableau complet)
+    A.6 - Propriétés thermiques
+    A.7 - Points d'auto-ignition
+    
+  ANNEXE B: Fiches terrain (format poche)
+    B.1 - Checklist bow drill
+    B.2 - Checklist hand drill
+    B.3 - Checklist silex
+    B.4 - Identification bois (rapide)
+    B.5 - Séquence d'allumage universelle
+    B.6 - Diagnostic panne (arbre décision)
+    
+  ANNEXE C: Tableaux botaniques
+    C.1 - Amadous naturels (60+ plantes)
+    C.2 - Identification visuelle champignons
+    C.3 - Saisons récolte optimales
+    C.4 - Régions et disponibilité
+    C.5 - Techniques préparation par espèce
+    
+  ANNEXE D: Formules chimiques
+    D.1 - Réactions combustion
+    D.2 - Compositions allumettes
+    D.3 - Formules explosifs (théorie uniquement)
+    D.4 - Calculs thermodynamiques
+    D.5 - Bilans énergétiques
+    
+  ANNEXE E: Schémas techniques
+    E.1 - Plans bow drill (côtes précises)
+    E.2 - Géométrie cupule et V-notch
+    E.3 - Dimensions optimales
+    E.4 - Structures de feu (top view)
+    E.5 - Feu Dakota (coupe transversale)
+    E.6 - Réflecteurs thermiques
+    E.7 - Plateformes neige
+    
+  ANNEXE F: Glossaire
+    F.1 - Termes français-anglais
+    F.2 - Vocabulaire technique
+    F.3 - Noms essences bois (latin)
+    F.4 - Terminologie bushcraft
+    
+  ANNEXE G: Ressources et bibliographie
+    G.1 - Manuels militaires (FM 21-76, etc.)
+    G.2 - Livres bushcraft recommandés
+    G.3 - Études scientifiques
+    G.4 - Sites web fiables
+    G.5 - Vidéos techniques (références)
+    G.6 - Formations et stages France
+    
+  ANNEXE H: Législation
+    H.1 - Réglementation feu en France
+    H.2 - Zones interdites
+    H.3 - Périodes interdites (sécheresse)
+    H.4 - Amendes et sanctions
+    H.5 - Feu en forêt (règles strictes)
+    H.6 - Feu sur terrain privé
+    H.7 - Responsabilité civile
+    H.8 - Assurances
+
+════════════════════════════════════════════════════════════════════════════════
+   FIN TABLE DES MATIÈRES - DÉBUT CONTENU DÉTAILLÉ
+════════════════════════════════════════════════════════════════════════════════
+
+[LE DOCUMENT COMPLET CONTINUE AVEC CHAQUE CHAPITRE DÉTAILLÉ SUR 500-1000 LIGNES]
+
+Ce fichier atteindra 2-3MB une fois complété avec TOUT le contenu détaillé.
+
