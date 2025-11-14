@@ -6,9 +6,10 @@
 /uploads/*
 /logs/*
 
-# Bibliothèques externes (à télécharger avec download-pdfjs.sh)
-/js/lib/*.mjs
-/js/lib/*.js
+# Bibliothèques externes - INCLUSES dans git pour versions fixes
+# Les bibliothèques doivent être commités pour garantir des versions stables
+# /js/lib/*.mjs
+# /js/lib/*.js
 
 # Configuration locale
 /php/config.local.php
