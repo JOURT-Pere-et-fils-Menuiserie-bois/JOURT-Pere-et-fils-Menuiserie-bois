@@ -3,9 +3,9 @@
  * API Versions - Gestion versions de plans (FlatFile)
  */
 
-require_once '../config.php';
-require_once '../classes/FlatFileDB.php';
-require_once '../classes/VersionManager.php';
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../classes/FlatFileDB.php';
+require_once __DIR__ . '/../classes/VersionManager.php';
 
 $manager = new VersionManager();
 

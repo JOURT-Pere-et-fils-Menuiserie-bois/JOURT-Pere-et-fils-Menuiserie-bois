@@ -3,9 +3,9 @@
  * API Projects - CRUD projets (FlatFile)
  */
 
-require_once '../config.php';
-require_once '../classes/FlatFileDB.php';
-require_once '../classes/ProjectManager.php';
+require_once __DIR__ . '/../config.php';
+require_once __DIR__ . '/../classes/FlatFileDB.php';
+require_once __DIR__ . '/../classes/ProjectManager.php';
 
 $manager = new ProjectManager();
 
