@@ -463,15 +463,16 @@
     </div>
 
     <!-- Scripts -->
-    <!-- PDF.js depuis CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.mjs" type="module"></script>
+    <!-- Bibliothèques externes (100% LOCAL - pas de CDN) -->
+    <!-- PDF.js (Mozilla) - Lecture PDF -->
+    <script src="js/lib/pdf.min.mjs" type="module"></script>
 
-    <!-- SheetJS pour Excel (export/import) -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <!-- SheetJS - Export/Import Excel -->
+    <script src="js/lib/xlsx.full.min.js"></script>
 
-    <!-- jsPDF pour génération PDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <!-- jsPDF - Génération PDF -->
+    <script src="js/lib/jspdf.umd.min.js"></script>
+    <script src="js/lib/jspdf.plugin.autotable.min.js"></script>
 
     <!-- Modules Core -->
     <script src="js/modules/pubsub.js"></script>
