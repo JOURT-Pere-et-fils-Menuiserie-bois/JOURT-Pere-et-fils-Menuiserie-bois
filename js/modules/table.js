@@ -374,7 +374,7 @@ const MeasurementTable = (function() {
     function exportToCSV() {
         const headers = ['Code', 'Description', 'Catégorie', 'Quantité', 'Unité', 'P.U.', 'Total'];
 
-        let csv = headers.join(';') + '\n';
+        let csv = headers.join(',') + '\n';
 
         measurements.forEach(m => {
             const row = [
@@ -386,7 +386,7 @@ const MeasurementTable = (function() {
                 (m.unit_price || 0).toFixed(2),
                 ((m.value || 0) * (m.unit_price || 0)).toFixed(2)
             ];
-            csv += row.join(';') + '\n';
+            csv += row.join(',') + '\n';
         });
 
         // Télécharger

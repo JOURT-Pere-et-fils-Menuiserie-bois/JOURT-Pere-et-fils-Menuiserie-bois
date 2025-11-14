@@ -11,6 +11,11 @@ const ToolsManager = (function() {
     let measurements = [];
     let measurementIdCounter = 1;
 
+    // Helper: Générer ID unique pour mesure
+    function generateMeasurementId() {
+        return 'meas-' + (measurementIdCounter++);
+    }
+
     // Propriétés courantes
     let toolProperties = {
         color: '#FF0000',
@@ -252,7 +257,7 @@ const ToolsManager = (function() {
 
         // Créer mesure
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'line',
             coordinates: {
                 start: currentPoints[0],
@@ -345,7 +350,7 @@ const ToolsManager = (function() {
         }
 
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'polyline',
             coordinates: {
                 points: [...currentPoints]
@@ -418,7 +423,7 @@ const ToolsManager = (function() {
         }
 
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'rectangle',
             coordinates: {
                 topLeft: currentPoints[0],
@@ -507,7 +512,7 @@ const ToolsManager = (function() {
         }
 
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'polygon',
             coordinates: {
                 points: [...currentPoints]
@@ -576,7 +581,7 @@ const ToolsManager = (function() {
         }
 
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'circle',
             coordinates: {
                 center: currentPoints[0],
@@ -601,7 +606,7 @@ const ToolsManager = (function() {
 
     function addCountPoint(point) {
         const measurement = {
-            id: measurementIdCounter++,
+            id: generateMeasurementId(),
             type: 'count',
             coordinates: point,
             value: 1,

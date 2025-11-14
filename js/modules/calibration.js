@@ -222,8 +222,8 @@ const CalibrationManager = (function() {
             line.remove();
         }
 
-        // Restaurer curseur
-        document.getElementById('plan-canvas').style.cursor = 'crosshair';
+        // Restaurer curseur par défaut
+        document.getElementById('plan-canvas').style.cursor = 'default';
     }
 
     /**

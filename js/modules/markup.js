@@ -13,6 +13,11 @@ const MarkupManager = (function() {
     let tempElement = null;
     let symbolLibrary = {};
 
+    // Helper: Générer ID unique pour markup
+    function generateMarkupId() {
+        return 'mark-' + (markupIdCounter++);
+    }
+
     // Propriétés courantes
     let markupProperties = {
         color: '#0066FF',
@@ -228,7 +233,7 @@ const MarkupManager = (function() {
 
         // Créer flèche avec pointe
         const markup = {
-            id: markupIdCounter++,
+            id: generateMarkupId(),
             type: 'arrow',
             coordinates: {
                 start: currentPoints[0],
@@ -294,7 +299,7 @@ const MarkupManager = (function() {
         if (!text) return;
 
         const markup = {
-            id: markupIdCounter++,
+            id: generateMarkupId(),
             type: 'text',
             coordinates: point,
             text: text,
@@ -383,7 +388,7 @@ const MarkupManager = (function() {
         }
 
         const markup = {
-            id: markupIdCounter++,
+            id: generateMarkupId(),
             type: 'freehand',
             coordinates: {
                 points: [...currentPoints]
@@ -459,7 +464,7 @@ const MarkupManager = (function() {
         }
 
         const markup = {
-            id: markupIdCounter++,
+            id: generateMarkupId(),
             type: 'cloud',
             coordinates: {
                 center: currentPoints[0],
@@ -511,7 +516,7 @@ const MarkupManager = (function() {
         const symbol = symbolLibrary[symbolId];
 
         const markup = {
-            id: markupIdCounter++,
+            id: generateMarkupId(),
             type: 'symbol',
             coordinates: point,
             symbolId: symbolId,
