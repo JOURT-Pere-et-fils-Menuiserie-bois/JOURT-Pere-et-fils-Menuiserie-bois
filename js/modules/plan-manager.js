@@ -127,14 +127,28 @@ const PlanManager = (function() {
 
         // Vérifier si le plan a un fichier
         if (!plan.file_path || plan.pending_upload) {
-            alert(`⚠️ Le plan "${plan.floor_level}" n'a pas encore de fichier PDF.\n\nVeuillez l'uploader.`);
+            alert(`⚠️ Le plan "${plan.floor_level}" n'a pas encore de fichier.\n\nVeuillez l'uploader.`);
             return;
         }
 
         try {
-            // Charger le PDF
-            console.log('📄 Chargement PDF:', plan.file_path);
-            await PDFLoader.loadPDFFromURL(plan.file_path);
+            // Détecter le type de fichier (PDF ou DXF)
+            const isPDF = plan.mime_type?.includes('pdf') || plan.file_path.toLowerCase().endsWith('.pdf');
+            const isDXF = plan.mime_type?.includes('dxf') || plan.file_path.toLowerCase().endsWith('.dxf');
+
+            if (isDXF) {
+                // Charger le DXF
+                console.log('📐 Chargement DXF:', plan.file_path);
+                if (typeof DXFLoader !== 'undefined') {
+                    await DXFLoader.loadDXFFromURL(plan.file_path);
+                } else {
+                    throw new Error('DXFLoader non disponible');
+                }
+            } else {
+                // Charger le PDF (par défaut)
+                console.log('📄 Chargement PDF:', plan.file_path);
+                await PDFLoader.loadPDFFromURL(plan.file_path);
+            }
 
             // Charger les mesures de ce plan
             console.log('📏 Chargement mesures du plan...');

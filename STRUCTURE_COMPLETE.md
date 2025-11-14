@@ -322,6 +322,79 @@ bf0ddf4 - Fix: Ajout logs détaillés pour diagnostiquer erreur chargement versi
 
 ---
 
+## 📐 SUPPORT DXF COMPLET
+
+### **Parser DXF natif (js/modules/dxf-loader.js)**
+
+**Entités supportées:**
+- ✅ LINE - Lignes droites
+- ✅ CIRCLE - Cercles complets
+- ✅ ARC - Arcs de cercle
+- ✅ LWPOLYLINE - Polylignes légères (2D)
+- ✅ POLYLINE - Polylignes classiques
+- ✅ Support des polylignes fermées (flag & 1)
+
+**Fonctionnalités:**
+- Parser DXF ASCII natif (pas de dépendance externe)
+- Calcul automatique bounding box
+- Transformation coordonnées DXF → Canvas
+- Auto-scaling pour fit dans canvas
+- Inversion axe Y (convention DXF vs Canvas)
+- Rendu vectoriel sur canvas HTML5
+
+**Codes de groupe DXF supportés:**
+```
+Code 8  - Layer name
+Code 10 - X coordinate (start/center)
+Code 20 - Y coordinate
+Code 30 - Z coordinate
+Code 11 - X coordinate (end point)
+Code 21 - Y coordinate (end point)
+Code 40 - Radius (circle/arc)
+Code 50 - Start angle (arc)
+Code 51 - End angle (arc)
+Code 62 - Color number
+Code 70 - Polyline flags
+Code 90 - Vertex count (LWPOLYLINE)
+Code 42 - Bulge
+```
+
+**API DXFLoader:**
+```javascript
+// Charger depuis File object
+await DXFLoader.loadDXF(file);
+
+// Charger depuis URL
+await DXFLoader.loadDXFFromURL(url);
+
+// Obtenir données parsées
+const data = DXFLoader.getDXFData();
+const entities = DXFLoader.getEntities();
+const bounds = DXFLoader.getBounds();
+
+// Rerendre (ex: après resize)
+DXFLoader.rerender();
+```
+
+**Workflow DXF identique à PDF:**
+1. Upload fichier .dxf via drag & drop ou modal
+2. Prompt niveau du plan (RDC, R+1, etc.)
+3. Upload vers serveur PHP
+4. Création plan dans version.plans[]
+5. Parser DXF côté client
+6. Rendu sur canvas
+7. Calibration échelle
+8. Dessin mesures (identique PDF)
+9. Auto-save par plan
+
+**Détection automatique type fichier:**
+- Extension .pdf → PDFLoader
+- Extension .dxf → DXFLoader
+- Mime-type application/pdf → PDFLoader
+- Mime-type image/vnd.dxf → DXFLoader
+
+---
+
 ## 🎯 PRÊT POUR PRODUCTION
 
 ✅ Architecture multi-plans complète
@@ -329,9 +402,13 @@ bf0ddf4 - Fix: Ajout logs détaillés pour diagnostiquer erreur chargement versi
 ✅ Auto-save intelligent (30s + avant changement plan)
 ✅ Backup automatique remplacement plans
 ✅ Héritage plans entre versions
-✅ Support DXF + PDF
+✅ Support PDF complet (PDF.js via CDN)
+✅ Support DXF complet (parser natif, entités LINE/CIRCLE/ARC/POLYLINE)
+✅ Détection automatique type fichier (PDF vs DXF)
 ✅ Rétrocompatibilité complète
 ✅ Logs détaillés partout
 ✅ Tests complets documentés
+✅ Drag & drop PDF + DXF
+✅ Upload modal PDF + DXF
 
 **Le système est maintenant production-ready pour usage professionnel réel ! 🚀**

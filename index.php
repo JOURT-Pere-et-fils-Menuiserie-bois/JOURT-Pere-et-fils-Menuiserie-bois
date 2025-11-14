@@ -421,8 +421,8 @@
                     </label>
 
                     <label>
-                        Fichier PDF *
-                        <input type="file" name="plan_file" id="plan-file-input" accept=".pdf" required>
+                        Fichier Plan (PDF ou DXF) *
+                        <input type="file" name="plan_file" id="plan-file-input" accept=".pdf,.dxf" required>
                     </label>
                 </form>
             </div>
