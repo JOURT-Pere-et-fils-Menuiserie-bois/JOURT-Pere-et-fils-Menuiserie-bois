@@ -157,9 +157,63 @@
             <!-- Right Panel: Info -->
             <aside class="right-panel">
                 <div class="info-section">
-                    <h3>Informations</h3>
-                    <div id="selection-info">
+                    <h3>📊 Projet</h3>
+                    <div id="project-details" class="project-details">
+                        <div class="info-row">
+                            <span class="info-label">Nom:</span>
+                            <span class="info-value" id="info-project-name">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Client:</span>
+                            <span class="info-value" id="info-client">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Référence:</span>
+                            <span class="info-value" id="info-reference">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Créé le:</span>
+                            <span class="info-value" id="info-created">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Modifié le:</span>
+                            <span class="info-value" id="info-updated">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>📈 Statistiques</h3>
+                    <div id="project-stats" class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-measurements">0</span>
+                            <span class="stat-label">Mesures</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-total-length">0 m</span>
+                            <span class="stat-label">Longueur totale</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-total-area">0 m²</span>
+                            <span class="stat-label">Surface totale</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="stat-total-price">0 €</span>
+                            <span class="stat-label">Total estimé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>ℹ️ Sélection</h3>
+                    <div id="selection-info" class="selection-info">
                         <p>Aucune sélection</p>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <div class="save-status">
+                        <span id="save-indicator">💾 Sauvegardé</span>
                     </div>
                 </div>
             </aside>
@@ -336,6 +390,9 @@
     <script src="js/modules/versioning.js"></script>
     <script src="js/modules/export.js"></script>
     <script src="js/modules/project-selector.js"></script>
+    <script src="js/modules/info-panel.js"></script>
+    <script src="js/modules/auto-save.js"></script>
+    <script src="js/modules/shortcuts.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
