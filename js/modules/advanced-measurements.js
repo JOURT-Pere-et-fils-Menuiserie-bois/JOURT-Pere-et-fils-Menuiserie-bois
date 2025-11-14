@@ -33,24 +33,23 @@ const AdvancedMeasurements = (function() {
 
     /**
      * Charger formules personnalisées depuis localStorage
+     * NOTE: Désactivé car les fonctions JavaScript ne peuvent pas être sérialisées
+     * Les formules personnalisées doivent être recréées à chaque session
      */
     function loadFormulas() {
-        const stored = localStorage.getItem('customFormulas');
-        if (stored) {
-            try {
-                customFormulas = JSON.parse(stored);
-            } catch(e) {
-                console.error('Erreur chargement formules', e);
-                customFormulas = [];
-            }
-        }
+        // localStorage désactivé pour formules (contiennent des functions)
+        console.warn('Formules personnalisées non persistées (fonctions JS non sérialisables)');
+        customFormulas = [];
     }
 
     /**
      * Sauvegarder formules personnalisées
+     * NOTE: Désactivé car les fonctions JavaScript ne peuvent pas être sérialisées
      */
     function saveFormulas() {
-        localStorage.setItem('customFormulas', JSON.stringify(customFormulas));
+        // Ne pas sauvegarder - les functions ne sont pas sérialisables en JSON
+        console.warn('Formules personnalisées non sauvegardées (fonctions JS non sérialisables)');
+        // TODO: Implémenter système de formules prédéfinies avec IDs si besoin
     }
 
     // ===== VOLUME (AIRE + ÉPAISSEUR) =====
