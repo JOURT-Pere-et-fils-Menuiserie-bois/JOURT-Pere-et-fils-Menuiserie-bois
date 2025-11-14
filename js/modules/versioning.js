@@ -109,21 +109,32 @@ const VersionManager = (function() {
             // Charger le plan
             await PDFLoader.loadPDFFromURL(version.file_path);
 
-            // Charger les mesures
-            const measurements = await StorageManager.loadMeasurements(currentProjectId, versionId);
-            MeasurementTable.loadMeasurements(measurements);
+            // Charger les mesures (ne pas bloquer si erreur)
+            try {
+                const measurementsData = await StorageManager.loadMeasurements(currentProjectId, versionId);
+                const measurements = measurementsData.measurements || measurementsData || [];
 
-            // Dessiner les mesures
-            measurements.forEach(m => {
-                DrawingManager.drawMeasurement(m);
-            });
+                console.log('Mesures chargées pour version:', versionId, measurements.length);
+
+                if (measurements.length > 0) {
+                    MeasurementTable.loadMeasurements(measurements);
+
+                    // Dessiner les mesures
+                    measurements.forEach(m => {
+                        DrawingManager.drawMeasurement(m);
+                    });
+                }
+            } catch (measError) {
+                console.log('Aucune mesure pour cette version (normal si nouveau)');
+            }
 
             currentVersionId = versionId;
 
+            // Publier événement
+            PubSub.publish(EVENTS.VERSION_CHANGED, { versionId });
+
             // Fermer modal
             document.getElementById('versions-modal').classList.remove('active');
-
-            PubSub.publish(EVENTS.VERSION_CHANGED, { versionId });
 
             alert(`Version ${version.version_label} chargée`);
 
