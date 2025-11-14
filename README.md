@@ -55,9 +55,9 @@ Solution complète pour charger des plans PDF/DXF, calibrer l'échelle, effectue
 ## 🚀 Installation rapide
 
 ### 1. Prérequis
-- PHP 7.4+
-- MySQL 5.7+ ou MariaDB 10.3+
-- Apache ou Nginx
+- **PHP 7.4+** seulement !
+- ✨ **Aucune base de données requise** (système de fichiers JSON)
+- Apache ou Nginx (optionnel, serveur PHP intégré suffit)
 
 ### 2. Installation
 
@@ -66,26 +66,42 @@ Solution complète pour charger des plans PDF/DXF, calibrer l'échelle, effectue
 git clone <repository-url>
 cd JOURT-Pere-et-fils-Menuiserie-bois
 
-# Créer la base de données
-mysql -u root -p < database/schema.sql
-
-# Configurer PHP
-# Éditer php/config.php avec vos paramètres MySQL
+# Télécharger PDF.js (obligatoire)
+cd js/lib/
+wget https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js
+wget https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js
+cd ../..
 
 # Configurer permissions
 chmod -R 755 saves/ uploads/ logs/
 
-# Lancer serveur (développement)
+# C'est tout ! Lancer le serveur
 php -S localhost:8000
 ```
 
 ### 3. Premier démarrage
 
-1. Ouvrir http://localhost:8000
+1. Ouvrir **http://localhost:8000**
 2. Créer un nouveau projet
 3. Charger un plan PDF
 4. Calibrer l'échelle
 5. Commencer à mesurer !
+
+**Structure automatique créée :**
+```
+saves/
+└── projet_20250115_143022_a3f8/
+    ├── project.json              # Métadonnées projet
+    ├── versions/
+    │   ├── versions.json         # Liste versions
+    │   └── v001/
+    │       ├── plan.pdf          # Plan uploadé
+    │       ├── measurements.json # Mesures
+    │       └── metadata.json     # Infos version
+    ├── avenants/
+    │   └── avenants.json         # Avenants
+    └── exports/                  # Exports CSV/Excel
+```
 
 ---
 
@@ -122,8 +138,15 @@ Cliquer sur **"Exporter"** et choisir le format (CSV, Excel, PDF)
 ### Stack
 - **Frontend** : Vanilla JavaScript (ES6+), HTML5 Canvas + SVG, CSS3
 - **Backend** : PHP 7.4+ (Standalone), REST API
-- **Base de données** : MySQL 8.0 / MariaDB 10.3+
+- **Base de données** : ✨ **Fichiers JSON** (FlatFile - aucun serveur DB requis)
 - **Bibliothèques** : PDF.js (Mozilla)
+
+### Avantages du système FlatFile
+- ✅ **Installation instantanée** : Aucune configuration DB
+- ✅ **Portabilité totale** : Copiez le dossier `saves/` = backup complet
+- ✅ **Lisible** : Fichiers JSON éditables manuellement
+- ✅ **Backup simple** : Copie de fichiers, pas de dump SQL
+- ✅ **Un projet = Un dossier** : Organisation claire
 
 ### Structure projet
 ```
@@ -135,12 +158,15 @@ metre-pro/
 │   ├── modules/          # Modules JS
 │   └── lib/              # PDF.js
 ├── php/
-│   ├── config.php        # Configuration
+│   ├── config.php        # Configuration (aucun mot de passe DB !)
 │   ├── api/              # API REST
 │   └── classes/          # Classes métier
-├── database/
-│   └── schema.sql        # Schéma BDD
-└── saves/                # Données persistées
+│       ├── FlatFileDB.php         # Gestion fichiers JSON
+│       ├── ProjectManager.php     # Gestion projets
+│       ├── VersionManager.php     # Gestion versions
+│       └── MeasurementManager.php # Gestion mesures
+└── saves/                # Données persistées (JSON)
+    └── projet_xxx/       # Un dossier par projet
 ```
 
 ---
