@@ -147,7 +147,11 @@ const PlanManager = (function() {
             } else {
                 // Charger le PDF (par défaut)
                 console.log('📄 Chargement PDF:', plan.file_path);
-                await PDFLoader.loadPDFFromURL(plan.file_path);
+                if (typeof PDFLoader !== 'undefined') {
+                    await PDFLoader.loadPDFFromURL(plan.file_path);
+                } else {
+                    throw new Error('PDFLoader non disponible. Vérifiez que PDF.js est chargé (js/lib/pdf.min.mjs)');
+                }
             }
 
             // Charger les mesures de ce plan

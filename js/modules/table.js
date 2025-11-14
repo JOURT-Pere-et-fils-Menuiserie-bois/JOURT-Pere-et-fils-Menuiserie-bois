@@ -8,6 +8,19 @@ const MeasurementTable = (function() {
     let tbody = null;
     let totalDisplay = null;
 
+    // Helper: Debounce function
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
     /**
      * Initialiser
      */
@@ -156,10 +169,20 @@ const MeasurementTable = (function() {
      */
     function handleInputChange(measurementId, input) {
         const field = input.dataset.field;
-        const value = input.value;
+        let value = input.value;
 
         const measurement = measurements.find(m => m.id === measurementId);
         if (!measurement) return;
+
+        // Validation et conversion selon le type de champ
+        if (field === 'quantity' || field === 'unit_price') {
+            const numValue = parseFloat(value);
+            if (isNaN(numValue) || numValue < 0) {
+                input.value = measurement[field] || 0; // Restaurer ancienne valeur
+                return;
+            }
+            value = numValue;
+        }
 
         // Mettre à jour la mesure
         measurement[field] = value;
@@ -172,7 +195,7 @@ const MeasurementTable = (function() {
             const total = quantity * unitPrice;
 
             row.querySelector('.row-total').textContent = formatCurrency(total);
-            updateTotal();
+            updateTotalDebounced(); // Debounced pour performance pendant saisie
         }
 
         // Notifier
@@ -239,6 +262,9 @@ const MeasurementTable = (function() {
             totalDisplay.innerHTML = `<strong>${formatCurrency(total)}</strong>`;
         }
     }
+
+    // Version debouncée pour éviter trop d'appels
+    const updateTotalDebounced = debounce(updateTotal, 300);
 
     /**
      * Formater montant en euros
