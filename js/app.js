@@ -195,23 +195,62 @@ const App = (function() {
      */
     async function loadPDFFile(file) {
         try {
+            if (!currentProject) {
+                alert('Veuillez d\'abord créer un projet');
+                showNewProjectModal();
+                return;
+            }
+
             // Masquer drop zone
             document.getElementById('drop-zone').classList.add('hidden');
 
-            // Upload et chargement
-            console.log('Chargement PDF:', file.name);
+            console.log('Upload PDF:', file.name);
 
-            // Upload vers serveur
-            const uploadResult = await StorageManager.uploadFile(file, currentProject.project_id, {
-                file_type: 'pdf'
-            });
+            // Demander le niveau du plan
+            const floorLevel = prompt('Niveau du plan (ex: RDC, R+1, R+2, Sous-sol, Combles):', 'RDC');
+            if (!floorLevel) {
+                document.getElementById('drop-zone').classList.remove('hidden');
+                return;
+            }
 
-            // Charger dans le viewer
-            if (typeof PDFLoader !== 'undefined') {
-                await PDFLoader.loadPDF(file);
-                currentVersion = uploadResult.version_id;
-                updateVersionDisplay();
-                PubSub.publish(EVENTS.PLAN_LOADED, { file, type: 'pdf' });
+            // Ordre automatique selon niveau
+            const floorOrders = {
+                'Sous-sol': -1,
+                'RDC': 0,
+                'R+1': 1,
+                'R+2': 2,
+                'R+3': 3,
+                'R+4': 4,
+                'Combles': 5,
+                'Toiture': 6
+            };
+            const floorOrder = floorOrders[floorLevel] || 0;
+
+            // Si aucune version, créer version initiale
+            if (!currentVersion) {
+                console.log('Création première version...');
+                const versionResult = await StorageManager.apiRequest('/versions.php', 'POST', {
+                    project_id: currentProject.project_id,
+                    version_label: 'Version initiale',
+                    description: 'Première version du projet'
+                });
+
+                currentVersion = versionResult.version.version_id;
+                console.log('Version créée:', currentVersion);
+
+                // Publier événement
+                PubSub.publish(EVENTS.VERSION_CHANGED, {
+                    versionId: currentVersion,
+                    version: versionResult.version
+                });
+            }
+
+            // Ajouter plan via PlanManager
+            if (typeof PlanManager !== 'undefined') {
+                await PlanManager.addPlan(file, floorLevel, floorOrder);
+                console.log('✅ Plan ajouté via PlanManager');
+            } else {
+                throw new Error('PlanManager non disponible');
             }
 
         } catch (error) {
@@ -226,18 +265,57 @@ const App = (function() {
      */
     async function loadDXFFile(file) {
         try {
+            if (!currentProject) {
+                alert('Veuillez d\'abord créer un projet');
+                showNewProjectModal();
+                return;
+            }
+
             document.getElementById('drop-zone').classList.add('hidden');
-            console.log('Chargement DXF:', file.name);
+            console.log('Upload DXF:', file.name);
 
-            const uploadResult = await StorageManager.uploadFile(file, currentProject.project_id, {
-                file_type: 'dxf'
-            });
+            // DXF: Demander aussi le niveau
+            const floorLevel = prompt('Niveau du plan (ex: RDC, R+1, R+2, Sous-sol, Combles):', 'RDC');
+            if (!floorLevel) {
+                document.getElementById('drop-zone').classList.remove('hidden');
+                return;
+            }
 
-            if (typeof DXFLoader !== 'undefined') {
-                await DXFLoader.loadDXF(file);
-                currentVersion = uploadResult.version_id;
-                updateVersionDisplay();
-                PubSub.publish(EVENTS.PLAN_LOADED, { file, type: 'dxf' });
+            const floorOrders = {
+                'Sous-sol': -1,
+                'RDC': 0,
+                'R+1': 1,
+                'R+2': 2,
+                'R+3': 3,
+                'R+4': 4,
+                'Combles': 5,
+                'Toiture': 6
+            };
+            const floorOrder = floorOrders[floorLevel] || 0;
+
+            // Si aucune version, créer version initiale
+            if (!currentVersion) {
+                console.log('Création première version...');
+                const versionResult = await StorageManager.apiRequest('/versions.php', 'POST', {
+                    project_id: currentProject.project_id,
+                    version_label: 'Version initiale',
+                    description: 'Première version du projet'
+                });
+
+                currentVersion = versionResult.version.version_id;
+
+                PubSub.publish(EVENTS.VERSION_CHANGED, {
+                    versionId: currentVersion,
+                    version: versionResult.version
+                });
+            }
+
+            // Ajouter plan via PlanManager (même workflow que PDF)
+            if (typeof PlanManager !== 'undefined') {
+                await PlanManager.addPlan(file, floorLevel, floorOrder);
+                console.log('✅ Plan DXF ajouté via PlanManager');
+            } else {
+                throw new Error('PlanManager non disponible');
             }
 
         } catch (error) {
@@ -547,6 +625,19 @@ const App = (function() {
             currentProject = project;
             updateProjectDisplay();
             StorageManager.saveLocal('last_project_id', project.project_id);
+        });
+
+        PubSub.subscribe(EVENTS.PROJECT_CREATED, (project) => {
+            console.log('Projet créé:', project);
+            currentProject = project;
+            updateProjectDisplay();
+        });
+
+        // NOUVEAU: Mémoriser version courante
+        PubSub.subscribe(EVENTS.VERSION_CHANGED, (data) => {
+            console.log('Version changée:', data.versionId);
+            currentVersion = data.versionId;
+            updateVersionDisplay();
         });
 
         PubSub.subscribe(EVENTS.PLAN_LOADED, (data) => {

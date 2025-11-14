@@ -147,17 +147,62 @@ const StorageManager = (function() {
     }
 
     /**
-     * Sauvegarder mesures
+     * Sauvegarder mesures d'un plan spécifique
      */
-    async function saveMeasurements(projectId, versionId, measurements) {
-        saveLocal(`measurements_${versionId}`, measurements);
+    async function saveMeasurements(projectId, versionId, planId, measurements) {
+        // Si planId n'est pas fourni, utiliser ancienne méthode (rétrocompatibilité)
+        if (!planId) {
+            console.warn('saveMeasurements: planId non fourni, mode rétrocompatibilité');
+            saveLocal(`measurements_${versionId}`, measurements);
+
+            try {
+                const result = await apiRequest('/measurements.php', 'POST', {
+                    project_id: projectId,
+                    version_id: versionId,
+                    measurements: measurements
+                });
+                return result;
+            } catch (error) {
+                console.error('Error saving measurements:', error);
+                throw error;
+            }
+        }
+
+        // NOUVELLE MÉTHODE: Sauvegarder par plan
+        saveLocal(`measurements_${versionId}_${planId}`, measurements);
 
         try {
+            // Charger measurements_by_plan existants
+            let allMeasurements = { measurements_by_plan: {} };
+
+            try {
+                const existing = await apiRequest(`/measurements.php?project_id=${projectId}&version_id=${versionId}`, 'GET');
+                if (existing && existing.measurements_by_plan) {
+                    allMeasurements = existing;
+                } else if (existing && Array.isArray(existing.measurements)) {
+                    // Ancienne structure { measurements: [] } - migrer
+                    allMeasurements.measurements_by_plan = {};
+                } else if (Array.isArray(existing)) {
+                    // Très ancienne structure (array direct) - migrer
+                    allMeasurements.measurements_by_plan = {};
+                }
+            } catch (e) {
+                // Pas de mesures existantes, OK
+                console.log('Pas de mesures existantes, création nouvelle structure');
+            }
+
+            // Mettre à jour mesures du plan courant
+            allMeasurements.measurements_by_plan[planId] = measurements;
+
+            console.log(`💾 Sauvegarde mesures: plan ${planId}, ${measurements.length} mesure(s)`);
+
+            // Sauvegarder tout avec nouvelle structure
             const result = await apiRequest('/measurements.php', 'POST', {
                 project_id: projectId,
                 version_id: versionId,
-                measurements: measurements
+                measurements_by_plan: allMeasurements.measurements_by_plan
             });
+
             return result;
         } catch (error) {
             console.error('Error saving measurements:', error);
@@ -166,16 +211,32 @@ const StorageManager = (function() {
     }
 
     /**
-     * Charger mesures
+     * Charger mesures (version ou plan spécifique)
      */
-    async function loadMeasurements(projectId, versionId) {
+    async function loadMeasurements(projectId, versionId, planId = null) {
         try {
             const result = await apiRequest(`/measurements.php?project_id=${projectId}&version_id=${versionId}`, 'GET');
             saveLocal(`measurements_${versionId}`, result);
+
+            // Si planId fourni, retourner seulement ce plan
+            if (planId) {
+                if (result.measurements_by_plan && result.measurements_by_plan[planId]) {
+                    console.log(`📦 Mesures chargées pour plan ${planId}:`, result.measurements_by_plan[planId].length);
+                    return result.measurements_by_plan[planId];
+                } else {
+                    console.log(`📦 Aucune mesure pour plan ${planId}`);
+                    return [];
+                }
+            }
+
+            // Sinon retourner structure complète
             return result;
         } catch (error) {
             const localData = loadLocal(`measurements_${versionId}`);
             if (localData) {
+                if (planId && localData.measurements_by_plan) {
+                    return localData.measurements_by_plan[planId] || [];
+                }
                 return localData;
             }
             throw error;

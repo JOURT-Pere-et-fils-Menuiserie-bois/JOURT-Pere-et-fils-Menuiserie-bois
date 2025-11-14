@@ -117,58 +117,27 @@ const VersionManager = (function() {
 
             console.log('✅ Projet courant:', currentProjectId);
 
-            // Charger le plan
-            console.log('📄 Chargement PDF depuis:', version.file_path);
-            try {
-                await PDFLoader.loadPDFFromURL(version.file_path);
-                console.log('✅ PDF chargé avec succès');
-            } catch (pdfError) {
-                console.error('❌ Erreur chargement PDF:', pdfError);
-                throw new Error(`Impossible de charger le PDF: ${pdfError.message}`);
-            }
-
-            // Charger les mesures (ne pas bloquer si erreur)
-            console.log('📏 Chargement mesures...');
-            try {
-                const measurementsData = await StorageManager.loadMeasurements(currentProjectId, versionId);
-                console.log('📦 Données mesures reçues:', measurementsData);
-
-                const measurements = measurementsData.measurements || measurementsData || [];
-
-                console.log('✅ Mesures extraites:', measurements.length, 'mesure(s)');
-
-                if (measurements.length > 0) {
-                    console.log('📊 Chargement dans table...');
-                    MeasurementTable.loadMeasurements(measurements);
-
-                    console.log('🎨 Dessin des mesures...');
-                    // Dessiner les mesures
-                    measurements.forEach((m, index) => {
-                        try {
-                            DrawingManager.drawMeasurement(m);
-                            console.log(`  ✓ Mesure ${index + 1} dessinée`);
-                        } catch (drawError) {
-                            console.error(`  ✗ Erreur dessin mesure ${index + 1}:`, drawError);
-                        }
-                    });
-
-                    console.log('✅ Toutes les mesures dessinées');
-                }
-            } catch (measError) {
-                console.warn('⚠️ Aucune mesure pour cette version (normal si nouveau):', measError.message);
-            }
-
             currentVersionId = versionId;
 
-            // Publier événement
+            // Publier événement VERSION_CHANGED
+            // PlanManager s'abonne à cet événement et chargera automatiquement les plans
             console.log('📢 Publication événement VERSION_CHANGED');
-            PubSub.publish(EVENTS.VERSION_CHANGED, { versionId });
+            PubSub.publish(EVENTS.VERSION_CHANGED, {
+                versionId,
+                version
+            });
+
+            // PlanManager va:
+            // 1. Charger la liste des plans de cette version
+            // 2. Charger le premier plan disponible (PDF + mesures)
+            // 3. Mettre à jour le sélecteur de plans
+            // Pas besoin de charger PDF ou mesures ici!
 
             // Fermer modal
             document.getElementById('versions-modal').classList.remove('active');
 
-            console.log('✅ Version chargée avec succès:', version.version_label);
-            alert(`✅ Version ${version.version_label} chargée`);
+            console.log('✅ Version changée, PlanManager va charger les plans');
+            alert(`✅ Version ${version.version_label} sélectionnée\n\nChargement des plans en cours...`);
 
         } catch (error) {
             console.error('❌ ERREUR CHARGEMENT VERSION:', error);

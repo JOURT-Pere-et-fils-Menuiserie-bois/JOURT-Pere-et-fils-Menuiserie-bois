@@ -168,44 +168,19 @@ const ProjectSelector = (function() {
                 )[0];
             }
 
-            // 4. Charger le plan PDF et les mesures de cette version
+            // 4. Publier événement VERSION_CHANGED pour que PlanManager charge les plans
             if (currentVersion) {
                 console.log('Chargement de la version:', currentVersion.version_label);
 
-                // Charger le PDF
-                if (currentVersion.file_path && typeof PDFLoader !== 'undefined') {
-                    await PDFLoader.loadPDFFromURL(currentVersion.file_path);
-                    console.log('PDF chargé:', currentVersion.file_name);
-                }
-
-                // Charger les mesures
-                try {
-                    const measurementsData = await StorageManager.loadMeasurements(project.project_id, currentVersion.version_id);
-                    const measurements = measurementsData.measurements || measurementsData || [];
-
-                    console.log('Mesures chargées:', measurements.length);
-
-                    // Charger dans le tableau
-                    if (typeof MeasurementTable !== 'undefined') {
-                        MeasurementTable.loadMeasurements(measurements);
-                    }
-
-                    // Dessiner sur le canvas
-                    if (typeof DrawingManager !== 'undefined') {
-                        measurements.forEach(measurement => {
-                            DrawingManager.drawMeasurement(measurement);
-                        });
-                    }
-
-                    // Publier événement
-                    PubSub.publish(EVENTS.VERSION_CHANGED, {
-                        versionId: currentVersion.version_id,
-                        version: currentVersion
-                    });
-
-                } catch (measError) {
-                    console.log('Aucune mesure pour cette version (normal pour nouveau projet)');
-                }
+                // Publier événement VERSION_CHANGED
+                // PlanManager s'abonne à cet événement et va:
+                // 1. Charger la liste des plans de cette version
+                // 2. Charger le premier plan disponible (PDF + mesures)
+                // 3. Mettre à jour le sélecteur de plans
+                PubSub.publish(EVENTS.VERSION_CHANGED, {
+                    versionId: currentVersion.version_id,
+                    version: currentVersion
+                });
 
                 showNotification(`✅ Projet "${project.project_name}" ouvert avec ${versions.length} version(s)`, 'success');
             } else {

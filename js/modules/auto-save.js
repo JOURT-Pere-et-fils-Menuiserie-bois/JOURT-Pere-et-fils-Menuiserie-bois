@@ -9,6 +9,7 @@ const AutoSave = (function() {
     let isDirty = false;
     let currentProject = null;
     let currentVersion = null;
+    let currentPlanId = null;  // NOUVEAU: Plan courant
     let measurements = [];
 
     /**
@@ -58,6 +59,19 @@ const AutoSave = (function() {
                 currentVersion = data.versionId;
             }
         });
+
+        // NOUVEAU: Mémoriser le plan courant + sauvegarder avant changement
+        PubSub.subscribe('plan:changed', async (data) => {
+            // Sauvegarder ancien plan avant de changer
+            if (isDirty && currentPlanId && currentProject && currentVersion) {
+                console.log('💾 Auto-save avant changement de plan');
+                await saveNow();
+            }
+
+            // Mémoriser nouveau plan
+            currentPlanId = data.planId;
+            console.log('📄 Plan changé:', currentPlanId);
+        });
     }
 
     /**
@@ -106,6 +120,11 @@ const AutoSave = (function() {
             return;
         }
 
+        if (!currentPlanId) {
+            console.log('AutoSave: Pas de plan courant');
+            return;
+        }
+
         try {
             // Mettre à jour l'indicateur
             if (typeof InfoPanel !== 'undefined') {
@@ -115,8 +134,15 @@ const AutoSave = (function() {
             // Récupérer les mesures depuis le tableau
             measurements = getMeasurementsFromTable();
 
-            // Sauvegarder les mesures
-            await StorageManager.saveMeasurements(currentProject.project_id, currentVersion, measurements);
+            console.log(`💾 Auto-save: ${measurements.length} mesure(s) pour plan ${currentPlanId}`);
+
+            // Sauvegarder les mesures avec plan_id
+            await StorageManager.saveMeasurements(
+                currentProject.project_id,
+                currentVersion,
+                currentPlanId,  // NOUVEAU: plan_id
+                measurements
+            );
 
             // Marquer comme sauvegardé
             isDirty = false;
@@ -126,10 +152,10 @@ const AutoSave = (function() {
                 InfoPanel.updateSaveIndicator('saved');
             }
 
-            console.log('AutoSave: Sauvegarde réussie', measurements.length, 'mesures');
+            console.log('✅ Auto-save réussi');
 
         } catch (error) {
-            console.error('AutoSave: Erreur de sauvegarde', error);
+            console.error('❌ Auto-save échoué:', error);
 
             // Mettre à jour l'indicateur
             if (typeof InfoPanel !== 'undefined') {
