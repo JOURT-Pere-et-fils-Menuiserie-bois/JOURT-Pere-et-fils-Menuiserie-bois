@@ -524,11 +524,17 @@ const App = (function() {
         document.getElementById('thickness-value').textContent = thickness + 'px';
         document.getElementById('opacity-value').textContent = opacity + '%';
 
-        PubSub.publish('tool:properties:changed', {
+        const props = {
             color,
             thickness: parseInt(thickness),
             opacity: parseInt(opacity) / 100
-        });
+        };
+
+        // Publier pour les outils standards
+        PubSub.publish('tool:properties:changed', props);
+
+        // Publier aussi pour les outils markup
+        PubSub.publish('markup:properties:changed', props);
     }
 
     /**

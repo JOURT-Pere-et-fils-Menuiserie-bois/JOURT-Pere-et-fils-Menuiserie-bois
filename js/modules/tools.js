@@ -41,6 +41,12 @@ const ToolsManager = (function() {
         // Écouter changement d'outil
         PubSub.subscribe(EVENTS.TOOL_CHANGED, function(data) {
             currentTool = data.tool;
+
+            // Si c'est un outil markup, notifier le MarkupManager
+            if (currentTool && currentTool.startsWith('markup:')) {
+                PubSub.publish('markup:tool:changed', { tool: currentTool });
+            }
+
             cancelCurrentDrawing();
         });
 
