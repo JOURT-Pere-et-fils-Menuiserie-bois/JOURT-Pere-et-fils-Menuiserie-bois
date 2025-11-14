@@ -1,12 +1,13 @@
 <?php
 /**
- * API Upload - Upload de fichiers PDF/DXF
+ * API Upload - Upload de fichiers PDF/DXF (FlatFile)
  */
 
 require_once '../config.php';
-require_once '../classes/Database.php';
+require_once '../classes/FlatFileDB.php';
+require_once '../classes/VersionManager.php';
 
-$db = Database::getInstance();
+$versionManager = new VersionManager();
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -41,91 +42,50 @@ try {
         jsonError('Type de fichier non autorisé. Utilisez PDF ou DXF.');
     }
 
-    // Créer dossier projet
-    $projectPath = SAVES_PATH . "/projet_$projectId";
-    if (!is_dir($projectPath)) {
-        mkdir($projectPath, 0755, true);
-    }
-
-    // Obtenir numéro de version
-    $sql = "SELECT COALESCE(MAX(version_number), 0) + 1 as next_version
-            FROM plan_versions
-            WHERE project_id = :project_id";
-
-    $nextVersion = $db->fetchValue($sql, [':project_id' => $projectId]);
-    $versionLabel = 'v' . str_pad($nextVersion, 3, '0', STR_PAD_LEFT);
-
-    // Créer dossier version
-    $versionPath = "$projectPath/versions/v$nextVersion";
-    if (!is_dir($versionPath)) {
-        mkdir($versionPath, 0755, true);
-    }
-
     // Calculer hash
     $hash = hash_file('sha256', $file['tmp_name']);
 
     // Vérifier si fichier déjà uploadé
-    $sql = "SELECT version_id FROM plan_versions
-            WHERE project_id = :project_id AND file_hash = :hash";
+    $versions = $versionManager->getAll($projectId);
+    foreach ($versions as $v) {
+        if ($v['file_hash'] === $hash) {
+            jsonError('Ce fichier a déjà été uploadé (version ' . $v['version_label'] . ')');
+        }
+    }
 
-    $existingVersion = $db->fetchValue($sql, [
-        ':project_id' => $projectId,
-        ':hash' => $hash
-    ]);
+    // Créer version
+    $versionData = [
+        'file_name' => $file['name'],
+        'file_hash' => $hash,
+        'file_size' => $file['size'],
+        'mime_type' => $file['type'],
+        'user_id' => 1 // TODO: Session
+    ];
 
-    if ($existingVersion) {
-        jsonError('Ce fichier a déjà été uploadé (version #' . $existingVersion . ')');
+    $version = $versionManager->create($projectId, $versionData);
+
+    // Créer dossier version
+    $versionPath = SAVES_PATH . '/' . $projectId . '/versions/' . $version['version_id'];
+    if (!file_exists($versionPath)) {
+        mkdir($versionPath, 0755, true);
     }
 
     // Déplacer fichier
     $fileName = 'plan.' . $extension;
-    $filePath = "$versionPath/$fileName";
+    $filePath = $versionPath . '/' . $fileName;
 
     if (!move_uploaded_file($file['tmp_name'], $filePath)) {
         jsonError('Erreur lors de l\'enregistrement du fichier');
     }
 
-    // Créer version en BDD
-    $sql = "INSERT INTO plan_versions
-            (project_id, version_number, version_label, file_path, file_name,
-             file_hash, file_size_bytes, mime_type, uploaded_by, is_current)
-            VALUES
-            (:project_id, :version_number, :version_label, :file_path, :file_name,
-             :file_hash, :file_size, :mime_type, :user_id, 1)";
-
-    // Désactiver les autres versions courantes
-    $db->query("UPDATE plan_versions SET is_current = 0 WHERE project_id = :project_id", [
-        ':project_id' => $projectId
-    ]);
-
-    $versionId = $db->insert($sql, [
-        ':project_id' => $projectId,
-        ':version_number' => $nextVersion,
-        ':version_label' => $versionLabel,
-        ':file_path' => $filePath,
-        ':file_name' => $file['name'],
-        ':file_hash' => $hash,
-        ':file_size' => $file['size'],
-        ':mime_type' => $file['type'],
-        ':user_id' => 1 // TODO: Session
-    ]);
-
-    // Créer fichier metadata.json
-    $metadata = [
-        'version_id' => $versionId,
-        'version_number' => $nextVersion,
-        'version_label' => $versionLabel,
-        'file_name' => $file['name'],
-        'file_size' => $file['size'],
-        'file_hash' => $hash,
-        'uploaded_at' => date('Y-m-d H:i:s')
-    ];
-
-    file_put_contents("$versionPath/metadata.json", json_encode($metadata, JSON_PRETTY_PRINT));
+    // Mettre à jour le file_path dans la version
+    $versionData['file_path'] = $filePath;
+    $version = $versionManager->update($projectId, $version['version_id'], ['file_path' => $filePath]);
 
     jsonSuccess([
-        'version_id' => $versionId,
-        'version_label' => $versionLabel,
+        'version' => $version,
+        'version_id' => $version['version_id'],
+        'version_label' => $version['version_label'],
         'file_path' => $filePath
     ], 'Fichier uploadé avec succès');
 

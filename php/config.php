@@ -1,14 +1,7 @@
 <?php
 /**
- * Configuration globale
+ * Configuration globale - Version Flatfile
  */
-
-// Configuration base de données
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'metre_pro');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_CHARSET', 'utf8mb4');
 
 // Configuration chemins
 define('BASE_PATH', dirname(__DIR__));
@@ -29,14 +22,19 @@ if (!file_exists(UPLOADS_PATH)) {
 
 // Configuration erreurs
 error_reporting(E_ALL);
-ini_set('display_errors', 0); // Désactiver en production
+ini_set('display_errors', 1); // Mettre à 0 en production
 ini_set('log_errors', 1);
-ini_set('error_log', BASE_PATH . '/logs/php_errors.log');
+
+$logsDir = BASE_PATH . '/logs';
+if (!file_exists($logsDir)) {
+    mkdir($logsDir, 0755, true);
+}
+ini_set('error_log', $logsDir . '/php_errors.log');
 
 // Timezone
 date_default_timezone_set('Europe/Paris');
 
-// Headers CORS (à sécuriser en production)
+// Headers CORS
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
@@ -52,7 +50,7 @@ if (session_status() === PHP_SESSION_NONE) {
 function jsonResponse($data, $statusCode = 200) {
     http_response_code($statusCode);
     header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     exit;
 }
 

@@ -1,10 +1,10 @@
 <?php
 /**
- * API Projects - CRUD projets
+ * API Projects - CRUD projets (FlatFile)
  */
 
 require_once '../config.php';
-require_once '../classes/Database.php';
+require_once '../classes/FlatFileDB.php';
 require_once '../classes/ProjectManager.php';
 
 $manager = new ProjectManager();
@@ -40,8 +40,7 @@ try {
             jsonError('Le nom du projet est requis');
         }
 
-        // TODO: Récupérer user_id depuis session
-        $userId = 1;
+        $userId = 1; // TODO: Session
 
         $project = $manager->create($data, $userId);
         jsonSuccess(['project' => $project], 'Projet créé avec succès');

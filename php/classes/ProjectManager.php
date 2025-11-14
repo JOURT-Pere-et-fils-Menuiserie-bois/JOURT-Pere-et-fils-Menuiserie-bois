@@ -1,90 +1,101 @@
 <?php
 /**
- * ProjectManager - Gestion des projets
+ * ProjectManager - Gestion des projets (version FlatFile)
  */
 
 class ProjectManager {
-    private $db;
-
-    public function __construct() {
-        $this->db = Database::getInstance();
-    }
 
     /**
      * Créer un projet
      */
-    public function create($data, $userId) {
-        $sql = "INSERT INTO projects (project_name, client_name, contract_reference, address, created_by)
-                VALUES (:name, :client, :contract, :address, :user_id)";
+    public function create($data, $userId = 1) {
+        $projectId = 'projet_' . date('Ymd_His') . '_' . bin2hex(random_bytes(4));
 
-        $projectId = $this->db->insert($sql, [
-            ':name' => $data['project_name'],
-            ':client' => $data['client_name'] ?? null,
-            ':contract' => $data['contract_reference'] ?? null,
-            ':address' => $data['address'] ?? null,
-            ':user_id' => $userId
-        ]);
+        // Créer structure dossiers
+        $projectPath = FlatFileDB::createProjectStructure($projectId);
 
-        return $this->getById($projectId);
+        // Créer données projet
+        $project = [
+            'project_id' => $projectId,
+            'project_name' => $data['project_name'],
+            'client_name' => $data['client_name'] ?? '',
+            'contract_reference' => $data['contract_reference'] ?? '',
+            'address' => $data['address'] ?? '',
+            'created_at' => FlatFileDB::now(),
+            'created_by' => $userId,
+            'updated_at' => FlatFileDB::now(),
+            'status' => 'active'
+        ];
+
+        // Sauvegarder
+        FlatFileDB::write($projectPath . '/project.json', $project);
+
+        // Créer fichiers vides pour versions et mesures
+        FlatFileDB::write($projectPath . '/versions/versions.json', []);
+        FlatFileDB::write($projectPath . '/avenants/avenants.json', []);
+
+        return $project;
     }
 
     /**
      * Obtenir un projet par ID
      */
     public function getById($projectId) {
-        $sql = "SELECT * FROM projects WHERE project_id = :id";
-        return $this->db->fetchOne($sql, [':id' => $projectId]);
+        $projectFile = SAVES_PATH . '/' . $projectId . '/project.json';
+        return FlatFileDB::read($projectFile);
     }
 
     /**
      * Obtenir tous les projets
      */
     public function getAll($status = 'active') {
-        $sql = "SELECT p.*, u.name as created_by_name
-                FROM projects p
-                LEFT JOIN users u ON p.created_by = u.user_id
-                WHERE p.status = :status
-                ORDER BY p.updated_at DESC";
+        $allProjects = FlatFileDB::getAllProjects();
 
-        return $this->db->fetchAll($sql, [':status' => $status]);
+        if ($status === 'all') {
+            return $allProjects;
+        }
+
+        return array_filter($allProjects, function($p) use ($status) {
+            return ($p['status'] ?? 'active') === $status;
+        });
     }
 
     /**
      * Mettre à jour un projet
      */
     public function update($projectId, $data) {
-        $fields = [];
-        $params = [':id' => $projectId];
+        $projectFile = SAVES_PATH . '/' . $projectId . '/project.json';
+        $project = FlatFileDB::read($projectFile);
 
+        if (!$project) {
+            throw new Exception('Projet non trouvé');
+        }
+
+        // Mettre à jour les champs
         foreach (['project_name', 'client_name', 'contract_reference', 'address'] as $field) {
             if (isset($data[$field])) {
-                $fields[] = "$field = :$field";
-                $params[":$field"] = $data[$field];
+                $project[$field] = $data[$field];
             }
         }
 
-        if (empty($fields)) {
-            return $this->getById($projectId);
-        }
+        $project['updated_at'] = FlatFileDB::now();
 
-        $sql = "UPDATE projects SET " . implode(', ', $fields) . " WHERE project_id = :id";
-        $this->db->query($sql, $params);
+        FlatFileDB::write($projectFile, $project);
 
-        return $this->getById($projectId);
+        return $project;
     }
 
     /**
      * Supprimer un projet
      */
     public function delete($projectId) {
-        $sql = "DELETE FROM projects WHERE project_id = :id";
-        $this->db->query($sql, [':id' => $projectId]);
+        $projectPath = SAVES_PATH . '/' . $projectId;
 
-        // Supprimer dossier saves
-        $projectPath = SAVES_PATH . "/projet_$projectId";
-        if (is_dir($projectPath)) {
-            $this->deleteDirectory($projectPath);
+        if (!is_dir($projectPath)) {
+            throw new Exception('Projet non trouvé');
         }
+
+        FlatFileDB::deleteDirectory($projectPath);
 
         return true;
     }
@@ -93,26 +104,18 @@ class ProjectManager {
      * Archiver un projet
      */
     public function archive($projectId) {
-        $sql = "UPDATE projects SET status = 'archived' WHERE project_id = :id";
-        $this->db->query($sql, [':id' => $projectId]);
-        return $this->getById($projectId);
-    }
+        $projectFile = SAVES_PATH . '/' . $projectId . '/project.json';
+        $project = FlatFileDB::read($projectFile);
 
-    /**
-     * Supprimer récursivement un dossier
-     */
-    private function deleteDirectory($dir) {
-        if (!is_dir($dir)) {
-            return false;
+        if (!$project) {
+            throw new Exception('Projet non trouvé');
         }
 
-        $files = array_diff(scandir($dir), ['.', '..']);
+        $project['status'] = 'archived';
+        $project['updated_at'] = FlatFileDB::now();
 
-        foreach ($files as $file) {
-            $path = $dir . '/' . $file;
-            is_dir($path) ? $this->deleteDirectory($path) : unlink($path);
-        }
+        FlatFileDB::write($projectFile, $project);
 
-        return rmdir($dir);
+        return $project;
     }
 }
