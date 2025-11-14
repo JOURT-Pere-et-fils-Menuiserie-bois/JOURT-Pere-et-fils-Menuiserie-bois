@@ -22,6 +22,15 @@
                 <div class="project-info">
                     <span id="current-project">Aucun projet</span>
                     <span id="current-version"></span>
+                    <!-- NOUVEAU: Sélecteur de plans -->
+                    <div class="plan-selector-container">
+                        <label for="plans-selector">Plan:</label>
+                        <select id="plans-selector" class="plan-selector">
+                            <option value="">Aucun plan</option>
+                        </select>
+                        <button id="btn-add-plan" class="btn-icon" title="Ajouter un plan">➕</button>
+                        <button id="btn-replace-plan" class="btn-icon" title="Remplacer ce plan" disabled>🔄</button>
+                    </div>
                 </div>
             </div>
             <div class="header-right">
@@ -376,6 +385,54 @@
         </div>
     </div>
 
+    <!-- Modal: Add Plan -->
+    <div id="add-plan-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Ajouter un plan à la version</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-plan-form">
+                    <label>
+                        Niveau / Étage *
+                        <select name="floor_level" id="floor-level-select">
+                            <option value="Sous-sol">Sous-sol</option>
+                            <option value="RDC" selected>RDC (Rez-de-chaussée)</option>
+                            <option value="R+1">R+1 (1er étage)</option>
+                            <option value="R+2">R+2 (2ème étage)</option>
+                            <option value="R+3">R+3 (3ème étage)</option>
+                            <option value="R+4">R+4 (4ème étage)</option>
+                            <option value="Combles">Combles</option>
+                            <option value="Toiture">Toiture</option>
+                            <option value="custom">Autre (personnalisé)...</option>
+                        </select>
+                    </label>
+
+                    <label id="custom-level-label" style="display: none;">
+                        Nom personnalisé *
+                        <input type="text" name="custom_floor_level" id="custom-floor-level" placeholder="Ex: Mezzanine, Parking">
+                    </label>
+
+                    <label>
+                        Ordre d'affichage
+                        <input type="number" name="floor_order" id="floor-order-input" value="0" min="-10" max="100">
+                        <small>Ordre de tri (ex: Sous-sol=-1, RDC=0, R+1=1, etc.)</small>
+                    </label>
+
+                    <label>
+                        Fichier PDF *
+                        <input type="file" name="plan_file" id="plan-file-input" accept=".pdf" required>
+                    </label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Annuler</button>
+                <button class="btn btn-primary" id="add-plan-confirm">Ajouter</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <!-- PDF.js depuis CDN -->
     <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.mjs" type="module"></script>
@@ -389,11 +446,83 @@
     <script src="js/modules/layers.js"></script>
     <script src="js/modules/table.js"></script>
     <script src="js/modules/versioning.js"></script>
+    <script src="js/modules/plan-manager.js"></script>
     <script src="js/modules/export.js"></script>
     <script src="js/modules/project-selector.js"></script>
     <script src="js/modules/info-panel.js"></script>
     <script src="js/modules/auto-save.js"></script>
     <script src="js/modules/shortcuts.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        // Gestion modal Add Plan
+        document.addEventListener('DOMContentLoaded', function() {
+            const floorLevelSelect = document.getElementById('floor-level-select');
+            const customLevelLabel = document.getElementById('custom-level-label');
+            const customLevelInput = document.getElementById('custom-floor-level');
+            const floorOrderInput = document.getElementById('floor-order-input');
+            const addPlanConfirm = document.getElementById('add-plan-confirm');
+
+            // Ordre par défaut selon niveau
+            const floorOrders = {
+                'Sous-sol': -1,
+                'RDC': 0,
+                'R+1': 1,
+                'R+2': 2,
+                'R+3': 3,
+                'R+4': 4,
+                'Combles': 5,
+                'Toiture': 6
+            };
+
+            // Afficher/masquer champ personnalisé
+            if (floorLevelSelect) {
+                floorLevelSelect.addEventListener('change', function() {
+                    if (this.value === 'custom') {
+                        customLevelLabel.style.display = 'block';
+                        customLevelInput.required = true;
+                    } else {
+                        customLevelLabel.style.display = 'none';
+                        customLevelInput.required = false;
+
+                        // Mettre à jour ordre automatiquement
+                        if (floorOrders[this.value] !== undefined) {
+                            floorOrderInput.value = floorOrders[this.value];
+                        }
+                    }
+                });
+            }
+
+            // Confirmer ajout plan
+            if (addPlanConfirm) {
+                addPlanConfirm.addEventListener('click', async function() {
+                    const form = document.getElementById('add-plan-form');
+                    const formData = new FormData(form);
+
+                    const floorLevelValue = formData.get('floor_level');
+                    let floorLevel = floorLevelValue === 'custom' ? formData.get('custom_floor_level') : floorLevelValue;
+                    const floorOrder = parseInt(formData.get('floor_order'));
+                    const file = formData.get('plan_file');
+
+                    if (!floorLevel || !file) {
+                        alert('Veuillez remplir tous les champs obligatoires');
+                        return;
+                    }
+
+                    try {
+                        await PlanManager.addPlan(file, floorLevel, floorOrder);
+
+                        // Fermer modal et réinitialiser form
+                        document.getElementById('add-plan-modal').classList.remove('active');
+                        form.reset();
+                        customLevelLabel.style.display = 'none';
+                        customLevelInput.required = false;
+                    } catch (error) {
+                        console.error('Erreur ajout plan:', error);
+                        // L'erreur est déjà gérée dans PlanManager.addPlan
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

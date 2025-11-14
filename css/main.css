@@ -385,3 +385,137 @@
 .hidden {
     display: none !important;
 }
+
+/* Plan Selector */
+.plan-selector-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+}
+
+.plan-selector-container label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.plan-selector {
+    flex: 1;
+    min-width: 150px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.plan-selector:hover {
+    border-color: var(--primary-color);
+}
+
+.plan-selector:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.plan-selector option {
+    padding: 8px;
+}
+
+.btn-icon {
+    padding: 6px 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.btn-icon:disabled {
+    background: var(--bg-tertiary);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn-icon:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Modal Add Plan Styles */
+#add-plan-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#add-plan-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#add-plan-form input[type="text"],
+#add-plan-form input[type="number"],
+#add-plan-form input[type="file"],
+#add-plan-form select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+#add-plan-form input[type="text"]:focus,
+#add-plan-form input[type="number"]:focus,
+#add-plan-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+#add-plan-form small {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: -4px;
+}
+
+#add-plan-form input[type="file"] {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#add-plan-form input[type="file"]::file-selector-button {
+    padding: 8px 16px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 12px;
+    font-size: 13px;
+}
+
+#add-plan-form input[type="file"]::file-selector-button:hover {
+    background: var(--primary-dark);
+}

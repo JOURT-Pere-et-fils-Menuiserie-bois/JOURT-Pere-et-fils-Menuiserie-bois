@@ -35,8 +35,18 @@ try {
             jsonError('project_id requis');
         }
 
-        $version = $manager->create($data['project_id'], $data);
-        jsonSuccess(['version' => $version], 'Version créée');
+        // Check if it's a "create from previous" request
+        $action = $_GET['action'] ?? null;
+
+        if ($action === 'create_from_previous') {
+            // Créer version depuis version précédente avec copie sélective
+            $version = $manager->createFromPrevious($data['project_id'], $data);
+            jsonSuccess(['version' => $version], 'Version créée depuis version précédente');
+        } else {
+            // Créer version normale
+            $version = $manager->create($data['project_id'], $data);
+            jsonSuccess(['version' => $version], 'Version créée');
+        }
     }
 
     // PUT - Mettre à jour version (ex: échelle)
