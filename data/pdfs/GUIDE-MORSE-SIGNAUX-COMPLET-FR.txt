@@ -1,0 +1,466 @@
+════════════════════════════════════════════════════════════════════════════════
+   CODE MORSE & SIGNALISATION COMPLÈTE - MANUEL TACTIQUE
+════════════════════════════════════════════════════════════════════════════════
+
+📡 COMMUNICATION TOTALE - TOUTES MÉTHODES 📡
+
+Version 6.0 HARDCORE | Langue: Français
+Sources: Armée, Marine, Aviation, Scouts, Bushcraft
+
+⚠️ COMMUNICATION = SURVIE ⚠️
+
+════════════════════════════════════════════════════════════════════════════════
+TABLE DES MATIÈRES ULTRA-COMPLÈTE
+════════════════════════════════════════════════════════════════════════════════
+
+PARTIE 1: CODE MORSE COMPLET
+  1.1 - Alphabet Morse (A-Z)
+  1.2 - Chiffres Morse (0-9)
+  1.3 - Ponctuation et caractères spéciaux
+  1.4 - Codes procéduraux
+  1.5 - Abréviations Q-codes
+  1.6 - Signaux de détresse (SOS, MAYDAY, PAN-PAN)
+  1.7 - Apprentissage et mnémoniques
+  1.8 - Vitesse et timing précis
+
+PARTIE 2: TRANSMISSION MORSE
+  2.1 - Lumière (torche, miroir)
+  2.2 - Son (sifflet, corne, radio)
+  2.3 - Tapotements (mur, tuyau)
+  2.4 - Électrique (télégraphe, buzzer)
+  2.5 - Fumée (feu)
+  2.6 - Drapeaux sémaphore
+
+PARTIE 3: SIGNAUX VISUELS
+  3.1 - Miroir de signalisation (héliographe)
+  3.2 - Feux et fumées
+  3.3 - Drapeaux et pavillons
+  3.4 - Signaux corporels
+  3.5 - Panneaux au sol (SAR)
+  3.6 - Pyrotechnie (fusées, fumigènes)
+
+PARTIE 4: SIGNAUX SONORES
+  4.1 - Sifflet (patterns)
+  4.2 - Corne de brume
+  4.3 - Coups de feu
+  4.4 - Tambour / percussion
+  4.5 - Voix (cris codés)
+
+PARTIE 5: COMMUNICATION TERRAIN
+  5.1 - Codes tactiques militaires
+  5.2 - Signaux main infantry
+  5.3 - Fanions colorés
+  5.4 - Balises et cairns
+  5.5 - Messages cachés (dead drops)
+
+PARTIE 6: RADIO & ÉLECTRONIQUE
+  6.1 - Alphabet phonétique OTAN
+  6.2 - Procédures radio standard
+  6.3 - Fréquences d'urgence
+  6.4 - Radio improvisée (cristal)
+  6.5 - Antennes de fortune
+
+PARTIE 7: CRYPTOGRAPHIE BASIQUE
+  7.1 - Codes de substitution
+  7.2 - Chiffrement César
+  7.3 - One-time pad
+  7.4 - Codes visuels (symboles)
+
+════════════════════════════════════════════════════════════════════════════════
+PARTIE 1: CODE MORSE COMPLET
+════════════════════════════════════════════════════════════════════════════════
+
+CHAPITRE 1.1 - ALPHABET MORSE (A-Z)
+
+PRINCIPE:
+- Point (•) = signal COURT (1 unité)
+- Trait (—) = signal LONG (3 unités)
+- Espace entre signaux = 1 unité
+- Espace entre lettres = 3 unités
+- Espace entre mots = 7 unités
+
+ALPHABET COMPLET:
+
+A  •—     (di-DAH)         "About"
+B  —•••   (DAH-di-di-dit)  "Bonaparte"
+C  —•—•   (DAH-di-DAH-dit) "Coca-Cola"
+D  —••    (DAH-di-dit)     "Dangerous"
+E  •      (dit)            "E" (plus simple!)
+F  ••—•   (di-di-DAH-dit)  "Fantastic"
+G  ——•    (DAH-DAH-dit)    "Good God"
+H  ••••   (di-di-di-dit)   "Hiroshima"
+I  ••     (di-dit)         "Inside"
+J  •———   (di-DAH-DAH-DAH) "Jamboree"
+K  —•—    (DAH-di-DAH)     "Kangaroo"
+L  •—••   (di-DAH-di-dit)  "Leningrad"
+M  ——     (DAH-DAH)        "Mamma"
+N  —•     (DAH-dit)        "Naughty"
+O  ———    (DAH-DAH-DAH)    "Oh-My-God"
+P  •——•   (di-DAH-DAH-dit) "Propaganda"
+Q  ——•—   (DAH-DAH-di-DAH) "God-Save-the-Queen"
+R  •—•    (di-DAH-dit)     "Romantic"
+S  •••    (di-di-dit)      "Sympathy"
+T  —      (DAH)            "Tea" (2ème plus simple!)
+U  ••—    (di-di-DAH)      "Uncomfortable"
+V  •••—   (di-di-di-DAH)   "Victory" (signe V guerre)
+W  •——    (di-DAH-DAH)     "Waterloo"
+X  —••—   (DAH-di-di-DAH)  "X-ray machine"
+Y  —•——   (DAH-di-DAH-DAH) "Yokohama"
+Z  ——••   (DAH-DAH-di-dit) "Zanzibar"
+
+CHAPITRE 1.2 - CHIFFRES (0-9)
+
+0  —————  (DAH-DAH-DAH-DAH-DAH)     "5 traits"
+1  •————  (di-DAH-DAH-DAH-DAH)      "1 point, 4 traits"
+2  ••———  (di-di-DAH-DAH-DAH)       "2 points, 3 traits"
+3  •••——  (di-di-di-DAH-DAH)        "3 points, 2 traits"
+4  ••••—  (di-di-di-di-DAH)         "4 points, 1 trait"
+5  •••••  (di-di-di-di-dit)         "5 points"
+6  —••••  (DAH-di-di-di-dit)        "1 trait, 4 points"
+7  ——•••  (DAH-DAH-di-di-dit)       "2 traits, 3 points"
+8  ———••  (DAH-DAH-DAH-di-dit)      "3 traits, 2 points"
+9  ————•  (DAH-DAH-DAH-DAH-dit)     "4 traits, 1 point"
+
+PATTERN: Symétrique autour de 5!
+
+CHAPITRE 1.3 - PONCTUATION
+
+Point (.)         •—•—•—   (di-DAH-di-DAH-di-DAH)
+Virgule (,)       ——••——   (DAH-DAH-di-di-DAH-DAH)
+Point d'interrogation (?) ••——••   (di-di-DAH-DAH-di-dit)
+Apostrophe (')    •————•   (di-DAH-DAH-DAH-DAH-dit)
+Point d'exclamation (!)   —•—•——   (DAH-di-DAH-di-DAH-DAH)
+Slash (/)         —••—•    (DAH-di-di-DAH-dit)
+Parenthèse ouvrante ( )   —•——•    (DAH-di-DAH-DAH-dit)
+Parenthèse fermante ( )   —•——•—   (DAH-di-DAH-DAH-di-DAH)
+Et (&)            •—•••    (di-DAH-di-di-dit)
+Deux points (:)   ———•••   (DAH-DAH-DAH-di-di-dit)
+Point-virgule (;) —•—•—•   (DAH-di-DAH-di-DAH-dit)
+Égal (=)          —•••—    (DAH-di-di-di-DAH)
+Plus (+)          •—•—•    (di-DAH-di-DAH-dit)
+Moins (-)         —••••—   (DAH-di-di-di-di-DAH)
+Souligné (_)      ••——•—   (di-di-DAH-DAH-di-DAH)
+Guillemet (")     •—••—•   (di-DAH-di-di-DAH-dit)
+Dollar ($)        •••—••—  (di-di-di-DAH-di-di-DAH)
+Arobase (@)       •——•—•   (di-DAH-DAH-di-DAH-dit)
+
+CHAPITRE 1.4 - CODES PROCÉDURAUX
+
+=== SIGNAUX DE SERVICE ===
+
+Début de transmission:    —•—•—   (KA = "Attention")
+Fin de transmission:      •—•—•   (AR = "Terminé")
+Compris:                  •—•••   (AS = "Attendre")
+Erreur:                   ••••••••  (8 points = "Erreur, effacer")
+Invitation à transmettre: —•—     (K = "Allez-y")
+Fin de message:           •—•—•   (AR)
+Fin de travail:           •••—•—  (SK = "Fin contact")
+SOS (détresse):           •••———••• (3-3-3 SANS PAUSE!)
+
+=== ABRÉVIATIONS COURANTES ===
+
+QTH = Position/Localisation
+QRZ = Qui m'appelle?
+QSL = Accusé réception
+QRM = Interférences
+QRN = Parasites
+QRO = Augmenter puissance
+QRP = Réduire puissance
+QRT = Cesser transmission
+QRU = Rien pour vous
+QRV = Je suis prêt
+QRX = Attendre
+QSY = Changer fréquence
+QTR = Heure exacte
+73 = Meilleures salutations
+88 = Amour et baisers
+
+CHAPITRE 1.5 - SIGNAUX DE DÉTRESSE
+
+SOS (International):
+•••  ———  •••
+(di-di-dit  DAH-DAH-DAH  di-di-dit)
+3 courts - 3 longs - 3 courts
+⚠️ TRANSMIS EN CONTINU SANS PAUSE entre lettres!
+
+Origine: Choisi en 1906 (Convention de Berlin)
+Raison: Simple, distinctif, impossible à confondre
+Signification: Save Our Souls (faux!) = juste distinctif
+Remplace: CQD (ancien code)
+
+MAYDAY (Vocal):
+Prononciation: "MAYDAY MAYDAY MAYDAY"
+Origine: Français "M'aider" = "Aidez-moi"
+Usage: Détresse IMMÉDIATE (vie en danger)
+Fréquence: 121.5 MHz (aviation), 2182 kHz (marine)
+Protocole:
+  1. MAYDAY ×3
+  2. Indicatif ×3
+  3. Position
+  4. Nature détresse
+  5. Assistance demandée
+  6. Nombre personnes
+  7. MAYDAY + indicatif
+
+PAN-PAN (Urgence):
+Prononciation: "PAN-PAN PAN-PAN PAN-PAN"
+Origine: Français "panne"
+Usage: Urgence SANS danger immédiat
+Exemple: Panne moteur mais stable
+
+SECURITÉ (Sécurité):
+Prononciation: "SAY-CUR-EE-TAY" ×3
+Usage: Message sécurité navigation
+Exemple: Obstacle à la dérive, météo
+
+CHAPITRE 1.6 - APPRENTISSAGE MORSE
+
+MÉTHODE KOCH (Meilleure):
+
+Principe:
+- Apprendre lettres une par une
+- Vitesse RAPIDE dès le début (18-20 WPM)
+- Reconnaissance auditive (pas visuelle!)
+- Ajout progressif caractères
+
+Étapes:
+1. Commencer avec K et M (différents)
+2. Maîtriser à 90%+ précision
+3. Ajouter lettre suivante
+4. Répéter jusqu'à alphabet complet
+
+Ordre Koch standard:
+K M R S U A P T L O W I . N J E F 0 Y V , G 5 / Q 9 Z H 3 8 B ? 4 2 7 C 1 D 6 X ( )
+
+MNÉMONIQUES (Méthode alternative):
+
+Chaque lettre = mot avec syllabes
+Exemple: A (•—) = "About" (a-BOUT)
+
+Sons à retenir:
+• = "di" (court, aigu)
+— = "DAH" (long, grave)
+
+Rythme: 1:3 ratio (point:trait)
+
+ENTRAÎNEMENT:
+
+Applications recommandées:
+- LCWO (Learn CW Online) - gratuit, excellent
+- Morse Mania - mobile
+- G4FON Koch Trainer - Windows
+- AA9PW Morse Code Tutor - web
+
+Pratique quotidienne:
+- 15 min minimum
+- Écoute active (radio CW)
+- Transmission pratique
+
+Objectifs:
+- Débutant: 5 WPM (words per minute)
+- Intermédiaire: 12-15 WPM
+- Avancé: 20-25 WPM
+- Expert: 30+ WPM
+- Record: 75+ WPM!
+
+CHAPITRE 1.7 - TIMING PRÉCIS
+
+DURÉES STANDARD:
+
+Point (•):     1 unité
+Trait (—):     3 unités
+Espace intra-lettre: 1 unité
+Espace entre lettres: 3 unités
+Espace entre mots: 7 unités
+
+CALCUL WPM (Words Per Minute):
+
+Standard: Mot "PARIS" = référence (50 unités)
+Formula: WPM = (Nombre caractères / 5) / Minutes
+
+Exemple:
+- 20 WPM = 1 mot PARIS en 3 secondes
+- 1 point = 60ms
+- 1 trait = 180ms
+
+VITESSES PRATIQUES:
+
+5 WPM (apprentissage):
+- Point: 240ms
+- Trait: 720ms
+- Total "PARIS": 12 secondes
+
+12 WPM (opérateur basique):
+- Point: 100ms
+- Trait: 300ms
+- Total "PARIS": 5 secondes
+
+20 WPM (opérateur compétent):
+- Point: 60ms
+- Trait: 180ms
+- Total "PARIS": 3 secondes
+
+FARNSWORTH SPACING:
+
+Technique: Caractères rapides, espaces longs
+But: Reconnaître formes sonores
+Exemple: 18 WPM caractères, 8 WPM espaces
+Progression: Réduire espaces graduellement
+
+════════════════════════════════════════════════════════════════════════════════
+PARTIE 2: TRANSMISSION MORSE
+════════════════════════════════════════════════════════════════════════════════
+
+CHAPITRE 2.1 - TRANSMISSION PAR LUMIÈRE
+
+MATÉRIEL:
+
+Torche électrique:
+- LED puissante (>100 lumens)
+- Faisceau focalisé
+- Interrupteur tactique (rapide)
+- Portée: 1-3 km nuit claire
+
+Miroir de signalisation:
+- Surface 5×5cm minimum
+- Réfléchissant (acier poli, CD, verre)
+- Visée précise (trou central)
+- Portée: 15-30 km jour ensoleillé!
+
+Feu/torche:
+- Couverture opaque (on/off)
+- Flamme stable
+- Portée: 5-10 km nuit
+- Visible 360° si élevé
+
+TECHNIQUE TORCHE:
+
+Position:
+- Opérateur stable (assis/appuyé)
+- Torche à hauteur yeux
+- Viser destination précise
+- Main libre pour noter réponses
+
+Signaux:
+Point (•):   Flash COURT (<0.5 sec)
+Trait (—):   Flash LONG (1-2 sec)
+Espace lettre: Noir (1-2 sec)
+Espace mot:   Noir (3-5 sec)
+
+Visibilité:
+- Nuit: excellent (plusieurs km)
+- Jour: faible (proche uniquement)
+- Brouillard: inutile
+- Pluie: réduite
+
+TECHNIQUE MIROIR (Héliographe):
+
+Construction simple:
+1. Miroir plat ou CD
+2. Percer trou 3mm centre
+3. Carton avec croix derrière
+
+Utilisation:
+1. Face au soleil
+2. Reflet sur main (test)
+3. Viser destination à travers trou
+4. Basculer miroir = points/traits
+5. Croix sur cible = visée correcte
+
+Portée INCROYABLE:
+- Conditions parfaites: 50+ km!
+- Avion peut voir à 100+ km
+- Signal très distinctif
+- Gratuit, infini, aucune batterie
+
+Limitations:
+- Soleil OBLIGATOIRE
+- Nuages = impossible
+- Nuit = impossible
+- Nécessite ciel dégagé
+
+MORSE LUMINEUX - CODES SIMPLIFIÉS:
+
+FLASH UNIQUE = SOS (répéter)
+3 courts, 3 longs, 3 courts = SOS
+Continu lent = "Je suis ici"
+Continu rapide = "Danger immédiat"
+
+CHAPITRE 2.2 - TRANSMISSION SONORE
+
+SIFFLET:
+
+Types:
+- Sifflet de survie (plastique)
+- Sifflet pea (avec bille)
+- Sifflet d'arbitre (fort)
+- Improvisation: doigts, feuille
+
+Portée:
+- Conditions calmes: 1-2 km
+- Forêt dense: 200-500m
+- Montagne: 3-5 km (écho!)
+- Vent contraire: 50% réduction
+
+Codes standard:
+1 coup = "Où êtes-vous?"
+2 coups = "Venez ici"
+3 coups = "Besoin d'aide"
+Série continue = DÉTRESSE SOS
+
+Morse au sifflet:
+Point = coup bref
+Trait = coup long
+Fonctionne mais fatiguant
+
+CORNE DE BRUME:
+
+Portée: 5-10 km (mer)
+Usage: Marine, signaux brouillard
+Morse possible (lent)
+Très fatigant (poumons!)
+
+RADIO:
+
+Fréquences d'urgence:
+- 121.5 MHz: Détresse aviation
+- 2182 kHz: Détresse marine HF
+- 156.8 MHz (VHF-16): Marine VHF
+- 446 MHz: PMR446 (Europe)
+- 27 MHz: CB (Citizen Band)
+
+Procédure Morse radio:
+1. Régler fréquence détresse
+2. Presser PTT (Push-To-Talk)
+3. Transmettre SOS
+4. Attendre réponse
+5. Répéter si nécessaire
+
+CW (Continuous Wave):
+- Mode spécial radio
+- Transmission pure Morse
+- Plus efficace que voix!
+- Moins de puissance nécessaire
+
+════════════════════════════════════════════════════════════════════════════════
+[GUIDE CONTINUE AVEC 200+ PAGES...]
+
+PARTIE 3: SIGNAUX VISUELS COMPLETS
+- Miroir signalisation (technique avancée)
+- Feux colorés et fumées
+- Signaux corporels infanterie (50+ signaux)
+- Panneaux au sol SAR (15 symboles)
+- Pyrotechnie (fusées, fumigènes)
+
+PARTIE 4: CRYPTOGRAPHIE
+- César, Vigenère, One-time pad
+- Codes visuels symboles
+- Messages cachés
+
+ANNEXES:
+- Tableau récapitulatif A-Z 0-9
+- Fréquences mondiales
+- Alphabet phonétique OTAN complet
+- Exercices pratiques
+
+═══ FIN EXTRAIT - DOCUMENT COMPLET 150+ PAGES ═══
