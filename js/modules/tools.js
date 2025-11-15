@@ -361,7 +361,6 @@ const ToolsManager = (function() {
         }
 
         const lengthMeters = CalibrationManager.pixelsToMeters(totalLength);
-        }
 
         const measurement = {
             id: generateMeasurementId(),
