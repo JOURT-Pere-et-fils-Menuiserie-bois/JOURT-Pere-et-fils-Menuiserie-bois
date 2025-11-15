@@ -7,6 +7,37 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ---
 
+## [1.1.1] - 2025-11-15
+
+### 📚 Documentation - Nettoyage Production
+
+#### Améliorations
+- **README.md** : Section installation simplifiée
+  - Suppression instructions téléchargement manuel (bibliothèques dans git)
+  - Section documentation mise à jour avec fichiers actuels
+  - Message clair: "Aucun téléchargement requis"
+
+- **js/lib/README.md** : Réécriture complète
+  - Documentation des bibliothèques incluses (2.7 MB)
+  - Explications pourquoi incluses dans git (100% standalone)
+  - Versions, sources, licences détaillées
+  - Procédure de mise à jour des bibliothèques
+
+#### Suppressions
+- `INSTRUCTION_TELECHARGEMENT_LIBS.md` : Obsolète (bibliothèques dans git)
+- `ANALYSE_MARCHE_CONCURRENCE.md` : Document interne, inutile en production
+- `VERIFICATION-CHEMINS.md` : Rapport ponctuel migration CDN→Local, inutile en production
+- `download-pdfjs.sh` : Script obsolète (bibliothèques commitées)
+
+#### Résultat
+Documentation production-ready:
+- ✅ 5 fichiers .md pertinents (68.8K)
+- ✅ Aucune référence à fichiers supprimés
+- ✅ Installation ultra-simple: `git clone && php -S localhost:8000`
+- ✅ 100% standalone, zéro configuration
+
+---
+
 ## [1.1.0] - 2025-11-14
 
 ### ✨ Fonctionnalités ajoutées

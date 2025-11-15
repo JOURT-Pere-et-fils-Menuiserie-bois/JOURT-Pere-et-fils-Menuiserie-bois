@@ -96,36 +96,16 @@ git clone <repository-url>
 cd JOURT-Pere-et-fils-Menuiserie-bois
 ```
 
-### 3. Installer les bibliothèques JavaScript
+### 3. Vérifier les permissions
 
-⚠️ **IMPORTANT** : Les bibliothèques JavaScript doivent être téléchargées manuellement car l'environnement Docker bloque les CDN.
+✅ **Toutes les bibliothèques JavaScript sont déjà incluses dans le repository !**
 
-**Option A : Téléchargement manuel (RECOMMANDÉ)**
+Les 5 bibliothèques (2.7 MB total) sont dans `js/lib/` :
+- PDF.js 3.11.174 (core + worker)
+- SheetJS 0.20.1
+- jsPDF 2.5.1 + AutoTable 3.5.31
 
-Voir le fichier **[INSTRUCTION_TELECHARGEMENT_LIBS.md](INSTRUCTION_TELECHARGEMENT_LIBS.md)** pour les instructions détaillées.
-
-Téléchargez ces 5 fichiers depuis votre navigateur et placez-les dans `js/lib/` :
-
-1. **PDF.js core** (~500 KB)
-   https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.mjs
-
-2. **PDF.js worker** (~1.1 MB)
-   https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.mjs
-
-3. **SheetJS** (~900 KB)
-   https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js
-
-4. **jsPDF** (~350 KB)
-   https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js
-
-5. **jsPDF AutoTable** (~35 KB)
-   https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js
-
-**Vérification** :
-```bash
-ls -lh js/lib/*.{js,mjs}
-# Vous devez voir 5 fichiers (total ~2.7 MB)
-```
+**Aucun téléchargement requis !**
 
 ### 4. Permissions
 
@@ -372,11 +352,11 @@ Voir **[BUGS_CORRIGES.md](BUGS_CORRIGES.md)** pour détails complets.
 
 ## 📚 Documentation
 
-- **[README.md](README.md)** : Ce fichier
-- **[INSTRUCTION_TELECHARGEMENT_LIBS.md](INSTRUCTION_TELECHARGEMENT_LIBS.md)** : Installation bibliothèques
+- **[README.md](README.md)** : Ce fichier (documentation principale)
+- **[CHANGELOG.md](CHANGELOG.md)** : Historique des versions et modifications
+- **[BUGS_CORRIGES.md](BUGS_CORRIGES.md)** : Documentation détaillée des bugs corrigés
 - **[FONCTIONNALITES_AVANCEES.md](FONCTIONNALITES_AVANCEES.md)** : Guide complet des 4 modules avancés
-- **[ANALYSE_MARCHE_CONCURRENCE.md](ANALYSE_MARCHE_CONCURRENCE.md)** : Analyse concurrence
-- **[VERIFICATION-CHEMINS.md](VERIFICATION-CHEMINS.md)** : Rapport vérification chemins CDN→Local
+- **[js/lib/README.md](js/lib/README.md)** : Documentation des bibliothèques JavaScript incluses
 
 ---
 
@@ -387,7 +367,7 @@ Tous droits réservés.
 
 ---
 
-**Version** : 1.1.0 (Fonctionnalités avancées)
-**Dernière mise à jour** : 14 Novembre 2025
+**Version** : 1.1.1 (Production-ready)
+**Dernière mise à jour** : 15 Novembre 2025
 **Bugs corrigés** : 10/20 critiques/moyens
-**Taille totale** : ~3 MB (avec bibliothèques)
+**Taille totale** : 2.7 MB (bibliothèques incluses)
