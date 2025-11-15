@@ -13,12 +13,23 @@ const DrawingManager = (function() {
     function init() {
         svg = document.getElementById('annotations-layer');
         if (!svg) {
-            console.error('SVG annotations layer not found');
+            console.error('CRITICAL: SVG annotations layer "annotations-layer" not found');
             return;
         }
 
         // Écouter les événements
         setupEventListeners();
+    }
+
+    /**
+     * Vérifier que le module est initialisé
+     */
+    function checkInit() {
+        if (!svg) {
+            console.error('DrawingManager not initialized: SVG layer missing');
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -46,6 +57,11 @@ const DrawingManager = (function() {
      * Dessiner une mesure
      */
     function drawMeasurement(measurement) {
+        if (!checkInit()) {
+            console.error('Cannot draw measurement: DrawingManager not initialized');
+            return;
+        }
+
         const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         group.id = `measurement-${measurement.id}`;
         group.classList.add('measurement-item');

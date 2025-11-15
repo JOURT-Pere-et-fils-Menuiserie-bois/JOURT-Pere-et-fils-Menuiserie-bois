@@ -117,7 +117,12 @@
         }
 
         // Récupérer les mesures
-        const measurements = Table.getMeasurements();
+        if (typeof MeasurementTable === 'undefined') {
+            alert('Module MeasurementTable non disponible');
+            return;
+        }
+
+        const measurements = MeasurementTable.getMeasurements();
 
         if (!measurements || measurements.length === 0) {
             alert('Aucune mesure à exporter');

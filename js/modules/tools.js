@@ -22,7 +22,8 @@ const ToolsManager = (function() {
             alert('Erreur: Module de calibration non chargé');
             return false;
         }
-        if (!CalibrationManager.getScale()) {
+        const scale = CalibrationManager.getScale();
+        if (!scale) {
             alert('⚠️ Veuillez calibrer l\'échelle avant de mesurer\n\nCliquez sur le bouton "Calibrer" et tracez une ligne sur une dimension connue du plan.');
             return false;
         }

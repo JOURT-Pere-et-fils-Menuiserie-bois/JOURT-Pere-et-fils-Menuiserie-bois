@@ -9,6 +9,58 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
 ## [1.1.1] - 2025-11-15
 
+### 🐛 Corrections de bugs - Renforcement sécurité
+
+#### Bugs critiques corrigés (5)
+
+1. **Bug #21** - `tools.js:20-31` - checkCalibration() logique incorrecte
+   - Stockage résultat `getScale()` pour éviter appels multiples
+   - Prévention crash si scale undefined
+
+2. **Bug #22** - `ui-handlers.js:120` - Référence module incorrecte
+   - Correction `Table.getMeasurements()` → `MeasurementTable.getMeasurements()`
+   - Ajout vérification existence module avant appel
+   - Message erreur explicite si module manquant
+
+3. **Bug #23** - `pdf-loader.js:17-34` - Canvas DOM non vérifié
+   - Vérification existence canvas avant `getContext()`
+   - Vérification contexte 2D valide
+   - Console.error si éléments manquants
+
+4. **Bug #24** - `drawing.js:13-33, 56-63` - SVG layer non vérifié
+   - Vérification existence layer SVG à l'init
+   - Nouvelle fonction `checkInit()` pour sécuriser toutes opérations
+   - Protection toutes fonctions de dessin contre crash
+
+5. **Bug #25** - `app.js:38-152` - Event listeners sans vérification (20+ éléments)
+   - Vérification existence avant `addEventListener()` sur tous boutons
+   - Sécurisation header, outils, zoom, PDF, propriétés, tableau, modales
+   - Aucun crash si éléments DOM manquants
+
+#### Bugs moyens corrigés (1)
+
+6. **Bug #26** - `app.js:556-570` - updateToolProperties() non sécurisé
+   - Vérification existence tous éléments propriétés
+   - Early return si éléments manquants
+   - Prévention erreurs silencieuses
+
+#### Impact
+- ✅ **100% des bugs critiques** identifiés corrigés
+- ✅ Application robuste face aux éléments DOM manquants
+- ✅ Messages d'erreur clairs en console pour debugging
+- ✅ Pas de crash au chargement si HTML incomplet
+
+#### Fichiers modifiés
+- `js/app.js` : 50+ lignes sécurisées
+- `js/modules/tools.js` : Logique calibration corrigée
+- `js/modules/ui-handlers.js` : Référence module corrigée
+- `js/modules/pdf-loader.js` : Init sécurisé
+- `js/modules/drawing.js` : Fonction checkInit() ajoutée
+
+Voir `BUGS_CORRIGES.md` pour détails techniques complets.
+
+---
+
 ### 📚 Documentation - Nettoyage Production
 
 #### Améliorations

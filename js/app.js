@@ -37,11 +37,17 @@ const App = (function() {
      */
     function initEventListeners() {
         // Header buttons
-        document.getElementById('btn-open-project').addEventListener('click', showOpenProjectModal);
-        document.getElementById('btn-new-project').addEventListener('click', showNewProjectModal);
-        document.getElementById('btn-upload-plan').addEventListener('click', showFileSelector);
-        document.getElementById('btn-versions').addEventListener('click', showVersionsModal);
-        document.getElementById('btn-export').addEventListener('click', showExportMenu);
+        const btnOpenProject = document.getElementById('btn-open-project');
+        const btnNewProject = document.getElementById('btn-new-project');
+        const btnUploadPlan = document.getElementById('btn-upload-plan');
+        const btnVersions = document.getElementById('btn-versions');
+        const btnExport = document.getElementById('btn-export');
+
+        if (btnOpenProject) btnOpenProject.addEventListener('click', showOpenProjectModal);
+        if (btnNewProject) btnNewProject.addEventListener('click', showNewProjectModal);
+        if (btnUploadPlan) btnUploadPlan.addEventListener('click', showFileSelector);
+        if (btnVersions) btnVersions.addEventListener('click', showVersionsModal);
+        if (btnExport) btnExport.addEventListener('click', showExportMenu);
 
         // Project search
         const searchInput = document.getElementById('project-search');
@@ -54,10 +60,15 @@ const App = (function() {
         }
 
         // File input
-        document.getElementById('file-input').addEventListener('change', handleFileSelect);
-        document.getElementById('btn-browse-file').addEventListener('click', () => {
-            document.getElementById('file-input').click();
-        });
+        const fileInput = document.getElementById('file-input');
+        const btnBrowseFile = document.getElementById('btn-browse-file');
+
+        if (fileInput) fileInput.addEventListener('change', handleFileSelect);
+        if (btnBrowseFile) {
+            btnBrowseFile.addEventListener('click', () => {
+                if (fileInput) fileInput.click();
+            });
+        }
 
         // Tools
         document.querySelectorAll('.tool-btn').forEach(btn => {
@@ -70,27 +81,44 @@ const App = (function() {
         });
 
         // Calibration
-        document.getElementById('btn-calibrate').addEventListener('click', startCalibration);
+        const btnCalibrate = document.getElementById('btn-calibrate');
+        if (btnCalibrate) btnCalibrate.addEventListener('click', startCalibration);
 
         // Zoom controls
-        document.getElementById('btn-zoom-in').addEventListener('click', () => zoomIn());
-        document.getElementById('btn-zoom-out').addEventListener('click', () => zoomOut());
-        document.getElementById('btn-zoom-fit').addEventListener('click', () => zoomFit());
+        const btnZoomIn = document.getElementById('btn-zoom-in');
+        const btnZoomOut = document.getElementById('btn-zoom-out');
+        const btnZoomFit = document.getElementById('btn-zoom-fit');
+
+        if (btnZoomIn) btnZoomIn.addEventListener('click', () => zoomIn());
+        if (btnZoomOut) btnZoomOut.addEventListener('click', () => zoomOut());
+        if (btnZoomFit) btnZoomFit.addEventListener('click', () => zoomFit());
 
         // PDF Navigation
-        document.getElementById('btn-prev-page').addEventListener('click', () => previousPage());
-        document.getElementById('btn-next-page').addEventListener('click', () => nextPage());
+        const btnPrevPage = document.getElementById('btn-prev-page');
+        const btnNextPage = document.getElementById('btn-next-page');
+
+        if (btnPrevPage) btnPrevPage.addEventListener('click', () => previousPage());
+        if (btnNextPage) btnNextPage.addEventListener('click', () => nextPage());
 
         // Properties
-        document.getElementById('prop-color').addEventListener('change', updateToolProperties);
-        document.getElementById('prop-thickness').addEventListener('input', updateToolProperties);
-        document.getElementById('prop-opacity').addEventListener('input', updateToolProperties);
+        const propColor = document.getElementById('prop-color');
+        const propThickness = document.getElementById('prop-thickness');
+        const propOpacity = document.getElementById('prop-opacity');
+
+        if (propColor) propColor.addEventListener('change', updateToolProperties);
+        if (propThickness) propThickness.addEventListener('input', updateToolProperties);
+        if (propOpacity) propOpacity.addEventListener('input', updateToolProperties);
 
         // Measurements table
-        document.getElementById('select-all-measurements').addEventListener('change', toggleSelectAllMeasurements);
-        document.getElementById('btn-add-measurement').addEventListener('click', addManualMeasurement);
-        document.getElementById('btn-delete-selected').addEventListener('click', deleteSelectedMeasurements);
-        document.getElementById('btn-create-avenant').addEventListener('click', createAvenantFromSelection);
+        const selectAllMeasurements = document.getElementById('select-all-measurements');
+        const btnAddMeasurement = document.getElementById('btn-add-measurement');
+        const btnDeleteSelected = document.getElementById('btn-delete-selected');
+        const btnCreateAvenant = document.getElementById('btn-create-avenant');
+
+        if (selectAllMeasurements) selectAllMeasurements.addEventListener('change', toggleSelectAllMeasurements);
+        if (btnAddMeasurement) btnAddMeasurement.addEventListener('click', addManualMeasurement);
+        if (btnDeleteSelected) btnDeleteSelected.addEventListener('click', deleteSelectedMeasurements);
+        if (btnCreateAvenant) btnCreateAvenant.addEventListener('click', createAvenantFromSelection);
     }
 
     /**
@@ -113,11 +141,15 @@ const App = (function() {
         });
 
         // Modal nouveau projet
-        document.getElementById('create-project-confirm').addEventListener('click', createNewProject);
+        const createProjectConfirm = document.getElementById('create-project-confirm');
+        if (createProjectConfirm) createProjectConfirm.addEventListener('click', createNewProject);
 
         // Modal calibration
-        document.getElementById('calibration-confirm').addEventListener('click', confirmCalibration);
-        document.getElementById('calibration-cancel').addEventListener('click', cancelCalibration);
+        const calibrationConfirm = document.getElementById('calibration-confirm');
+        const calibrationCancel = document.getElementById('calibration-cancel');
+
+        if (calibrationConfirm) calibrationConfirm.addEventListener('click', confirmCalibration);
+        if (calibrationCancel) calibrationCancel.addEventListener('click', cancelCalibration);
     }
 
     /**
@@ -522,12 +554,20 @@ const App = (function() {
      * Mettre à jour propriétés outil
      */
     function updateToolProperties() {
-        const color = document.getElementById('prop-color').value;
-        const thickness = document.getElementById('prop-thickness').value;
-        const opacity = document.getElementById('prop-opacity').value;
+        const propColor = document.getElementById('prop-color');
+        const propThickness = document.getElementById('prop-thickness');
+        const propOpacity = document.getElementById('prop-opacity');
+        const thicknessValue = document.getElementById('thickness-value');
+        const opacityValue = document.getElementById('opacity-value');
 
-        document.getElementById('thickness-value').textContent = thickness + 'px';
-        document.getElementById('opacity-value').textContent = opacity + '%';
+        if (!propColor || !propThickness || !propOpacity) return;
+
+        const color = propColor.value;
+        const thickness = propThickness.value;
+        const opacity = propOpacity.value;
+
+        if (thicknessValue) thicknessValue.textContent = thickness + 'px';
+        if (opacityValue) opacityValue.textContent = opacity + '%';
 
         const props = {
             color,

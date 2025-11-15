@@ -16,7 +16,16 @@ const PDFLoader = (function() {
      */
     function init() {
         canvas = document.getElementById('plan-canvas');
+        if (!canvas) {
+            console.error('Canvas element "plan-canvas" not found');
+            return;
+        }
+
         context = canvas.getContext('2d');
+        if (!context) {
+            console.error('Failed to get 2D context from canvas');
+            return;
+        }
 
         // Configurer PDF.js worker LOCAL
         if (typeof pdfjsLib !== 'undefined') {
