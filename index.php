@@ -47,6 +47,7 @@
                         <button id="btn-export-excel">📊 Excel (.xlsx)</button>
                         <button id="btn-export-csv">📄 CSV</button>
                         <button id="btn-export-pdf">📑 Rapport PDF</button>
+                        <button id="btn-export-product-sheets">📋 Tableau Fiches Techniques</button>
                         <hr>
                         <button id="btn-import-catalogue">📥 Importer catalogue</button>
                     </div>

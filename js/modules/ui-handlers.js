@@ -64,6 +64,15 @@
             });
         }
 
+        // Export Product Sheets Table
+        const btnExportProductSheets = document.getElementById('btn-export-product-sheets');
+        if (btnExportProductSheets) {
+            btnExportProductSheets.addEventListener('click', function() {
+                exportMenu.classList.remove('active');
+                handleProductSheetsExport();
+            });
+        }
+
         // Import catalogue
         const btnImportCatalogue = document.getElementById('btn-import-catalogue');
         if (btnImportCatalogue) {
@@ -95,6 +104,52 @@
                 includeSignature: true
             });
         }
+    }
+
+    /**
+     * Exporter tableau des fiches techniques produits
+     */
+    function handleProductSheetsExport() {
+        // Vérifier que PDFReports est disponible
+        if (typeof PDFReports === 'undefined') {
+            alert('Module PDFReports non disponible');
+            return;
+        }
+
+        // Récupérer les mesures
+        const measurements = Table.getMeasurements();
+
+        if (!measurements || measurements.length === 0) {
+            alert('Aucune mesure à exporter');
+            return;
+        }
+
+        // Vérifier qu'au moins une mesure a des fiches associées
+        const hasSheetsAssociated = measurements.some(m =>
+            m.product_sheets && m.product_sheets.length > 0
+        );
+
+        if (!hasSheetsAssociated) {
+            alert('Aucune fiche technique associée aux mesures.\n\n' +
+                  'Utilisez le bouton "📄 Fiches" dans le tableau pour associer des fiches produits aux ouvrages.');
+            return;
+        }
+
+        // Récupérer les infos du projet
+        const currentProject = App.getCurrentProject();
+        const currentVersion = App.getCurrentVersion();
+
+        const projectInfo = {
+            name: currentProject ? currentProject.name : 'Projet',
+            version: currentVersion ? currentVersion.name : 'Version 1'
+        };
+
+        // Générer le PDF
+        PDFReports.exportProductSheetsTable(measurements, {
+            title: 'Tableau des Fiches Techniques',
+            fileName: `fiches-techniques-${Date.now()}.pdf`,
+            projectInfo: projectInfo
+        });
     }
 
     /**

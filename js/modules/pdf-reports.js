@@ -531,6 +531,154 @@ const PDFReports = (function() {
         doc.save(fileName);
     }
 
+    /**
+     * Exporter tableau des fiches techniques produits
+     */
+    function exportProductSheetsTable(measurements, options = {}) {
+        const title = options.title || 'Tableau des Fiches Techniques';
+        const fileName = options.fileName || `fiches-techniques-${Date.now()}.pdf`;
+
+        // Filtrer uniquement les mesures ayant des fiches associées
+        const measurementsWithSheets = measurements.filter(m =>
+            m.product_sheets && m.product_sheets.length > 0
+        );
+
+        if (measurementsWithSheets.length === 0) {
+            alert('Aucune fiche technique associée aux mesures');
+            return;
+        }
+
+        // Initialiser PDF
+        const doc = new jsPDF('p', 'mm', 'a4');
+        let yPos = 20;
+
+        // En-tête entreprise
+        yPos = addHeader(doc, yPos, title);
+        yPos += 10;
+
+        // Info projet
+        if (options.projectInfo) {
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Projet: ${options.projectInfo.name || 'N/A'}`, 20, yPos);
+            yPos += 5;
+            doc.text(`Version: ${options.projectInfo.version || 'N/A'}`, 20, yPos);
+            yPos += 10;
+        }
+
+        // Tableau des fiches
+        const tableData = [];
+
+        measurementsWithSheets.forEach((measurement, index) => {
+            const lineNumber = index + 1;
+            const description = measurement.description || 'Sans description';
+
+            // Récupérer les métadonnées des fiches
+            let sheets = [];
+            if (typeof ProductSheets !== 'undefined') {
+                sheets = ProductSheets.getSheetsByIds(measurement.product_sheets);
+            }
+
+            if (sheets.length === 0) {
+                // Pas de métadonnées disponibles
+                tableData.push([
+                    lineNumber.toString(),
+                    description,
+                    'Fiches non disponibles'
+                ]);
+            } else {
+                // Première fiche sur la ligne de l'ouvrage
+                const firstSheet = sheets[0];
+                const firstSheetInfo = formatSheetInfo(firstSheet);
+
+                tableData.push([
+                    lineNumber.toString(),
+                    description,
+                    firstSheetInfo
+                ]);
+
+                // Fiches suivantes sur des lignes séparées
+                for (let i = 1; i < sheets.length; i++) {
+                    const sheetInfo = formatSheetInfo(sheets[i]);
+                    tableData.push([
+                        '', // Pas de numéro de ligne
+                        '', // Pas de description
+                        sheetInfo
+                    ]);
+                }
+            }
+        });
+
+        // Générer le tableau avec AutoTable
+        doc.autoTable({
+            startY: yPos,
+            head: [['N°', 'Ouvrage', 'Fiches Techniques']],
+            body: tableData,
+            theme: 'striped',
+            headStyles: {
+                fillColor: [0, 102, 204],
+                textColor: 255,
+                fontSize: 10,
+                fontStyle: 'bold',
+                halign: 'left'
+            },
+            bodyStyles: {
+                fontSize: 9,
+                cellPadding: 3
+            },
+            columnStyles: {
+                0: { cellWidth: 15, halign: 'center' },
+                1: { cellWidth: 60 },
+                2: { cellWidth: 100 }
+            },
+            alternateRowStyles: {
+                fillColor: [245, 245, 245]
+            },
+            margin: { left: 20, right: 20 }
+        });
+
+        // Bloc signature
+        yPos = doc.lastAutoTable.finalY + 15;
+
+        // Vérifier si on a assez d'espace, sinon nouvelle page
+        if (yPos > 250) {
+            doc.addPage();
+            yPos = 20;
+        }
+
+        addSignatureBlock(doc, yPos);
+
+        // Sauvegarder
+        doc.save(fileName);
+    }
+
+    /**
+     * Formater les informations d'une fiche technique
+     */
+    function formatSheetInfo(sheet) {
+        const parts = [];
+
+        // Nom
+        parts.push(sheet.name || 'Sans nom');
+
+        // Référence
+        if (sheet.reference) {
+            parts.push(`Réf: ${sheet.reference}`);
+        }
+
+        // Fabricant
+        if (sheet.manufacturer) {
+            parts.push(`Fabricant: ${sheet.manufacturer}`);
+        }
+
+        // Normes
+        if (sheet.norms && sheet.norms.length > 0) {
+            parts.push(`Normes: ${sheet.norms.join(', ')}`);
+        }
+
+        return parts.join(' | ');
+    }
+
     // Initialiser
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
@@ -542,6 +690,7 @@ const PDFReports = (function() {
     return {
         generateReport,
         generateSimpleReport,
+        exportProductSheetsTable,
         setCompanyInfo,
         getCompanyInfo
     };
