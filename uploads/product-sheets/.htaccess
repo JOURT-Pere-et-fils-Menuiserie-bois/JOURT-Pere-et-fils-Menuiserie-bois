@@ -1,0 +1,19 @@
+# Protection du dossier fiches produits
+# Autorise uniquement la lecture de fichiers PDF
+
+<FilesMatch "\.pdf$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Bloque l'exécution de scripts
+<FilesMatch "\.(php|phtml|php3|php4|php5|pl|py|jsp|asp|htm|html|shtml|sh|cgi)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Désactive l'affichage du contenu du dossier
+Options -Indexes
+
+# Force le type MIME pour les PDF
+AddType application/pdf .pdf

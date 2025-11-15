@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/versioning.css">
     <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/product-sheets.css">
 </head>
 <body>
     <div class="app-container">
@@ -39,6 +40,7 @@
                 <button id="btn-new-project" class="btn btn-secondary">+ Nouveau</button>
                 <button id="btn-upload-plan" class="btn btn-secondary">📄 Charger Plan</button>
                 <button id="btn-versions" class="btn btn-secondary">📋 Versions</button>
+                <button id="btn-product-sheets-library" class="btn btn-secondary">📚 Bibliothèque Fiches</button>
                 <div class="btn-group">
                     <button id="btn-export" class="btn btn-secondary">💾 Exporter ▼</button>
                     <div class="dropdown-menu" id="export-menu">
@@ -462,6 +464,95 @@
         </div>
     </div>
 
+    <!-- Modal Bibliothèque Fiches Produits -->
+    <div id="product-sheets-library-modal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>📚 Bibliothèque de Fiches Techniques</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="product-sheets-toolbar">
+                    <input type="text" id="product-sheets-search" placeholder="🔍 Rechercher une fiche..." class="search-input">
+                    <button id="btn-add-sheet" class="btn btn-primary">➕ Nouvelle Fiche</button>
+                </div>
+
+                <div id="add-sheet-form" class="add-sheet-form" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 4px;">
+                    <h3>Ajouter une fiche technique</h3>
+                    <div class="form-group">
+                        <label for="product-sheet-pdf-file">Fichier PDF *</label>
+                        <input type="file" id="product-sheet-pdf-file" accept=".pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-name">Nom de la fiche *</label>
+                        <input type="text" id="product-sheet-name" placeholder="Ex: Lambris Pin Classe 2 - ABC Bois" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-ref">Référence</label>
+                        <input type="text" id="product-sheet-ref" placeholder="Ex: LP-C2-2024">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-manufacturer">Fabricant</label>
+                        <input type="text" id="product-sheet-manufacturer" placeholder="Ex: ABC Bois">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-norms">Normes (séparées par virgule)</label>
+                        <input type="text" id="product-sheet-norms" placeholder="Ex: NF EN 14915, CE">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-category">Catégorie</label>
+                        <input type="text" id="product-sheet-category" placeholder="Ex: Lambris, Isolation, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-sheet-tags">Tags (séparés par virgule)</label>
+                        <input type="text" id="product-sheet-tags" placeholder="Ex: pin, classe 2, extérieur">
+                    </div>
+                    <div class="form-actions">
+                        <button id="btn-upload-product-sheet" class="btn btn-primary">💾 Enregistrer</button>
+                        <button id="btn-cancel-add-sheet" class="btn btn-secondary">Annuler</button>
+                    </div>
+                </div>
+
+                <div id="product-sheets-list" class="product-sheets-list">
+                    <!-- Rempli dynamiquement par product-sheets.js -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Association Fiches → Ligne Tableau -->
+    <div id="product-sheets-assign-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📄 Fiches Techniques de l'Ouvrage</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="assigned-section">
+                    <h3>Fiches associées</h3>
+                    <div id="assigned-sheets-list">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+
+                <hr style="margin: 20px 0;">
+
+                <div class="available-section">
+                    <h3>Ajouter une fiche</h3>
+                    <div id="available-sheets-list">
+                        <!-- Rempli dynamiquement -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Fermer</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <!-- Bibliothèques externes (100% LOCAL - pas de CDN) -->
     <!-- PDF.js (Mozilla) - Lecture PDF -->
@@ -498,6 +589,7 @@
     <script src="js/modules/excel-export.js"></script>
     <script src="js/modules/pdf-reports.js"></script>
     <script src="js/modules/ui-handlers.js"></script>
+    <script src="js/modules/product-sheets.js"></script>
 
     <!-- Application principale -->
     <script src="js/app.js"></script>
@@ -568,6 +660,31 @@
                         console.error('Erreur ajout plan:', error);
                         // L'erreur est déjà gérée dans PlanManager.addPlan
                     }
+                });
+            }
+
+            // Gestion formulaire ajout fiche produit
+            const btnAddSheet = document.getElementById('btn-add-sheet');
+            const btnCancelAddSheet = document.getElementById('btn-cancel-add-sheet');
+            const addSheetForm = document.getElementById('add-sheet-form');
+
+            if (btnAddSheet) {
+                btnAddSheet.addEventListener('click', function() {
+                    addSheetForm.style.display = addSheetForm.style.display === 'none' ? 'block' : 'none';
+                });
+            }
+
+            if (btnCancelAddSheet) {
+                btnCancelAddSheet.addEventListener('click', function() {
+                    addSheetForm.style.display = 'none';
+                    // Réinitialiser le formulaire
+                    document.getElementById('product-sheet-pdf-file').value = '';
+                    document.getElementById('product-sheet-name').value = '';
+                    document.getElementById('product-sheet-ref').value = '';
+                    document.getElementById('product-sheet-manufacturer').value = '';
+                    document.getElementById('product-sheet-norms').value = '';
+                    document.getElementById('product-sheet-category').value = '';
+                    document.getElementById('product-sheet-tags').value = '';
                 });
             }
         });

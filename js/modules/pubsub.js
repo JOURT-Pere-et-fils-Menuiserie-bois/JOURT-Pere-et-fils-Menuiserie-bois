@@ -114,6 +114,12 @@ const EVENTS = {
     EXPORT_STARTED: 'export:started',
     EXPORT_COMPLETED: 'export:completed',
 
+    // Fiches Produits
+    PRODUCT_SHEETS_LOADED: 'product_sheets:loaded',
+    PRODUCT_SHEET_ADDED: 'product_sheet:added',
+    PRODUCT_SHEET_UPDATED: 'product_sheet:updated',
+    PRODUCT_SHEET_DELETED: 'product_sheet:deleted',
+
     // UI
     UI_ERROR: 'ui:error',
     UI_SUCCESS: 'ui:success',

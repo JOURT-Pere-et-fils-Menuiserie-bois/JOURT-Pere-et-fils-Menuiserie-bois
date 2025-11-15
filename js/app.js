@@ -18,6 +18,11 @@ const App = (function() {
         initModals();
         initDragAndDrop();
 
+        // Initialiser ProductSheets
+        if (typeof ProductSheets !== 'undefined') {
+            ProductSheets.init();
+        }
+
         // Charger dernier projet si disponible
         loadLastProject();
 

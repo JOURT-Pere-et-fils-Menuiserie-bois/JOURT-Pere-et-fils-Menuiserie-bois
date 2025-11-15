@@ -1,0 +1,258 @@
+/**
+ * Styles pour Bibliothèque Fiches Produits
+ */
+
+/* Toolbar de la bibliothèque */
+.product-sheets-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.product-sheets-toolbar .search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Liste des fiches dans la bibliothèque */
+.product-sheets-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.product-sheet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+    transition: all 0.2s;
+}
+
+.product-sheet-item:hover {
+    background: #fff;
+    border-color: #0066cc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-sheet-item .sheet-info {
+    flex: 1;
+}
+
+.product-sheet-item .sheet-info h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-sheet-item .sheet-info p {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.product-sheet-item .sheet-info .ref {
+    color: #0066cc;
+    font-weight: 500;
+}
+
+.product-sheet-item .sheet-info .manufacturer {
+    color: #666;
+    font-style: italic;
+}
+
+.product-sheet-item .sheet-info .meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.product-sheet-item .sheet-info .category {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e3f2fd;
+    color: #1976d2;
+    font-size: 11px;
+    border-radius: 3px;
+}
+
+.product-sheet-item .sheet-info .norms {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #e8f5e9;
+    color: #388e3c;
+    font-size: 11px;
+    border-radius: 3px;
+}
+
+.product-sheet-item .sheet-actions {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-icon:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Formulaire ajout fiche */
+.add-sheet-form .form-group {
+    margin-bottom: 15px;
+}
+
+.add-sheet-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+.add-sheet-form input[type="text"],
+.add-sheet-form input[type="file"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-sheet-form .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Modal association fiches */
+.assigned-section,
+.available-section {
+    margin-bottom: 20px;
+}
+
+.assigned-section h3,
+.available-section h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+#assigned-sheets-list,
+#available-sheets-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.assigned-sheet-item,
+.available-sheet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    transition: all 0.2s;
+}
+
+.assigned-sheet-item:hover,
+.available-sheet-item:hover {
+    border-color: #0066cc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.assigned-sheet-item .sheet-info,
+.available-sheet-item .sheet-info {
+    flex: 1;
+}
+
+.assigned-sheet-item .sheet-info strong,
+.available-sheet-item .sheet-info strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.assigned-sheet-item .sheet-info .ref,
+.available-sheet-item .sheet-info .ref {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #0066cc;
+}
+
+.assigned-sheet-item .sheet-info .manufacturer,
+.available-sheet-item .sheet-info .manufacturer {
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Bouton "Fiches" dans le tableau */
+.table-action-btn[data-action="sheets"] {
+    position: relative;
+}
+
+.sheets-count {
+    display: inline-block;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    background: #0066cc;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 9px;
+    margin-left: 4px;
+}
+
+.table-action-btn[data-action="sheets"]:hover .sheets-count {
+    background: #0052a3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-sheets-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product-sheets-toolbar {
+        flex-direction: column;
+    }
+
+    .product-sheets-toolbar .search-input {
+        width: 100%;
+    }
+}

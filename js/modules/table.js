@@ -124,6 +124,9 @@ const MeasurementTable = (function() {
                 <span class="status-badge status-${status}">${getStatusLabel(status)}</span>
             </td>
             <td>
+                <button class="table-action-btn" data-action="sheets" title="Fiches produits">
+                    📄 <span class="sheets-count">${measurement.product_sheets ? measurement.product_sheets.length : 0}</span>
+                </button>
                 <button class="table-action-btn" data-action="edit" title="Éditer">
                     ✏️
                 </button>
@@ -148,6 +151,9 @@ const MeasurementTable = (function() {
             btn.addEventListener('click', function() {
                 const action = this.dataset.action;
                 switch(action) {
+                    case 'sheets':
+                        openProductSheetsModal(measurement.id);
+                        break;
                     case 'edit':
                         editRow(measurement.id);
                         break;
@@ -393,6 +399,187 @@ const MeasurementTable = (function() {
             // Centrer la vue sur la mesure
             // TODO: Implémenter pan vers coordonnées
         }
+    }
+
+    /**
+     * Ouvrir modal association fiches produits
+     */
+    function openProductSheetsModal(measurementId) {
+        const measurement = measurements.find(m => m.id == measurementId);
+        if (!measurement) return;
+
+        // Stocker l'ID de la mesure en cours
+        const modal = document.getElementById('product-sheets-assign-modal');
+        if (!modal) return;
+
+        modal.dataset.measurementId = measurementId;
+
+        // Initialiser product_sheets si absent
+        if (!measurement.product_sheets) {
+            measurement.product_sheets = [];
+        }
+
+        // Afficher les fiches associées
+        renderAssignedSheets(measurementId);
+
+        // Afficher la liste complète pour sélection
+        renderAvailableSheets(measurementId);
+
+        // Ouvrir la modal
+        modal.style.display = 'block';
+    }
+
+    /**
+     * Fermer modal association fiches
+     */
+    function closeProductSheetsModal() {
+        const modal = document.getElementById('product-sheets-assign-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    /**
+     * Afficher les fiches déjà associées
+     */
+    function renderAssignedSheets(measurementId) {
+        const measurement = measurements.find(m => m.id == measurementId);
+        if (!measurement) return;
+
+        const container = document.getElementById('assigned-sheets-list');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        if (!measurement.product_sheets || measurement.product_sheets.length === 0) {
+            container.innerHTML = '<p class="empty-state">Aucune fiche associée</p>';
+            return;
+        }
+
+        // Récupérer les fiches depuis la bibliothèque
+        const sheets = ProductSheets.getSheetsByIds(measurement.product_sheets);
+
+        sheets.forEach(sheet => {
+            const item = document.createElement('div');
+            item.className = 'assigned-sheet-item';
+            item.innerHTML = `
+                <div class="sheet-info">
+                    <strong>${escapeHtml(sheet.name)}</strong>
+                    <span class="ref">${escapeHtml(sheet.reference || '')}</span>
+                </div>
+                <button class="btn-icon btn-remove-sheet" data-sheet-id="${sheet.id}">
+                    ❌
+                </button>
+            `;
+
+            item.querySelector('.btn-remove-sheet').addEventListener('click', () => {
+                removeSheetFromMeasurement(measurementId, sheet.id);
+            });
+
+            container.appendChild(item);
+        });
+    }
+
+    /**
+     * Afficher la liste des fiches disponibles pour sélection
+     */
+    function renderAvailableSheets(measurementId) {
+        const measurement = measurements.find(m => m.id == measurementId);
+        if (!measurement) return;
+
+        const container = document.getElementById('available-sheets-list');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        const allSheets = ProductSheets.getAllSheets();
+        const assignedIds = measurement.product_sheets || [];
+
+        // Filtrer les fiches non encore assignées
+        const availableSheets = allSheets.filter(sheet => !assignedIds.includes(sheet.id));
+
+        if (availableSheets.length === 0) {
+            container.innerHTML = '<p class="empty-state">Toutes les fiches sont déjà associées</p>';
+            return;
+        }
+
+        availableSheets.forEach(sheet => {
+            const item = document.createElement('div');
+            item.className = 'available-sheet-item';
+            item.innerHTML = `
+                <div class="sheet-info">
+                    <strong>${escapeHtml(sheet.name)}</strong>
+                    <span class="ref">${escapeHtml(sheet.reference || '')}</span>
+                    <span class="manufacturer">${escapeHtml(sheet.manufacturer || '')}</span>
+                </div>
+                <button class="btn-icon btn-add-sheet" data-sheet-id="${sheet.id}">
+                    ➕
+                </button>
+            `;
+
+            item.querySelector('.btn-add-sheet').addEventListener('click', () => {
+                addSheetToMeasurement(measurementId, sheet.id);
+            });
+
+            container.appendChild(item);
+        });
+    }
+
+    /**
+     * Ajouter une fiche à une mesure
+     */
+    function addSheetToMeasurement(measurementId, sheetId) {
+        const measurement = measurements.find(m => m.id == measurementId);
+        if (!measurement) return;
+
+        if (!measurement.product_sheets) {
+            measurement.product_sheets = [];
+        }
+
+        if (!measurement.product_sheets.includes(sheetId)) {
+            measurement.product_sheets.push(sheetId);
+
+            // Sauvegarder
+            PubSub.publish(EVENTS.MEASUREMENT_UPDATED, { measurement });
+
+            // Rafraîchir les listes
+            renderAssignedSheets(measurementId);
+            renderAvailableSheets(measurementId);
+
+            // Rafraîchir le tableau
+            updateMeasurement(measurement);
+        }
+    }
+
+    /**
+     * Retirer une fiche d'une mesure
+     */
+    function removeSheetFromMeasurement(measurementId, sheetId) {
+        const measurement = measurements.find(m => m.id == measurementId);
+        if (!measurement) return;
+
+        if (measurement.product_sheets) {
+            measurement.product_sheets = measurement.product_sheets.filter(id => id !== sheetId);
+
+            // Sauvegarder
+            PubSub.publish(EVENTS.MEASUREMENT_UPDATED, { measurement });
+
+            // Rafraîchir les listes
+            renderAssignedSheets(measurementId);
+            renderAvailableSheets(measurementId);
+
+            // Rafraîchir le tableau
+            updateMeasurement(measurement);
+        }
+    }
+
+    /**
+     * Escape HTML
+     */
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text || '';
+        return div.innerHTML;
     }
 
     /**
