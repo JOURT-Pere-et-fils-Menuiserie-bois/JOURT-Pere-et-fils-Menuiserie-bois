@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logiciel de Métré Pro - JOURT Père et Fils</title>
 
-    <!-- Base URL pour résolution des chemins relatifs -->
-    <base href="/opticoupe/optiplan/">
-
     <!-- Styles -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/viewer.css">
-    <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/versioning.css">
-    <link rel="stylesheet" href="css/dropdown.css">
-    <link rel="stylesheet" href="css/product-sheets.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/viewer.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/versioning.css">
+    <link rel="stylesheet" href="./css/dropdown.css">
+    <link rel="stylesheet" href="./css/product-sheets.css">
 </head>
 <body>
     <div class="app-container">
@@ -560,43 +557,43 @@
     <!-- Scripts -->
     <!-- Bibliothèques externes (100% LOCAL - pas de CDN) -->
     <!-- PDF.js (Mozilla) - Lecture PDF -->
-    <script src="js/lib/pdf.min.mjs" type="module"></script>
+    <script src="./js/lib/pdf.min.mjs" type="module"></script>
 
     <!-- SheetJS - Export/Import Excel -->
-    <script src="js/lib/xlsx.full.min.js"></script>
+    <script src="./js/lib/xlsx.full.min.js"></script>
 
     <!-- jsPDF - Génération PDF -->
-    <script src="js/lib/jspdf.umd.min.js"></script>
-    <script src="js/lib/jspdf.plugin.autotable.min.js"></script>
+    <script src="./js/lib/jspdf.umd.min.js"></script>
+    <script src="./js/lib/jspdf.plugin.autotable.min.js"></script>
 
     <!-- Modules Core -->
-    <script src="js/modules/pubsub.js"></script>
-    <script src="js/modules/storage.js"></script>
-    <script src="js/modules/pdf-loader.js"></script>
-    <script src="js/modules/dxf-loader.js"></script>
-    <script src="js/modules/calibration.js"></script>
-    <script src="js/modules/drawing.js"></script>
-    <script src="js/modules/tools.js"></script>
-    <script src="js/modules/layers.js"></script>
-    <script src="js/modules/table.js"></script>
-    <script src="js/modules/versioning.js"></script>
-    <script src="js/modules/plan-manager.js"></script>
-    <script src="js/modules/export.js"></script>
-    <script src="js/modules/project-selector.js"></script>
-    <script src="js/modules/info-panel.js"></script>
-    <script src="js/modules/auto-save.js"></script>
-    <script src="js/modules/shortcuts.js"></script>
+    <script src="./js/modules/pubsub.js"></script>
+    <script src="./js/modules/storage.js"></script>
+    <script src="./js/modules/pdf-loader.js"></script>
+    <script src="./js/modules/dxf-loader.js"></script>
+    <script src="./js/modules/calibration.js"></script>
+    <script src="./js/modules/drawing.js"></script>
+    <script src="./js/modules/tools.js"></script>
+    <script src="./js/modules/layers.js"></script>
+    <script src="./js/modules/table.js"></script>
+    <script src="./js/modules/versioning.js"></script>
+    <script src="./js/modules/plan-manager.js"></script>
+    <script src="./js/modules/export.js"></script>
+    <script src="./js/modules/project-selector.js"></script>
+    <script src="./js/modules/info-panel.js"></script>
+    <script src="./js/modules/auto-save.js"></script>
+    <script src="./js/modules/shortcuts.js"></script>
 
     <!-- Modules Avancés -->
-    <script src="js/modules/advanced-measurements.js"></script>
-    <script src="js/modules/markup.js"></script>
-    <script src="js/modules/excel-export.js"></script>
-    <script src="js/modules/pdf-reports.js"></script>
-    <script src="js/modules/ui-handlers.js"></script>
-    <script src="js/modules/product-sheets.js"></script>
+    <script src="./js/modules/advanced-measurements.js"></script>
+    <script src="./js/modules/markup.js"></script>
+    <script src="./js/modules/excel-export.js"></script>
+    <script src="./js/modules/pdf-reports.js"></script>
+    <script src="./js/modules/ui-handlers.js"></script>
+    <script src="./js/modules/product-sheets.js"></script>
 
     <!-- Application principale -->
-    <script src="js/app.js"></script>
+    <script src="./js/app.js"></script>
     <script>
         // Gestion modal Add Plan
         document.addEventListener('DOMContentLoaded', function() {

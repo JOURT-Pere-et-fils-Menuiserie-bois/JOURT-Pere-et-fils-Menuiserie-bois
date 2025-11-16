@@ -30,7 +30,7 @@ const ProductSheets = (function() {
      */
     async function loadLibrary() {
         try {
-            const response = await fetch('php/api/product-sheets.php');
+            const response = await fetch('./php/api/product-sheets.php');
             const data = await response.json();
 
             if (data.success) {
@@ -216,7 +216,7 @@ const ProductSheets = (function() {
         formData.append('tags', JSON.stringify(tagsArray));
 
         try {
-            const response = await fetch('php/api/product-sheets.php', {
+            const response = await fetch('./php/api/product-sheets.php', {
                 method: 'POST',
                 body: formData
             });
@@ -258,7 +258,7 @@ const ProductSheets = (function() {
         const sheet = library[sheetId];
         if (!sheet) return;
 
-        const pdfUrl = `uploads/product-sheets/${sheet.pdf_filename}`;
+        const pdfUrl = `./uploads/product-sheets/${sheet.pdf_filename}`;
         window.open(pdfUrl, '_blank');
     }
 
@@ -274,7 +274,7 @@ const ProductSheets = (function() {
         if (!newName) return;
 
         try {
-            const response = await fetch('php/api/product-sheets.php', {
+            const response = await fetch('./php/api/product-sheets.php', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -312,7 +312,7 @@ const ProductSheets = (function() {
         }
 
         try {
-            const response = await fetch('php/api/product-sheets.php', {
+            const response = await fetch('./php/api/product-sheets.php', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

@@ -4,7 +4,7 @@
  */
 
 const StorageManager = (function() {
-    const API_BASE = 'php/api';
+    const API_BASE = './php/api';
 
     /**
      * Sauvegarder en localStorage
