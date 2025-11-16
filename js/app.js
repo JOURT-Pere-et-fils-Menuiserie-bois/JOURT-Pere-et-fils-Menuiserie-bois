@@ -93,6 +93,13 @@ const App = (function() {
         if (btnZoomOut) btnZoomOut.addEventListener('click', () => zoomOut());
         if (btnZoomFit) btnZoomFit.addEventListener('click', () => zoomFit());
 
+        // View controls (Grid & Measurements)
+        const btnToggleGrid = document.getElementById('btn-toggle-grid');
+        const btnToggleMeasurements = document.getElementById('btn-toggle-measurements');
+
+        if (btnToggleGrid) btnToggleGrid.addEventListener('click', () => toggleGrid());
+        if (btnToggleMeasurements) btnToggleMeasurements.addEventListener('click', () => toggleMeasurements());
+
         // PDF Navigation
         const btnPrevPage = document.getElementById('btn-prev-page');
         const btnNextPage = document.getElementById('btn-next-page');
@@ -528,6 +535,118 @@ const App = (function() {
     function nextPage() {
         if (typeof PDFLoader !== 'undefined') {
             PDFLoader.nextPage();
+        }
+    }
+
+    /**
+     * Toggle affichage de la grille
+     */
+    function toggleGrid() {
+        const viewerMain = document.getElementById('viewer-main');
+        const canvas = document.getElementById('plan-canvas');
+
+        if (!viewerMain || !canvas) return;
+
+        // Vérifier si la grille existe déjà
+        let gridCanvas = document.getElementById('grid-canvas');
+
+        if (gridCanvas) {
+            // Toggle visibilité
+            const isVisible = gridCanvas.style.display !== 'none';
+            gridCanvas.style.display = isVisible ? 'none' : 'block';
+
+            // Mettre à jour l'état du bouton
+            const btn = document.getElementById('btn-toggle-grid');
+            if (btn) {
+                btn.classList.toggle('active', !isVisible);
+            }
+        } else {
+            // Créer la grille
+            gridCanvas = document.createElement('canvas');
+            gridCanvas.id = 'grid-canvas';
+            gridCanvas.style.position = 'absolute';
+            gridCanvas.style.top = '0';
+            gridCanvas.style.left = '0';
+            gridCanvas.style.pointerEvents = 'none';
+            gridCanvas.style.zIndex = '1';
+
+            // Insérer avant le canvas principal
+            viewerMain.insertBefore(gridCanvas, canvas);
+
+            // Dessiner la grille
+            drawGrid(gridCanvas, canvas);
+
+            // Activer le bouton
+            const btn = document.getElementById('btn-toggle-grid');
+            if (btn) btn.classList.add('active');
+        }
+    }
+
+    /**
+     * Dessiner la grille sur le canvas
+     */
+    function drawGrid(gridCanvas, mainCanvas) {
+        // Ajuster la taille du canvas grille
+        gridCanvas.width = mainCanvas.width || 800;
+        gridCanvas.height = mainCanvas.height || 600;
+
+        const ctx = gridCanvas.getContext('2d');
+        const gridSize = 50; // Taille de la grille en pixels
+
+        ctx.strokeStyle = '#e0e0e0';
+        ctx.lineWidth = 0.5;
+
+        // Lignes verticales
+        for (let x = 0; x <= gridCanvas.width; x += gridSize) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, gridCanvas.height);
+            ctx.stroke();
+        }
+
+        // Lignes horizontales
+        for (let y = 0; y <= gridCanvas.height; y += gridSize) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(gridCanvas.width, y);
+            ctx.stroke();
+        }
+
+        // Lignes principales (tous les 5 carreaux)
+        ctx.strokeStyle = '#c0c0c0';
+        ctx.lineWidth = 1;
+
+        for (let x = 0; x <= gridCanvas.width; x += gridSize * 5) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, gridCanvas.height);
+            ctx.stroke();
+        }
+
+        for (let y = 0; y <= gridCanvas.height; y += gridSize * 5) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(gridCanvas.width, y);
+            ctx.stroke();
+        }
+    }
+
+    /**
+     * Toggle affichage des mesures (annotations)
+     */
+    function toggleMeasurements() {
+        const annotationsLayer = document.getElementById('annotations-layer');
+        const btn = document.getElementById('btn-toggle-measurements');
+
+        if (!annotationsLayer) return;
+
+        // Toggle visibilité
+        const isVisible = annotationsLayer.style.visibility !== 'hidden';
+        annotationsLayer.style.visibility = isVisible ? 'hidden' : 'visible';
+
+        // Mettre à jour l'état du bouton
+        if (btn) {
+            btn.classList.toggle('active', !isVisible);
         }
     }
 

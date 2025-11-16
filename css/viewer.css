@@ -40,6 +40,11 @@
     background: var(--bg-tertiary);
 }
 
+.view-controls button.active {
+    background: var(--primary-color);
+    color: white;
+}
+
 #zoom-level {
     min-width: 50px;
     text-align: center;
@@ -88,6 +93,14 @@
     top: 0;
     left: 0;
     cursor: crosshair;
+}
+
+#grid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
 #annotations-layer {
