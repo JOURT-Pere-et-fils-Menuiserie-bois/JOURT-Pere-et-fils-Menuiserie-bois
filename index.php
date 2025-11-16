@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logiciel de Métré Pro - JOURT Père et Fils</title>
 
+    <!-- Base URL pour résolution des chemins relatifs -->
+    <base href="/opticoupe/optiplan/">
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
