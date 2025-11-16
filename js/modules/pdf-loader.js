@@ -29,7 +29,7 @@ const PDFLoader = (function() {
 
         // Configurer PDF.js worker LOCAL
         if (typeof pdfjsLib !== 'undefined') {
-            pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/lib/pdf.worker.min.mjs';
+            pdfjsLib.GlobalWorkerOptions.workerSrc = './js/lib/pdf.worker.min.mjs';
         }
     }
 
