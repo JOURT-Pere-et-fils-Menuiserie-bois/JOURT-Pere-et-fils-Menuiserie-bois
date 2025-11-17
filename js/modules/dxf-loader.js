@@ -338,10 +338,50 @@ const DXFLoader = (function() {
     }
 
     /**
+     * Décharger le plan DXF actuel (libération mémoire)
+     * CRITIQUE pour les DXF volumineux
+     */
+    function unloadPlan() {
+        console.log('🗑️ Déchargement plan DXF actuel...');
+
+        // 1. Nettoyer le canvas
+        if (currentCanvas) {
+            const ctx = currentCanvas.getContext('2d');
+            if (ctx) {
+                ctx.clearRect(0, 0, currentCanvas.width, currentCanvas.height);
+            }
+            currentCanvas.width = 0;
+            currentCanvas.height = 0;
+        }
+
+        // 2. Nettoyer le SVG annotations
+        const svg = document.getElementById('annotations-layer');
+        if (svg) {
+            svg.setAttribute('width', '0');
+            svg.setAttribute('height', '0');
+            while (svg.firstChild) {
+                svg.removeChild(svg.firstChild);
+            }
+        }
+
+        // 3. Réinitialiser les variables
+        dxfData = null;
+        entities = [];
+        bounds = null;
+        currentCanvas = null;
+
+        console.log('✅ Mémoire DXF libérée');
+    }
+
+    /**
      * Charger DXF depuis URL
+     * Décharge automatiquement le plan précédent
      */
     async function loadDXFFromURL(url) {
         try {
+            // ✅ CRITIQUE: Décharger l'ancien plan AVANT de charger le nouveau
+            unloadPlan();
+
             console.log('📂 Chargement DXF depuis URL:', url);
 
             const response = await fetch(url);
@@ -356,6 +396,7 @@ const DXFLoader = (function() {
             bounds = calculateBounds(entities);
 
             console.log('📐 Limites DXF:', bounds);
+            console.log(`✅ DXF chargé: ${entities.length} entité(s)`);
 
             // Rendre sur canvas
             const canvas = document.getElementById('pdf-canvas');
@@ -413,6 +454,7 @@ const DXFLoader = (function() {
     return {
         loadDXF,
         loadDXFFromURL,
+        unloadPlan,
         getDXFData,
         getEntities,
         getBounds,

@@ -147,12 +147,26 @@ const PlanManager = (function() {
         }
 
         try {
+            // ✅ CRITIQUE: Nettoyer AVANT de charger le nouveau plan
+            // Libère la mémoire (important pour PDFs de 60 Mo+)
+            console.log('🧹 Nettoyage plan précédent...');
+
+            // 1. Nettoyer le tableau des mesures
+            if (typeof MeasurementTable !== 'undefined' && typeof MeasurementTable.clear === 'function') {
+                MeasurementTable.clear();
+            }
+
+            // 2. Nettoyer les annotations dessinées
+            if (typeof DrawingManager !== 'undefined' && typeof DrawingManager.clearAll === 'function') {
+                DrawingManager.clearAll();
+            }
+
             // Détecter le type de fichier (PDF ou DXF)
             const isPDF = plan.mime_type?.includes('pdf') || plan.file_path.toLowerCase().endsWith('.pdf');
             const isDXF = plan.mime_type?.includes('dxf') || plan.file_path.toLowerCase().endsWith('.dxf');
 
             if (isDXF) {
-                // Charger le DXF
+                // Charger le DXF (unloadPlan() appelé automatiquement)
                 console.log('📐 Chargement DXF:', plan.file_path);
                 if (typeof DXFLoader !== 'undefined') {
                     await DXFLoader.loadDXFFromURL(plan.file_path);
@@ -160,7 +174,7 @@ const PlanManager = (function() {
                     throw new Error('DXFLoader non disponible');
                 }
             } else {
-                // Charger le PDF (par défaut)
+                // Charger le PDF (unloadPlan() appelé automatiquement)
                 console.log('📄 Chargement PDF:', plan.file_path);
                 if (typeof PDFLoader !== 'undefined') {
                     await PDFLoader.loadPDFFromURL(plan.file_path);

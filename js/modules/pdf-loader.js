@@ -35,14 +35,19 @@ const PDFLoader = (function() {
 
     /**
      * Charger un fichier PDF
+     * Décharge automatiquement le plan précédent
      */
     async function loadPDF(file) {
         try {
+            // ✅ CRITIQUE: Décharger l'ancien plan AVANT de charger le nouveau
+            unloadPlan();
+
+            console.log('📄 Chargement PDF depuis fichier...');
             const arrayBuffer = await file.arrayBuffer();
             const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
 
             pdfDoc = await loadingTask.promise;
-            console.log('PDF chargé:', pdfDoc.numPages, 'pages');
+            console.log(`✅ PDF chargé: ${pdfDoc.numPages} page(s)`);
 
             // Afficher la première page
             await renderPage(1);
@@ -61,12 +66,64 @@ const PDFLoader = (function() {
     }
 
     /**
+     * Décharger le plan actuel (libération mémoire)
+     * CRITIQUE pour les PDFs volumineux (60 Mo+)
+     */
+    function unloadPlan() {
+        console.log('🗑️ Déchargement plan actuel...');
+
+        // 1. Détruire le document PDF (libère la mémoire)
+        if (pdfDoc && typeof pdfDoc.destroy === 'function') {
+            try {
+                pdfDoc.destroy();
+                console.log('✅ Document PDF détruit');
+            } catch (e) {
+                console.warn('Erreur destruction PDF:', e);
+            }
+        }
+
+        // 2. Nettoyer le canvas
+        if (canvas && context) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = 0;
+            canvas.height = 0;
+        }
+
+        // 3. Nettoyer le SVG annotations
+        const svg = document.getElementById('annotations-layer');
+        if (svg) {
+            svg.setAttribute('width', '0');
+            svg.setAttribute('height', '0');
+            // Supprimer tous les enfants (annotations)
+            while (svg.firstChild) {
+                svg.removeChild(svg.firstChild);
+            }
+        }
+
+        // 4. Réinitialiser les variables
+        pdfDoc = null;
+        currentPage = 1;
+        viewport = null;
+        scale = 1.0;
+
+        console.log('✅ Mémoire libérée');
+    }
+
+    /**
      * Charger un PDF depuis une URL
+     * Décharge automatiquement le plan précédent
      */
     async function loadPDFFromURL(url) {
         try {
+            // ✅ CRITIQUE: Décharger l'ancien plan AVANT de charger le nouveau
+            // Évite les fuites mémoire avec des PDFs de 60 Mo+
+            unloadPlan();
+
+            console.log('📄 Chargement PDF:', url);
             const loadingTask = pdfjsLib.getDocument(url);
             pdfDoc = await loadingTask.promise;
+
+            console.log(`✅ PDF chargé: ${pdfDoc.numPages} page(s)`);
 
             await renderPage(1);
 
@@ -260,6 +317,7 @@ const PDFLoader = (function() {
     return {
         loadPDF,
         loadPDFFromURL,
+        unloadPlan,
         renderPage,
         goToPage,
         nextPage,
