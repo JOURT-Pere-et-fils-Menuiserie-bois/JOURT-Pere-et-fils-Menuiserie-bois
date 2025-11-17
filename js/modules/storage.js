@@ -25,7 +25,11 @@ const StorageManager = (function() {
     function loadLocal(key) {
         try {
             const data = localStorage.getItem(key);
-            return data ? JSON.parse(data) : null;
+            // Vérifier que data existe ET n'est pas "undefined" ou "null" (strings)
+            if (!data || data === 'undefined' || data === 'null') {
+                return null;
+            }
+            return JSON.parse(data);
         } catch (error) {
             console.error('Local storage error:', error);
             return null;
