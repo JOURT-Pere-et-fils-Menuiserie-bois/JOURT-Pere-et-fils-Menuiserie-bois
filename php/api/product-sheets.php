@@ -13,7 +13,7 @@ header('Content-Type: application/json');
 require_once __DIR__ . '/../config.php';
 
 // Chemins
-$library_file = SAVES_DIR . '/product-sheets-library.json';
+$library_file = SAVES_PATH . '/product-sheets-library.json';
 $upload_dir = dirname(__DIR__, 2) . '/uploads/product-sheets/';
 
 // Créer le fichier bibliothèque si inexistant

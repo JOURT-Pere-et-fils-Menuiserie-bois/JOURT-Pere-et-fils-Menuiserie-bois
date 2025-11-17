@@ -22,7 +22,7 @@ if (!file_exists(UPLOADS_PATH)) {
 
 // Configuration erreurs
 error_reporting(E_ALL);
-ini_set('display_errors', 1); // Mettre à 0 en production
+ini_set('display_errors', 0); // DÉSACTIVÉ pour éviter HTML dans les réponses JSON
 ini_set('log_errors', 1);
 
 $logsDir = BASE_PATH . '/logs';
@@ -30,6 +30,43 @@ if (!file_exists($logsDir)) {
     mkdir($logsDir, 0755, true);
 }
 ini_set('error_log', $logsDir . '/php_errors.log');
+
+// Gestionnaire d'erreurs global pour retourner du JSON au lieu de HTML
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    error_log("PHP Error [$errno]: $errstr in $errfile on line $errline");
+    // Ne pas interrompre l'exécution pour les warnings, seulement logger
+    return false; // Laisser le gestionnaire d'erreurs par défaut continuer
+});
+
+// Gestionnaire d'exceptions global pour retourner du JSON
+set_exception_handler(function($exception) {
+    error_log("Uncaught Exception: " . $exception->getMessage());
+    http_response_code(500);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode([
+        'success' => false,
+        'error' => 'Erreur serveur interne'
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+});
+
+// Gestionnaire de shutdown pour capturer les erreurs fatales
+register_shutdown_function(function() {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        error_log("Fatal Error: " . $error['message'] . " in " . $error['file'] . " on line " . $error['line']);
+
+        // Si les headers n'ont pas encore été envoyés
+        if (!headers_sent()) {
+            http_response_code(500);
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode([
+                'success' => false,
+                'error' => 'Erreur serveur critique'
+            ], JSON_UNESCAPED_UNICODE);
+        }
+    }
+});
 
 // Timezone
 date_default_timezone_set('Europe/Paris');

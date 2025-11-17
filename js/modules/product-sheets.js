@@ -31,7 +31,17 @@ const ProductSheets = (function() {
     async function loadLibrary() {
         try {
             const response = await fetch('php/api/product-sheets.php');
-            const data = await response.json();
+            const responseText = await response.text();
+
+            // Valider que c'est du JSON
+            let data;
+            try {
+                data = JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                console.error('Erreur chargement bibliothèque: Le serveur a retourné une réponse invalide');
+                return;
+            }
 
             if (data.success) {
                 library = data.sheets || {};
@@ -221,7 +231,17 @@ const ProductSheets = (function() {
                 body: formData
             });
 
-            const data = await response.json();
+            const responseText = await response.text();
+
+            // Valider JSON
+            let data;
+            try {
+                data = JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                alert('Erreur serveur: réponse invalide');
+                return;
+            }
 
             if (data.success) {
                 // Ajouter à la bibliothèque locale
@@ -285,7 +305,17 @@ const ProductSheets = (function() {
                 })
             });
 
-            const data = await response.json();
+            const responseText = await response.text();
+
+            // Valider JSON
+            let data;
+            try {
+                data = JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                alert('Erreur serveur: réponse invalide');
+                return;
+            }
 
             if (data.success) {
                 library[sheetId] = data.sheet;
@@ -322,7 +352,17 @@ const ProductSheets = (function() {
                 })
             });
 
-            const data = await response.json();
+            const responseText = await response.text();
+
+            // Valider JSON
+            let data;
+            try {
+                data = JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                alert('Erreur serveur: réponse invalide');
+                return;
+            }
 
             if (data.success) {
                 delete library[sheetId];

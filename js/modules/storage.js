@@ -25,7 +25,11 @@ const StorageManager = (function() {
     function loadLocal(key) {
         try {
             const data = localStorage.getItem(key);
-            return data ? JSON.parse(data) : null;
+            // Gérer les cas: null, undefined (string), données vides
+            if (!data || data === 'undefined' || data === 'null') {
+                return null;
+            }
+            return JSON.parse(data);
         } catch (error) {
             console.error('Local storage error:', error);
             return null;
@@ -62,12 +66,27 @@ const StorageManager = (function() {
 
         try {
             const response = await fetch(`${API_BASE}${endpoint}`, options);
+            const responseText = await response.text();
 
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                // Essayer de parser l'erreur JSON si possible
+                let errorMessage = `HTTP error! status: ${response.status}`;
+                try {
+                    const errorData = JSON.parse(responseText);
+                    errorMessage = errorData.error || errorMessage;
+                } catch (e) {
+                    // Pas du JSON, garder le message par défaut
+                }
+                throw new Error(errorMessage);
             }
 
-            return await response.json();
+            // Valider que c'est du JSON
+            try {
+                return JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                throw new Error('Le serveur a retourné une réponse invalide (pas du JSON)');
+            }
         } catch (error) {
             console.error('API request error:', error);
             throw error;
@@ -89,21 +108,32 @@ const StorageManager = (function() {
                 body: formData
             });
 
+            // Lire le texte de la réponse une seule fois
+            const responseText = await response.text();
+
             if (!response.ok) {
                 // Essayer de lire le message d'erreur du serveur
                 let errorMessage = `HTTP ${response.status}`;
                 try {
-                    const errorData = await response.json();
+                    const errorData = JSON.parse(responseText);
                     errorMessage = errorData.error || errorMessage;
                 } catch (e) {
-                    const errorText = await response.text();
-                    errorMessage = errorText || errorMessage;
+                    // Si ce n'est pas du JSON, utiliser le texte brut (mais tronquer si trop long)
+                    errorMessage = responseText.length > 200
+                        ? responseText.substring(0, 200) + '...'
+                        : responseText;
                 }
                 console.error('Upload error details:', errorMessage);
                 throw new Error(`Upload error: ${errorMessage}`);
             }
 
-            return await response.json();
+            // Valider que la réponse est du JSON valide
+            try {
+                return JSON.parse(responseText);
+            } catch (e) {
+                console.error('Invalid JSON response:', responseText.substring(0, 500));
+                throw new Error('Le serveur a retourné une réponse invalide (pas du JSON)');
+            }
         } catch (error) {
             console.error('File upload error:', error);
             throw error;
