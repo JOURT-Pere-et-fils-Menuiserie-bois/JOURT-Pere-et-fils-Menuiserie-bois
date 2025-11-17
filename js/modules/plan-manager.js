@@ -87,6 +87,21 @@ const PlanManager = (function() {
             currentProjectId = projectId;
             currentVersionId = versionId;
 
+            // Filtrer plans avec paths invalides (ne correspondent pas à la version courante)
+            currentPlans = currentPlans.filter(p => {
+                if (!p.file_path) return true; // Garder plans en attente
+
+                // Vérifier que le path contient bien la version courante
+                const pathContainsVersion = p.file_path.includes(`/${versionId}/`) ||
+                                           p.file_path.includes(`\\${versionId}\\`);
+
+                if (!pathContainsVersion) {
+                    console.warn(`⚠️ Plan ${p.plan_id} ignoré: path incorrect (${p.file_path})`);
+                    return false;
+                }
+                return true;
+            });
+
             // Trier par floor_order
             currentPlans.sort((a, b) => (a.floor_order || 0) - (b.floor_order || 0));
 
