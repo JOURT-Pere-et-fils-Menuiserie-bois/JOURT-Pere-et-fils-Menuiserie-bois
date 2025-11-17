@@ -41,13 +41,11 @@ const App = (function() {
         const btnNewProject = document.getElementById('btn-new-project');
         const btnUploadPlan = document.getElementById('btn-upload-plan');
         const btnVersions = document.getElementById('btn-versions');
-        const btnExport = document.getElementById('btn-export');
 
         if (btnOpenProject) btnOpenProject.addEventListener('click', showOpenProjectModal);
         if (btnNewProject) btnNewProject.addEventListener('click', showNewProjectModal);
         if (btnUploadPlan) btnUploadPlan.addEventListener('click', showFileSelector);
         if (btnVersions) btnVersions.addEventListener('click', showVersionsModal);
-        if (btnExport) btnExport.addEventListener('click', showExportMenu);
 
         // Project search
         const searchInput = document.getElementById('project-search');
@@ -774,15 +772,6 @@ const App = (function() {
         // Charger les versions
         if (typeof VersionManager !== 'undefined') {
             VersionManager.loadVersions(currentProject.project_id);
-        }
-    }
-
-    /**
-     * Afficher menu export
-     */
-    function showExportMenu() {
-        if (typeof ExportManager !== 'undefined') {
-            ExportManager.showMenu();
         }
     }
 

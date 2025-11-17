@@ -578,7 +578,6 @@
     <script src="./js/modules/table.js"></script>
     <script src="./js/modules/versioning.js"></script>
     <script src="./js/modules/plan-manager.js"></script>
-    <script src="./js/modules/export.js"></script>
     <script src="./js/modules/project-selector.js"></script>
     <script src="./js/modules/info-panel.js"></script>
     <script src="./js/modules/auto-save.js"></script>

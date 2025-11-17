@@ -583,52 +583,6 @@ const MeasurementTable = (function() {
     }
 
     /**
-     * Exporter les mesures
-     */
-    function exportData(format) {
-        switch(format) {
-            case 'csv':
-                exportToCSV();
-                break;
-            case 'excel':
-                exportToExcel();
-                break;
-            case 'pdf':
-                exportToPDF();
-                break;
-        }
-    }
-
-    /**
-     * Exporter en CSV
-     */
-    function exportToCSV() {
-        const headers = ['Code', 'Description', 'Catégorie', 'Quantité', 'Unité', 'P.U.', 'Total'];
-
-        let csv = headers.join(',') + '\n';
-
-        measurements.forEach(m => {
-            const row = [
-                m.item_code || generateItemCode(m),
-                m.description || getDefaultDescription(m),
-                m.category || getCategoryFromType(m.type),
-                (m.value || 0).toFixed(2),
-                m.unit || getUnitFromType(m.type),
-                (m.unit_price || 0).toFixed(2),
-                ((m.value || 0) * (m.unit_price || 0)).toFixed(2)
-            ];
-            csv += row.join(',') + '\n';
-        });
-
-        // Télécharger
-        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `mesures_${Date.now()}.csv`;
-        link.click();
-    }
-
-    /**
      * Obtenir les mesures
      */
     function getMeasurements() {
@@ -667,7 +621,6 @@ const MeasurementTable = (function() {
         removeMeasurement,
         getMeasurements,
         loadMeasurements,
-        exportData,
         editRow,
         deleteRow,
         highlightMeasurement
