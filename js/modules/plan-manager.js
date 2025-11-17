@@ -59,10 +59,25 @@ const PlanManager = (function() {
             btnAdd.addEventListener('click', showAddPlanModal);
         }
 
+        // Bouton confirmer ajout plan
+        const btnConfirmAdd = document.getElementById('add-plan-confirm');
+        if (btnConfirmAdd) {
+            btnConfirmAdd.addEventListener('click', handleAddPlanConfirm);
+        }
+
         // Bouton remplacer plan
         const btnReplace = document.getElementById('btn-replace-plan');
         if (btnReplace) {
             btnReplace.addEventListener('click', showReplacePlanModal);
+        }
+
+        // Gestion du select personnalisé pour le niveau
+        const floorSelect = document.getElementById('floor-level-select');
+        const customLabel = document.getElementById('custom-level-label');
+        if (floorSelect && customLabel) {
+            floorSelect.addEventListener('change', (e) => {
+                customLabel.style.display = e.target.value === 'custom' ? 'block' : 'none';
+            });
         }
     }
 
@@ -433,6 +448,59 @@ const PlanManager = (function() {
             if (label) {
                 label.textContent = `Plan: ${currentPlan.floor_level}`;
             }
+        }
+    }
+
+    /**
+     * Gérer la confirmation d'ajout de plan
+     */
+    async function handleAddPlanConfirm() {
+        const form = document.getElementById('add-plan-form');
+        const fileInput = document.getElementById('plan-file-input');
+        const floorSelect = document.getElementById('floor-level-select');
+        const customFloorInput = document.getElementById('custom-floor-level');
+        const floorOrderInput = document.getElementById('floor-order-input');
+
+        if (!form || !fileInput || !floorSelect) {
+            console.error('Éléments du formulaire manquants');
+            return;
+        }
+
+        // Validation
+        const file = fileInput.files[0];
+        if (!file) {
+            alert('Veuillez sélectionner un fichier plan');
+            return;
+        }
+
+        let floorLevel = floorSelect.value;
+        if (floorLevel === 'custom') {
+            floorLevel = customFloorInput.value.trim();
+            if (!floorLevel) {
+                alert('Veuillez entrer un nom personnalisé pour le niveau');
+                return;
+            }
+        }
+
+        const floorOrder = parseInt(floorOrderInput.value) || 0;
+
+        // Ajouter le plan
+        try {
+            await addPlan(file, floorLevel, floorOrder);
+
+            // Fermer la modale et réinitialiser le formulaire
+            const modal = document.getElementById('add-plan-modal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+            form.reset();
+            const customLabel = document.getElementById('custom-level-label');
+            if (customLabel) {
+                customLabel.style.display = 'none';
+            }
+        } catch (error) {
+            console.error('Erreur ajout plan:', error);
+            alert('Erreur lors de l\'ajout du plan: ' + error.message);
         }
     }
 

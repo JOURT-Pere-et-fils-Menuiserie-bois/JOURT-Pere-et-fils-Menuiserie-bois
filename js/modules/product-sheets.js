@@ -57,6 +57,18 @@ const ProductSheets = (function() {
             btnLibrary.addEventListener('click', openLibraryModal);
         }
 
+        // Bouton "Nouvelle Fiche" - afficher le formulaire
+        const btnAddSheet = document.getElementById('btn-add-sheet');
+        if (btnAddSheet) {
+            btnAddSheet.addEventListener('click', showAddSheetForm);
+        }
+
+        // Bouton "Annuler" - cacher le formulaire
+        const btnCancelAddSheet = document.getElementById('btn-cancel-add-sheet');
+        if (btnCancelAddSheet) {
+            btnCancelAddSheet.addEventListener('click', hideAddSheetForm);
+        }
+
         // Bouton upload dans la modal bibliothèque
         const btnUpload = document.getElementById('btn-upload-product-sheet');
         if (btnUpload) {
@@ -174,6 +186,42 @@ const ProductSheets = (function() {
     }
 
     /**
+     * Afficher le formulaire d'ajout de fiche
+     */
+    function showAddSheetForm() {
+        const form = document.getElementById('add-sheet-form');
+        if (form) {
+            form.style.display = 'block';
+            // Réinitialiser le formulaire
+            const fileInput = document.getElementById('product-sheet-pdf-file');
+            const nameInput = document.getElementById('product-sheet-name');
+            const refInput = document.getElementById('product-sheet-ref');
+            const manuInput = document.getElementById('product-sheet-manufacturer');
+            const normsInput = document.getElementById('product-sheet-norms');
+            const categoryInput = document.getElementById('product-sheet-category');
+            const tagsInput = document.getElementById('product-sheet-tags');
+
+            if (fileInput) fileInput.value = '';
+            if (nameInput) nameInput.value = '';
+            if (refInput) refInput.value = '';
+            if (manuInput) manuInput.value = '';
+            if (normsInput) normsInput.value = '';
+            if (categoryInput) categoryInput.value = '';
+            if (tagsInput) tagsInput.value = '';
+        }
+    }
+
+    /**
+     * Cacher le formulaire d'ajout de fiche
+     */
+    function hideAddSheetForm() {
+        const form = document.getElementById('add-sheet-form');
+        if (form) {
+            form.style.display = 'none';
+        }
+    }
+
+    /**
      * Upload nouvelle fiche
      */
     async function handleUploadSheet() {
@@ -238,6 +286,9 @@ const ProductSheets = (function() {
                 if (normsInput) normsInput.value = '';
                 if (categoryInput) categoryInput.value = '';
                 if (tagsInput) tagsInput.value = '';
+
+                // Cacher le formulaire
+                hideAddSheetForm();
 
                 alert('Fiche ajoutée à la bibliothèque');
 
