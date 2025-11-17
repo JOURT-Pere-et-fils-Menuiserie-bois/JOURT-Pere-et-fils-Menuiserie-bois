@@ -232,34 +232,21 @@ const PlanManager = (function() {
         }
 
         try {
-            console.log('➕ Ajout plan:', floorLevel);
+            console.log('➕ Ajout plan:', floorLevel, '| Fichier:', file.name);
 
-            // Upload du fichier
-            const uploadResult = await StorageManager.uploadFile(file, currentProjectId, {
-                version_id: currentVersionId,
-                floor_level: floorLevel,
-                floor_order: floorOrder
-            });
+            // ✅ NOUVELLE API: Upload + création du plan en une seule opération
+            // Le nom original du fichier est conservé !
+            const result = await StorageManager.uploadPlan(
+                file,
+                currentProjectId,
+                currentVersionId,
+                floorLevel,
+                floorOrder
+            );
 
-            console.log('✅ Fichier uploadé:', uploadResult.file_path);
-
-            // Créer l'entrée du plan
-            const planData = {
-                project_id: currentProjectId,
-                version_id: currentVersionId,
-                floor_level: floorLevel,
-                floor_order: floorOrder,
-                file_path: uploadResult.file_path,
-                file_name: uploadResult.file_name,
-                file_size: uploadResult.file_size,
-                mime_type: uploadResult.mime_type,
-                file_hash: uploadResult.file_hash || null
-            };
-
-            const result = await StorageManager.apiRequest('/plans.php', 'POST', planData);
             const newPlan = result.plan;
 
-            console.log('✅ Plan créé:', newPlan);
+            console.log('✅ Plan créé:', newPlan.floor_level, '| Nom original:', result.original_name);
 
             currentPlans.push(newPlan);
             currentPlans.sort((a, b) => (a.floor_order || 0) - (b.floor_order || 0));
@@ -269,7 +256,7 @@ const PlanManager = (function() {
             // Charger ce nouveau plan
             await loadPlan(newPlan.plan_id);
 
-            alert(`✅ Plan "${floorLevel}" ajouté avec succès`);
+            alert(`✅ Plan "${floorLevel}" ajouté avec succès\n📄 Fichier: ${result.original_name}`);
 
             return newPlan;
 
@@ -291,6 +278,8 @@ const PlanManager = (function() {
         }
 
         const confirmMsg = `⚠️ Vous êtes sur le point de remplacer le plan "${plan.floor_level}".\n\n` +
+                          `Fichier actuel: ${plan.file_name}\n` +
+                          `Nouveau fichier: ${newFile.name}\n\n` +
                           `L'ancien plan sera sauvegardé automatiquement.\n\n` +
                           `Continuer ?`;
 
@@ -299,9 +288,10 @@ const PlanManager = (function() {
         }
 
         try {
-            console.log('🔄 Remplacement plan:', plan.floor_level);
+            console.log('🔄 Remplacement plan:', plan.floor_level, '| Nouveau fichier:', newFile.name);
 
-            // Upload du nouveau fichier
+            // ⚠️ NOTE: Pour le remplacement, on utilise encore l'ancienne API
+            // TODO: Créer une API replace-plan.php dédiée qui garde le nom original
             const uploadResult = await StorageManager.uploadFile(newFile, currentProjectId, {
                 version_id: currentVersionId,
                 floor_level: plan.floor_level
@@ -315,7 +305,7 @@ const PlanManager = (function() {
                 version_id: currentVersionId,
                 plan_id: planId,
                 new_file_path: uploadResult.file_path,
-                new_file_name: uploadResult.file_name,
+                new_file_name: newFile.name, // ✅ Utiliser le nom original, pas celui de l'upload
                 new_file_hash: uploadResult.file_hash || null,
                 new_file_size: uploadResult.file_size,
                 mime_type: uploadResult.mime_type
@@ -339,6 +329,7 @@ const PlanManager = (function() {
 
             const backupPath = result.backup.file_path || 'backup créé';
             alert(`✅ Plan "${plan.floor_level}" remplacé avec succès\n\n` +
+                  `Nouveau fichier: ${newFile.name}\n` +
                   `Backup: ${backupPath}`);
 
             return result;

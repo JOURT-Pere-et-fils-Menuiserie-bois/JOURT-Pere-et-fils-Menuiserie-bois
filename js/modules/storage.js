@@ -77,7 +77,8 @@ const StorageManager = (function() {
     }
 
     /**
-     * Upload de fichier
+     * Upload de fichier (ancienne API - crée des versions)
+     * @deprecated Utiliser uploadPlan() pour les plans multiples
      */
     async function uploadFile(file, projectId, metadata = {}) {
         const formData = new FormData();
@@ -108,6 +109,44 @@ const StorageManager = (function() {
             return await response.json();
         } catch (error) {
             console.error('File upload error:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Upload d'un plan (nouvelle API multi-plans)
+     * Garde le nom original du fichier et crée le plan en une seule opération
+     */
+    async function uploadPlan(file, projectId, versionId, floorLevel, floorOrder = 0) {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('project_id', projectId);
+        formData.append('version_id', versionId);
+        formData.append('floor_level', floorLevel);
+        formData.append('floor_order', floorOrder.toString());
+
+        try {
+            const response = await fetch(`${API_BASE}/upload-plan.php`, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                let errorMessage = `HTTP ${response.status}`;
+                try {
+                    const errorData = await response.json();
+                    errorMessage = errorData.error || errorMessage;
+                } catch (e) {
+                    const errorText = await response.text();
+                    errorMessage = errorText || errorMessage;
+                }
+                console.error('Upload plan error:', errorMessage);
+                throw new Error(`Upload plan error: ${errorMessage}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Plan upload error:', error);
             throw error;
         }
     }
@@ -252,6 +291,7 @@ const StorageManager = (function() {
         removeLocal,
         apiRequest,
         uploadFile,
+        uploadPlan,
         saveProject,
         loadProject,
         saveMeasurements,
