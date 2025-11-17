@@ -27,11 +27,15 @@ class PlanManager {
 
         $data = json_decode(file_get_contents($versionsFile), true);
 
-        if (!$data || !isset($data['versions'])) {
+        if (!$data) {
             return [];
         }
 
-        $version = $this->findVersion($data['versions'], $versionId);
+        // Le fichier versions.json contient directement un array de versions, pas un objet
+        // Structure: [{version1}, {version2}] et non {versions: [...]}
+        $versions = $data;
+
+        $version = $this->findVersion($versions, $versionId);
 
         if (!$version) {
             return [];
@@ -123,13 +127,13 @@ class PlanManager {
 
         $versionsData = json_decode(file_get_contents($versionsFile), true);
 
-        if (!$versionsData || !isset($versionsData['versions'])) {
+        if (!$versionsData || !is_array($versionsData)) {
             throw new Exception('Structure versions.json invalide');
         }
 
         $versionFound = false;
 
-        foreach ($versionsData['versions'] as &$version) {
+        foreach ($versionsData as &$version) {
             if ($version['version_id'] === $versionId) {
                 // Initialiser plans[] si n'existe pas
                 if (!isset($version['plans'])) {
@@ -146,7 +150,7 @@ class PlanManager {
             throw new Exception('Version non trouvée');
         }
 
-        // Sauvegarder
+        // Sauvegarder (versionsData est un array direct)
         file_put_contents($versionsFile, json_encode($versionsData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 
         return $plan;
@@ -181,7 +185,7 @@ class PlanManager {
         $versionIndex = null;
         $planIndex = null;
 
-        foreach ($versionsData['versions'] as $vIdx => &$version) {
+        foreach ($versionsData as $vIdx => &$version) {
             if ($version['version_id'] === $versionId) {
                 if (isset($version['plans'])) {
                     foreach ($version['plans'] as $pIdx => &$plan) {
@@ -264,9 +268,9 @@ class PlanManager {
             'previous_file_path' => $oldPlan['file_path'] ?? null
         ];
 
-        $versionsData['versions'][$versionIndex]['plans'][$planIndex] = $newPlan;
+        $versionsData[$versionIndex]['plans'][$planIndex] = $newPlan;
 
-        // Sauvegarder
+        // Sauvegarder (versionsData est un array direct)
         file_put_contents($versionsFile, json_encode($versionsData, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 
         return [
@@ -295,13 +299,13 @@ class PlanManager {
 
         $data = json_decode(file_get_contents($versionsFile), true);
 
-        if (!$data || !isset($data['versions'])) {
+        if (!$data || !is_array($data)) {
             throw new Exception('Structure versions.json invalide');
         }
 
         $planFound = false;
 
-        foreach ($data['versions'] as &$version) {
+        foreach ($data as &$version) {
             if ($version['version_id'] === $versionId) {
                 if (isset($version['plans'])) {
                     $version['plans'] = array_filter($version['plans'], function($p) use ($planId, &$planFound) {
@@ -354,7 +358,7 @@ class PlanManager {
         $versionsFile = $this->basePath . "/{$projectId}/versions/versions.json";
         $versionsData = json_decode(file_get_contents($versionsFile), true);
 
-        foreach ($versionsData['versions'] as &$version) {
+        foreach ($versionsData as &$version) {
             if ($version['version_id'] === $targetVersionId) {
                 if (!isset($version['plans'])) {
                     $version['plans'] = [];

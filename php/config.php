@@ -22,7 +22,7 @@ if (!file_exists(UPLOADS_PATH)) {
 
 // Configuration erreurs
 error_reporting(E_ALL);
-ini_set('display_errors', 1); // Mettre à 0 en production
+ini_set('display_errors', 0); // DÉSACTIVÉ pour éviter HTML dans réponses JSON
 ini_set('log_errors', 1);
 
 $logsDir = BASE_PATH . '/logs';

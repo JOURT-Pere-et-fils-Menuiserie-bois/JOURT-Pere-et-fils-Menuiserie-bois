@@ -159,36 +159,29 @@ const ProjectSelector = (function() {
                 await VersionManager.loadVersions(projectId);
             }
 
-            // 3. Trouver la version actuelle ou la plus récente
-            let currentVersion = versions.find(v => v.is_current === 1 || v.is_current === '1');
-            if (!currentVersion && versions.length > 0) {
-                // Prendre la plus récente (tri par date)
-                currentVersion = versions.sort((a, b) =>
-                    new Date(b.upload_date) - new Date(a.upload_date)
-                )[0];
-            }
+            // 3. NE PLUS charger automatiquement une version
+            // À la place, afficher un message et ouvrir la modale des versions
+            console.log(`✅ Projet "${project.project_name}" ouvert avec ${versions.length} version(s)`);
 
-            // 4. Publier événement VERSION_CHANGED pour que PlanManager charge les plans
-            if (currentVersion) {
-                console.log('Chargement de la version:', currentVersion.version_label);
-
-                // Publier événement VERSION_CHANGED
-                // PlanManager s'abonne à cet événement et va:
-                // 1. Charger la liste des plans de cette version
-                // 2. Charger le premier plan disponible (PDF + mesures)
-                // 3. Mettre à jour le sélecteur de plans
-                PubSub.publish(EVENTS.VERSION_CHANGED, {
-                    versionId: currentVersion.version_id,
-                    version: currentVersion
-                });
-
-                showNotification(`✅ Projet "${project.project_name}" ouvert avec ${versions.length} version(s)`, 'success');
-            } else {
-                showNotification(`✅ Projet "${project.project_name}" ouvert (aucun plan)`, 'success');
-            }
-
-            // Fermer la modale
+            // Fermer la modale de sélection de projet
             document.getElementById('open-project-modal').classList.remove('active');
+
+            // Afficher message à l'utilisateur
+            if (versions.length > 0) {
+                alert(`✅ Projet "${project.project_name}" ouvert avec ${versions.length} version(s)\n\nVeuillez maintenant sélectionner une version dans le menu "Versions"`);
+
+                // Ouvrir automatiquement la modale des versions pour que l'utilisateur choisisse
+                setTimeout(() => {
+                    const versionsModal = document.getElementById('versions-modal');
+                    if (versionsModal) {
+                        versionsModal.classList.add('active');
+                    }
+                }, 500);
+            } else {
+                alert(`✅ Projet "${project.project_name}" ouvert\n\nAucune version n'existe encore.\n\nVous pouvez créer une version en uploadant un plan via "Charger Plan"`);
+            }
+
+            return; // Sortir sans charger de version automatiquement
 
         } catch (error) {
             console.error('Erreur ouverture projet:', error);
