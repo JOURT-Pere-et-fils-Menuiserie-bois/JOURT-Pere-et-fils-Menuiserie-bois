@@ -85,10 +85,25 @@ const StorageManager = (function() {
         const formData = new FormData();
         formData.append('file', file);
         formData.append('project_id', projectId);
-        formData.append('metadata', JSON.stringify(metadata));
+
+        // Si version_id fourni = ajouter plan à version existante
+        // Sinon = créer nouvelle version (legacy)
+        let endpoint = '/upload.php';
+        if (metadata.version_id) {
+            endpoint = '/upload_plan.php';
+            formData.append('version_id', metadata.version_id);
+            if (metadata.floor_level) {
+                formData.append('floor_level', metadata.floor_level);
+            }
+            if (metadata.floor_order !== undefined) {
+                formData.append('floor_order', metadata.floor_order);
+            }
+        } else {
+            formData.append('metadata', JSON.stringify(metadata));
+        }
 
         try {
-            const response = await fetch(`${API_BASE}/upload.php`, {
+            const response = await fetch(`${API_BASE}${endpoint}`, {
                 method: 'POST',
                 body: formData
             });
