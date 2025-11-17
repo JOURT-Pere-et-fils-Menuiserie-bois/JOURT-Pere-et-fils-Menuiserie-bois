@@ -198,7 +198,10 @@
             <!-- Right Panel: Info -->
             <aside class="right-panel">
                 <div class="info-section">
-                    <h3>📊 Projet</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3>📊 Projet</h3>
+                        <button id="btn-edit-project" class="btn btn-small btn-primary" style="display: none;" title="Modifier le projet">✏️</button>
+                    </div>
                     <div id="project-details" class="project-details">
                         <div class="info-row">
                             <span class="info-label">Nom:</span>
@@ -373,6 +376,40 @@
             <div class="modal-footer">
                 <button class="btn btn-secondary modal-close">Annuler</button>
                 <button class="btn btn-primary" id="create-project-confirm">Créer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Project -->
+    <div id="edit-project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modifier le projet</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-project-form">
+                    <label>
+                        Nom du projet *
+                        <input type="text" name="project_name" id="edit-project-name" required>
+                    </label>
+                    <label>
+                        Client
+                        <input type="text" name="client_name" id="edit-client-name">
+                    </label>
+                    <label>
+                        Référence contrat
+                        <input type="text" name="contract_reference" id="edit-contract-reference">
+                    </label>
+                    <label>
+                        Adresse
+                        <textarea name="address" id="edit-address" rows="3"></textarea>
+                    </label>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close">Annuler</button>
+                <button class="btn btn-primary" id="edit-project-confirm">Enregistrer</button>
             </div>
         </div>
     </div>

@@ -41,11 +41,13 @@ const App = (function() {
         const btnNewProject = document.getElementById('btn-new-project');
         const btnUploadPlan = document.getElementById('btn-upload-plan');
         const btnVersions = document.getElementById('btn-versions');
+        const btnEditProject = document.getElementById('btn-edit-project');
 
         if (btnOpenProject) btnOpenProject.addEventListener('click', showOpenProjectModal);
         if (btnNewProject) btnNewProject.addEventListener('click', showNewProjectModal);
         if (btnUploadPlan) btnUploadPlan.addEventListener('click', showFileSelector);
         if (btnVersions) btnVersions.addEventListener('click', showVersionsModal);
+        if (btnEditProject) btnEditProject.addEventListener('click', showEditProjectModal);
 
         // Project search
         const searchInput = document.getElementById('project-search');
@@ -148,6 +150,10 @@ const App = (function() {
         // Modal nouveau projet
         const createProjectConfirm = document.getElementById('create-project-confirm');
         if (createProjectConfirm) createProjectConfirm.addEventListener('click', createNewProject);
+
+        // Modal éditer projet
+        const editProjectConfirm = document.getElementById('edit-project-confirm');
+        if (editProjectConfirm) editProjectConfirm.addEventListener('click', handleEditProjectConfirm);
 
         // Modal calibration
         const calibrationConfirm = document.getElementById('calibration-confirm');
@@ -419,6 +425,63 @@ const App = (function() {
     }
 
     /**
+     * Afficher modal éditer projet
+     */
+    function showEditProjectModal() {
+        if (!currentProject) {
+            alert('Aucun projet ouvert');
+            return;
+        }
+
+        // Pré-remplir le formulaire avec les données actuelles
+        document.getElementById('edit-project-name').value = currentProject.project_name || '';
+        document.getElementById('edit-client-name').value = currentProject.client_name || '';
+        document.getElementById('edit-contract-reference').value = currentProject.contract_reference || '';
+        document.getElementById('edit-address').value = currentProject.address || '';
+
+        document.getElementById('edit-project-modal').classList.add('active');
+    }
+
+    /**
+     * Enregistrer modifications du projet
+     */
+    async function handleEditProjectConfirm() {
+        if (!currentProject) {
+            alert('Aucun projet ouvert');
+            return;
+        }
+
+        const form = document.getElementById('edit-project-form');
+        const formData = new FormData(form);
+
+        const updatedData = {
+            project_id: currentProject.project_id,
+            project_name: formData.get('project_name'),
+            client_name: formData.get('client_name'),
+            contract_reference: formData.get('contract_reference'),
+            address: formData.get('address')
+        };
+
+        try {
+            const result = await StorageManager.saveProject(updatedData);
+
+            // Mettre à jour le projet courant avec les nouvelles données
+            currentProject = result.project;
+            updateProjectDisplay();
+
+            document.getElementById('edit-project-modal').classList.remove('active');
+
+            PubSub.publish(EVENTS.PROJECT_UPDATED, currentProject);
+
+            alert('Projet modifié avec succès !');
+
+        } catch (error) {
+            console.error('Erreur modification projet:', error);
+            alert('Erreur lors de la modification du projet: ' + error.message);
+        }
+    }
+
+    /**
      * Charger dernier projet
      */
     function loadLastProject() {
@@ -446,10 +509,22 @@ const App = (function() {
      * Mettre à jour l'affichage du projet
      */
     function updateProjectDisplay() {
+        const btnEditProject = document.getElementById('btn-edit-project');
+
         if (currentProject) {
             document.getElementById('current-project').textContent = currentProject.project_name;
+
+            // Afficher le bouton d'édition
+            if (btnEditProject) {
+                btnEditProject.style.display = 'inline-block';
+            }
         } else {
             document.getElementById('current-project').textContent = 'Aucun projet';
+
+            // Masquer le bouton d'édition
+            if (btnEditProject) {
+                btnEditProject.style.display = 'none';
+            }
         }
     }
 
