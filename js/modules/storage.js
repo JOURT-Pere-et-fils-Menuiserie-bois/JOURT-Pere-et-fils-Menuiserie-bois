@@ -61,7 +61,9 @@ const StorageManager = (function() {
         }
 
         try {
-            const response = await fetch(`${API_BASE}${endpoint}`, options);
+            // Supprimer le / initial si présent pour éviter les chemins absolus
+            const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint;
+            const response = await fetch(`${API_BASE}/${cleanEndpoint}`, options);
 
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
