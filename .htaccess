@@ -1,0 +1,402 @@
+<IfModule mod_rewrite.c>
+
+# Vérifier si l'adresse IP est dans le dossier "deny"
+RewriteCond %{REMOTE_ADDR} ^(.*)
+RewriteCond %{DOCUMENT_ROOT}/deny/%1.txt -f
+RewriteRule ^ - [E=IP_DENY:1]
+
+    # Exception pour le répertoire "checklist"
+    RewriteCond %{REQUEST_URI} !^/checklist/
+
+    # Exception pour la page process_data.php
+    RewriteCond %{REQUEST_URI} !^/process_data.php
+
+
+# Rediriger vers "/403.6" si l'adresse IP est bloquée
+RewriteCond %{ENV:IP_DENY} 1
+RewriteCond %{REQUEST_URI} !^/403.6
+RewriteRule ^ /403.6 [L]
+
+# Autoriser l'accès aux fichiers llm.txt et llm-full.txt (LLM crawlers)
+RewriteRule ^llm\.txt$ - [L]
+RewriteRule ^llm-full\.txt$ - [L]
+
+# Supprime les points-virgules en fin d'URL
+RewriteCond %{REQUEST_URI} ^(.+);$
+RewriteRule ^ %1 [R=301,L]
+
+# Bloquer les requêtes avec des mots clés suspects dans la chaîne de requête
+ RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
+ RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+ RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+ RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+ RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+ RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+ RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+
+ RewriteCond %{QUERY_STRING} ^.*(union|select|cast|declare|drop|md5|benchmark|table|column|distinct|substr|concat|truncate|convert|exec|passthru|system|popen|load|between|null|delay|sleep|unhex|%00|%0A|%0D|%21|%22|%23|%24|%25|%27|%28|%29|%40|%60|%2A|%2B|%2C|%2D|%3B|%3C|%3E|%5B|%5C|%5D|%5E|%5F|%7B|%7C|%7D|%7E|>|<|sanitize|base64|@set|@ini|dirname|decode).* [NC,OR]
+ RewriteCond %{QUERY_STRING} ^.*(sp_executesql).* [NC]
+ RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+ RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+
+# Blocks some XSS attacks
+ RewriteCond %{QUERY_STRING} (\|%3E) [NC,OR]
+ RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+ RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+
+# PHP-CGI Vulnerability
+  RewriteCond %{QUERY_STRING} ^(%2d|\-)[^=]+$ [NC,OR]
+
+# Rediriger les requêtes bloquées vers une page d'erreur ou les rejeter avec un code 403
+ RewriteRule ^ /429 [L]
+
+</IfModule>
+
+ErrorDocument 302 https://www.jourt.com/302
+ErrorDocument 400 https://www.jourt.com/400
+ErrorDocument 403 https://www.jourt.com/403
+ErrorDocument 404 https://www.jourt.com/404
+ErrorDocument 410 https://www.jourt.com/410
+ErrorDocument 429 https://www.jourt.com/429
+ErrorDocument 500 https://www.jourt.com/500
+ErrorDocument 503 https://www.jourt.com/503
+ErrorDocument 504 https://www.jourt.com/504
+
+<filesMatch "">
+Header set Cache-Control "store, cache, must-revalidate, max-age=36000, public"
+Header set Content-Security-Policy "upgrade-insecure-requests; form-action 'self'; object-src 'none'; frame-ancestors 'self'; frame-src 'self'; child-src 'self'; default-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline' ; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'self';"
+
+</filesMatch>
+<filesMatch ".(ico|jpg|jpeg|png|gif|webp|ico|woff2|css|js|json)$">
+ Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+<filesMatch ".(txt|php)$">
+ Header set Cache-Control "max-age=36000, public"
+</filesMatch>
+
+
+ExpiresActive On
+ExpiresByType text/css "access 1 year"
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType image/webp "access 1 year"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresByType font/woff2  "access 1 year"
+ExpiresByType application/font-woff2  "access 1 year"
+ExpiresByType application/x-font-woff2  "access 1 year"
+ExpiresByType text/txt "access plus 1 day"
+ExpiresByType application/json "access plus 1 year"
+#Header append Cache-Control "public"
+
+RewriteEngine on
+RewriteBase /
+
+Options All -Indexes
+Options -Indexes
+Options +FollowSymlinks
+IndexIgnore *
+
+# Bloquer l'accès aux fichiers .txt dans le répertoire "deny"
+RewriteCond %{REQUEST_URI} ^/deny/.+\.txt$
+RewriteRule ^ - [F]
+RewriteRule ^mail$  devis [L,NC,R=301]
+RewriteRule ^rss.xml$  rss.php [L]
+RewriteRule ^images/rss/([^/]+)/([^/]+)\.(\d+)\.webp$ images/rss/$1/$2.webp?date=$3 [L,NC]
+RewriteRule ^images/wiki/([^/]+)\.(\d+)\.webp$ images/wiki/$1.webp?date=$2 [L,NC]
+
+# Exception pour le répertoire "checklist"
+RewriteCond %{REQUEST_URI} !^/checklist/
+RewriteRule ^article-([^-]+)-([0-9]+).txt$ /article-$1-$2 [L]
+RewriteRule ^article-([^-]+)-([0-9]+)/$ /article-$1-$2 [NC,R=301]
+RewriteRule ^article-([^-]+)-([0-9]+)$ /blog.php?categorie=$1&article=$2 [L]
+RewriteRule ^blog-([^-]+)-page([0-9]+)/$ /blog-$1-page$2 [NC,R=301]
+RewriteRule ^blog-([^-]+)-page([0-9]+)$ /blog.php?categorie=$1&page=$2 [L]
+RewriteRule ^blog-([^-]+)/$ /blog-$1 [NC,R=301]
+RewriteRule ^blog-([^-]+)$ /blog.php?categorie=$1 [L]
+RewriteRule ^sitemap.xml$  sitemap.php [NE,L]
+
+
+RewriteRule ^return-policy$  return-policy.php [NE,L]
+RewriteRule ^atelier-brest$  atelier-brest.php [NE,L]
+RewriteRule ^emploi$  emploi.php [NE,L]
+RewriteRule ^destockage$  destockage.php [NE,L]
+RewriteRule ^devis$  devis.php [NE,L]
+RewriteRule ^hall-of-fame$  hall-of-fame.php [NE,L]
+RewriteRule ^information$  info.php [NE,L]
+RewriteRule ^blog$  blog.php [QSA,NC,L]
+RewriteRule ^cloud$  cloud.php [QSA,NC,L]
+
+# Icones-entreprise - Redirection 301 trailing slash EN PREMIER
+RewriteRule ^icones-entreprise/galerie-icones/$ /icones-entreprise/galerie-icones [R=301,L]
+RewriteRule ^icones-entreprise/galerie-icones-page-([0-9]+)/$ /icones-entreprise/galerie-icones-page-$1 [R=301,L]
+RewriteRule ^icones-entreprise/galerie-icones-image-([^/]+)-page-([0-9]+)/$ /icones-entreprise/galerie-icones-image-$1-page-$2 [R=301,NE,L]
+RewriteRule ^icones-entreprise/galerie-icones-image-([^/]+)/$ /icones-entreprise/galerie-icones-image-$1 [R=301,NE,L]
+
+RewriteRule ^400$ 400.php [NE,L]
+RewriteRule ^403$ 403.php [NE,L]
+RewriteRule ^403.6$ 403.6.php [NE,L]
+RewriteRule ^404$ 404.php [NE,L]
+RewriteRule ^410$ 410.php [NE,L]
+RewriteRule ^429$ 429.php [NE,L]
+RewriteRule ^500$ 500.php [NE,L]
+RewriteRule ^503$ 503.php [NE,L]
+RewriteRule ^504$ 504.php [NE,L]
+RewriteRule ^ips$ ips.php [L]
+
+
+#anti spammer
+RewriteRule (?:^|/)wp-admin/(.*) 429 [L]
+RewriteRule (?:^|/)wp-admin(.*) 429 [L]
+RewriteRule (?:^|/)administrator/(.*) 429 [L]
+RewriteRule (?:^|/)administrator(.*) 429 [L]
+RewriteRule (?:^|/)wp-includes/(.*) 429 [L]
+RewriteRule (?:^|/)wp-includes(.*) 429 [L]
+RewriteRule (?:^|/)includes/(.*) 429 [L]
+RewriteRule (?:^|/)includes(.*) 429 [L]
+RewriteRule (?:^|/)core/(.*) 429 [L]
+RewriteRule (?:^|/)core(.*) 429 [L]
+RewriteRule (?:^|/)typo3/(.*) 429 [L]
+RewriteRule (?:^|/)typo3(.*) 429 [L]
+RewriteRule (?:^|/)wp-content/(.*) 429 [L]
+RewriteRule (?:^|/)wp-content(.*) 429 [L]
+RewriteRule (?:^|/)wp-login/(.*) 429 [L]
+RewriteRule (?:^|/)wp-login(.*) 429 [L]
+RewriteRule (?:^|/)wordpress/(.*) 429 [L]
+RewriteRule (?:^|/)wordpress(.*) 429 [L]
+RewriteRule (?:^|/)wp-json/(.*) 429 [L]
+RewriteRule (?:^|/)wp-json(.*) 429 [L]
+RewriteRule (?:^|/)wp/(.*) 429 [L]
+RewriteRule (?:^|/)admin-ajax\.php 429 [L]
+RewriteRule (?:^|/)wp-config\.php 429 [L]
+RewriteRule (?:^|/)configuration\.php 429 [L]
+RewriteRule (?:^|/)settings\.php 429 [L]
+RewriteRule (?:^|/)default\.settings\.php 429 [L]
+RewriteRule (?:^|/)LocalConfiguration\.php 429 [L]
+RewriteRule (?:^|/)AdditionalConfiguration\.php 429 [L]
+
+RewriteRule ^wp-login.php$ 429 [L]
+RewriteRule ^wp-admin$ 429 [L]
+RewriteRule ^administrator$ 429 [L]
+RewriteRule ^admin.php$ 429 [L]
+RewriteRule ^wp-config.php$ 429 [L]
+RewriteRule ^phpMyAdmin/$ 429 [L]
+RewriteRule ^mysqladmin/$ 429 [L]
+RewriteRule ^myadmin/$ 429 [L]
+RewriteRule ^database/$ 429 [L]
+RewriteRule ^sql.php$ 429 [L]
+RewriteRule ^phpinfo.php$ 429 [L]
+RewriteRule ^shell.php$ 429 [L]
+RewriteRule ^phpshell.php$ 429 [L]
+RewriteRule ^phpmyadmin.php$ 429 [L]
+RewriteRule ^adminer.php$ 429 [L]
+RewriteRule ^pma/$ 429 [L]
+RewriteRule ^cgi-bin/$ 429 [L]
+RewriteRule ^config.php$ 429 [L]
+RewriteRule ^backup/$ 429 [L]
+RewriteRule ^upload/$ 429 [L]
+RewriteRule ^wp-config.bak$ 429 [L]
+RewriteRule ^wp-config.php.bak$ 429 [L]
+RewriteRule ^wp-config.php~$ 429 [L]
+RewriteRule ^\.htaccess$ 429 [L]
+RewriteRule ^\.htpasswd$ 429 [L]
+RewriteRule ^\.aahtpasswd$ 429 [L]
+RewriteRule ^wp.php$ 429 [L]
+RewriteRule ^upload.php$ 429 [L]
+RewriteRule ^old-index.php$ 429 [L]
+RewriteRule ^wikindex.php$ 429 [L]
+RewriteRule ^install.php$ 429 [L]
+RewriteRule ^config.php$ 429 [L]
+RewriteRule ^setup.php$ 429 [L]
+RewriteRule ^.password$ 429 [L]
+RewriteRule ^.php/(.*)$ 429 [L]
+
+RewriteCond %{HTTP_USER_AGENT} ^.*Wget* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*curl* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*apache* [NC]
+RewriteCond %{HTTP_USER_AGENT} "JDatabaseDriverMysqli" [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} "JSIMPLEPIEFACTORY" [NC]
+RewriteCond %{HTTP:X-FORWARDED-FOR} "JDatabaseDriverMysqli" [NC,OR]
+RewriteCond %{HTTP:X-FORWARDED-FOR} "JSIMPLEPIEFACTORY" [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s[0-4]\\.* [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT* [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s5\\.[3-9]* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s6\\.[4-9]* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s7\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s8\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT\s9\\.* [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*Windows\sNT* [NC]
+RewriteCond %{HTTP_USER_AGENT} !^.*Windows\sNT\s[1-9][0-9.][0-9.]* [NC]
+
+RewriteCond %{HTTP_USER_AGENT} ^.*MSIE* [NC]
+RewriteCond %{HTTP_USER_AGENT} !^.*MSIE\s[1-9][0-9.][0-9.]* [NC]
+RewriteCond %{HTTP_USER_AGENT} ^.*Mozilla\/[1-4]\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Chrome\/[1-9]\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox\/[1-9]\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*MSIE\s[1-6]\\.* [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*Opera* [NC]
+
+RewriteRule ^(.*)$ 429 [NC,L]
+
+
+
+Redirect 301 /emploi/ https://www.jourt.com/emploi
+Redirect 301 /destockage/ https://www.jourt.com/destockage
+Redirect 301 /devis/ https://www.jourt.com/devis
+Redirect 301 /information/ https://www.jourt.com/information
+Redirect 301 /blog/ https://www.jourt.com/blog
+Redirect 301 /blog.txt https://www.jourt.com/blog
+Redirect 301 /cloud/ https://www.jourt.com/cloud
+Redirect 301 /return-policy/ https://www.jourt.com/return-policy
+Redirect 301 /atelier-brest/ https://www.jourt.com/atelier-brest
+Redirect 301 /tools/convertion/ https://www.jourt.com/tools/convertion
+Redirect 301 /tools/surfaces/ https://www.jourt.com/tools/surfaces
+Redirect 301 /tools/peintures/ https://www.jourt.com/tools/peintures
+Redirect 301 /tools/pente/ https://www.jourt.com/tools/pente
+Redirect 301 /tools/optidecouplinthe/ https://www.jourt.com/tools/optidecouplinthe
+Redirect 301 /index.html https://www.jourt.com
+Redirect 301 /index.php$ https://www.jourt.com
+Redirect 301 /information.html https://www.jourt.com/information
+Redirect 301 /emploi.html https://www.jourt.com/emploi
+Redirect 301 /galerie.html https://www.jourt.com/blog
+Redirect 301 /galerie-charpente.html https://www.jourt.com/blog
+Redirect 301 /contact.html https://www.jourt.com/information
+Redirect 301 /devis.html https://www.jourt.com/devis
+Redirect 301 /cloud.html https://www.jourt.com/cloud
+
+Redirect 301 /emploi.txt https://www.jourt.com/emploi
+Redirect 301 /blog-actualites.txt https://www.jourt.com/blog-actualites
+Redirect 301 /information.html https://www.jourt.com/information
+Redirect 301 /index-2.html https://www.jourt.com
+Redirect 301 /devis.html https://www.jourt.com/devis
+Redirect 301 /article-habillage-7.txt https://www.jourt.com/article-habillage-7
+Redirect 301 /article-menuiserie_exterieure-1.txt https://www.jourt.com/article-menuiserie_exterieure-1
+
+AddDefaultCharset UTF-8
+ServerSignature Off
+
+Header set X-Frame-Options "SAMEORIGIN"
+Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header set Referrer-Policy: no-referrer
+# Header set Feature-Policy "camera '*'; cross-origin-isolated '*'; display-capture '*'; fullscreen '*';"
+Header set Permissions-Policy "camera=(*), cross-origin-isolated=(*), display-capture=(*), fullscreen=(*)"
+
+Header set Content-Security-Policy "upgrade-insecure-requests; form-action 'self'; object-src 'none'; frame-ancestors 'self'; frame-src 'self'; child-src 'self'; default-src 'self'; manifest-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src 'self' blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; base-uri 'self';"
+
+Header set X-Powered-By "www.jourt.com"
+
+Header set X-Permitted-Cross-Domain-Policies "none"
+#Header set Expect-CT: "enforce, max-age=31536000"
+
+<Files sw.js>
+ Header set Cache-Control "max-age=36000, public"
+</Files>
+
+<Files sitemap.xml>
+ Header set Cache-Control "max-age=36000, public"
+</Files>
+
+
+
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# If your server don't support ETags deactivate with "None" (and remove header)
+<IfModule mod_expires.c>
+  <IfModule mod_headers.c>
+   # Header unset ETag
+  </IfModule>
+  FileETag None
+</IfModule>
+
+
+<IfModule mod_deflate.c>
+# Insert filters / compress text, html, javascript, css, xml:
+# mod_deflate can be used for Apache v2 and later and is the recommended GZip mechanism to use
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/javascript
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE text/vtt
+AddOutputFilterByType DEFLATE text/x-component
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/js
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE application/x-httpd-php
+AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+AddOutputFilterByType DEFLATE application/atom+xml
+AddOutputFilterByType DEFLATE application/json
+AddOutputFilterByType DEFLATE application/ld+json
+AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+AddOutputFilterByType DEFLATE application/x-font-ttf
+AddOutputFilterByType DEFLATE application/font-sfnt
+AddOutputFilterByType DEFLATE application/x-web-app-manifest+json
+AddOutputFilterByType DEFLATE font/opentype
+AddOutputFilterByType DEFLATE font/otf
+AddOutputFilterByType DEFLATE font/ttf
+AddOutputFilterByType DEFLATE font/sfnt
+AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/x-icon
+
+# Exception: Images
+SetEnvIfNoCase REQUEST_URI \.(?:gif|jpg|jpeg|png)$ no-gzip dont-vary
+
+# Drop problematic browsers
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+
+# Make sure proxies don't deliver the wrong content
+<IfModule mod_headers.c>
+Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+</IfModule>
+
+# mod_gzip is an external extension and last updated 2015, so
+# if available please use mod_deflate instead
+# If you are stuck on Apache v1.3 you can use mod_zip to enable Gzip
+# as mod_deflate is available for Apache v2 or later only.
+<IfModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+  mod_gzip_item_include handler ^cgi-script$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType application/font-woff2 .woff2
+  AddType text/x-vcard .vcf
+  AddCharset utf-8 .vcf
+</IfModule>
+
+<IfModule mod_limitipconn.c>
+    LimitIPConnection 100
+</IfModule>
+
+<files .htaccess>
+order allow,deny
+deny from all
+</files>
+
+<files .admin/.password>
+order allow,deny
+deny from all
+</files>
+
+<Files ~ "\.vcf$">
+	ForceType text/x-vcard
+</Files>
